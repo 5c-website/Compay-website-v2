@@ -72,8 +72,8 @@ const index = ({ data }) => {
         <div className='relative mr-auto ml-auto max-w-[1200px] sm:max-w-full sm:w-full'>
           <div className='relative flex flex-col max-w-full z-10   second-content'>
             <div>
-              <h2 className='text-slate-50 uppercase text-5xl mt-0 mb-0 font-semibold tracking-[2px] text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:tracking-[1px]'>{content.unseentitle}</h2>
-              <h1 className='text-slate-50 uppercase  max-w-full font-semibold mt-0 mb-0  text-[80px] tracking-[2px] leading-[80px] sm:text-[2.5rem] sm:leading-[50px] sm:ml-0'>{content.unseensubtitle}</h1>
+              <h2 className='text-slate-50 uppercase text-5xl mt-0 mb-0 font-semibold tracking-[2px] leading-[60px] sm:ml-0 sm:text-[22px] sm:tracking-[1px]'>{content.unseentitle}</h2>
+              <h1 className='text-slate-50 uppercase  max-w-full font-semibold mt-0 mb-0 text-[3rem] tracking-[2px] leading-[80px] sm:text-[2.5rem] sm:leading-[50px] sm:ml-0'>{content.unseensubtitle}</h1>
             </div>
 
             <div className='max-w-full flex flex-col justify-center items-start sm:ml-0  secondDivContent '>
@@ -120,7 +120,7 @@ const index = ({ data }) => {
         <div className='relative flex flex-col items-start ml-auto mr-auto' style={{ zIndex: '1', maxWidth: '1200px' }}>
           <div className='max-w-full relative ml-0 pl-4 pr-4 '>
             <h2 className='uppercase mt-0 mb-0 font-semibold fourth-div-content text-slate-50 tracking-[2px] text-[50px] leading-[32px] sm:ml-0 sm:text-[22px] sm:tracking-[1px]'>{content.thirdsectitle}</h2>
-            <h1 className='max-w-full uppercase mt-0 mb-0 font-normal text-slate-50 text-[80px] leading-[100px] w-[1074px] tracking-[1px] sm:ml-0 sm:text-[34px] sm:tracking-[1px] sm:leading-[40px]'>
+            <h1 className='max-w-full uppercase mt-0 mb-0 font-normal text-slate-50 text-[3rem] leading-[100px] w-[1074px] tracking-[1px] sm:ml-0 sm:text-[34px] sm:tracking-[1px] sm:leading-[40px]'>
               <span className='hyperspectral-text'>{content.rainbowtext}</span>
               {content.thirdsecsubtitle}
             </h1>
@@ -177,8 +177,8 @@ const index = ({ data }) => {
       <div className='pt-60 pl-4 pr-4 overflow-hidden sm:pt-32'>
         <div className='flex flex-col overflow-hidden items-start ml-auto mr-auto' style={{ maxWidth: '1200px' }}>
           <div className='relative max-w-full' style={{ width: '1200px' }}>
-            <h2 className='text-slate-50 uppercase mt-0 mb-0 font-normal tracking-[2px] text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:tracking-[1px] '>{content.fourthtitle}</h2>
-            <h1 className='max-w-full text-slate-50 uppercase mt-0 mb-0 font-normal text-[80px] leading-[100px] w-[1074px] tracking-[1px] sm:ml-0 sm:text-[34px] sm:tracking-[1px] sm:leading-[40px]'>
+            <h2 className='text-slate-50 uppercase mt-0 mb-0 font-normal tracking-[2px] text-5xl leading-[60px] sm:ml-0 sm:text-[22px] sm:tracking-[1px] '>{content.fourthtitle}</h2>
+            <h1 className='max-w-full text-slate-50 uppercase mt-0 mb-0 font-normal text-[3rem] leading-[100px] w-[1074px] tracking-[1px] sm:ml-0 sm:text-[34px] sm:tracking-[1px] sm:leading-[40px]'>
               <span className='hyperspectral-text'>{content.fourthrainbowtext}&nbsp;</span>
               {content.fourthsubtitle}
             </h1>
@@ -268,8 +268,8 @@ const index = ({ data }) => {
           <div className='flex pl-0' style={{ borderLeft: '8px #00d4ff' }}>
             <div className='side-line-effects'></div>
             <div className='quote'>
-              <h1 className='max-w-full w-full uppercase mt-0 mb-0 text-left font-semibold not-italic  font-quote text-[#fff] tracking-[2px] text-[50px] leading-[46.88px] sm:ml-0 sm:text-[28px] sm:tracking-[1px]'>{content.quote}</h1>
-              <div className='uppercase mt-4 not-italic leading-10 font-use-one text-[#fff] font-use tracking-[2px] text-[50px] sm:leading-10 sm:ml-0 sm:text-[18px] sm:tracking-[1px]'>-{content.author}</div>
+              <h1 className='max-w-full w-full uppercase mt-0 mb-0 text-left font-semibold not-italic  font-quote text-[#fff] tracking-[2px] text-[40px] leading-[46.88px] sm:ml-0 sm:text-[28px] sm:tracking-[1px]'>{content.quote}</h1>
+              <div className='uppercase mt-4 not-italic leading-10 font-use-one text-[#fff] font-use tracking-[2px] text-[24px] sm:leading-10 sm:ml-0 sm:text-[18px] sm:tracking-[1px]'>-{content.author}</div>
             </div>
           </div>
           <div className='max-w-full flex flex-col items-start ml-[140px] sm:ml-3 w-[670px] sm:max-w-full sm:w-[95%] mt-[60px]'>
