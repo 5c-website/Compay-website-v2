@@ -1,8 +1,5 @@
 import React from 'react'
 import { Link,graphql } from 'gatsby'
-import top from '../../Assets/mining/top.png'
-import bottom from '../../Assets/mining/bottom.png'
-import center from '../../Assets/mining/center.png'
 
 function Radiologist({ data }) {
     const Content = data.allStrapiHealthcare.nodes[0];
