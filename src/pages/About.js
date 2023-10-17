@@ -374,7 +374,7 @@ function About({ data }) {
                         <div className=' flex flex-row justify-start items-start overflow-hidden'>
                             <Marquee direction="left" speed={100} delay={2}>
                                 <div className="image_wrapper">
-                                    <img src={strapiContent.partnersmq[0].localFile.url} alt="" />
+                                    <img src={strapiContent.partnersmq[0].localFile.url} alt=""/>
                                 </div>
                                 <div className="image_wrapper">
                                     <img src={strapiContent.partnersmq[1].localFile.url} alt="" />
@@ -406,18 +406,18 @@ function About({ data }) {
                 </div>
             </div>
             <div className=' mb-60 relative flex flex-col items-start ml-auto mr-auto' style={{ zIndex: '1', maxWidth: '1200px' }}>
-                <h2 className='max-w-full uppercase mt-0 mb-0 font-semibold  font-use text-[50px] sm:text-xl sm:ml-3' style={{ color: '#fff', letterSpacing: '2px', lineHeight: '60px' }}>partners</h2>
+                <h2 className='max-w-full uppercase mt-0 mb-0 font-semibold  font-use text-[50px] sm:text-xl sm:ml-3' style={{ color: '#fff', letterSpacing: '2px', lineHeight: '60px' }}>{strapiContent.investor}</h2>
                 <div className='w-full' style={{ maxWidth: '1000px', marginTop: '60px', marginLeft: '100px' }}>
                     <div className='logos-container'>
                         <img className='logo-section max-w-full' src={strapiContent.partnerslogo[0].localFile.url}></img>
                         <img className='logo-section max-w-full' src={strapiContent.partnerslogo[1].localFile.url}></img>
                         <img className='logo-section max-w-full' src={strapiContent.partnerslogo[2].localFile.url}></img>
                         <img className='logo-section max-w-full' src={strapiContent.partnerslogo[3].localFile.url}></img>
-                        <img className='logo-section max-w-full' src={strapiContent.partnerslogo[4].localFile.url}></img>
+                        {/* <img className='logo-section max-w-full' src={strapiContent.partnerslogo[4].localFile.url}></img>
                         <img className='logo-section max-w-full' src={strapiContent.partnerslogo[5].localFile.url}></img>
                         <img className='logo-section max-w-full' src={strapiContent.partnerslogo[6].localFile.url}></img>
                         <img className='logo-section max-w-full' src={strapiContent.partnerslogo[7].localFile.url}></img>
-                        <img className='logo-section max-w-full' src={strapiContent.partnerslogo[8].localFile.url}></img>
+                        <img className='logo-section max-w-full' src={strapiContent.partnerslogo[8].localFile.url}></img> */}
                     </div>
                 </div>
             </div>
@@ -483,6 +483,7 @@ export const pageQuery = graphql`
 query MyQuery {
     allStrapiAbout {
       nodes {
+        investor
         title
         content {
           data {
