@@ -154,17 +154,17 @@ function Technology({ data }) {
               <div className=' w-full max-w-full justify-between items-center flex overflow-hidden mt-[60px] sm:items-start sm:flex-col'>
                 <div className='max-w-full flex flex-col justify-center items-center mt-0 w-[400px] h-[370px] sm:w-[96%]'>
                   <ul className=' h-full flex flex-col justify-between pl-0 mt-0' style={{ marginBottom: '10px' }}>
-                    <li className='w-full max-w-full items-start pl-0 flex mb-8'>
+                    <li className='w-full max-w-full items-start pl-0 flex mb-3'>
                       <div className='bullet-line-css'></div>
-                      <p className='mb-0 mt-0 leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', fontSize: '20px' }}>{strapiContent.fourthpoint1.data.fourthpoint1}</p>
+                      <p className='mb-0 mt-0 leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', fontSize: '16px' }}>{strapiContent.fourthpoint1.data.fourthpoint1}</p>
                     </li>
-                    <li className='w-full max-w-full items-start pl-0 flex mb-8'>
+                    <li className='w-full max-w-full items-start pl-0 flex mb-4'>
                       <div className='bullet-line-css'></div>
-                      <p className='mb-0 mt-0 leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', fontSize: '20px' }}>{strapiContent.fourthpoint2.data.fourthpoint2}</p>
+                      <p className='mb-0 mt-0 leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', fontSize: '16px' }}>{strapiContent.fourthpoint2.data.fourthpoint2}</p>
                     </li>
-                    <li className='w-full max-w-full items-start pl-0 flex mb-8'>
+                    <li className='w-full max-w-full items-start pl-0 flex mb-4'>
                       <div className='bullet-line-css'></div>
-                      <p className='mb-0 mt-0 leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', fontSize: '20px' }}>{strapiContent.fourthpoint3.data.fourthpoint3}</p>
+                      <p className='mb-0 mt-0 leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', fontSize: '16px' }}>{strapiContent.fourthpoint3.data.fourthpoint3}</p>
                     </li>
                   </ul>
                 </div>
