@@ -64,9 +64,9 @@ function Radiologist({ data }) {
                         </div>
                         <div className=' h-auto max-w-full justify-between items-center flex flex-row-reverse relative ml-[100px] mb-[140px] w-[1100px] sm:flex-col sm:w-full sm:ml-0'>
                             <div className=' w-[541px] h-[580px] max-w-full items-center mr-0 flex relative px-[50px] py-[47px] sm:h-[284px] sm:mb-0 sm:p-5'>
-                                <img className=' z-[1] w-[200px] h-[200px] object-cover absolute top-0 bottom-auto left-0 right-auto sm:w-[95px] sm:h-[95px] sm:left-[8px]' src={Content.top[0].localFile.url}></img>
-                                <img className=' w-[440px] h-[440px] object-cover bg-[rgba(0, 212, 255, 0)] relative max-w-full sm:w-full sm:h-full' style={{ filter: 'grayscale(1)' }} src={Content.cen[0].localFile.url}></img>
-                                <img className=' z-[1] w-[200px] h-[200px] object-cover absolute top-auto bottom-0 left-auto right-0 sm:w-[95px] sm:h-[95px] sm:right-[8px]' src={Content.bottom[0].localFile.url}></img>
+                                <img className=' z-[1] w-[200px] h-[200px] object-cover absolute top-0 bottom-auto left-0 right-auto sm:w-[95px] sm:h-[95px] sm:left-[8px]' src={Content.top.localFile.url}></img>
+                                <img className=' w-[440px] h-[440px] object-cover bg-[rgba(0, 212, 255, 0)] relative max-w-full sm:w-full sm:h-full' style={{ filter: 'grayscale(1)' }} src={Content.cen.localFile.url}></img>
+                                <img className=' z-[1] w-[200px] h-[200px] object-cover absolute top-auto bottom-0 left-auto right-0 sm:w-[95px] sm:h-[95px] sm:right-[8px]' src={Content.bottom.localFile.url}></img>
                             </div>
                             <div className=' h-auto w-[520px] max-h-full max-w-full flex flex-col items-start justify-center sm:w-full'>
                                 <div className=' w-[528px] max-w-full sm:w-full sm:ml-4'>
@@ -123,16 +123,16 @@ function Radiologist({ data }) {
                             </button>
                             <div className='social-platform font-use sm:w-[100%]'>
                                 <Link to="https://www.facebook.com/5cnetwork" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                                    <img src={Content.socialPlatforms[3].localFile.url} alt='facebook' className='mr-0 max-w-full inline-block align-middle'></img>
+                                    <img src={Content.socialPlatforms[1].localFile.url} alt='facebook' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
                                 <Link to="https://www.linkedin.com/company/5c-network?trk=top_nav_home" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                     <img src={Content.socialPlatforms[2].localFile.url} alt='Linkedin' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
                                 <Link to="https://twitter.com/5c_network" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                                    <img src={Content.socialPlatforms[0].localFile.url} alt='Twitter' className='mr-0 max-w-full inline-block align-middle'></img>
+                                    <img src={Content.socialPlatforms[3].localFile.url} alt='Twitter' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
-                                <Link to="https://medium.com/pixxel-labs" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                                    <img src={Content.socialPlatforms[1].localFile.url} alt='Medium' className='mr-0 max-w-full inline-block align-middle'></img>
+                                <Link to="https://www.instagram.com/5cnetwork/" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                    <img src={Content.socialPlatforms[0].localFile.url} alt='Medium' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
                             </div>
                         </div>
@@ -158,7 +158,7 @@ function Radiologist({ data }) {
                 </div>
                 <div className='relative flex flex-row items-end mt-0 overflow-hidden' style={{ color: '#fff', height: '400px' }}>
                     <video autoPlay loop muted className=' w-full h-full absolute m-auto object-cover bg-cover inline-block align-baseline ' style={{ backgroundPosition: '50%', top: '-100%', bottom: '-100%', left: '-100%', right: '-100%' }}>
-                        <source src={Content.footervideo[0].localFile.url} type="video/mp4" />
+                        <source src={Content.footervideo.localFile.url} type="video/mp4" />
                     </video>
                 </div>
             </div>

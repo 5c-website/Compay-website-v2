@@ -9,9 +9,9 @@ module.exports = {
       resolve: "gatsby-source-strapi",
       options: {
         apiURL: "https://katturai.cubebase.ai",
-        accessToken:'50680852f75dee249bc1f3a8384e950e6a177098b372a096dfb1a5dd59d23a63b57a5b7e5eb67fb07bd57221b36591856278cc497d036442643b1ea4c0c2340531b59f0ad525c8b03ab0cd2a6ae447b922383326e2ae9b6c3255d44e36b7d1d247e9ab2d134192efbecf5772a4896810f1ca820d8aebae6968e12aa12abe8794',
+        accessToken:'a0b8220d37903f198b25d694a39747afd6d4f46028756ca660dc2be609985788d5cc0cb8b8263dfdc0e482514fa0151e27e67a6807e9bd38cacd0971148fc1ae85a0e75d4b53ed8d4116fae7ab9c70ea095055173a8f286d49c387df337a272b56bb7d8ffe7d888d2f37e89cd28805107ed429caf88707a97712a805ef2432c0',
         collectionTypes: [
-          'homepage','solution','technology','partner','about','carrer','blog','newsroom','contact','user','radiologist','clinician','hospital','diagnostic','healthcare'
+          'homepage','solution','technology','about','carrer','blog','newsroom','contact','diagnostic','clinician','healthcare','hospital','radiologist'
         ],
         
         queryLimit: 1000,

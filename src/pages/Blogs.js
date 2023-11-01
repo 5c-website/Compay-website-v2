@@ -185,16 +185,16 @@ function Blogs({data}) {
                             </button>
                             <div className='social-platform font-use sm:w-[100%]'>
                                 <Link to="https://www.facebook.com/5cnetwork" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                                    <img src={strapiContent.sociallogo[0].localFile.url} alt='facebook' className='mr-0 max-w-full inline-block align-middle'></img>
+                                    <img src={strapiContent.sociallogo[1].localFile.url} alt='facebook' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
                                 <Link to="https://www.linkedin.com/company/5c-network?trk=top_nav_home" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                                    <img src={strapiContent.sociallogo[2].localFile.url} alt='Linkedin' className='mr-0 max-w-full inline-block align-middle'></img>
+                                    <img src={strapiContent.sociallogo[3].localFile.url} alt='Linkedin' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
                                 <Link to="https://twitter.com/5c_network" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                                    <img src={strapiContent.sociallogo[1].localFile.url} alt='Twitter' className='mr-0 max-w-full inline-block align-middle'></img>
+                                    <img src={strapiContent.sociallogo[2].localFile.url} alt='Twitter' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
-                                <Link to="https://medium.com/pixxel-labs" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                                    <img src={strapiContent.sociallogo[3].localFile.url} alt='Medium' className='mr-0 max-w-full inline-block align-middle'></img>
+                                <Link to="https://www.instagram.com/5cnetwork/" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                    <img src={strapiContent.sociallogo[0].localFile.url} alt='Medium' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
                             </div>
                         </div>

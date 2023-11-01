@@ -123,16 +123,16 @@ function Radiologist({ data }) {
                             </button>
                             <div className='social-platform font-use sm:w-[100%]'>
                                 <Link to="https://www.facebook.com/5cnetwork" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                                    <img src={Content.socialPlatforms[3].localFile.url} alt='facebook' className='mr-0 max-w-full inline-block align-middle'></img>
+                                    <img src={Content.socialPlatforms[1].localFile.url} alt='facebook' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
                                 <Link to="https://www.linkedin.com/company/5c-network?trk=top_nav_home" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                     <img src={Content.socialPlatforms[2].localFile.url} alt='Linkedin' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
                                 <Link to="https://twitter.com/5c_network" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                                    <img src={Content.socialPlatforms[0].localFile.url} alt='Twitter' className='mr-0 max-w-full inline-block align-middle'></img>
+                                    <img src={Content.socialPlatforms[3].localFile.url} alt='Twitter' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
-                                <Link to="https://medium.com/pixxel-labs" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                                    <img src={Content.socialPlatforms[1].localFile.url} alt='Medium' className='mr-0 max-w-full inline-block align-middle'></img>
+                                <Link to="https://www.instagram.com/5cnetwork/" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                    <img src={Content.socialPlatforms[0].localFile.url} alt='Medium' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
                             </div>
                         </div>
@@ -158,7 +158,7 @@ function Radiologist({ data }) {
                 </div>
                 <div className='relative flex flex-row items-end mt-0 overflow-hidden' style={{ color: '#fff', height: '400px' }}>
                     <video autoPlay loop muted className=' w-full h-full absolute m-auto object-cover bg-cover inline-block align-baseline ' style={{ backgroundPosition: '50%', top: '-100%', bottom: '-100%', left: '-100%', right: '-100%' }}>
-                        <source src={Content.footervideo[0].localFile.url} type="video/mp4" />
+                        <source src={Content.footervideo.localFile.url} type="video/mp4" />
                     </video>
                 </div>
             </div>
