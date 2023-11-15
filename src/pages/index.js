@@ -214,7 +214,7 @@ const index = ({ data }) => {
           </div>
           <div className='max-w-full flex' style={{ width: '1000px', marginTop: '50px' }}></div>
           <div className='relative flex w-full justify-center' style={{ marginTop: '60px', height: '459px' }}>
-            <img src={content.sateliteimg.localFile.childrenImageSharp[0].fluid.src} className='max-w-full inline-block align-middle' style={{ width: '459px', height: '459px' }}></img>
+            <img src={content.sateliteimg.localFile.url} className='max-w-full inline-block align-middle' style={{ width: '459px', height: '459px' }}></img>
           </div>
         </div>
       </div>
@@ -506,11 +506,7 @@ query MyQuery {
         fourthcard4content
         sateliteimg {
           localFile {
-            childrenImageSharp {
-              fluid {
-                src
-              }
-            }
+            url
           }
         }
         fifthtitle

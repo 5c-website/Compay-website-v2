@@ -8,8 +8,8 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL: "https://katturai.cubebase.ai",
-        accessToken:'a0b8220d37903f198b25d694a39747afd6d4f46028756ca660dc2be609985788d5cc0cb8b8263dfdc0e482514fa0151e27e67a6807e9bd38cacd0971148fc1ae85a0e75d4b53ed8d4116fae7ab9c70ea095055173a8f286d49c387df337a272b56bb7d8ffe7d888d2f37e89cd28805107ed429caf88707a97712a805ef2432c0',
+        apiURL: "http://164.52.200.137:1337/",
+        accessToken:'5b5c6f863539cbb3f55f89d7428a7279659ef62242e2752e75b1464b36bd758600bc227e197ed781693f46abe443962ba5d82034f385f52cdaff5c4f809c3af456b37f7761aebff4050cd98dd739a9be2da587b6cb76bb65fa4e61aa33be35cfc8aeafd01b4756fcfdea5ab9befe0d52fe9cc246333c93b6b8724b659ab67413',
         collectionTypes: [
           'homepage','solution','technology','about','carrer','blog','newsroom','contact','diagnostic','clinician','healthcare','hospital','radiologist'
         ],
@@ -20,3 +20,5 @@ module.exports = {
     // 'gatsby-plugin-offline'
   ],
 }
+
+// 
