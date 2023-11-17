@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import star from '../Assets/Solution/star.svg'
+import twoStar from '../Assets/Solution/two_star.svg'
 
 
 function Technology({ data }) {
@@ -11,22 +13,22 @@ function Technology({ data }) {
       <div className='absolute w-full max-w-full flex flex-col items-center bg-transparent nav-division' style={{ zIndex: '2', color: 'rgba(255, 255, 255, 0)', top: '0' }}>
         <div className='w-full max-w-full pt-3 pb-3 ml-auto mr-auto' style={{ width: '79%' }}>
           <nav className=' w-full max-w-full justify-around items-center flex relative float-right font-use nav-md'>
-            <Link to='/Solutions' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Solutions</Link>
-            <Link to='/Technology' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
-            <Link to='/About' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
-            {/* <Link to='/Partners' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Partners</Link> */}
-            <Link to='/' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Prodigi</Link>
-            <Link to='/Carrers' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Careers</Link>
+            <Link to='/Solutions' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Solutions</Link>
+            <Link to='/Technology' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
+            <Link to='/About' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
+            {/* <Link to='/Partners' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Partners</Link> */}
+            <Link to='/' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Prodigi</Link>
+            <Link to='/Carrers' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Careers</Link>
             <div className='DropdDown'>
               <div className='DropDowntoggle'>
-                <div className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold ' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Resources</div>
+                <div className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  ' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Resources</div>
               </div>
               <nav className='navbartoggle'>
                 <Link to='/Blogs' className='navlinks'>Blogs</Link>
                 <Link to='/Newsroom' className='navlinks'>Newsroom</Link>
               </nav>
             </div>
-            <Link to='Contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Contact</Link>
+            <Link to='Contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Contact</Link>
           </nav>
         </div>
       </div>
@@ -69,12 +71,15 @@ function Technology({ data }) {
       <div className=' mt-60 sm:mt-2'>
         <div className='max-w-full flex justify-center items-center ml-auto mr-auto'>
           <div className='max-w-full relative w-[1200px]'>
-            <h2 className='uppercase mt-0 mb-0 font-semibold  font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.secondtitle}</h2>
+            <h2 className='uppercase mt-0 mb-0   font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.secondtitle}</h2>
             <h2 className='max-w-full uppercase mt-0 mb-0 font-light font-use-one text-[#fff] text-[80px] tracking-[2px] leading-[100px] sm:text-[2.5rem] sm:leading-[50px] sm:ml-[10px]'> {strapiContent.secondsubtitle}</h2>
             <p className=' mb-0 text-xl leading-8 font-use-one w-[700px] mt-[50px] ml-[100px] sm:ml-[10px] sm:text-base sm:w-[83%]' style={{color: 'rgba(255, 255, 255, .85)' }}>
               <div dangerouslySetInnerHTML={{ __html: strapiContent.secondcontent.data.secondcontent }}></div>
             </p>
             <div className=' w-full max-w-full justify-center flex relative mt-[104px]'>
+            <div className='absolute top-auto bottom-0 left-0 right-auto '>
+                              <img src={star} alt='effect'></img>
+                            </div>
               <img src={strapiContent.secondimg.localFile.url} className='h-auto object-fill max-w-full inline-block align-middle w-[800px] '></img>
             </div>
             <div className=' w-full justify-between items-center flex relative mt-[60px] sm:mt-[5px] sm:flex-col'>
@@ -97,21 +102,24 @@ function Technology({ data }) {
           </div>
         </div>
       </div>
-      <div className='mt-[208px] sm:mt-3 sm:ml-[10px]'>
+      {/* <div className='mt-[208px] sm:mt-3 sm:ml-[10px]'>
         <div className=' relative flex items-start flex-col ml-auto mr-auto max-w-[1200px] z-[1]'>
           <div>
-            <h2 className=' uppercase mt-0 mb-0 font-semibold  font-use leading-[60px] text-[50px] text-[#fff] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.rgbtitle}</h2>
-            <h2 className=' max-w-full uppercase mt-0 mb-0 font-semibold  font-use leading-[100px] text-[#fff] text-[80px] sm:text-[34px] sm:leading-10 sm:tracking-[1px]'>{strapiContent.rgbsubtitle}</h2>
+            <h2 className=' uppercase mt-0 mb-0   font-use leading-[60px] text-[50px] text-[#fff] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.rgbtitle}</h2>
+            <h2 className=' max-w-full uppercase mt-0 mb-0   font-use leading-[100px] text-[#fff] text-[80px] sm:text-[34px] sm:leading-10 sm:tracking-[1px]'>{strapiContent.rgbsubtitle}</h2>
           </div>
           <div className=' w-full max-w-full mt-12'>
             <img className=' max-w-full inline-block align-middle' src={strapiContent.rgbimg.localFile.url}></img>
           </div>
         </div>
-      </div>
-      <div className=' pl-4 pr-4 mt-60 sm:mt-[50px]'>
+      </div> */}
+      <div className=' pl-4 pr-4 mt-80 sm:mt-[50px]'>
         <div className='flex flex-col relative items-start  ml-auto mr-auto z-[1] max-w-[1200px]'>
-          <h2 className='uppercase mt-0 mb-0 font-semibold font-use tracking-[2px] text-[50px] leading-[60px] text-[#fff] sm:text-[22px] sm:leading-10 sm:tracking-[1px] '>{strapiContent.thirdtitle}</h2>
-          <h2 className='uppercase mt-0 mb-0 font-semibold max-w-full  font-use text-[#fff] tracking-[2px] text-[80px] leading-[100px] sm:text-[2.5rem] sm:leading-10'>{strapiContent.thirdsubtitle}</h2>
+        <div className='absolute top-0 bottom-auto left-auto right-0 star-embed '>
+                              <img src={star} alt='effect'></img>
+                            </div>
+          <h2 className='uppercase mt-0 mb-0  font-use tracking-[2px] text-[50px] leading-[60px] text-[#fff] sm:text-[22px] sm:leading-10 sm:tracking-[1px] '>{strapiContent.thirdtitle}</h2>
+          <h2 className='uppercase mt-0 mb-0  max-w-full  font-use text-[#fff] tracking-[2px] text-[80px] leading-[100px] sm:text-[2.5rem] sm:leading-10'>{strapiContent.thirdsubtitle}</h2>
           <div className='w-[700px] mt-[60px] ml-[100px] sm:ml-[10px] sm:w-full'>
             <p className='mb-0 leading-8 text-xl mt-0  font-use-one sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .85)' }}>
               {strapiContent.thirdcontent.data.thirdcontent}
@@ -123,19 +131,23 @@ function Technology({ data }) {
           <div className='w-full max-w-full'>
             <div className='flex justify-between stats-card'>
               <div className='max-w-full' style={{ width: '351px' }}>
-                <h3 className=' font-semibold leading-9 text-3xl uppercase mt-0 mb-0 font-use sm:text-[24px]' style={{ letterSpacing: '3px', color: '#fff' }}>{strapiContent.thirdcard1title}</h3>
+                <h3 className='  leading-9 text-3xl uppercase mt-0 mb-0 font-use sm:text-[24px]' style={{ letterSpacing: '3px', color: '#fff' }}>{strapiContent.thirdcard1title}</h3>
                 <p className='mb-0 text-xl leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', marginTop: '8px' }}>{strapiContent.thirdcard1content}</p>
               </div>
               <div className=' separator-effect-md'></div>
               <div className=' max-w-full' style={{ width: '400px' }}>
-                <h3 className=' font-semibold leading-9 text-3xl uppercase mt-0 mb-0 font-use sm:text-[24px]' style={{ letterSpacing: '3px', color: '#fff' }}>{strapiContent.thirdcard2title}</h3>
+                <h3 className='  leading-9 text-3xl uppercase mt-0 mb-0 font-use sm:text-[24px]' style={{ letterSpacing: '3px', color: '#fff' }}>{strapiContent.thirdcard2title}</h3>
                 <p className='mb-0 text-xl leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', marginTop: '8px' }}>{strapiContent.thirdcard2content}</p>
               </div>
               <div className=' separator-effect-md'></div>
               <div className='max-w-full' style={{ width: '250px' }}>
-                <h3 className=' font-semibold leading-9 text-3xl uppercase mt-0 mb-0 font-use sm:text-[24px]' style={{ letterSpacing: '3px', color: '#fff' }}>{strapiContent.thirdcard3title}</h3>
+                <h3 className='  leading-9 text-3xl uppercase mt-0 mb-0 font-use sm:text-[24px]' style={{ letterSpacing: '3px', color: '#fff' }}>{strapiContent.thirdcard3title}</h3>
                 <p className='mb-0 text-xl leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', marginTop: '8px' }}>{strapiContent.thirdcard3content}</p>
               </div>
+            </div>
+            <div className='absolute z-[-1] w-[342px] flex top-auto bottom-[-14%] left-0 right-auto'>
+                <img src={twoStar} alt='effects'></img>
+                <img src={twoStar} alt='effects'></img>
             </div>
           </div>
         </div>
@@ -143,8 +155,11 @@ function Technology({ data }) {
       <div className=' overflow-visible mt-[276px] mb-[240px] sm:mt-[140px]'>
         <div className=' relative flex flex-col items-start ml-auto mr-auto z-[1] max-w-[1200px] sm:ml-[10px]'>
           <div className='max-w-full w-full overflow-hidden'>
-            <h2 className='uppercase mt-0 mb-0 font-semibold  font-use tracking-[2px] text-[#fff] text-[50px] leading-[60px] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.fourthtitle}</h2>
-            <h2 className='max-w-full uppercase mt-0 mb-0 font-semibold  font-use tracking-[2px] text-[#fff] text-[80px] leading-[100px] sm:leading-10 sm:text-[34px] sm:tracking-[1px] '> {strapiContent.fourthsubtitle}</h2>
+            <h2 className='uppercase mt-0 mb-0   font-use tracking-[2px] text-[#fff] text-[50px] leading-[60px] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.fourthtitle}</h2>
+            <h2 className='max-w-full uppercase mt-0 mb-0   font-use tracking-[2px] text-[#fff] text-[80px] leading-[100px] sm:leading-10 sm:text-[34px] sm:tracking-[1px] '> {strapiContent.fourthsubtitle}</h2>
+            <div className='absolute z-[-1] flex top-[4%] bottom-auto left-auto right-[-4%] star-embed'>
+                <img src={star} alt='effects'></img>
+            </div>
             <div className='max-w-full overflow-hidden w-[1100px] mt-[60px] ml-[100px] sm:ml-[10px] sm:mt-[50px]'>
               <div className=' w-[700px] sm:w-[95%]'>
                 <p className='mb-0 text-xl mt-0 leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)' }}>
@@ -181,7 +196,7 @@ function Technology({ data }) {
                 <div className='relative ml-auto mr-auto max-w-[1200px]'>
                     <div className='flex justify-between items-start pb-0 pl-4 pr-4 mb-8 mt-[101px] sm:flex-col sm:mt-50px ' style={{border: '1px #7c4c4c', borderBottomColor: 'rgba(255, 255, 255, .5)' }}>
                         <div className='flex flex-col items-start'>
-                            <div className='uppercase font-semibold font-use leading-[48px] text-[40px]' style={{ color: 'rgba(255, 255, 255, .85) '}}>{strapiContent.footertitle}</div>
+                            <div className='uppercase  font-use leading-[48px] text-[40px]' style={{ color: 'rgba(255, 255, 255, .85) '}}>{strapiContent.footertitle}</div>
                             <p className=' text-xl leading-8 font-use-one w-[441px] mt-[30px] mb-[30px] sm:w-[100%] sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)'}}>{strapiContent.footercontent.data.footercontent}</p>
                             {/* getintouchbutton */}
                             <button className="btn btn-2 hover-slide-up sm:w-[100%]">
@@ -204,20 +219,20 @@ function Technology({ data }) {
                         </div>
                         <div className='flex sm:mt-[65px] sm:w-[100%] sm:justify-between'>
                             <div className='flex flex-col font-use ml-[60px] sm:ml-[5px]'>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>solutions</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>media</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>blogs</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>newsroom</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>annual returns</Link>
+                                <Link to="/About" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>solutions</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>media</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>blogs</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>newsroom</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>annual returns</Link>
 
                             </div>
                             <div className='flex flex-col font-use ml-[60px]'>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>vision</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>carrers</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>privacy policy</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>vision</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>carrers</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>privacy policy</Link>
                             </div>
                         </div>
                     </div>

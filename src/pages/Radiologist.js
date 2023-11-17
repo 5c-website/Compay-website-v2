@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link,graphql } from 'gatsby'
+import star from '../Assets/Solution/star.svg'
 
 function Radiologist({ data }) {
     const Content = data.allStrapiRadiologist.nodes[0];
@@ -10,22 +11,22 @@ function Radiologist({ data }) {
             <div className='absolute w-full max-w-full flex flex-col items-center bg-transparent nav-division' style={{ zIndex: '2', color: 'rgba(255, 255, 255, 0)', top: '0' }}>
                 <div className='w-full max-w-full pt-3 pb-3 ml-auto mr-auto' style={{ width: '79%' }}>
                     <nav className=' w-full max-w-full justify-around items-center flex relative float-right font-use nav-md'>
-                        <Link to='/Solutions' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Solutions</Link>
-                        <Link to='/Technology' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
-                        <Link to='/About' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
-                        {/* <Link to='/Partners' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Partners</Link> */}
-                        <Link to='/' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Prodigi</Link>
-                        <Link to='/Carrers' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Careers</Link>
+                        <Link to='/Solutions' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Solutions</Link>
+                        <Link to='/Technology' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
+                        <Link to='/About' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
+                        {/* <Link to='/Partners' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Partners</Link> */}
+                        <Link to='/' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Prodigi</Link>
+                        <Link to='/Carrers' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Careers</Link>
                         <div className='DropdDown'>
                             <div className='DropDowntoggle'>
-                                <div className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Resources</div>
+                                <div className=' inline-block ml-6 mr-6 text-base align-top relative uppercase ' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Resources</div>
                             </div>
                             <nav className='navbartoggle'>
                                 <Link to='/Blogs' className='navlinks'>Blogs</Link>
                                 <Link to='/Newsroom' className='navlinks'>Newsroom</Link>
                             </nav>
                         </div>
-                        <Link to='/Contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Contact</Link>
+                        <Link to='/Contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Contact</Link>
                     </nav>
                 </div>
             </div>
@@ -60,7 +61,7 @@ function Radiologist({ data }) {
                 <div className=' max-w-full flex flex-col justify-center items-center relative ml-auto mr-auto'>
                     <div className=' w-full max-w-full flex flex-col items-center pt-[100px] relative'>
                         <div className=' w-full max-w-full mb-20'>
-                            <h1 className=' max-w-full text-[#fff] tracking-[2px] uppercase mt-0 mb-0 text-[50px] font-semibold leading-[100px] font-use'>{Content.title}</h1>
+                            <h1 className=' max-w-full text-[#fff] tracking-[2px] uppercase mt-0 mb-0 text-[80px]  leading-[100px] font-use'>{Content.title}</h1>
                         </div>
                         <div className=' h-auto max-w-full justify-between items-center flex relative ml-[100px] mb-[140px] w-[1100px] sm:flex-col sm:w-full sm:ml-0'>
                             <div className=' w-[541px] h-[580px] max-w-full items-center mr-0 flex relative px-[50px] py-[47px] sm:h-[284px] sm:mb-0 sm:p-5'>
@@ -70,32 +71,32 @@ function Radiologist({ data }) {
                             </div>
                             <div className=' h-auto w-[520px] max-h-full max-w-full flex flex-col items-start justify-center sm:w-full'>
                                 <div className=' w-[528px] max-w-full sm:w-full sm:ml-4'>
-                                    <h2 className=' mb-10 text-[35px] leading-[54px] text-[#fff] tracking-[2px] uppercase mt-0 font-semibold font-use '>
+                                    <h2 className=' mb-10 text-[40px] leading-[54px] text-[#fff] tracking-[2px] uppercase mt-0  font-use '>
                                         {Content.contentTitle}
                                     </h2>
                                 </div>
                                 <ul className=' w-full h-full max-h-none max-w-full flex flex-col relative pl-0 mb-0 mt-0 justify-between'>
                                     <li className=' w-full max-w-full items-start mb-8 pl-0 flex'>
                                         <div className='bullet-line-css'></div>
-                                        <p className=' mt-0 mb-0 leading-8 text-base text-[#fff] font-use-one'>
+                                        <p className=' mt-0 mb-0 leading-8 text-xl text-[#fff] font-use-one'>
                                         {Content.point1.data.point1}
                                         </p>
                                     </li>
                                     <li className=' w-full max-w-full items-start mb-8 pl-0 flex'>
                                         <div className='bullet-line-css'></div>
-                                        <p className=' mt-0 mb-0 leading-8 text-base text-[#fff] font-use-one'>
+                                        <p className=' mt-0 mb-0 leading-8 text-xl text-[#fff] font-use-one'>
                                         {Content.point2.data.point2}
                                         </p>
                                     </li>
                                     <li className=' w-full max-w-full items-start mb-8 pl-0 flex'>
                                         <div className='bullet-line-css'></div>
-                                        <p className=' mt-0 mb-0 leading-8 text-base text-[#fff] font-use-one'>
+                                        <p className=' mt-0 mb-0 leading-8 text-xl text-[#fff] font-use-one'>
                                         {Content.point3.data.point3}
                                         </p>
                                     </li>
                                     <li className=' w-full max-w-full items-start mb-8 pl-0 flex'>
                                         <div className='bullet-line-css'></div>
-                                        <p className=' mt-0 mb-0 leading-8 text-base text-[#fff] font-use-one'>
+                                        <p className=' mt-0 mb-0 leading-8 text-xl text-[#fff] font-use-one'>
                                         {Content.point4.data.point4}
                                         </p>
                                     </li>
@@ -107,7 +108,11 @@ function Radiologist({ data }) {
                                     </li> */}
                                 </ul>
                             </div>
+                            
                         </div>
+                        <div className='absolute top-auto bottom-0 left-0 right-auto '>
+                              <img src={star} alt='effect'></img>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -115,7 +120,7 @@ function Radiologist({ data }) {
                 <div className='relative ml-auto mr-auto max-w-[1200px]'>
                     <div className='flex justify-between items-start pb-0 pl-4 pr-4 mb-8 mt-[101px] sm:flex-col sm:mt-50px ' style={{border: '1px #7c4c4c', borderBottomColor: 'rgba(255, 255, 255, .5)' }}>
                         <div className='flex flex-col items-start'>
-                            <div className='uppercase font-semibold font-use leading-[48px] text-[40px]' style={{ color: 'rgba(255, 255, 255, .85) '}}>{Content.footertitle}</div>
+                            <div className='uppercase  font-use leading-[48px] text-[40px]' style={{ color: 'rgba(255, 255, 255, .85) '}}>{Content.footertitle}</div>
                             <p className=' text-xl leading-8 font-use-one w-[441px] mt-[30px] mb-[30px] sm:w-[100%] sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)'}}>{Content.footercontent.data.footercontent}</p>
                             {/* getintouchbutton */}
                             <button className="btn btn-2 hover-slide-up sm:w-[100%]">
@@ -138,20 +143,20 @@ function Radiologist({ data }) {
                         </div>
                         <div className='flex sm:mt-[65px] sm:w-[100%] sm:justify-between'>
                             <div className='flex flex-col font-use ml-[60px] sm:ml-[5px]'>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>solutions</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>media</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>blogs</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>newsroom</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>annual returns</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>solutions</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>media</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>blogs</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>newsroom</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>annual returns</Link>
 
                             </div>
                             <div className='flex flex-col font-use ml-[60px]'>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>vision</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>carrers</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>privacy policy</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>vision</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>carrers</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>privacy policy</Link>
                             </div>
                         </div>
                     </div>

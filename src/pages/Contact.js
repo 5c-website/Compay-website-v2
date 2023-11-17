@@ -9,22 +9,22 @@ function Contact({ data }) {
             <div className='absolute w-full max-w-full flex flex-col items-center bg-transparent nav-division' style={{ zIndex: '2', color: 'rgba(255, 255, 255, 0)', top: '0' }}>
                 <div className='w-full max-w-full pt-3 pb-3 ml-auto mr-auto' style={{ width: '79%' }}>
                     <nav className=' w-full max-w-full justify-around items-center flex relative float-right font-use nav-md'>
-                        <Link to='/Solutions' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Solutions</Link>
-                        <Link to='/Technology' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
-                        <Link to='/About' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
-                        {/* <Link to='/Partners' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Partners</Link> */}
-                        <Link to='/' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Prodigi</Link>
-                        <Link to='/Carrers' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Careers</Link>
+                        <Link to='/Solutions' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Solutions</Link>
+                        <Link to='/Technology' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
+                        <Link to='/About' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
+                        {/* <Link to='/Partners' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Partners</Link> */}
+                        <Link to='/' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Prodigi</Link>
+                        <Link to='/Carrers' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Careers</Link>
                         <div className='DropdDown'>
                             <div className='DropDowntoggle'>
-                                <div className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Resources</div>
+                                <div className=' inline-block ml-6 mr-6 text-base align-top relative uppercase ' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Resources</div>
                             </div>
                             <nav className='navbartoggle'>
                                 <Link to='/Blogs' className='navlinks'>Blogs</Link>
                                 <Link to='/Newsroom' className='navlinks'>Newsroom</Link>
                             </nav>
                         </div>
-                        <Link to='/Contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Contact</Link>
+                        <Link to='/Contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Contact</Link>
                     </nav>
                 </div>
             </div>
@@ -58,7 +58,7 @@ function Contact({ data }) {
             <div className='Contact-page' style={{ backgroundImage: `url(${strapiContent.contactimg.localFile.url})` }}>
                 <div className='max-w-full ml-auto mr-auto sm:w-full'>
                     <div className='max-w-full relative mt-[234px] w-[1200px] sm:w-full sm:mt-28'>
-                        <h1 className=' uppercase max-w-full mt-0 mb-0 font-semibold font-use text-[#fff] tracking-[2px] leading-[100px] sm:ml-1 text-[80px] sm:text-[2.5rem]'>{strapiContent.title}</h1>
+                        <h1 className=' uppercase max-w-full mt-0 mb-0  font-use text-[#fff] tracking-[2px] leading-[100px] sm:ml-1 text-[80px] sm:text-[2.5rem]'>{strapiContent.title}</h1>
                         <div className=' max-w-full mt-8 text-[#fff] w-[500px] ml-[100px] sm:ml-[10px] sm:mt-0  sm:w-full'>
                             <p className=' mt-0 mb-0 leading-8 font-use-one font-medium sm:text-xl text-[20px] sm:w-[98%]' style={{color: 'rgba(255, 255, 255, .85)' }}>{strapiContent.titlecontent.data.titlecontent}</p>
                         </div>
@@ -67,37 +67,37 @@ function Contact({ data }) {
             </div>
             <div className='relative'>
                 <div className='flex flex-col relative items-start ml-auto mr-auto' style={{ zIndex: '1', maxWidth: '1200px' }} >
-                    <h2 className='uppercase mt-0 mb-0 font-semibold  font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:leading-10 sm:text-[22px] sm:tracking-[1px]'>{strapiContent.sectitle}</h2>
-                    <h2 className='max-w-full uppercase mt-0 mb-0 font-semibold font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:leading-10 sm:ml-[10px] sm:text-[28px] sm:tracking-[1px]'>{strapiContent.secsubtitle}</h2>
+                    <h2 className='uppercase mt-0 mb-0   font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:leading-10 sm:text-[22px] sm:tracking-[1px]'>{strapiContent.sectitle}</h2>
+                    <h2 className='max-w-full uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:leading-10 sm:ml-[10px] sm:text-[28px] sm:tracking-[1px]'>{strapiContent.secsubtitle}</h2>
                     <div className='contact-link'>
                         <Link className='flex max-w-full uppercase text-lg items-center justify-center w-[460px] h-[142px] sm:w-[85%] sm:h-[9vh]' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, .04)', border: '1px solid #333' }}>
                             <img src={strapiContent.helpimg[0].localFile.url} className='max-w-full inline-block align-middle mr-[30px] sm:mr-[20px] sm:h-[40px] sm:w-[40px]'></img>
                             <div>
-                                <div className=' leading-9 uppercase font-use font-semibold text-[30px] sm:text-[20px]' style={{ lineHeight: '36px', letterSpacing: '3px' }}>{strapiContent.help[0].title}</div>
+                                <div className=' leading-9 uppercase font-use  text-[30px] sm:text-[20px]' style={{ lineHeight: '36px', letterSpacing: '3px' }}>{strapiContent.help[0].title}</div>
                             </div>
                         </Link>
                         <Link className='flex max-w-full uppercase text-lg items-center justify-center w-[460px] h-[142px] sm:w-[85%] sm:h-[9vh]' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, .04)', border: '1px solid #333' }}>
                             <img src={strapiContent.helpimg[2].localFile.url} className='max-w-full inline-block align-middle mr-[30px] sm:mr-[20px] sm:h-[40px] sm:w-[40px]'></img>
                             <div>
-                                <div className=' leading-9 uppercase font-use font-semibold text-[30px] sm:text-[20px]' style={{lineHeight: '36px', letterSpacing: '3px' }}>{strapiContent.help[1].title}</div>
+                                <div className=' leading-9 uppercase font-use  text-[30px] sm:text-[20px]' style={{lineHeight: '36px', letterSpacing: '3px' }}>{strapiContent.help[1].title}</div>
                             </div>
                         </Link>
                         {/* <Link className='flex max-w-full uppercase text-lg items-center justify-center w-[460px] h-[142px] sm:w-[85%] sm:h-[9vh]' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, .04)', border: '1px solid #333' }}>
                             <img src={strapiContent.helpimg[4].localFile.url} className='max-w-full inline-block align-middle mr-[30px] sm:mr-[20px] sm:h-[40px] sm:w-[40px]'></img>
                             <div>
-                                <div className=' leading-9 uppercase font-use font-semibold text-[30px] sm:text-[20px]' style={{  lineHeight: '36px', letterSpacing: '3px' }}>{strapiContent.help[2].title}</div>
+                                <div className=' leading-9 uppercase font-use  text-[30px] sm:text-[20px]' style={{  lineHeight: '36px', letterSpacing: '3px' }}>{strapiContent.help[2].title}</div>
                             </div>
                         </Link> */}
                         <Link className='flex max-w-full uppercase text-lg items-center justify-center w-[460px] h-[142px] sm:w-[85%] sm:h-[9vh]' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, .04)', border: '1px solid #333' }}>
                             <img src={strapiContent.helpimg[3].localFile.url} className='max-w-full inline-block align-middle mr-[30px] sm:mr-[20px] sm:h-[40px] sm:w-[40px]'></img>
                             <div>
-                                <div className=' leading-9 uppercase font-use font-semibold text-[30px] sm:text-[20px]' style={{  lineHeight: '36px', letterSpacing: '3px' }}>{strapiContent.help[3].title}</div>
+                                <div className=' leading-9 uppercase font-use  text-[30px] sm:text-[20px]' style={{  lineHeight: '36px', letterSpacing: '3px' }}>{strapiContent.help[3].title}</div>
                             </div>
                         </Link>
                         {/* <Link className='flex max-w-full uppercase text-lg items-center justify-center w-[460px] h-[142px] sm:w-[85%] sm:h-[9vh]' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, .04)', border: '1px solid #333' }}>
                             <img src={strapiContent.helpimg[1].localFile.url} className='max-w-full inline-block align-middle mr-[30px] sm:mr-[20px] sm:h-[40px] sm:w-[40px]'></img>
                             <div>
-                                <div className=' leading-9 uppercase font-use font-semibold text-[30px] sm:text-[20px]' style={{ lineHeight: '36px', letterSpacing: '3px' }}>{strapiContent.help[4].title}</div>
+                                <div className=' leading-9 uppercase font-use  text-[30px] sm:text-[20px]' style={{ lineHeight: '36px', letterSpacing: '3px' }}>{strapiContent.help[4].title}</div>
                             </div>
                         </Link> */}
                     </div>
@@ -105,8 +105,8 @@ function Contact({ data }) {
             </div>
             <div className='mt-[220px] mb-[200px] sm:mt-28 sm:max-w-full sm:w-full' >
                 <div className='relative flex flex-col items-start ml-auto mr-auto max-w-[1200px] z-[1] sm:max-w-full sm:w-full'>
-                    <h2 className='uppercase mt-0 mb-0 font-semibold  font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.loctitle}</h2>
-                    <h2 className='max-w-full uppercase mt-0 mb-0 font-semibold font-use text-[#fff] text-[80px] tracking-[2px] leading-[100px] sm:tracking-[1px] sm:text-[38px] sm:leading-[50px] sm:ml-[10px]'>{strapiContent.locsubtitle}</h2>
+                    <h2 className='uppercase mt-0 mb-0   font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.loctitle}</h2>
+                    <h2 className='max-w-full uppercase mt-0 mb-0  font-use text-[#fff] text-[80px] tracking-[2px] leading-[100px] sm:tracking-[1px] sm:text-[38px] sm:leading-[50px] sm:ml-[10px]'>{strapiContent.locsubtitle}</h2>
                     <div className='flex mt-20 justify-between w-[1020px] ml-[100px] sm:flex-col sm:ml-[10px] sm:w-full'>
                         <div className='w-auto flex sm:mb-14 sm:max-w-[98%] sm:w-full'>
                             <div>
@@ -138,7 +138,7 @@ function Contact({ data }) {
                 <div className='relative ml-auto mr-auto max-w-[1200px]'>
                     <div className='flex justify-between items-start pb-0 pl-4 pr-4 mb-8 mt-[101px] sm:flex-col sm:mt-50px ' style={{border: '1px #7c4c4c', borderBottomColor: 'rgba(255, 255, 255, .5)' }}>
                         <div className='flex flex-col items-start'>
-                            <div className='uppercase font-semibold font-use leading-[48px] text-[40px]' style={{ color: 'rgba(255, 255, 255, .85) '}}>{strapiContent.footertitle}</div>
+                            <div className='uppercase  font-use leading-[48px] text-[40px]' style={{ color: 'rgba(255, 255, 255, .85) '}}>{strapiContent.footertitle}</div>
                             <p className=' text-xl leading-8 font-use-one w-[441px] mt-[30px] mb-[30px] sm:w-[100%] sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)'}}>{strapiContent.footercontent}</p>
                             {/* getintouchbutton */}
                             <button className="btn btn-2 hover-slide-up sm:w-[100%]">
@@ -161,20 +161,20 @@ function Contact({ data }) {
                         </div>
                         <div className='flex sm:mt-[65px] sm:w-[100%] sm:justify-between'>
                             <div className='flex flex-col font-use ml-[60px] sm:ml-[5px]'>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>solutions</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>media</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>blogs</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>newsroom</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>annual returns</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>solutions</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>media</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>blogs</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>newsroom</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>annual returns</Link>
 
                             </div>
                             <div className='flex flex-col font-use ml-[60px]'>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>vision</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>carrers</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>privacy policy</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>vision</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>carrers</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>privacy policy</Link>
                             </div>
                         </div>
                     </div>

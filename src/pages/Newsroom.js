@@ -10,22 +10,22 @@ function Newsroom({ data }) {
             <div className='absolute w-full max-w-full flex flex-col items-center bg-transparent ' style={{ zIndex: '2', color: 'rgba(255, 255, 255, 0)', top: '0' }}>
                 <div className='w-full max-w-full pt-3 pb-3 ml-auto mr-auto' style={{ width: '79%' }}>
                     <nav className=' w-full max-w-full justify-around items-center flex relative float-right font-use nav-md nav-division'>
-                        <Link to='/Solutions' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Solutions</Link>
-                        <Link to='/Technology' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
-                        <Link to='/About' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
-                        {/* <Link to='/Partners' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Partners</Link> */}
-                        <Link to='/' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Prodigi</Link>
-                        <Link to='/Carrers' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Careers</Link>
+                        <Link to='/Solutions' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Solutions</Link>
+                        <Link to='/Technology' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
+                        <Link to='/About' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
+                        {/* <Link to='/Partners' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Partners</Link> */}
+                        <Link to='/' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Prodigi</Link>
+                        <Link to='/Carrers' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Careers</Link>
                         <div className='DropdDown'>
                             <div className='DropDowntoggle'>
-                                <div className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Resources</div>
+                                <div className=' inline-block ml-6 mr-6 text-base align-top relative uppercase ' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Resources</div>
                             </div>
                             <nav className='navbartoggle'>
                                 <Link to='/Blogs' className='navlinks'>Blogs</Link>
                                 <Link to='/Newsroom' className='navlinks'>Newsroom</Link>
                             </nav>
                         </div>
-                        <Link to='/Contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase font-semibold hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Contact</Link>
+                        <Link to='/Contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Contact</Link>
                     </nav>
                 </div>
             </div>
@@ -69,7 +69,7 @@ function Newsroom({ data }) {
                                                         <img className='blog-img' src={strapiContent.newsimg[0].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[0].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 font-semibold font-use' style={{ letterSpacing: 0, fontSize: '40px', lineHeight: '120%', color: '#fff' }}>
+                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{ letterSpacing: 0, fontSize: '40px', lineHeight: '120%', color: '#fff' }}>
                                                                 {strapiContent.news[0].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
@@ -86,7 +86,7 @@ function Newsroom({ data }) {
                                                         <img className='blog-img' src={strapiContent.newsimg[1].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[1].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 font-semibold font-use' style={{ letterSpacing: 0, fontSize: '40px', lineHeight: '120%', color: '#fff' }}>
+                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{ letterSpacing: 0, fontSize: '40px', lineHeight: '120%', color: '#fff' }}>
                                                                 {strapiContent.news[1].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
@@ -103,7 +103,7 @@ function Newsroom({ data }) {
                                                         <img className='blog-img' src={strapiContent.newsimg[2].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[2].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 font-semibold font-use' style={{ letterSpacing: 0, fontSize: '40px', lineHeight: '120%', color: '#fff' }}>
+                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{ letterSpacing: 0, fontSize: '40px', lineHeight: '120%', color: '#fff' }}>
                                                                 {strapiContent.news[2].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
@@ -120,7 +120,7 @@ function Newsroom({ data }) {
                                                         <img className='blog-img' src={strapiContent.newsimg[3].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[3].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 font-semibold font-use' style={{ letterSpacing: 0, fontSize: '40px', lineHeight: '120%', color: '#fff' }}>
+                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{ letterSpacing: 0, fontSize: '40px', lineHeight: '120%', color: '#fff' }}>
                                                                 {strapiContent.news[3].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
@@ -137,7 +137,7 @@ function Newsroom({ data }) {
                                                         <img className='blog-img' src={strapiContent.newsimg[4].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[4].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 font-semibold font-use' style={{ letterSpacing: 0, fontSize: '40px', lineHeight: '120%', color: '#fff' }}>
+                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{ letterSpacing: 0, fontSize: '40px', lineHeight: '120%', color: '#fff' }}>
                                                                 {strapiContent.news[4].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
@@ -154,7 +154,7 @@ function Newsroom({ data }) {
                                                         <img className='blog-img' src={strapiContent.newsimg[5].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[5].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 font-semibold font-use' style={{ letterSpacing: 0, fontSize: '40px', lineHeight: '120%', color: '#fff' }}>
+                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{ letterSpacing: 0, fontSize: '40px', lineHeight: '120%', color: '#fff' }}>
                                                                 {strapiContent.news[5].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
@@ -171,7 +171,7 @@ function Newsroom({ data }) {
                                                         <img className='blog-img' src={strapiContent.newsimg[6].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[6].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 font-semibold font-use' style={{ letterSpacing: 0, fontSize: '40px', lineHeight: '120%', color: '#fff' }}>
+                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{ letterSpacing: 0, fontSize: '40px', lineHeight: '120%', color: '#fff' }}>
                                                                 {strapiContent.news[6].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
@@ -188,7 +188,7 @@ function Newsroom({ data }) {
                                                         <img className='blog-img' src={strapiContent.newsimg[7].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[7].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 font-semibold font-use' style={{ letterSpacing: 0, fontSize: '40px', lineHeight: '120%', color: '#fff' }}>
+                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{ letterSpacing: 0, fontSize: '40px', lineHeight: '120%', color: '#fff' }}>
                                                                 {strapiContent.news[7].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
@@ -212,7 +212,7 @@ function Newsroom({ data }) {
                 <div className='relative ml-auto mr-auto max-w-[1200px]'>
                     <div className='flex justify-between items-start pb-0 pl-4 pr-4 mb-8 mt-[101px] sm:flex-col sm:mt-50px ' style={{border: '1px #7c4c4c', borderBottomColor: 'rgba(255, 255, 255, .5)' }}>
                         <div className='flex flex-col items-start'>
-                            <div className='uppercase font-semibold font-use leading-[48px] text-[40px]' style={{ color: 'rgba(255, 255, 255, .85) '}}>{strapiContent.footertitle}</div>
+                            <div className='uppercase  font-use leading-[48px] text-[40px]' style={{ color: 'rgba(255, 255, 255, .85) '}}>{strapiContent.footertitle}</div>
                             <p className=' text-xl leading-8 font-use-one w-[441px] mt-[30px] mb-[30px] sm:w-[100%] sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)'}}>{strapiContent.content.data.content}</p>
                             {/* getintouchbutton */}
                             <button className="btn btn-2 hover-slide-up sm:w-[100%]">
@@ -235,20 +235,20 @@ function Newsroom({ data }) {
                         </div>
                         <div className='flex sm:mt-[65px] sm:w-[100%] sm:justify-between'>
                             <div className='flex flex-col font-use ml-[60px] sm:ml-[5px]'>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>solutions</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>media</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>blogs</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>newsroom</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>annual returns</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>solutions</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>media</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>blogs</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>newsroom</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>annual returns</Link>
 
                             </div>
                             <div className='flex flex-col font-use ml-[60px]'>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>vision</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>carrers</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 font-semibold' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>privacy policy</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>vision</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>carrers</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>privacy policy</Link>
                             </div>
                         </div>
                     </div>
