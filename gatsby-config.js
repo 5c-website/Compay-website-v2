@@ -1,5 +1,5 @@
 const siteMetadata = {
-  title: `5c`,
+  title: `5C`,
   description: `Five Connects`,
   // image: `/default-site-image.jpg`,
   // twitterUsername: `@spences10`,
@@ -11,6 +11,9 @@ const siteMetadata = {
 
 module.exports = {
   siteMetadata: siteMetadata,
+  siteMetadata: {
+    title: '5C',
+  },
   plugins: [
     'gatsby-plugin-postcss',
     `gatsby-plugin-image`,
@@ -33,7 +36,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        title:siteMetadata.title,
         name: `5C`,
         short_name: `5C`,
         start_url: `/`,
