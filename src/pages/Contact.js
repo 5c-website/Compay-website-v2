@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import star from '../Assets/Solution/star.svg'
+import leftdown from '../Assets/Solution/downarrow.svg'
 
 function Contact({ data }) {
     const strapiContent = data.allStrapiContact.nodes[0];
@@ -67,6 +69,19 @@ function Contact({ data }) {
             </div>
             <div className='relative'>
                 <div className='flex flex-col relative items-start ml-auto mr-auto' style={{ zIndex: '1', maxWidth: '1200px' }} >
+                <div className='absolute top-0 bottom-auto left-auto right-[310px] star-embed-up '>
+                              <img src={star} alt='effect'></img>
+                            </div>
+                            <div className='absolute top-0 bottom-auto left-auto right-0 star-embed-up '>
+                              <img src={star} alt='effect'></img>
+                            </div>
+                            <div className='absolute top-auto bottom-[-387px] left-auto right-0 star-embed-up '>
+                              <img src={leftdown} alt='effect'></img>
+                            </div>
+                            <div className='absolute top-auto bottom-[-115px] left-auto right-0 star-embed-up '>
+                              <img src={leftdown} alt='effect'></img>
+                            </div>
+                            
                     <h2 className='uppercase mt-0 mb-0   font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:leading-10 sm:text-[22px] sm:tracking-[1px]'>{strapiContent.sectitle}</h2>
                     <h2 className='max-w-full uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:leading-10 sm:ml-[10px] sm:text-[28px] sm:tracking-[1px]'>{strapiContent.secsubtitle}</h2>
                     <div className='contact-link'>

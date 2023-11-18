@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import leftdown from '../Assets/Solution/leftdown.svg'
+import twoStar from '../Assets/Solution/two_star.svg'
 
 
 function Carrers({ data }) {
@@ -71,6 +73,10 @@ function Carrers({ data }) {
                 <div className='flex relative flex-col ml-auto mr-auto items-start' style={{ zIndex: '1', maxWidth: '1200px' }}>
                     <h2 className=' uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.sectitle}</h2>
                     <h2 className=' uppercase max-w-full mt-0 mb-0  font-use text-[#fff] text-[80px] tracking-[2px] leading-[100px] sm:text-[34px] sm:leading-[50px] sm:ml-[10px]'>{strapiContent.secsubtitle}</h2>
+                    <div className=' absolute z-[-1] top-0 bottom-auto left-auto right-[2%] star-embed-down'>
+                        <img src={leftdown}></img>
+                    </div>
+
                     <div className=' mt-8 w-[800px] sm:ml-[10px] sm:w-[94%]'>
                         <p className=' mb-6 leading-8 mt-0 text-xl font-use' style={{ color: 'rgba(255, 255, 255, .85)' }}>
                             {strapiContent.content.data.content}
@@ -166,6 +172,13 @@ function Carrers({ data }) {
             </div>
             <div className=' overflow-hidden pr-4 pl-4 sm:pl-2 sm:pr-2 mt-[240px] sm:mt-28'>
                 <div className=' relative flex flex-col items-start ml-auto mr-auto' style={{ zIndex: '1', maxWidth: '1200px' }}>
+                <div className='absolute z-[-1] w-[342px] flex top-0 bottom-auto left-auto right-[2%]'>
+                <img src={twoStar} alt='effects'></img>
+                <img src={twoStar} alt='effects'></img>
+            </div>
+                <div className=' absolute z-[-1] top-[11%] bottom-auto left-auto right-0 star-embed-down'>
+                        <img src={leftdown}></img>
+                    </div>
                     <div>
                         <h1 className='uppercase mt-0 mb-0   font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.buildtitle}</h1>
                         <h1 className='max-w-full uppercase mt-0 mb-0   font-use text-[#fff] text-[80px] tracking-[2px] leading-[100px] sm:text-[34px] sm:leading-[20px] sm:ml-[10px]' >{strapiContent.buildsubtitle}</h1>

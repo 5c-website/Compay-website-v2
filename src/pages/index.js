@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import { Helmet } from "react-helmet"
 import star from '../Assets/Solution/star.svg'
 import twoStar from '../Assets/Solution/two_star.svg'
 
@@ -9,6 +10,7 @@ const index = ({ data }) => {
   const content = data.allStrapiHomepage.nodes[0];
 
   return (
+    
     <div className='bg-black Homepage'>
       <div className='absolute w-full max-w-full flex flex-col items-center bg-transparent nav-division' style={{ zIndex: '2', color: 'rgba(255, 255, 255, 0)', top: '0' }}>
         <div className='w-full max-w-full pt-3 pb-3 ml-auto mr-auto' style={{ width: '79%' }}>
