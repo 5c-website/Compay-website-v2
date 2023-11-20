@@ -405,9 +405,9 @@ function About({ data }) {
                                 <div className="image_wrapper">
                                     <img src={strapiContent.partnersmq[7].localFile.url} alt="" />
                                 </div>
-                                <div className="image_wrapper">
+                                {/* <div className="image_wrapper">
                                     <img src={strapiContent.partnersmq[8].localFile.url} alt="" />
-                                </div>
+                                </div> */}
                             </Marquee>
                         </div>
                     </div>
