@@ -164,6 +164,176 @@ function Blogs({data}) {
                                                     </div>
                                                 </Link>
                                             </div>
+                                            <div className='blogitems'>
+                                                <Link className='w-full max-w-full inline-block text-lg' style={{lineHeight:'26px'}}>
+                                                    <div className='w-full max-w-full pl-5 pr-5' style={{marginBottom:'60px'}}>
+                                                        <img className='blog-img' src={strapiContent.images[6].localFile.url}></img>
+                                                        <div className='blog-content'>
+                                                            <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[6].title}</div>
+                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            {strapiContent.blogs[6].content.data.content}
+                                                            </h2>
+                                                            <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
+                                                                <div className='3px'>{strapiContent.blogs[6].duration}</div>&nbsp;
+                                                                {/* <div className='3px'>min read</div> */}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                            <div className='blogitems'>
+                                                <Link className='w-full max-w-full inline-block text-lg' style={{lineHeight:'26px'}}>
+                                                    <div className='w-full max-w-full pl-5 pr-5' style={{marginBottom:'60px'}}>
+                                                        <img className='blog-img' src={strapiContent.images[7].localFile.url}></img>
+                                                        <div className='blog-content'>
+                                                            <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[7].title}</div>
+                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            {strapiContent.blogs[7].content.data.content}
+                                                            </h2>
+                                                            <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
+                                                                <div className='3px'>{strapiContent.blogs[7].duration}</div>&nbsp;
+                                                                {/* <div className='3px'>min read</div> */}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                            <div className='blogitems'>
+                                                <Link className='w-full max-w-full inline-block text-lg' style={{lineHeight:'26px'}}>
+                                                    <div className='w-full max-w-full pl-5 pr-5' style={{marginBottom:'60px'}}>
+                                                        <img className='blog-img' src={strapiContent.images[8].localFile.url}></img>
+                                                        <div className='blog-content'>
+                                                            <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[8].title}</div>
+                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            {strapiContent.blogs[8].content.data.content}
+                                                            </h2>
+                                                            <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
+                                                                <div className='3px'>{strapiContent.blogs[8].duration}</div>&nbsp;
+                                                                {/* <div className='3px'>min read</div> */}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                            <div className='blogitems'>
+                                                <Link className='w-full max-w-full inline-block text-lg' style={{lineHeight:'26px'}}>
+                                                    <div className='w-full max-w-full pl-5 pr-5' style={{marginBottom:'60px'}}>
+                                                        <img className='blog-img' src={strapiContent.images[9].localFile.url}></img>
+                                                        <div className='blog-content'>
+                                                            <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[9].title}</div>
+                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            {strapiContent.blogs[9].content.data.content}
+                                                            </h2>
+                                                            <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
+                                                                <div className='3px'>{strapiContent.blogs[9].duration}</div>&nbsp;
+                                                                {/* <div className='3px'>min read</div> */}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                            <div className='blogitems'>
+                                                <Link className='w-full max-w-full inline-block text-lg' style={{lineHeight:'26px'}}>
+                                                    <div className='w-full max-w-full pl-5 pr-5' style={{marginBottom:'60px'}}>
+                                                        <img className='blog-img' src={strapiContent.images[10].localFile.url}></img>
+                                                        <div className='blog-content'>
+                                                            <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[10].title}</div>
+                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            {strapiContent.blogs[10].content.data.content}
+                                                            </h2>
+                                                            <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
+                                                                <div className='3px'>{strapiContent.blogs[10].duration}</div>&nbsp;
+                                                                {/* <div className='3px'>min read</div> */}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                            <div className='blogitems'>
+                                                <Link className='w-full max-w-full inline-block text-lg' style={{lineHeight:'26px'}}>
+                                                    <div className='w-full max-w-full pl-5 pr-5' style={{marginBottom:'60px'}}>
+                                                        <img className='blog-img' src={strapiContent.images[11].localFile.url}></img>
+                                                        <div className='blog-content'>
+                                                            <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[11].title}</div>
+                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            {strapiContent.blogs[11].content.data.content}
+                                                            </h2>
+                                                            <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
+                                                                <div className='3px'>{strapiContent.blogs[11].duration}</div>&nbsp;
+                                                                {/* <div className='3px'>min read</div> */}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                            <div className='blogitems'>
+                                                <Link className='w-full max-w-full inline-block text-lg' style={{lineHeight:'26px'}}>
+                                                    <div className='w-full max-w-full pl-5 pr-5' style={{marginBottom:'60px'}}>
+                                                        <img className='blog-img' src={strapiContent.images[12].localFile.url}></img>
+                                                        <div className='blog-content'>
+                                                            <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[12].title}</div>
+                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            {strapiContent.blogs[12].content.data.content}
+                                                            </h2>
+                                                            <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
+                                                                <div className='3px'>{strapiContent.blogs[12].duration}</div>&nbsp;
+                                                                {/* <div className='3px'>min read</div> */}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                            <div className='blogitems'>
+                                                <Link className='w-full max-w-full inline-block text-lg' style={{lineHeight:'26px'}}>
+                                                    <div className='w-full max-w-full pl-5 pr-5' style={{marginBottom:'60px'}}>
+                                                        <img className='blog-img' src={strapiContent.images[13].localFile.url}></img>
+                                                        <div className='blog-content'>
+                                                            <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[13].title}</div>
+                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            {strapiContent.blogs[13].content.data.content}
+                                                            </h2>
+                                                            <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
+                                                                <div className='3px'>{strapiContent.blogs[13].duration}</div>&nbsp;
+                                                                {/* <div className='3px'>min read</div> */}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                            <div className='blogitems'>
+                                                <Link className='w-full max-w-full inline-block text-lg' style={{lineHeight:'26px'}}>
+                                                    <div className='w-full max-w-full pl-5 pr-5' style={{marginBottom:'60px'}}>
+                                                        <img className='blog-img' src={strapiContent.images[14].localFile.url}></img>
+                                                        <div className='blog-content'>
+                                                            <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[14].title}</div>
+                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            {strapiContent.blogs[14].content.data.content}
+                                                            </h2>
+                                                            <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
+                                                                <div className='3px'>{strapiContent.blogs[14].duration}</div>&nbsp;
+                                                                {/* <div className='3px'>min read</div> */}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                            <div className='blogitems'>
+                                                <Link className='w-full max-w-full inline-block text-lg' style={{lineHeight:'26px'}}>
+                                                    <div className='w-full max-w-full pl-5 pr-5' style={{marginBottom:'60px'}}>
+                                                        <img className='blog-img' src={strapiContent.images[15].localFile.url}></img>
+                                                        <div className='blog-content'>
+                                                            <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[15].title}</div>
+                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            {strapiContent.blogs[15].content.data.content}
+                                                            </h2>
+                                                            <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
+                                                                <div className='3px'>{strapiContent.blogs[15].duration}</div>&nbsp;
+                                                                {/* <div className='3px'>min read</div> */}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
