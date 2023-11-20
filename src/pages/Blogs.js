@@ -334,6 +334,23 @@ function Blogs({data}) {
                                                     </div>
                                                 </Link>
                                             </div>
+                                            <div className='blogitems'>
+                                                <Link className='w-full max-w-full inline-block text-lg' style={{lineHeight:'26px'}}>
+                                                    <div className='w-full max-w-full pl-5 pr-5' style={{marginBottom:'60px'}}>
+                                                        <img className='blog-img' src={strapiContent.images[16].localFile.url}></img>
+                                                        <div className='blog-content'>
+                                                            <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[16].title}</div>
+                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            {strapiContent.blogs[16].content.data.content}
+                                                            </h2>
+                                                            <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
+                                                                <div className='3px'>{strapiContent.blogs[16].duration}</div>&nbsp;
+                                                                {/* <div className='3px'>min read</div> */}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
