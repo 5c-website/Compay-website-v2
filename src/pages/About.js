@@ -405,9 +405,18 @@ function About({ data }) {
                                 <div className="image_wrapper">
                                     <img src={strapiContent.partnersmq[7].localFile.url} alt="" />
                                 </div>
-                                {/* <div className="image_wrapper">
+                                <div className="image_wrapper">
                                     <img src={strapiContent.partnersmq[8].localFile.url} alt="" />
-                                </div> */}
+                                </div>
+                                <div className="image_wrapper">
+                                    <img src={strapiContent.partnersmq[9].localFile.url} alt="" />
+                                </div>
+                                <div className="image_wrapper">
+                                    <img src={strapiContent.partnersmq[10].localFile.url} alt="" />
+                                </div>
+                                <div className="image_wrapper">
+                                    <img src={strapiContent.partnersmq[11].localFile.url} alt="" />
+                                </div>
                             </Marquee>
                         </div>
                     </div>
