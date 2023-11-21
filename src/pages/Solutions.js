@@ -16,15 +16,15 @@ function Solutions({ data }) {
             <Link to='/Technology' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
             <Link to='/About' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
             {/* <Link to='/Partners' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Partners</Link> */}
-            <Link to='/' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>5C</Link>
+            <Link to='/' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>5C Network</Link>
             <Link to='/Carrers' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Careers</Link>
             <div className='DropdDown'>
               <div className='DropDowntoggle'>
                 <div className=' inline-block ml-6 mr-6 text-base align-top relative uppercase ' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Resources</div>
               </div>
               <nav className='navbartoggle'>
-                <Link to='/Blogs' className='navlinks'>Blogs</Link>
-                <Link to='/Newsroom' className='navlinks'>Newsroom</Link>
+              <Link to='/Blogs' className='navlinks hover-under '>Blogs</Link>
+                <Link to='/Newsroom' className='navlinks  hover-under-1'>Newsroom</Link>
               </nav>
             </div>
             <Link to='/Contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Contact</Link>
@@ -42,7 +42,7 @@ function Solutions({ data }) {
       <li><Link to="/Solutions">Solutions</Link></li>
       <li><Link to="/Technology">Technology</Link></li>
       <li><Link to="/Partners">Partners</Link></li>
-      <li><Link to="/">5C</Link></li>
+      <li><Link to="/">5C Network</Link></li>
       <li><Link to="/About">About</Link></li>
       <li class="">
         <div tabindex="0" class="onclick-menu">Resources
@@ -67,11 +67,11 @@ function Solutions({ data }) {
               <p className='mb-0 mt-0 font-use-one text-xl text-[#ffffffd6] content-solution'>{strapiContent.content.data.content}</p>
             </div>
             <div className='relative flex w-full max-w-full justify-around  solutions-home-container'>
-                <Link to="/Radiologist" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}>{strapiContent.menuItems[0].items}</Link>
-                <Link to="/Clinician" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}>{strapiContent.menuItems[1].items}</Link>
-                <Link to="/Hospital" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}>{strapiContent.menuItems[2].items}</Link>
-                <Link to="/diagnostic" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}>{strapiContent.menuItems[3].items}</Link>
-                <Link to="/Healthcare" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}>{strapiContent.menuItems[4].items}</Link>
+                <Link to="/Radiologist" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='underline-closing'>{strapiContent.menuItems[0].items}</span></Link>
+                <Link to="/Clinician" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='underline-closing'>{strapiContent.menuItems[1].items}</span></Link>
+                <Link to="/Hospital" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='underline-closing'>{strapiContent.menuItems[2].items}</span></Link>
+                <Link to="/diagnostic" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='underline-closing'>{strapiContent.menuItems[3].items}</span></Link>
+                <Link to="/Healthcare" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='underline-closing'>{strapiContent.menuItems[4].items}</span></Link>
             </div>
           </div>
         </div>
@@ -85,7 +85,7 @@ function Solutions({ data }) {
                             <p className=' text-xl leading-8 font-use-one w-[441px] mt-[30px] mb-[30px] sm:w-[100%] sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)'}}>{strapiContent.footercontent.data.footercontent}</p>
                             {/* getintouchbutton */}
                             <button className="btn btn-2 hover-slide-up sm:w-[100%]">
-                                <span>{strapiContent.git}</span>
+                            <Link to='/Contact'> <span>{strapiContent.git}</span></Link>
                             </button>
                             <div className='social-platform font-use sm:w-[100%]'>
                                 <Link to="https://www.facebook.com/5cnetwork" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>

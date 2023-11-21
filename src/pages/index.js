@@ -19,15 +19,15 @@ const index = ({ data }) => {
             <Link to='/Technology' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
             <Link to='/About' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
             {/* <Link to='/Partners' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Partners</Link> */}
-            <Link to='/' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>5C</Link>
+            <Link to='/' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>5C Network</Link>
             <Link to='/Carrers' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Careers</Link>
             <div className='DropdDown'>
               <div className='DropDowntoggle'>
                 <div className=' inline-block ml-6 mr-6 text-base align-top relative uppercase ' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Resources</div>
               </div>
               <nav className='navbartoggle'>
-                <Link to='/Blogs' className='navlinks'>Blogs</Link>
-                <Link to='/Newsroom' className='navlinks'>Newsroom</Link>
+                <Link to='/Blogs' className='navlinks hover-under '>Blogs</Link>
+                <Link to='/Newsroom' className='navlinks-1  hover-under-1'>Newsroom</Link>
               </nav>
             </div>
             <Link to='/Contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
@@ -45,7 +45,7 @@ const index = ({ data }) => {
             <li><Link to="/Solutions">Solutions</Link></li>
             <li><Link to="/Technology">Technology</Link></li>
             <li><Link to="/Partners">Partners</Link></li>
-            <li><Link to="/">5C</Link></li>
+            <li><Link to="/">5C Network</Link></li>
             <li><Link to="/About">About</Link></li>
             <li class="">
               <div tabindex="0" class="onclick-menu">Resources
@@ -87,7 +87,7 @@ const index = ({ data }) => {
                 </p>
               </div>
               <button class="btn btn-2 hover-slide-up mt-7 uppercase sm:w-full">
-                <span>{content.moreAboutUs}</span>
+                <Link to='/About'><span>{content.moreAboutUs}</span></Link>
               </button>
             </div>
             <div className='absolute z-[1] top-0 bottom-auto left-0 right-auto'>
@@ -123,7 +123,7 @@ const index = ({ data }) => {
               </div>
               <div className=' w-full max-w-full mt-7 flex'>
                 <button class="btn btn-2 hover-slide-up uppercase">
-                  <span>{content.LearnMore}</span>
+                  <Link to='/Solution'><span>{content.LearnMore}</span></Link>
                 </button>
               </div>
             </div>
@@ -225,7 +225,7 @@ const index = ({ data }) => {
             </div>
             <div className=' max-w-full flex w-[1000px] mt-[50px] sm:w-[98%]'>
               <button class="btn btn-2 hover-slide-up uppercase sm:min-w-[95%]">
-                <span>{content.moreAboutTechnology}</span>
+                <Link to='/Technology'><span>{content.moreAboutTechnology}</span></Link>
               </button>
             </div>
             <div className='absolute w-[347px] h-[407px] top-[-94%] bottom-0 left-auto right-[-13%] star-embed '>
@@ -282,7 +282,7 @@ const index = ({ data }) => {
                   <p className=' text-xl mb-0 mt-0 leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)' }}>{content.sixthcontent.data.sixthcontent}</p>
                 </div>
                 <button class="btn btn-2 hover-slide-up uppercase mt-7 sm:min-w-full">
-                  <span>{content.askUs}</span>
+                  <Link to='/Contact'><span>{content.askUs}</span></Link>
                 </button>
               </div>
             </div>
@@ -309,7 +309,7 @@ const index = ({ data }) => {
             </p>
             <div className=' mt-10 sm:max-w-full sm:w-full'>
               <button class="btn btn-2 hover-slide-up uppercase sm:max-w-full sm:w-full">
-                <span>{content.futureWith}</span>
+                <Link to='/Technology'><span>{content.futureWith}</span></Link>
               </button>
             </div>
           </div>
@@ -328,7 +328,7 @@ const index = ({ data }) => {
             </div>
             <div className=' mb-5 more-from-news-button sm:hidden'>
               <button class="btn btn-2 hover-slide-up uppercase">
-                <span>{content.aboutMedia}</span>
+                <Link to='/Newsroom'><span>{content.aboutMedia}</span></Link>
               </button>
             </div>
           </div>
@@ -375,7 +375,7 @@ const index = ({ data }) => {
                             <p className=' text-xl leading-8 font-use-one w-[441px] mt-[30px] mb-[30px] sm:w-[100%] sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)'}}>{content.footerleftcontent.data.footerleftcontent}</p>
                             {/* getintouchbutton */}
                             <button className="btn btn-2 hover-slide-up sm:w-[100%]">
-                                <span>{content.getInTouch}</span>
+                            <Link to='/Contact'><Link to='/Contact'><span>{content.getInTouch}</span></Link></Link>
                             </button>
                             <div className='social-platform font-use sm:w-[100%]'>
                                 <Link to="https://www.facebook.com/5cnetwork" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>

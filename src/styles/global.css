@@ -20,6 +20,8 @@
 /* hamburger-menu */
 
 /* menu-hover */
+
+
 .hover-effect::after {
     position: absolute;
     content: "";
@@ -34,6 +36,40 @@
   }
 
   .hover-effect:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .hover-under::after{
+    content: "";
+    width: 50%;
+    height: 1.5px;
+    top: 30%;
+    left: 10%;
+    background: #00d4ff;
+    transition: transform 0.5s;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+
+  .hover-under:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .hover-under-1::after{
+    content: "";
+    width: 80%;
+    height: 1.5px;
+    top: 100%;
+    left: 10%;
+    background: #00d4ff;
+    transition: transform 0.5s;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+
+  .hover-under-1:hover::after{
     transform: scaleX(1);
     transform-origin: left;
   }
@@ -70,6 +106,7 @@
 .navlinks{
     margin-left: 0;
     margin-right: 0;
+    margin-bottom: 5px;
     padding: 1px 28px 8px 25px;
     font-size: 18px;
     font-weight: 600;
@@ -79,6 +116,20 @@
     flex-direction: column;
     font-family: 'Barlow', sans-serif;
     
+}
+
+.navlinks-1{
+  margin-left: 0;
+  margin-right: 0;
+  padding: 1px 28px 8px 25px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Barlow', sans-serif;
+  
 }
 
 .DropDowntoggle:hover + .navbartoggle {
@@ -810,6 +861,8 @@ transition: all 0.4s ease-in;
     padding-top: 10px;
     padding-bottom: 10px;
   }
+
+  
   .btn{
     min-width: 86%;
   }

@@ -24,8 +24,8 @@ module.exports = {
       resolve: "gatsby-source-strapi",
       
       options: {
-        apiURL: "https://katturai.cubebase.ai/",
-        accessToken:'1a562b99cb71137a236d99de1777a858e77137a5126b344de1ebee7a870c037ea3bb659a80699b51eca7a1e3cbbd3d6e1125ee5e62fc865461ea3f9510dc0c9c5712e5068e068a713eb4b997aa07163f3c3d2eb657f05b2a9fcf22e22250a94a840d57188d2a8346dc4e3a546621dbbc04ec5bbe37ce5e456330b3bad24959e3',
+        apiURL: "http://127.0.0.1:1337",
+        accessToken:'4c443c86a738f173655ec5c6bd7ba1abbd882c2a44dc623a3542ba8e21a4974f19221323d5f4977533f52c28eeec3a1a7081fdcffe76432326491d0bad439b5c9f36db7acf2db0f03f212ff23457923228e6996ab0ca03c22c6e2efc9e4626d394ee58ced7e637b1203b77bdefaade8663509e18972e13c344c91ec3918c837b',
         collectionTypes: [
           'homepage','solution','technology','about','carrer','blog','newsroom','contact','diagnostic','clinician','healthcare','hospital','radiologist'
         ],
