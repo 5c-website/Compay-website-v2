@@ -337,7 +337,7 @@ const index = ({ data }) => {
             <Link className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px]' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000'}}>
               <div className=' pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full' style={{ backgroundColor: '#19191a' }}>
                 <div className='flex items-start justify-between mb-10'>
-                  <img src={content.newslogo[1].localFile.url} className='max-w-full inline-block align-middle h-[30px] sm:h-[20px]' style={{ border: '0'}}></img>
+                  <img src={content.newslogo[1].localFile.url} className='max-w-full inline-block align-middle h-[30px] w-[14rem] sm:h-[20px]' style={{ border: '0'}}></img>
                   <div className='uppercase text-xs font-use-one' style={{ color: 'rgba(255, 255, 255, .8)', lineHeight: '15px' }}>{content.newscards[0].date}</div>
                 </div>
                 <p className='mt-0 mb-0 normal-case font-use-one text-[28px] sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .95)', lineHeight: '38px' }}>
@@ -348,7 +348,7 @@ const index = ({ data }) => {
             <Link className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px]' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000', textDecoration: 'none' }}>
               <div className=' pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full' style={{backgroundColor: '#19191a' }}>
                 <div className='flex items-start justify-between mb-14'>
-                  <img src={content.newslogo[0].localFile.url} className='max-w-full w-20 inline-block align-middle h-[40px] sm:h-[20px]' style={{ border: '0', opacity: '.85' }}></img>
+                  <img src={content.newslogo[0].localFile.url} className='max-w-full w-[14rem] inline-block align-middle h-[40px] sm:h-[20px]' style={{ border: '0', opacity: '.85' }}></img>
                   <div className='uppercase text-xs font-use-one' style={{ color: 'rgba(255, 255, 255, .8)', lineHeight: '15px' }}>{content.newscards[1].date}</div>
                 </div>
                 <p className='mt-0 mb-0 normal-case font-use-one text-[28px] sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .95)', lineHeight: '38px' }}>
