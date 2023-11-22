@@ -91,7 +91,7 @@ function About({ data }) {
                     <div className='card-layout-container'>
                         <div className=' h-auto object-cover mr-0 flex flex-col relative pb-5 w-[264px] sm:w-[95%]' style={{ border: '1px solid #333', marginBottom: '60px' }}>
                             <div>
-                                <img className='card-img' src={strapiContent.leadershipcardsimg[2].localFile.url}></img>
+                                <img className='card-img' src={strapiContent.leadershipcardsimg[0].localFile.url}></img>
                             </div>
                             <div className=' h-auto pr-4' style={{ paddingLeft: '15px' }}>
                                 <div className='flex relative items-end justify-between'>
@@ -113,7 +113,7 @@ function About({ data }) {
                         </div>
                         <div className=' h-auto object-cover mr-0 flex flex-col relative pb-5 w-[264px] sm:w-[95%]' style={{ border: '1px solid #333', marginBottom: '60px' }}>
                             <div>
-                                <img className='card-img' src={strapiContent.leadershipcardsimg[0].localFile.url}></img>
+                                <img className='card-img' src={strapiContent.leadershipcardsimg[1].localFile.url}></img>
                             </div>
                             <div className=' h-auto pr-4' style={{ paddingLeft: '15px' }}>
                                 <div className='flex relative items-end justify-between'>
@@ -121,7 +121,7 @@ function About({ data }) {
                                         <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{ marginTop: '-19px', color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[1].firstname}</h3>
                                         <h3 className=' text-2xl leading-8  mt-0 mb-0 uppercase font-use' style={{ color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[1].lastname}</h3>
                                     </div>
-                                    <a href='https://www.linkedin.com/in/kalyan-sivasailam-3925074a/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                    <a href='https://www.linkedin.com/in/syed-s-ahmed-06553114/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                         <div>
                                             <img src={strapiContent.socialplatform[2].localFile.url}></img>
                                         </div>
@@ -135,7 +135,7 @@ function About({ data }) {
                         </div>
                         <div className=' h-auto object-cover mr-0 flex flex-col relative pb-5 w-[264px] sm:w-[95%]' style={{ border: '1px solid #333', marginBottom: '60px' }}>
                             <div>
-                                <img className='card-img' src={strapiContent.leadershipcardsimg[1].localFile.url}></img>
+                                <img className='card-img' src={strapiContent.leadershipcardsimg[2].localFile.url}></img>
                             </div>
                             <div className=' h-auto pr-4' style={{ paddingLeft: '15px' }}>
                                 <div className='flex relative items-end justify-between'>
@@ -143,7 +143,7 @@ function About({ data }) {
                                         <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{ marginTop: '-19px', color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[2].firstname}</h3>
                                         <h3 className=' text-2xl leading-8  mt-0 mb-0 uppercase font-use' style={{ color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[2].lastname}</h3>
                                     </div>
-                                    <a href='https://www.linkedin.com/in/kalyan-sivasailam-3925074a/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                    <a href='https://www.linkedin.com/in/anandriyer/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                         <div>
                                             <img src={strapiContent.socialplatform[2].localFile.url}></img>
                                         </div>
@@ -157,7 +157,7 @@ function About({ data }) {
                         </div>
                         <div className=' h-auto object-cover mr-0 flex flex-col relative pb-5 w-[264px] sm:w-[95%]' style={{ border: '1px solid #333', marginBottom: '60px' }}>
                             <div>
-                                <img className='card-img' src={strapiContent.leadershipcardsimg[5].localFile.url}></img>
+                                <img className='card-img' src={strapiContent.leadershipcardsimg[3].localFile.url}></img>
                             </div>
                             <div className=' h-auto pr-4' style={{ paddingLeft: '15px' }}>
                                 <div className='flex relative items-end justify-between'>
@@ -165,7 +165,7 @@ function About({ data }) {
                                         <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{ marginTop: '-19px', color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[3].firstname}</h3>
                                         <h3 className=' text-2xl leading-8  mt-0 mb-0 uppercase font-use' style={{ color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[3].lastname}</h3>
                                     </div>
-                                    <a href='https://www.linkedin.com/in/kalyan-sivasailam-3925074a/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                    <a href='https://www.linkedin.com/in/bargava/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                         <div>
                                             <img src={strapiContent.socialplatform[2].localFile.url}></img>
                                         </div>
@@ -179,7 +179,7 @@ function About({ data }) {
                         </div>
                         <div className=' h-auto object-cover mr-0 flex flex-col relative pb-5 w-[264px] sm:w-[95%]' style={{ border: '1px solid #333', marginBottom: '60px' }}>
                             <div>
-                                <img className='card-img' src={strapiContent.leadershipcardsimg[3].localFile.url}></img>
+                                <img className='card-img' src={strapiContent.leadershipcardsimg[4].localFile.url}></img>
                             </div>
                             <div className=' h-auto pr-4' style={{ paddingLeft: '15px' }}>
                                 <div className='flex relative items-end justify-between'>
@@ -187,7 +187,7 @@ function About({ data }) {
                                         <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{ marginTop: '-19px', color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[4].firstname}</h3>
                                         <h3 className=' text-2xl leading-8  mt-0 mb-0 uppercase font-use' style={{ color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[4].lastname}</h3>
                                     </div>
-                                    <a href='https://www.linkedin.com/in/kalyan-sivasailam-3925074a/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                    <a href='https://www.linkedin.com/in/kirthiraj/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                         <div>
                                             <img src={strapiContent.socialplatform[2].localFile.url}></img>
                                         </div>
@@ -201,7 +201,7 @@ function About({ data }) {
                         </div>
                         <div className=' h-auto object-cover mr-0 flex flex-col relative pb-5 w-[264px] sm:w-[95%]' style={{border: '1px solid #333', marginBottom: '60px' }}>
                             <div>
-                                <img className='card-img' src={strapiContent.leadershipcardsimg[4].localFile.url}></img>
+                                <img className='card-img' src={strapiContent.leadershipcardsimg[5].localFile.url}></img>
                             </div>
                             <div className=' h-auto pr-4' style={{ paddingLeft: '15px' }}>
                                 <div className='flex relative items-end justify-between'>
@@ -209,7 +209,7 @@ function About({ data }) {
                                         <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{ marginTop: '-19px', color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[5].firstname}</h3>
                                         <h3 className=' text-2xl leading-8  mt-0 mb-0 uppercase font-use' style={{ color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[5].lastname}</h3>
                                     </div>
-                                    <a href='https://www.linkedin.com/in/kalyan-sivasailam-3925074a/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                    <a href='https://www.linkedin.com/in/vamshiavk/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                         <div>
                                             <img src={strapiContent.socialplatform[2].localFile.url}></img>
                                         </div>
@@ -221,9 +221,9 @@ function About({ data }) {
                                 </div>
                             </div>
                         </div>
-                        <div className=' h-auto object-cover mr-0 flex flex-col relative pb-5 w-[264px] sm:w-[95%]' style={{border: '1px solid #333', marginBottom: '60px' }}>
+                        {/* <div className=' h-auto object-cover mr-0 flex flex-col relative pb-5 w-[264px] sm:w-[95%]' style={{border: '1px solid #333', marginBottom: '60px' }}>
                             <div>
-                                <img className='card-img' src={strapiContent.leadershipcardsimg[8].localFile.url}></img>
+                                <img className='card-img' src={strapiContent.leadershipcardsimg[6].localFile.url}></img>
                             </div>
                             <div className=' h-auto pr-4' style={{ paddingLeft: '15px' }}>
                                 <div className='flex relative items-end justify-between'>
@@ -242,8 +242,8 @@ function About({ data }) {
                                     <div className=' text-lg leading-7 font-use-one' style={{ color: 'rgba(255, 255, 255, .75)' }}>{strapiContent.leadershipcards[6].position}</div>
                                 </div>
                             </div>
-                        </div>
-                        <div className=' h-auto object-cover mr-0 flex flex-col relative pb-5 w-[264px] sm:w-[95%]' style={{border: '1px solid #333', marginBottom: '60px' }}>
+                        </div> */}
+                        {/* <div className=' h-auto object-cover mr-0 flex flex-col relative pb-5 w-[264px] sm:w-[95%]' style={{border: '1px solid #333', marginBottom: '60px' }}>
                             <div>
                                 <img className='card-img' src={strapiContent.leadershipcardsimg[6].localFile.url}></img>
                             </div>
@@ -264,8 +264,8 @@ function About({ data }) {
                                     <div className=' text-lg leading-7 font-use-one' style={{ color: 'rgba(255, 255, 255, .75)' }}>{strapiContent.leadershipcards[7].position}</div>
                                 </div>
                             </div>
-                        </div>
-                        <div className=' h-auto object-cover mr-0 flex flex-col relative pb-5 w-[264px] sm:w-[95%]' style={{ border: '1px solid #333', marginBottom: '60px' }}>
+                        </div> */}
+                        {/* <div className=' h-auto object-cover mr-0 flex flex-col relative pb-5 w-[264px] sm:w-[95%]' style={{ border: '1px solid #333', marginBottom: '60px' }}>
                             <div>
                                 <img className='card-img' src={strapiContent.leadershipcardsimg[7].localFile.url}></img>
                             </div>
@@ -286,7 +286,7 @@ function About({ data }) {
                                     <div className=' text-lg leading-7 font-use-one' style={{ color: 'rgba(255, 255, 255, .75)' }}>{strapiContent.leadershipcards[8].position}</div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 {/* <div className=' relative flex flex-col items-start ml-auto mr-auto' style={{ zIndex: 1, maxWidth: '1200px' }}>

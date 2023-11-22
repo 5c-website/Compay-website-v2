@@ -8,6 +8,9 @@ const siteMetadata = {
   // backgroundColor: `#f7f0eb`,
   // themeColor: `#a2466c`,
 }
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
   siteMetadata: siteMetadata,
