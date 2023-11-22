@@ -1,22 +1,49 @@
-import React from 'react'
+import React,{ useEffect }  from 'react'
+import '../styles/global.css'
 import { useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Switch } from '@headlessui/react'
 import { navigate } from 'gatsby';
+import { useForm } from '@formspree/react';
+import { Alert } from "flowbite-react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function ReachUs() {
     const [agreed, setAgreed] = useState(false)
+    const [state, handleSubmit] = useForm("meqbwbpa");
+    const [submitted, setSubmitted] = useState(false);
+    const notify = () => toast("Successfully submitted");
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [company, setCompany] = useState('');
+    const [email, setEmail] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [message, setMessage] = useState('');
+
+ 
 
     function classNames(...classes) {
         return classes.filter(Boolean).join(' ')
       }
 
-      const handleSubmit = (event) => {
-        event.preventDefault();
-        navigate('/');
-      };
+      useEffect(() => {
+        if (state.succeeded && submitted) {
+          notify();
+          setFirstName('');
+          setLastName('');
+          setCompany('');
+          setEmail('');
+          setPhoneNumber('');
+          setMessage('');
+        }
+      }, [state.succeeded, submitted]);
+
+    
   return (
     <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
+      <ToastContainer />
       <div
         className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
         aria-hidden="true"
@@ -35,7 +62,11 @@ function ReachUs() {
         Your Door to Join India’s leading AI Powered Radiology Group opens here!
         </p>
       </div>
-      <form onSubmit={handleSubmit} method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
+      <form  onSubmit={(e) => {
+                e.preventDefault();
+                handleSubmit(e);
+                setSubmitted(true);
+            }} method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20"> 
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
             <label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-gray-900">
@@ -47,8 +78,11 @@ function ReachUs() {
                 name="first-name"
                 id="first-name"
                 autoComplete="given-name"
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
               />
+              
             </div>
           </div>
           <div>
@@ -62,6 +96,8 @@ function ReachUs() {
                 id="last-name"
                 autoComplete="family-name"
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
               />
             </div>
           </div>
@@ -76,6 +112,8 @@ function ReachUs() {
                 id="company"
                 autoComplete="organization"
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
               />
             </div>
           </div>
@@ -90,6 +128,8 @@ function ReachUs() {
                 id="email"
                 autoComplete="email"
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
           </div>
@@ -106,6 +146,7 @@ function ReachUs() {
                   id="country"
                   name="country"
                   className="h-full rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-9 text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
+                  
                 >
                   <option>US</option>
                   <option>CA</option>
@@ -123,6 +164,8 @@ function ReachUs() {
                 id="phone-number"
                 autoComplete="tel"
                 className="block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
               />
             </div>
           </div>
@@ -137,6 +180,8 @@ function ReachUs() {
                 rows={4}
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 defaultValue={''}
+                value={message}
+                  onChange={(e) => setMessage(e.target.value)}
               />
             </div>
           </div>
@@ -170,9 +215,9 @@ function ReachUs() {
           </Switch.Group>
         </div>
         <div className="mt-10">
-          <button
+          <button 
             type="submit"
-            className="block w-full rounded-md bg-[black] px-3.5 py-2.5 text-center text-sm font-semibold text-[#00d4ff] shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="block w-full rounded-md bg-[black] px-3.5 py-2.5 text-center text-sm font-semibold text-[#00d4ff] shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  toast-btn"
           >
             Let's talk
           </button>
