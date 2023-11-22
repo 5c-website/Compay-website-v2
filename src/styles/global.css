@@ -543,7 +543,7 @@ transition: all 0.4s ease-in;
 }
 
 
-/* button-hover-effects */
+/* .btn-1-hover-effects */
 
 ::before,
 ::after {
@@ -569,7 +569,7 @@ transition: all 0.4s ease-in;
   min-width: 150px;
   box-sizing: border-box;
 }
-  .btn span {         
+  .btn .rounded-effect {         
     position: relative;
     display: inline-block;
     font-size: 14px;
@@ -601,7 +601,7 @@ transition: all 0.4s ease-in;
   background-color: #00d4ff;
   transition: 0.3s ease-out;
 }
-.btn-2 span {
+.btn-2 .rounded-effect {
   color: #00d4ff;
   border: 1px solid #00d4ff;
   transition: 0.2s;
@@ -609,7 +609,7 @@ transition: all 0.4s ease-in;
   font-size: 18px;
   line-height: 21px;
 }  
-.btn-2 span:hover {
+.btn-2 .rounded-effect:hover {
   color: black; 
   transition: 0.2s 0.1s;
 }
@@ -677,7 +677,7 @@ transition: all 0.4s ease-in;
   -webkit-touch-callout: none;
 }
 
-#menuToggle span {
+#menuToggle .rounded-effect {
   display: block;
   width: 33px;
   height: 4px;
@@ -695,26 +695,26 @@ transition: all 0.4s ease-in;
     background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
 
-#menuToggle span:first-child {
+#menuToggle .rounded-effect:first-child {
   transform-origin: 0% 0%;
 }
 
-#menuToggle span:nth-last-child(2) {
+#menuToggle .rounded-effect:nth-last-child(2) {
   transform-origin: 0% 100%;
 }
 
-#menuToggle input:checked ~ span {
+#menuToggle input:checked ~ .rounded-effect {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
 }
 
-#menuToggle input:checked ~ span:nth-last-child(3) {
+#menuToggle input:checked ~ .rounded-effect:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-#menuToggle input:checked ~ span:nth-last-child(2) {
+#menuToggle input:checked ~ .rounded-effect:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
@@ -970,4 +970,71 @@ transition: all 0.4s ease-in;
   padding: 40px 20px;
 }
 }  
+
+
+
+.btn-1{
+  display: inline-block;
+  position: relative;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  background: rgba(0,0,0,0.09);
+}
+
+.btn-1::before, .btn-1::after{
+  content:"";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: #00d4ff;
+}
+
+.rounded-effect::before, .rounded-effect::after{
+  content:"";
+  width:2px;
+  height:0;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: #00d4ff;
+}
+.btn-1:hover::before, .btn-1:hover::after{
+  width: 100%;
+}
+.btn-1:hover .rounded-effect::before, .btn-1:hover .rounded-effect::after{
+  height: 100%;
+}
+/*----- .btn-1 1 -----*/
+.btn-1::before, .btn-1::after{
+  transition-delay: 0.2s;
+}
+.btn-1 .rounded-effect::before, .btn-1 .rounded-effect::after{
+  transition-delay: 0s;
+}
+.btn-1::before{
+  right: 0;
+  top: 0;
+}
+.btn-1::after{
+  left: 0;
+  bottom: 0;
+}
+.btn-1 .rounded-effect::before{
+  left: 0;
+  top: 0;
+}
+.btn-1 .rounded-effect::after{
+  right: 0;
+  bottom: 0;
+}
+.btn-1:hover::before, .btn-1:hover::after{
+  transition-delay: 0s;
+}
+.btn-1:hover .rounded-effect::before, .btn-1:hover .rounded-effect::after{
+  transition-delay: 0.2s;
+}
+
 

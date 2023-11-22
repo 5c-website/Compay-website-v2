@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import '../styles/global.css'
 import star from '../Assets/Solution/star.svg'
 import leftdown from '../Assets/Solution/downarrow.svg'
 import logo from '../Assets/Homepage/2-01.png'
@@ -86,17 +87,21 @@ function Contact({ data }) {
                     <h2 className='uppercase mt-0 mb-0   font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:leading-10 sm:text-[22px] sm:tracking-[1px]'>{strapiContent.sectitle}</h2>
                     <h2 className='max-w-full uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:leading-10 sm:ml-[10px] sm:text-[28px] sm:tracking-[1px]'>{strapiContent.secsubtitle}</h2>
                     <div className='contact-link'>
-                        <Link to='/ReachUs' className='flex max-w-full uppercase text-lg items-center justify-center w-[460px] h-[142px] sm:w-[85%] sm:h-[9vh]' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, .04)', border: '1px solid #333' }}>
+                        <Link to='/ReachUs' className='flex max-w-full uppercase text-lg items-center justify-center w-[460px] h-[142px] sm:w-[85%] sm:h-[9vh]  btn-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, .04)', border: '1px solid #333' }}>   
+                            <span className='flex pt-[2rem] rounded-effect'>
                             <img src={strapiContent.helpimg[0].localFile.url} className='max-w-full inline-block align-middle mr-[30px] sm:mr-[20px] sm:h-[40px] sm:w-[40px] ml-[60px]'></img>
                             <div>
                                 <div className=' leading-9 uppercase font-use  text-[30px] sm:text-[20px]' style={{ lineHeight: '36px', letterSpacing: '3px' }}>{strapiContent.help[0].title}</div>
                             </div>
+                            </span>
                         </Link>
-                        <Link  className='flex max-w-full uppercase text-lg items-center justify-center w-[460px] h-[142px] sm:w-[85%] sm:h-[9vh]' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, .04)', border: '1px solid #333' }}>
+                        <Link  className='flex max-w-full uppercase text-lg items-center justify-center w-[460px] h-[142px] sm:w-[85%] sm:h-[9vh] btn-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, .04)', border: '1px solid #333' }}>
+                        <span className='flex pt-[3rem]  rounded-effect sm:justify-center sm:pt-[20px] sm:pl-0'>
                             <img src={strapiContent.helpimg[2].localFile.url} className='max-w-full inline-block align-middle mr-[30px] sm:mr-[20px] sm:h-[40px] sm:w-[40px]'></img>
                             <div>
                                 <div className=' leading-9 uppercase font-use  text-[30px] sm:text-[20px]' style={{lineHeight: '36px', letterSpacing: '3px' }}>{strapiContent.help[1].title}</div>
                             </div>
+                            </span>
                         </Link>
                         {/* <Link className='flex max-w-full uppercase text-lg items-center justify-center w-[460px] h-[142px] sm:w-[85%] sm:h-[9vh]' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, .04)', border: '1px solid #333' }}>
                             <img src={strapiContent.helpimg[4].localFile.url} className='max-w-full inline-block align-middle mr-[30px] sm:mr-[20px] sm:h-[40px] sm:w-[40px]'></img>
@@ -104,11 +109,13 @@ function Contact({ data }) {
                                 <div className=' leading-9 uppercase font-use  text-[30px] sm:text-[20px]' style={{  lineHeight: '36px', letterSpacing: '3px' }}>{strapiContent.help[2].title}</div>
                             </div>
                         </Link> */}
-                        <Link className='flex max-w-full uppercase text-lg items-center justify-center w-[460px] h-[142px] sm:w-[85%] sm:h-[9vh]' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, .04)', border: '1px solid #333' }}>
+                        <Link className='flex max-w-full uppercase text-lg items-center justify-center w-[460px] h-[142px] sm:w-[85%] sm:h-[9vh] btn-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, .04)', border: '1px solid #333' }}>
+                        <span className='flex pt-[3rem] pl-[5rem] rounded-effect sm:justify-center sm:pt-[20px] sm:pl-0'>
                             <img src={strapiContent.helpimg[3].localFile.url} className='max-w-full inline-block align-middle mr-[30px] sm:mr-[20px] sm:h-[40px] sm:w-[40px]'></img>
                             <div>
                                 <div className=' leading-9 uppercase font-use  text-[30px] sm:text-[20px]' style={{  lineHeight: '36px', letterSpacing: '3px' }}>{strapiContent.help[3].title}</div>
                             </div>
+                            </span>
                         </Link>
                         {/* <Link className='flex max-w-full uppercase text-lg items-center justify-center w-[460px] h-[142px] sm:w-[85%] sm:h-[9vh]' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, .04)', border: '1px solid #333' }}>
                             <img src={strapiContent.helpimg[1].localFile.url} className='max-w-full inline-block align-middle mr-[30px] sm:mr-[20px] sm:h-[40px] sm:w-[40px]'></img>
