@@ -742,10 +742,17 @@ transition: all 0.4s ease-in;
 .mobile-stars{
   display:none;
 }
+.mobile-resolution-video{
+  display:none;
+}
 
 /* media query */
 
 @media screen and (max-width: 639px) {
+
+  .mobile-resolution-video{
+    display:block;
+  }
 
   p{
     font-size: 18px !important;

@@ -64,9 +64,13 @@ const index = ({ data }) => {
 
 
       <div className='flex flex-col relative items-center justify-start overflow-hidden h-screen' style={{ zIndex: '0', top: '0' }}>
-        <video autoPlay loop muted className=' w-full h-full m-auto absolute object-cover bg-cover inline-block align-baseline' style={{ backgroundPosition: '50%', top: '-100%', bottom: '-100%', left: '-100%', right: '-100%' }}>
+        <video autoPlay loop muted className=' sm:none w-full h-full m-auto absolute object-cover bg-cover inline-block align-baseline' style={{ backgroundPosition: '50%', top: '-100%', bottom: '-100%', left: '-100%', right: '-100%' }}>
           <source src={content.headervideo.localFile.url} type="video/mp4" />
         </video>
+        <video autoPlay loop muted className=' mobile-resolution-video w-full h-full m-auto absolute object-cover bg-cover inline-block align-baseline' style={{ backgroundPosition: '50%', top: '-100%', bottom: '-100%', left: '-100%', right: '-100%' }}>
+          <source src={content.mobileresolutionvideo.localFile.url} type="video/mp4" />
+        </video>
+
       </div>
       <div>
 
@@ -433,6 +437,11 @@ export const pageQuery = graphql`
 query MyQuery {
     allStrapiHomepage {
       nodes {
+        mobileresolutionvideo {
+          localFile {
+            url
+          }
+        }
         headervideo {
           localFile {
             url
