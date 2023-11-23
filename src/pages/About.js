@@ -5,6 +5,7 @@ import Img from 'gatsby-image';
 import downstar from '../Assets/Solution/downarrow.svg'
 import leftdown from '../Assets/Solution/leftdown.svg'
 import logo from '../Assets/Homepage/2-01.png'
+import mobilestar from '../Assets/Solution/single-mobile.svg'
 
 function About({ data }) {
     const strapiContent = data.allStrapiAbout.nodes[0]
@@ -55,7 +56,7 @@ function About({ data }) {
     </ul>
   </div>
 </nav>
-            <div className='about-home  sm:h-[80vh]' style={{ backgroundImage: `url(${strapiContent.abouthomeimg.localFile.url})` }}>
+            <div className='about-home  sm:h-[80vh] sm:p-[1rem]' style={{ backgroundImage: `url(${strapiContent.abouthomeimg.localFile.url})` }}>
                 <div className='max-w-full ml-auto mr-auto sm:ml-[10px]'>
                     <div className='max-w-full relative w-[1200px] mt-[234px] sm:mt-24'>
                         <h1 className=' uppercase max-w-full mt-0 mb-0  font-use text-[#fff] tracking-[2px] leading-[100px] text-[80px] sm:text-[2.5rem]'>{strapiContent.title}</h1>
@@ -67,7 +68,7 @@ function About({ data }) {
                     </div>
                 </div>
             </div>
-            <div className='passion sm:pt-28 sm:pb-[130px]' style={{ backgroundImage: `url(${strapiContent.secimg.localFile.url})` }}>
+            <div className='passion sm:pt-[3rem] sm:pb-[130px] sm:p-[1rem] ' style={{ backgroundImage: `url(${strapiContent.secimg.localFile.url})` }}>
                 <div className='flex flex-col items-start relative ml-auto mr-auto' style={{ zIndex: '1', maxWidth: '1200px' }}>
                     <h1 className=' uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.sectitle}</h1>
                     <h1 className=' uppercase max-w-full mt-0 mb-0  font-use text-[#fff] text-[80px] tracking-[2px] leading-[100px] sm:text-[34px] sm:leading-[50px] sm:ml-[10px]' style={{width: '1000px' }}>{strapiContent.secsubtitle}</h1>
@@ -78,11 +79,12 @@ function About({ data }) {
                     </div>
                 </div>
             </div>
-            <div className='overflow-hidden mt-40 sm:mt-20' >
+            <div className='overflow-hidden mt-40 sm:mt-20 sm:p-[1rem]' >
                 <div className=' relative flex flex-col items-start ml-auto mr-auto' style={{ zIndex: 1, maxWidth: '1200px' }}>
-                    <div className=' absolute z-[-99] top-0 bottom-auto left-auto right-[-6%] star-embed-down'>
+                    <div className=' absolute z-[-99] top-0 bottom-auto left-auto right-[-6%] star-embed-down '>
                         <img src={downstar}></img>
                     </div>
+                    
                     <h1 className=' uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.leadertitle}</h1>
                     <div className='card-layout-container'>
                         <div className=' h-auto object-cover mr-0 flex flex-col relative pb-5 w-[264px] sm:w-[95%]' style={{ border: '1px solid #333', marginBottom: '60px' }}>
@@ -370,8 +372,8 @@ function About({ data }) {
                         </div>
                     </div>
                 </div> */}
-                <div className='relative flex flex-col items-start ml-auto mr-auto mt-[20px] mb-[180px] ' style={{ zIndex: '1', maxWidth: '1200px'}}>
-                    <div className=' absolute z-[-1] top-[-61%] bottom-auto left-[-11%] right-auto'>
+                <div className='relative flex flex-col items-start ml-auto mr-auto mt-[20px] mb-[180px] sm:mt-0 sm:mb-0 ' style={{ zIndex: '1', maxWidth: '1200px'}}>
+                    <div className=' absolute z-[-1] top-[-61%] bottom-auto left-[-11%] right-auto sm:hidden'>
                         <img src={leftdown}></img>
                     </div>
                     <h2 className='max-w-full uppercase mt-0 mb-0   font-use text-[50px] sm:text-xl sm:ml-3' style={{ color: '#fff', letterSpacing: '2px', lineHeight: '100px' }}>{strapiContent.partners}</h2>
@@ -419,12 +421,13 @@ function About({ data }) {
                     </div>
                 </div>
             </div>
-            <div className=' mb-60 relative flex flex-col items-start ml-auto mr-auto' style={{ zIndex: '1', maxWidth: '1200px' }}>
-            <div className=' absolute z-[-99] top-auto bottom-[-67%]  left-auto right-[-7%] star-embed-up'>
+            <div className=' mb-60 relative flex flex-col items-start ml-auto mr-auto sm:p-[1rem] sm:mb-0' style={{ zIndex: '1', maxWidth: '1200px' }}>
+            <div className=' absolute z-[-99] top-auto bottom-[-67%]  left-auto right-[-7%] star-embed-up sm:hidden'>
                         <img src={downstar}></img>
                     </div>
+                    <img src={mobilestar} className='sm:w-full sm:mt-[2rem] sm:ml-0 mobile-stars'></img>s
                 <h2 className='max-w-full uppercase mt-0 mb-0   font-use text-[50px] sm:text-xl sm:ml-3' style={{ color: '#fff', letterSpacing: '2px', lineHeight: '60px' }}>{strapiContent.investor}</h2>
-                <div className='w-full' style={{ maxWidth: '1000px', marginTop: '60px', marginLeft: '100px' }}>
+                <div className='w-full sm:ml-0 max-w-full mt-[60px] ml-[100px] sm:mt-[1rem]' >
                     <div className='logos-container'>
                         <img className='logo-section max-w-full' src={strapiContent.partnerslogo[0].localFile.url}></img>
                         <img className='logo-section max-w-full' src={strapiContent.partnerslogo[1].localFile.url}></img>
@@ -450,16 +453,16 @@ function About({ data }) {
                             <Link to='/Contact'><span>{strapiContent.getInTouch}</span></Link>
                             </button>
                             <div className='social-platform font-use sm:w-[100%]'>
-                                <Link to="https://www.facebook.com/5cnetwork" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                <Link to="https://www.facebook.com/5cnetwork" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                     <img src={strapiContent.socialplatform[3].localFile.url} alt='facebook' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
-                                <Link to="https://www.linkedin.com/company/5c-network?trk=top_nav_home" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                <Link to="https://www.linkedin.com/company/5c-network?trk=top_nav_home" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                     <img src={strapiContent.socialplatform[2].localFile.url} alt='Linkedin' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
-                                <Link to="https://twitter.com/5c_network" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                <Link to="https://twitter.com/5c_network" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                     <img src={strapiContent.socialplatform[1].localFile.url} alt='Twitter' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
-                                <Link to="https://www.instagram.com/5cnetwork/" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                <Link to="https://www.instagram.com/5cnetwork/" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                     <img src={strapiContent.socialplatform[0].localFile.url} alt='Medium' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
                             </div>

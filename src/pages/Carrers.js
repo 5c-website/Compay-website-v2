@@ -50,11 +50,11 @@ function Carrers({ data }) {
             <li><Link to="/Newsroom">Newsroom</Link></li>
           
       <li><Link to="/Carrers">Careers</Link></li>
-      <li><Link to="/Contact" target="_blank">contact</Link></li>
+      <li><Link to="/Contact" >Contact</Link></li>
     </ul>
   </div>
 </nav>
-            <div className='carrers-home' style={{ backgroundImage: `url(${strapiContent.homeimg.localFile.url})` }}>
+            <div className='carrers-home sm:p-[1rem]' style={{ backgroundImage: `url(${strapiContent.homeimg.localFile.url})` }}>
                 <div className='max-w-full ml-auto mr-auto'>
                     <div className=' max-w-full relative w-[1200px] mt-[234px] sm:mt-[112px]'>
                         <h1 className='max-w-full uppercase mt-0 mb-0   font-use text-[#fff] tracking-[2px] leading-[100px] sm:ml-1 text-[80px] sm:text-[2.5rem]'>{strapiContent.title}</h1>
@@ -66,11 +66,11 @@ function Carrers({ data }) {
                     </div>
                 </div>
             </div>
-            <div style={{ marginTop: '120px' }}>
+            <div className='sm:p-[1rem] mt-[120px] sm:mt-[60px]' >
                 <div className='flex relative flex-col ml-auto mr-auto items-start' style={{ zIndex: '1', maxWidth: '1200px' }}>
                     <h2 className=' uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.sectitle}</h2>
                     <h2 className=' uppercase max-w-full mt-0 mb-0  font-use text-[#fff] text-[80px] tracking-[2px] leading-[100px] sm:text-[34px] sm:leading-[50px] sm:ml-[10px]'>{strapiContent.secsubtitle}</h2>
-                    <div className=' absolute z-[-1] top-0 bottom-auto left-auto right-[2%] star-embed-down'>
+                    <div className=' absolute z-[-1] top-0 bottom-auto left-auto right-[2%] star-embed-down sm:hidden'>
                         <img src={leftdown}></img>
                     </div>
 
@@ -167,13 +167,13 @@ function Carrers({ data }) {
                     </div>
                 </div>
             </div>
-            <div className=' overflow-hidden pr-4 pl-4 sm:pl-2 sm:pr-2 mt-[240px] sm:mt-28'>
+            <div className=' overflow-hidden pr-4 pl-4 sm:pl-2 sm:pr-2 mt-[240px] sm:mt-28 sm:p-[1rem]'>
                 <div className=' relative flex flex-col items-start ml-auto mr-auto' style={{ zIndex: '1', maxWidth: '1200px' }}>
-                <div className='absolute z-[-1] w-[342px] flex top-0 bottom-auto left-auto right-[2%]'>
+                <div className='absolute z-[-1] w-[342px] flex top-0 bottom-auto left-auto right-[2%] sm:hidden'>
                 <img src={twoStar} alt='effects'></img>
                 <img src={twoStar} alt='effects'></img>
             </div>
-                <div className=' absolute z-[-1] top-[11%] bottom-auto left-auto right-0 star-embed-down'>
+                <div className=' absolute z-[-1] top-[11%] bottom-auto left-auto right-0 star-embed-down sm:hidden'>
                         <img src={leftdown}></img>
                     </div>
                     <div>
@@ -183,7 +183,7 @@ function Carrers({ data }) {
                     <div className='flex flex-col items-start mt-8 w-[800px] sm:ml-[10px] sm:w-[96%]'>
                         <p className=' mb-0 leading-8 mt-0 text-xl font-use' style={{ color: 'rgba(255, 255, 255, .85)' }}>{strapiContent.buildpara.data.buildpara}</p>
                     </div>
-                    <div className='carrer-grid'>
+                    <div className='carrer-grid sm:mb-0'>
                         <div className=' w-full max-w-full justify-start flex items-start' style={{ height: '179px' }}>
                             <img src={strapiContent.buildimg[0].localFile.url} className='max-w-full inline-block align-middle mr-6' style={{ width: '70px', height: '70px' }}></img>
                             <div className='w-full max-w-full'>
@@ -252,16 +252,16 @@ function Carrers({ data }) {
                             <Link to='/Contact'><span>{strapiContent.getintouch}</span></Link>
                             </button>
                             <div className='social-platform font-use sm:w-[100%]'>
-                                <Link to="https://www.facebook.com/5cnetwork" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                <Link to="https://www.facebook.com/5cnetwork" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                     <img src={strapiContent.socialplatform[1].localFile.url} alt='facebook' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
-                                <Link to="https://www.linkedin.com/company/5c-network?trk=top_nav_home" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                <Link to="https://www.linkedin.com/company/5c-network?trk=top_nav_home" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                     <img src={strapiContent.socialplatform[3].localFile.url} alt='Linkedin' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
-                                <Link to="https://twitter.com/5c_network" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                <Link to="https://twitter.com/5c_network" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                     <img src={strapiContent.socialplatform[2].localFile.url} alt='Twitter' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
-                                <Link to="https://www.instagram.com/5cnetwork/" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                <Link to="https://www.instagram.com/5cnetwork/" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                     <img src={strapiContent.socialplatform[0].localFile.url} alt='Medium' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
                             </div>

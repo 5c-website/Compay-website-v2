@@ -55,7 +55,7 @@ function Technology({ data }) {
     </ul>
   </div>
 </nav>
-      <div className=' h-screen flex flex-col justify-start items-center bg-no-repeat technology-hero sm:h-[80vh] ' style={{ backgroundImage: `url(${strapiContent.titleimg.localFile.url})` }}>
+      <div className=' h-screen flex flex-col justify-start items-center bg-no-repeat technology-hero sm:h-[80vh] sm:p-[1rem]' style={{ backgroundImage: `url(${strapiContent.titleimg.localFile.url})` }}>
         <div className=' max-w-full ml-auto mr-auto'>
           <div className='max-w-full relative w-[1200px] mt-[234px] sm:mt-[6rem] sm:ml-[10px]'>
             <h1 className='max-w-full uppercase mt-0 mb-0 font-medium font-use text-[#fff] tracking-[2px] leading-[100px] text-[80px] sm:text-[2.5rem]'>{strapiContent.title}</h1>
@@ -65,12 +65,12 @@ function Technology({ data }) {
           </div>
         </div>
       </div>
-      <div className=' mt-60 sm:mt-2'>
+      <div className=' mt-60 sm:mt-2 sm:p-[1rem]'>
         <div className='max-w-full flex justify-center items-center ml-auto mr-auto'>
           <div className='max-w-full relative w-[1200px]'>
             <h2 className='uppercase mt-0 mb-0   font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.secondtitle}</h2>
             <h2 className='max-w-full uppercase mt-0 mb-0 font-light font-use-one text-[#fff] text-[80px] tracking-[2px] leading-[100px] sm:text-[2.5rem] sm:leading-[50px] sm:ml-[10px]'> {strapiContent.secondsubtitle}</h2>
-            <p className=' mb-0 text-xl leading-8 font-use-one w-[700px] mt-[50px] ml-[100px] sm:ml-[10px] sm:text-base sm:w-[83%]' style={{color: 'rgba(255, 255, 255, .85)' }}>
+            <p className=' mb-0 text-xl leading-8 font-use-one w-[700px] mt-[50px] ml-[100px] sm:ml-[10px] sm:text-base sm:w-[99%]' style={{color: 'rgba(255, 255, 255, .85)' }}>
               <div dangerouslySetInnerHTML={{ __html: strapiContent.secondcontent.data.secondcontent }}></div>
             </p>
             <div className=' w-full max-w-full justify-center flex relative mt-[104px]'>
@@ -79,7 +79,7 @@ function Technology({ data }) {
                             </div>
               <img src={strapiContent.secondimg.localFile.url} className='h-auto object-fill max-w-full inline-block align-middle w-[800px] '></img>
             </div>
-            <div className=' w-full justify-between items-center flex relative mt-[60px] sm:mt-[5px] sm:flex-col'>
+            <div className=' w-full justify-between items-center flex relative mt-[60px] sm:mt-[5rem] sm:flex-col'>
               <div className='max-w-full w-[430px] ml-[100px] sm:ml-[5px]'>
                 <ul className='max-w-full flex flex-col pl-0 justify-between mt-0 w-[400px] h-[250px] mb-[10px]'>
                   <li className='w-full max-w-full flex items-start mb-8 pl-0'>
@@ -92,7 +92,7 @@ function Technology({ data }) {
                   </li>
                 </ul>
               </div>
-              <div className='sm:mt-5 sm:w-full'>
+              <div className='sm:mt-20 sm:w-full '>
                 <img src={strapiContent.secondpointsimg.localFile.url} className='object-cover max-w-full inline-block align-middle w-[617px] h-[345px] sm:object-contain'></img>
               </div>
             </div>
@@ -110,14 +110,14 @@ function Technology({ data }) {
           </div>
         </div>
       </div> */}
-      <div className=' pl-4 pr-4 mt-80 sm:mt-[50px]'>
+      <div className=' pl-4 pr-4 mt-80 sm:mt-0  sm:p-[1rem]'>
         <div className='flex flex-col relative items-start  ml-auto mr-auto z-[1] max-w-[1200px]'>
-        <div className='absolute top-0 bottom-auto left-auto right-0 star-embed '>
+        <div className='absolute top-0 bottom-auto left-auto right-0 star-embed sm:hidden '>
                               <img src={star} alt='effect'></img>
                             </div>
           <h2 className='uppercase mt-0 mb-0  font-use tracking-[2px] text-[50px] leading-[60px] text-[#fff] sm:text-[22px] sm:leading-10 sm:tracking-[1px] '>{strapiContent.thirdtitle}</h2>
-          <h2 className='uppercase mt-0 mb-0  max-w-full  font-use text-[#fff] tracking-[2px] text-[80px] leading-[100px] sm:text-[2.5rem] sm:leading-10'>{strapiContent.thirdsubtitle}</h2>
-          <div className='w-[700px] mt-[60px] ml-[100px] sm:ml-[10px] sm:w-full'>
+          <h2 className='uppercase mt-0 mb-0  max-w-full  font-use text-[#fff] tracking-[2px] text-[80px] leading-[100px] sm:text-[40px] sm:leading-10'>{strapiContent.thirdsubtitle}</h2>
+          <div className='w-[700px] mt-[60px] ml-[100px] sm:ml-0 sm:w-full'>
             <p className='mb-0 leading-8 text-xl mt-0  font-use-one sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .85)' }}>
               {strapiContent.thirdcontent.data.thirdcontent}
             </p>
@@ -126,18 +126,18 @@ function Technology({ data }) {
             <img className=' inline-block max-w-full align-middle' src={strapiContent.thirdimg.localFile.url}></img>
           </div>
           <div className='w-full max-w-full'>
-            <div className='flex justify-between stats-card'>
+            <div className='flex justify-around stats-card'>
               <div className='max-w-full' style={{ width: '351px' }}>
                 <h3 className='  leading-9 text-3xl uppercase mt-0 mb-0 font-use sm:text-[24px]' style={{ letterSpacing: '3px', color: '#fff' }}>{strapiContent.thirdcard1title}</h3>
                 <p className='mb-0 text-xl leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', marginTop: '8px' }}>{strapiContent.thirdcard1content}</p>
               </div>
               <div className=' separator-effect-md'></div>
-              <div className=' max-w-full' style={{ width: '400px' }}>
+              {/* <div className=' max-w-full' style={{ width: '400px' }}>
                 <h3 className='  leading-9 text-3xl uppercase mt-0 mb-0 font-use sm:text-[24px]' style={{ letterSpacing: '3px', color: '#fff' }}>{strapiContent.thirdcard2title}</h3>
                 <p className='mb-0 text-xl leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', marginTop: '8px' }}>{strapiContent.thirdcard2content}</p>
-              </div>
-              <div className=' separator-effect-md'></div>
-              <div className='max-w-full' style={{ width: '250px' }}>
+              </div> */}
+              {/* <div className=' separator-effect-md'></div> */}
+              <div className='max-w-full' style={{ width: '300px' }}>
                 <h3 className='  leading-9 text-3xl uppercase mt-0 mb-0 font-use sm:text-[24px]' style={{ letterSpacing: '3px', color: '#fff' }}>{strapiContent.thirdcard3title}</h3>
                 <p className='mb-0 text-xl leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', marginTop: '8px' }}>{strapiContent.thirdcard3content}</p>
               </div>
@@ -149,12 +149,12 @@ function Technology({ data }) {
           </div>
         </div>
       </div>
-      <div className=' overflow-visible mt-[276px] mb-[240px] sm:mt-[140px]'>
-        <div className=' relative flex flex-col items-start ml-auto mr-auto z-[1] max-w-[1200px] sm:ml-[10px]'>
+      <div className=' overflow-visible mt-[276px] mb-[240px] sm:mt-[140px] sm:p-[1rem] sm:mb-0'>
+        <div className=' relative flex flex-col items-start ml-auto mr-auto z-[1] max-w-[1200px] sm:ml-0'>
           <div className='max-w-full w-full overflow-hidden'>
             <h2 className='uppercase mt-0 mb-0   font-use tracking-[2px] text-[#fff] text-[50px] leading-[60px] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.fourthtitle}</h2>
             <h2 className='max-w-full uppercase mt-0 mb-0   font-use tracking-[2px] text-[#fff] text-[80px] leading-[100px] sm:leading-10 sm:text-[34px] sm:tracking-[1px] '> {strapiContent.fourthsubtitle}</h2>
-            <div className='absolute z-[-1] flex top-[4%] bottom-auto left-auto right-[-4%] star-embed'>
+            <div className='absolute z-[-1] flex top-[4%] bottom-auto left-auto right-[-4%] star-embed sm:hidden'>
                 <img src={star} alt='effects'></img>
             </div>
             <div className='max-w-full overflow-hidden w-[1100px] mt-[60px] ml-[100px] sm:ml-[10px] sm:mt-[50px]'>
@@ -180,7 +180,7 @@ function Technology({ data }) {
                     </li>
                   </ul>
                 </div>
-                <div className='max-w-full w-[619px] sm:w-[96%]'>
+                <div className='max-w-full w-[619px] sm:mt-[3rem] sm:w-full'>
                   <img className=' inline-block max-w-full align-middle ' src={strapiContent.fourthimg.localFile.url}></img>
                 </div>
               </div>
@@ -200,16 +200,16 @@ function Technology({ data }) {
                             <Link to='/Contact'><span>{strapiContent.git}</span></Link>
                             </button>
                             <div className='social-platform font-use sm:w-[100%]'>
-                                <Link to="https://www.facebook.com/5cnetwork" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                <Link to="https://www.facebook.com/5cnetwork" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                     <img src={strapiContent.facebook.localFile.url} alt='facebook' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
-                                <Link to="https://www.linkedin.com/company/5c-network?trk=top_nav_home" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                <Link to="https://www.linkedin.com/company/5c-network?trk=top_nav_home" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                     <img src={strapiContent.linkedin.localFile.url} alt='Linkedin' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
-                                <Link to="https://twitter.com/5c_network" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                <Link to="https://twitter.com/5c_network" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                     <img src={strapiContent.twitter.localFile.url} alt='Twitter' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
-                                <Link to="https://www.instagram.com/5cnetwork/" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                <Link to="https://www.instagram.com/5cnetwork/" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                     <img src={strapiContent.medium.localFile.url} alt='Medium' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
                             </div>

@@ -55,7 +55,7 @@ function Contact({ data }) {
     </ul>
   </div>
 </nav>
-            <div className='Contact-page' style={{ backgroundImage: `url(${strapiContent.contactimg.localFile.url})` }}>
+            <div className='Contact-page sm:p-[1rem]' style={{ backgroundImage: `url(${strapiContent.contactimg.localFile.url})` }}>
                 <div className='max-w-full ml-auto mr-auto sm:w-full'>
                     <div className='max-w-full relative mt-[234px] w-[1200px] sm:w-full sm:mt-28'>
                         <h1 className=' uppercase max-w-full mt-0 mb-0  font-use text-[#fff] tracking-[2px] leading-[100px] sm:ml-1 text-[80px] sm:text-[2.5rem]'>{strapiContent.title}</h1>
@@ -65,18 +65,18 @@ function Contact({ data }) {
                     </div>
                 </div>
             </div>
-            <div className='relative'>
+            <div className='relative sm:p-[1rem]'>
                 <div className='flex flex-col relative items-start ml-auto mr-auto' style={{ zIndex: '1', maxWidth: '1200px' }} >
-                <div className='absolute top-0 bottom-auto left-auto right-[310px] star-embed-up '>
+                <div className='absolute top-0 bottom-auto left-auto right-[310px] star-embed-up sm:hidden '>
                               <img src={star} alt='effect'></img>
                             </div>
-                            <div className='absolute top-0 bottom-auto left-auto right-0 star-embed-up '>
+                            <div className='absolute top-0 bottom-auto left-auto right-0 star-embed-up sm:hidden '>
                               <img src={star} alt='effect'></img>
                             </div>
-                            <div className='absolute top-auto bottom-[-387px] left-auto right-0 star-embed-up '>
+                            <div className='absolute top-auto bottom-[-387px] left-auto right-0 star-embed-up sm:hidden '>
                               <img src={leftdown} alt='effect'></img>
                             </div>
-                            <div className='absolute top-auto bottom-[-115px] left-auto right-0 star-embed-up '>
+                            <div className='absolute top-auto bottom-[-115px] left-auto right-0 star-embed-up sm:hidden '>
                               <img src={leftdown} alt='effect'></img>
                             </div>
                             
@@ -122,7 +122,7 @@ function Contact({ data }) {
                     </div>
                 </div>
             </div>
-            <div className='mt-[220px] mb-[200px] sm:mt-28 sm:max-w-full sm:w-full' >
+            <div className='mt-[220px] mb-[200px] sm:mt-[5rem] sm:max-w-full sm:w-full sm:p-[1rem] sm:mb-0' >
                 <div className='relative flex flex-col items-start ml-auto mr-auto max-w-[1200px] z-[1] sm:max-w-full sm:w-full'>
                     <h2 className='uppercase mt-0 mb-0   font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.loctitle}</h2>
                     <h2 className='max-w-full uppercase mt-0 mb-0  font-use text-[#fff] text-[80px] tracking-[2px] leading-[100px] sm:tracking-[1px] sm:text-[38px] sm:leading-[50px] sm:ml-[10px]'>{strapiContent.locsubtitle}</h2>
@@ -164,16 +164,16 @@ function Contact({ data }) {
                             <Link to='/Contact'><span>{strapiContent.getintouch}</span></Link>
                             </button>
                             <div className='social-platform font-use sm:w-[100%]'>
-                                <Link to="https://www.facebook.com/5cnetwork" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                <Link to="https://www.facebook.com/5cnetwork" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                     <img src={strapiContent.socialplatform[1].localFile.url} alt='facebook' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
-                                <Link to="https://www.linkedin.com/company/5c-network?trk=top_nav_home" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                <Link to="https://www.linkedin.com/company/5c-network?trk=top_nav_home" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                     <img src={strapiContent.socialplatform[3].localFile.url} alt='Linkedin' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
-                                <Link to="https://twitter.com/5c_network" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                <Link to="https://twitter.com/5c_network" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                     <img src={strapiContent.socialplatform[2].localFile.url} alt='Twitter' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
-                                <Link to="https://www.instagram.com/5cnetwork/" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                <Link to="https://www.instagram.com/5cnetwork/" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                     <img src={strapiContent.socialplatform[0].localFile.url} alt='Medium' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
                             </div>

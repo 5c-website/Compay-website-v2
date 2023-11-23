@@ -54,13 +54,13 @@ function Radiologist({ data }) {
                     </ul>
                 </div>
             </nav>
-            <div className=' flex items-center flex-col'>
+            <div className=' flex items-center flex-col sm:p-[1rem]'>
                 <div className=' max-w-full flex flex-col justify-center items-center relative ml-auto mr-auto'>
                     <div className=' w-full max-w-full flex flex-col items-center pt-[100px] relative'>
-                    <div className='absolute top-auto bottom-0 left-auto right-0 star-embed '>
+                    <div className='absolute top-auto bottom-0 left-auto right-0 star-embed sm:bottom-[-110px] '>
                               <img src={star} alt='effect'></img>
                             </div>
-                        <div className=' w-full max-w-full mb-20'>
+                        <div className=' w-full max-w-full mb-20 sm:mb-14'>
                             <h1 className=' max-w-full text-[#fff] tracking-[2px] uppercase mt-0 mb-0 text-[60px]  leading-[100px] font-use sm:text-[30px] sm:ml-2'>{Content.title}</h1>
                         </div>
                         <div className=' h-auto max-w-full justify-between items-center flex flex-row-reverse relative ml-[100px] mb-[140px] w-[1100px] sm:flex-col sm:w-full sm:ml-0'>
@@ -70,8 +70,8 @@ function Radiologist({ data }) {
                                 <img className=' z-[1] w-[200px] h-[200px] object-cover absolute top-auto bottom-0 left-auto right-0 sm:w-[95px] sm:h-[95px] sm:right-[8px]' src={Content.bottom.localFile.url}></img>
                             </div>
                             <div className=' h-auto w-[520px] max-h-full max-w-full flex flex-col items-start justify-center sm:w-full'>
-                                <div className=' w-[528px] max-w-full sm:w-full sm:ml-4'>
-                                    <h2 className=' mb-10 text-[40px] leading-[54px] text-[#fff] tracking-[2px] uppercase mt-0  font-use '>
+                                <div className=' w-[528px] max-w-full sm:w-full '>
+                                    <h2 className=' mb-10 text-[40px] leading-[54px] text-[#fff] tracking-[2px] uppercase mt-0  font-use sm:text-[24px]  sm:leading-[36px] sm:mb-[20px] '>
                                     {Content.contentTitle}
                                     </h2>
                                 </div>
@@ -107,7 +107,7 @@ function Radiologist({ data }) {
                                         </p>
                                     </li> */}
                                 </ul>
-                                <div className=' w-full max-w-full mt-7 flex'>
+                                <div className=' w-full max-w-full mt-7 flex sm:justify-center'>
                 <button class="btn btn-2 hover-slide-up uppercase">
                   <Link to='/ReachForm'><span>Reach Us</span></Link>
                 </button>
@@ -128,16 +128,16 @@ function Radiologist({ data }) {
                             <Link to='/Contact'><span>{Content.git}</span></Link>
                             </button>
                             <div className='social-platform font-use sm:w-[100%]'>
-                                <Link to="https://www.facebook.com/5cnetwork" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                <Link to="https://www.facebook.com/5cnetwork" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                     <img src={Content.socialPlatforms[1].localFile.url} alt='facebook' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
-                                <Link to="https://www.linkedin.com/company/5c-network?trk=top_nav_home" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                <Link to="https://www.linkedin.com/company/5c-network?trk=top_nav_home" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                     <img src={Content.socialPlatforms[2].localFile.url} alt='Linkedin' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
-                                <Link to="https://twitter.com/5c_network" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                <Link to="https://twitter.com/5c_network" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                     <img src={Content.socialPlatforms[3].localFile.url} alt='Twitter' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
-                                <Link to="https://www.instagram.com/5cnetwork/" className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                <Link to="https://www.instagram.com/5cnetwork/" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                     <img src={Content.socialPlatforms[0].localFile.url} alt='Medium' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
                             </div>
