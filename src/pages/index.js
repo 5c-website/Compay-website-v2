@@ -48,19 +48,15 @@ const index = ({ data }) => {
           <ul id="menu">
             <li><Link to="/Solutions">Solutions</Link></li>
             <li><Link to="/Technology">Technology</Link></li>
-            <li><Link to="/Partners">Partners</Link></li>
+            {/* <li><Link to="/Partners">Partners</Link></li> */}
             <li><Link to="/">5C Network</Link></li>
             <li><Link to="/About">About</Link></li>
-            <li class="">
-              <div tabindex="0" class="onclick-menu">Resources
-                <ul class="onclick-menu-content">
+            
                   <li><Link to="/Blogs">Blogs</Link></li>
                   <li><Link to="/Newsroom">Newsroom</Link></li>
-                </ul>
-              </div>
-            </li>
+                
             <li><Link to="/Carrers">Careers</Link></li>
-            <li><Link to="/Contact" target="_blank">contact</Link></li>
+            <li><Link to="/Contact" target="_blank">Contact</Link></li>
           </ul>
         </div>
       </nav>
@@ -135,7 +131,7 @@ const index = ({ data }) => {
         </div>
       </div>
       {/* about container(fourth division) */}
-      <div className='relative mt-60 pl-0 pr-0 overflow-hidden'>
+      <div className='relative mt-60 pl-0 pr-0 overflow-hidden sm:mt-[5rem]'>
         <div className='relative flex flex-col items-start ml-auto mr-auto' style={{ zIndex: '1', maxWidth: '1200px' }}>
           <div className='max-w-full relative ml-0 pl-4 pr-4 '>
             <h2 className='uppercase mt-0 mb-0  fourth-div-content text-slate-50 tracking-[2px] text-[50px] leading-[32px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px]'>{content.thirdsectitle}</h2>
@@ -238,7 +234,7 @@ const index = ({ data }) => {
                             </div>
           </div>
           <div className='max-w-full flex' style={{ width: '1000px', marginTop: '50px' }}></div>
-          <div className='relative flex w-full justify-center' style={{ marginTop: '60px', height: '459px' }}>
+          {/* <div className='relative flex w-full justify-center' style={{ marginTop: '60px', height: '459px' }}>
             <img src={content.sateliteimg.localFile.url} className='max-w-full inline-block align-middle' style={{ width: '459px', height: '459px' }}></img>
             <div className='absolute w-[374px] h-[132px] flex top-[50%] bottom-0 left-auto right-0'>
                 <img src={twoStar} alt='effects'></img>
@@ -248,11 +244,11 @@ const index = ({ data }) => {
                 <img src={twoStar} alt='effects'></img>
                 <img src={twoStar} alt='effects'></img>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       {/* fifth section */}
-      <div className='px-[16px] py-[50px] sm:py-[120px]'>
+      <div className='px-[16px] py-[50px] pt-[142px] sm:py-[120px] sm:py-[50px]'>
         <div className='flex flex-col relative items-start justify-center ml-auto mr-auto' style={{ maxWidth: '1200px' }}>
           <h2 className='uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px]'>{content.fifthtitle}</h2>
           <div>
@@ -325,7 +321,7 @@ const index = ({ data }) => {
         </div>
       </div>
       {/* eighth division */}
-      <div className='news-recents'>
+      <div className='news-recents sm:pt-[6rem] sm:pb-[6rem]'>
         <div className='flex flex-col relative items-start ml-auto mr-auto' style={{ zIndex: '1', maxWidth: '1200px' }}>
           <div className='w-full flex items-end justify-between ml-3' style={{ maxWidth: '1078px' }}>
             <div className=' box-border'>

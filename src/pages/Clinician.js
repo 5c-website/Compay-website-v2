@@ -43,7 +43,7 @@ function Radiologist({ data }) {
                     <ul id="menu">
                         <li><Link to="/Solutions">Solutions</Link></li>
                         <li><Link to="/Technology">Technology</Link></li>
-                        <li><Link to="/Partners">Partners</Link></li>
+                        {/* <li><Link to="/Partners">Partners</Link></li> */}
                         <li><Link to="/">5C Network</Link></li>
                         <li><Link to="/About">About</Link></li>
                         <li class="">
@@ -114,7 +114,7 @@ function Radiologist({ data }) {
                                 </ul>
                                 <div className=' w-full max-w-full mt-7 flex'>
                 <button class="btn btn-2 hover-slide-up uppercase">
-                  <Link to='/Form-2'><span>Reach Us</span></Link>
+                  <Link to='/ReachForm'><span>Reach Us</span></Link>
                 </button>
               </div>
                             </div>

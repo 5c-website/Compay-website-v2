@@ -42,17 +42,13 @@ function Radiologist({ data }) {
                     <ul id="menu">
                         <li><Link to="/Solutions">Solutions</Link></li>
                         <li><Link to="/Technology">Technology</Link></li>
-                        <li><Link to="/Partners">Partners</Link></li>
+                        {/* <li><Link to="/Partners">Partners</Link></li> */}
                         <li><Link to="/">5C Network</Link></li>
                         <li><Link to="/About">About</Link></li>
-                        <li class="">
-                            <div tabindex="0" class="onclick-menu">Resources
-                                <ul className="onclick-menu-content">
+                        
                                     <li><Link to="/Blogs">Blogs</Link></li>
                                     <li><Link to="/Newsroom">Newsroom</Link></li>
-                                </ul>
-                            </div>
-                        </li>
+                                
                         <li><Link to="/Carrers">Careers</Link></li>
                         <li><Link to="/Contact" target="_blank">contact</Link></li>
                     </ul>
@@ -110,7 +106,7 @@ function Radiologist({ data }) {
                                 </ul>
                                 <div className='flex flex-row-reverse w-full max-w-full mt-7 flex'>
                 <button class="btn btn-2 hover-slide-up uppercase">
-                  <Link to='/Form1'><span>Reach Us</span></Link>
+                  <Link to='/ReachForm'><span>Reach Us</span></Link>
                 </button>
               </div>
                             </div>

@@ -43,17 +43,13 @@ function Contact({ data }) {
     <ul id="menu">
       <li><Link to="/Solutions">Solutions</Link></li>
       <li><Link to="/Technology">Technology</Link></li>
-      <li><Link to="/Partners">Partners</Link></li>
+      {/* <li><Link to="/Partners">Partners</Link></li> */}
       <li><Link to="/">5C Network</Link></li>
       <li><Link to="/About">About</Link></li>
-      <li class="">
-        <div tabindex="0" class="onclick-menu">Resources
-          <ul class="onclick-menu-content">
+      
             <li><Link to="/Blogs">Blogs</Link></li>
             <li><Link to="/Newsroom">Newsroom</Link></li>
-          </ul>
-        </div>
-      </li>
+          
       <li><Link to="/Carrers">Careers</Link></li>
       <li><Link to="/Contact" target="_blank">contact</Link></li>
     </ul>

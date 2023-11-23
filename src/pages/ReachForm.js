@@ -12,7 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function ReachUs() {
     const [agreed, setAgreed] = useState(false)
-    const [state, handleSubmit] = useForm("xoqozgng");
+    const [state, handleSubmit] = useForm("myyqardv");
     const [submitted, setSubmitted] = useState(false);
     const notify = () => toast("Successfully submitted");
     const [firstName, setFirstName] = useState('');
@@ -21,9 +21,11 @@ function ReachUs() {
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [message, setMessage] = useState('');
+    const [selectedValue, setSelectedValue] = useState('');
+    const [selectedGenre, setSelectedGenre] = useState('');
+    const genre = ['Radiologist', 'Clinicians', 'Hospitals', 'Diagnostic centers','Healthcare aggregators'];
 
- 
-
+    
     function classNames(...classes) {
         return classes.filter(Boolean).join(' ')
       }
@@ -37,9 +39,17 @@ function ReachUs() {
           setEmail('');
           setPhoneNumber('');
           setMessage('');
-        }
+          setSelectedGenre('');
+        }   
       }, [state.succeeded, submitted]);
 
+     
+  
+
+  const handleSelectChange = (e) => {
+    setSelectedGenre(e.target.value);
+  };
+        
     
   return (
     <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
@@ -64,8 +74,17 @@ function ReachUs() {
       </div>
       <form  onSubmit={(e) => {
                 e.preventDefault();
-                handleSubmit(e);
+                handleSubmit(e,{
+                  firstName,
+                  lastName,
+                  company,
+                  email,
+                  phoneNumber,
+                  message,
+                  selectedGenre,
+                });
                 setSubmitted(true);
+                
             }} method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20"> 
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
@@ -145,30 +164,40 @@ function ReachUs() {
                 <select
                   id="country"
                   name="country"
-                  className="h-full rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-9 text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
-                  
+                  className="h-full  rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-9 text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
                 >
-                  <option>US</option>
-                  <option>CA</option>
-                  <option>EU</option>
                   <option>IN</option>
                 </select>
-                <ChevronDownIcon
-                  className="pointer-events-none absolute right-3 top-0 h-full w-5 text-gray-400"
-                  aria-hidden="true"
-                />
+                
               </div>
               <input
                 type="tel"
                 name="phone-number"
                 id="phone-number"
                 autoComplete="tel"
-                className="block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 px-3.5 py-2 pl-[6rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
               />
             </div>
           </div>
+         
+      <select
+        className=" border-2 p-2 focus:outline-none bg-white rounded-md "
+        id="designation"
+        name="designation"
+        value={selectedGenre}
+        onChange={handleSelectChange}
+      >
+        {genre.map((item, i) => (
+          <option value={item} key={i}>
+            {item}
+          </option>
+        ))}
+      </select>
+
+          
+          
           <div className="sm:col-span-2">
             <label htmlFor="message" className="block text-sm font-semibold leading-6 text-gray-900">
               Message
