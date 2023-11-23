@@ -91,7 +91,7 @@ function Contact({ data }) {
                             </div>
                             </span>
                         </Link>
-                        <Link  className='flex max-w-full uppercase text-lg items-center justify-center w-[460px] h-[142px] sm:w-[85%] sm:h-[9vh] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, .04)', border: '1px solid #333' }}>
+                        <Link to='/Newsroom'  className='flex max-w-full uppercase text-lg items-center justify-center w-[460px] h-[142px] sm:w-[85%] sm:h-[9vh] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, .04)', border: '1px solid #333' }}>
                         <span className='flex pt-[3rem]  rounded-effect justify-center sm:justify-center sm:pt-[20px] sm:pl-0'>
                             <img src={strapiContent.helpimg[2].localFile.url} className='max-w-full inline-block align-middle mr-[30px] sm:mr-[20px] sm:h-[40px] sm:w-[40px]'></img>
                             <div>
@@ -105,7 +105,7 @@ function Contact({ data }) {
                                 <div className=' leading-9 uppercase font-use  text-[30px] sm:text-[20px]' style={{  lineHeight: '36px', letterSpacing: '3px' }}>{strapiContent.help[2].title}</div>
                             </div>
                         </Link> */}
-                        <Link className='flex max-w-full uppercase text-lg items-center justify-center w-[460px] h-[142px] sm:w-[85%] sm:h-[9vh] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, .04)', border: '1px solid #333' }}>
+                        <Link to='/Carrers' className='flex max-w-full uppercase text-lg items-center justify-center w-[460px] h-[142px] sm:w-[85%] sm:h-[9vh] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, .04)', border: '1px solid #333' }}>
                         <span className='flex pt-[3rem] pl-[5rem] rounded-effect sm:justify-center sm:pt-[20px] sm:pl-0'>
                             <img src={strapiContent.helpimg[3].localFile.url} className='max-w-full inline-block align-middle mr-[30px] sm:mr-[20px] sm:h-[40px] sm:w-[40px]'></img>
                             <div>

@@ -197,7 +197,7 @@ const index = ({ data }) => {
         <div className='flex flex-col overflow-hidden items-start ml-auto mr-auto' style={{ maxWidth: '1200px' }}>
           <div className='relative max-w-full' style={{ width: '1200px' }}>
             <h2 className='text-slate-50 uppercase mt-0 mb-0 font-normal tracking-[2px] text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px] '>{content.fourthtitle}</h2>
-            <h1 className='max-w-full text-slate-50 uppercase mt-0 mb-0 font-normal text-[80px] leading-[100px] w-[1074px] tracking-[1px] sm:ml-0 sm:text-[34px] sm:tracking-[1px] sm:leading-[40px] sm:leading-[40px] sm:mt-[8px]'>
+            <h1 className='max-w-full text-slate-50 uppercase mt-0 mb-0 font-normal text-[80px] leading-[100px] w-[1074px] tracking-[1px] sm:ml-0 sm:text-[34px] sm:tracking-[1px] sm:leading-[40px]  sm:mt-[8px]'>
               <span className='hyperspectral-text'>{content.fourthrainbowtext}&nbsp;</span>
               {content.fourthsubtitle}
             </h1>
@@ -252,7 +252,7 @@ const index = ({ data }) => {
         </div>
       </div>
       {/* fifth section */}
-      <div className='px-[16px] py-[50px] pt-[142px] sm:py-[120px] sm:py-[50px]'>
+      <div className='px-[16px] py-[50px] pt-[142px]  sm:py-[50px]'>
         <div className='flex flex-col relative items-start justify-center ml-auto mr-auto' style={{ maxWidth: '1200px' }}>
           <h2 className='uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px]'>{content.fifthtitle}</h2>
           <div>
@@ -339,8 +339,8 @@ const index = ({ data }) => {
             </div>
           </div>
           <div className='flex max-w-full mt-20 justify-between ml-[100px] w-[1000px] sm:ml-[0] sm:flex-col sm:w-full sm:mt-10'>
-            <Link className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px]' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000'}}>
-              <div className=' pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full' style={{ backgroundColor: '#19191a' }}>
+            <Link className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000'}}>
+              <div className=' pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full rounded-effect' style={{ backgroundColor: '#19191a' }}>
                 <div className='flex items-start justify-between mb-10'>
                   <img src={content.newslogo[1].localFile.url} className='max-w-full inline-block align-middle h-[30px] w-[14rem] sm:h-[20px]' style={{ border: '0'}}></img>
                   <div className='uppercase text-xs font-use-one' style={{ color: 'rgba(255, 255, 255, .8)', lineHeight: '15px' }}>{content.newscards[0].date}</div>
@@ -350,8 +350,8 @@ const index = ({ data }) => {
                 </p>
               </div>
             </Link>
-            <Link className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px]' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000', textDecoration: 'none' }}>
-              <div className=' pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full' style={{backgroundColor: '#19191a' }}>
+            <Link className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000', textDecoration: 'none' }}>
+              <div className=' pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full  rounded-effect' style={{backgroundColor: '#19191a' }}>
                 <div className='flex items-start justify-between mb-14'>
                   <img src={content.newslogo[0].localFile.url} className='max-w-full w-[14rem] inline-block align-middle h-[40px] sm:h-[20px]' style={{ border: '0', opacity: '.85' }}></img>
                   <div className='uppercase text-xs font-use-one' style={{ color: 'rgba(255, 255, 255, .8)', lineHeight: '15px' }}>{content.newscards[1].date}</div>
