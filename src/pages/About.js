@@ -56,7 +56,7 @@ function About({ data }) {
     </ul>
   </div>
 </nav>
-            <div className='about-home  sm:h-[80vh] sm:p-[1rem]' style={{ backgroundImage: `url(${strapiContent.abouthomeimg.localFile.url})` }}>
+            <div className='about-home  sm:h-[90vh] sm:p-[1rem]' style={{ backgroundImage: `url(${strapiContent.abouthomeimg.localFile.url})` }}>
                 <div className='max-w-full ml-auto mr-auto sm:ml-[10px]'>
                     <div className='max-w-full relative w-[1200px] mt-[234px] sm:mt-24'>
                         <h1 className=' uppercase max-w-full mt-0 mb-0  font-use text-[#fff] tracking-[2px] leading-[100px] text-[80px] sm:text-[2.5rem]'>{strapiContent.title}</h1>

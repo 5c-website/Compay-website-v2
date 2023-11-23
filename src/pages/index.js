@@ -228,7 +228,7 @@ const index = ({ data }) => {
                 <p className='text-slate-50 uppercase mt-12px leading-7 font-use-one mb-0' style={{ color: 'rgba(255, 255, 255, .65)', marginTop: '12px', fontSize: '18px' }}>{content.fourthcard4content}</p>
               </div> */}
             </div>
-            <div className=' max-w-full flex w-[1000px] mt-[50px] sm:w-[98%]'>
+            <div className=' max-w-full flex w-[1000px] mt-[50px] sm:w-[90%]'>
               <button class="btn btn-2 hover-slide-up uppercase sm:min-w-[95%]">
                 <Link to='/Technology'><span>{content.moreAboutTechnology}</span></Link>
               </button>
