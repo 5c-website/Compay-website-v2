@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet"
 import star from '../Assets/Solution/star.svg'
 import twoStar from '../Assets/Solution/two_star.svg'
 import logo from '../Assets/Homepage/2-01.png'
+import mobilestar from '../Assets/Solution/single-mobile.svg'
 
 
 
@@ -27,11 +28,13 @@ const index = ({ data }) => {
                 <div className=' inline-block ml-6 mr-6 text-base align-top relative uppercase ' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Resources</div>
               </div>
               <nav className='navbartoggle'>
-                <Link to='/Blogs' className='navlinks hover-under '>Blogs</Link>
-                <Link to='/Newsroom' className='navlinks-1  hover-under-1'>Newsroom</Link>
+                <Link to='/Blogs' className='navlinks '>Blogs</Link>
+                <Link to='/Newsroom' className='navlinks'>Newsroom</Link>
               </nav>
             </div>
             <Link to='/Contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
+            {/* <Link to='/Contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>SignIn</Link> */}
+
           </nav>
         </div>
       </div>
@@ -77,13 +80,13 @@ const index = ({ data }) => {
         <div className='relative mr-auto ml-auto max-w-[1200px] sm:max-w-full sm:w-full'>
           <div className='relative flex flex-col max-w-full z-10   second-content'>
             <div>
-              <h2 className='text-slate-50 uppercase text-[50px] mt-0 mb-0  tracking-[2px] leading-[60px] sm:ml-0 sm:text-[22px] sm:tracking-[1px]'>{content.unseentitle}</h2>
-              <h1 className='text-slate-50 uppercase  max-w-full  mt-0 mb-0 text-[70px] tracking-[2px] leading-[80px] sm:text-[2.5rem] sm:leading-[50px] sm:ml-0'>{content.unseensubtitle}</h1>
+              <h2 className='text-slate-50 uppercase text-[50px] mt-0 mb-0  tracking-[2px] leading-[60px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px] '>{content.unseentitle}</h2>
+              <h1 className='text-slate-50 uppercase  max-w-full  mt-0 mb-0 text-[70px] tracking-[2px] leading-[80px] sm:text-[34px] sm:leading-[40px] sm:mt-[8px] sm:ml-0'>{content.unseensubtitle}</h1>
             </div>
 
             <div className='max-w-full flex flex-col justify-center items-start sm:ml-0  secondDivContent '>
               <div className='max-w-full mt-10  container-content'>
-                <p className='text-xl leading-8 mb-0 secondDivParaContent sm:text-lg'>
+                <p className='text-xl leading-8 mb-0 secondDivParaContent sm:text-lg sm:text-[16px] sm:leading-[28px]'>
                   <div dangerouslySetInnerHTML={{ __html: content.unseencontent.data.unseencontent }}></div>
                 </p>
               </div>
@@ -116,7 +119,7 @@ const index = ({ data }) => {
         <div className='max-w-full flex justify-center ml-auto mr-auto'>
           <div className='flex max-w-full w-full sm:w-[90%] sm:flex-col third-div-img' style={{ backgroundImage: `url(${content.aboutimg.localFile.url})` }}>
             <div className='flex flex-col items-end sm:items-center sm:w-full sm:ml-0 sm:mt-5'>
-              <h1 className='uppercase mt-0 mb-0 font-normal font-barlow text-slate-50 text-[50px] sm:text-[28px]  ' style={{ lineHeight: '60px', letterSpacing: '3px' }}>{content.abouttitle}</h1>
+              <h1 className='uppercase mt-0 mb-0 font-normal font-barlow text-slate-50 text-[50px] sm:text-[22px] sm:leading-[26px] sm:tracking-[1px]  ' style={{ lineHeight: '60px', letterSpacing: '3px' }}>{content.abouttitle}</h1>
             </div>
             <div className='flex max-w-full flex-col items-start ml-6 justify-center w-[482px] sm:w-full' >
               <div className='max-w-full w-[882px] sm:w-full'>
@@ -135,8 +138,8 @@ const index = ({ data }) => {
       <div className='relative mt-60 pl-0 pr-0 overflow-hidden'>
         <div className='relative flex flex-col items-start ml-auto mr-auto' style={{ zIndex: '1', maxWidth: '1200px' }}>
           <div className='max-w-full relative ml-0 pl-4 pr-4 '>
-            <h2 className='uppercase mt-0 mb-0  fourth-div-content text-slate-50 tracking-[2px] text-[50px] leading-[32px] sm:ml-0 sm:text-[22px] sm:tracking-[1px]'>{content.thirdsectitle}</h2>
-            <h1 className='max-w-full uppercase mt-0 mb-0 font-normal text-slate-50 text-[80px] leading-[100px] w-[1074px] tracking-[1px] sm:ml-0 sm:text-[34px] sm:tracking-[1px] sm:leading-[40px]'>
+            <h2 className='uppercase mt-0 mb-0  fourth-div-content text-slate-50 tracking-[2px] text-[50px] leading-[32px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px]'>{content.thirdsectitle}</h2>
+            <h1 className='max-w-full uppercase mt-0 mb-0 font-normal text-slate-50 text-[80px] leading-[100px] w-[1074px] tracking-[1px] sm:ml-0 sm:text-[34px] sm:leading-[40px] sm:mt-[8px]'>
               <span className='hyperspectral-text'>{content.rainbowtext}</span>
               {content.thirdsecsubtitle}
             </h1>
@@ -193,8 +196,8 @@ const index = ({ data }) => {
       <div className='pt-60 pl-4 pr-4 overflow-hidden sm:pt-32'>
         <div className='flex flex-col overflow-hidden items-start ml-auto mr-auto' style={{ maxWidth: '1200px' }}>
           <div className='relative max-w-full' style={{ width: '1200px' }}>
-            <h2 className='text-slate-50 uppercase mt-0 mb-0 font-normal tracking-[2px] text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:tracking-[1px] '>{content.fourthtitle}</h2>
-            <h1 className='max-w-full text-slate-50 uppercase mt-0 mb-0 font-normal text-[80px] leading-[100px] w-[1074px] tracking-[1px] sm:ml-0 sm:text-[34px] sm:tracking-[1px] sm:leading-[40px]'>
+            <h2 className='text-slate-50 uppercase mt-0 mb-0 font-normal tracking-[2px] text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px] '>{content.fourthtitle}</h2>
+            <h1 className='max-w-full text-slate-50 uppercase mt-0 mb-0 font-normal text-[80px] leading-[100px] w-[1074px] tracking-[1px] sm:ml-0 sm:text-[34px] sm:tracking-[1px] sm:leading-[40px] sm:leading-[40px] sm:mt-[8px]'>
               <span className='hyperspectral-text'>{content.fourthrainbowtext}&nbsp;</span>
               {content.fourthsubtitle}
             </h1>
@@ -210,13 +213,14 @@ const index = ({ data }) => {
                 <h5 className='w-full max-w-full text-slate-50 uppercase mt-0 mb-0  font-use' style={{ letterSpacing: '3px', fontSize: '40px', lineHeight: '48px', letterSpacing: '3px' }}>{content.fourthcard2title}</h5>
                 <p className='text-slate-50 uppercase mt-12px leading-7 font-use-one mb-0' style={{ color: 'rgba(255, 255, 255, .65)', marginTop: '12px', fontSize: '18px' }}>{content.fourthcard2content}</p>
               </div>
+              <div className='separator-effect-md'></div>
               <div className='w-auto max-w-full flex flex-col' style={{ marginRight: '100px', height: '110px' }}>
                 <h5 className='w-full max-w-full text-slate-50 uppercase mt-0 mb-0  font-use' style={{ letterSpacing: '3px', fontSize: '40px', lineHeight: '48px', letterSpacing: '3px' }}>{content.fourthcard3title}</h5>
                 <p className='text-slate-50 uppercase mt-12px leading-7 font-use-one mb-0' style={{ color: 'rgba(255, 255, 255, .65)', marginTop: '12px', fontSize: '18px' }}>{content.fourthcard3content}</p>
               </div>
               <div className='separator-effect sm:hidden'></div>
               <div className='separator-effect'></div>
-              <div className='separator-effect'></div>
+              <div className='separator-effect sm:hidden'></div>
               
               {/* <div className='separator-effect-md'></div> */}
               {/* <div className='w-auto max-w-full flex flex-col' style={{ marginRight: '100px', height: '110px' }}>
@@ -250,9 +254,9 @@ const index = ({ data }) => {
       {/* fifth section */}
       <div className='px-[16px] py-[50px] sm:py-[120px]'>
         <div className='flex flex-col relative items-start justify-center ml-auto mr-auto' style={{ maxWidth: '1200px' }}>
-          <h2 className='uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:tracking-[1px]'>{content.fifthtitle}</h2>
+          <h2 className='uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px]'>{content.fifthtitle}</h2>
           <div>
-            <h1 className='max-w-full uppercase mt-0 mb-0  text-[#fff] font-use tracking-[2px] text-[80px] leading-[100px] sm:leading-10 sm:ml-0 sm:text-[34px] sm:tracking-[1px]'> {content.fifthsubtitle}</h1>
+            <h1 className='max-w-full uppercase mt-0 mb-0  text-[#fff] font-use tracking-[2px] text-[80px] leading-[100px] sm:leading-10 sm:ml-0 sm:text-[34px] sm:tracking-[1px] sm:mt-[8px'> {content.fifthsubtitle}</h1>
           </div>
           <div className='max-w-full mt-20 relative ml-[100px] w-[1000px] sm:ml-0 sm:mt-10'>
             {/* <div className='mb-10'>
@@ -270,12 +274,12 @@ const index = ({ data }) => {
       {/* card hover end section */}
 
       {/* sixth division */}
-      <div className=' pl-4 pr-4 py-[240px] sm:py-28'>
+      <div className=' pl-4 pr-4 py-[240px] sm:py-[3rem]'>
         <div className=' ml-auto mr-auto max-w-[1200px]'>
           <div className='max-w-full flex flex-col relative justify-between'>
             <div className='flex flex-col items-start'>
-              <h2 className='uppercase mt-0 mb-0   font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:tracking-[1px]'>{content.sixthtitle}</h2>
-              <h1 className=' max-w-full uppercase  mt-0 mb-0 font-use text-[#fff] font-use tracking-[2px] text-[80px] leading-[60px] sm:leading-10 sm:ml-0 sm:text-[34px] sm:tracking-[1px]'>{content.sixthsubtitle}</h1>
+              <h2 className='uppercase mt-0 mb-0   font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px]'>{content.sixthtitle}</h2>
+              <h1 className=' max-w-full uppercase  mt-0 mb-0 font-use text-[#fff] font-use tracking-[2px] text-[80px] leading-[60px] sm:leading-10 sm:ml-0 sm:text-[34px] sm:tracking-[1px] sm:mt-[8px'>{content.sixthsubtitle}</h1>
             </div>
             <div className='flex justify-between ml-[100px] mt-[50px] sm:ml-0'>
               <div className='max-w-full flex flex-col items-start' style={{ width: '800px' }}>
@@ -287,20 +291,21 @@ const index = ({ data }) => {
                 </button>
               </div>
             </div>
-            <div className='absolute w-[347px] h-[407px] top-[2%] bottom-auto left-auto right-0 star-embed '>
+            <div className='absolute w-[347px] h-[407px] top-[2%] bottom-auto left-auto right-0 star-embed sm:hidden '>
                               <img src={star} alt='effect'></img>
                             </div>
             <img src={content.sixthimg.localFile.childrenImageSharp[0].fluid.src} className='inline-block mt-20 max-w-full align-middle rounded-sm ml-[100px] sm:ml-0' style={{ width: '900px', border: '0' }}></img>
           </div>
+          <img src={mobilestar} className=' sm:mt-[2rem] sm:ml-[1rem] mobile-stars'></img>
         </div>
       </div>
       {/* seventh division */}
       <div className='flex flex-col items-center justify-center m-0 overflow-hidden'>
         <div className='flex flex-col relative w-[900px] sm:max-w-full sm:w-full'>
           <div className='flex pl-0' style={{ borderLeft: '8px #00d4ff' }}>
-            <div className='side-line-effects'></div>
+            <div className='side-line-effects sm:mr-[8px] '></div>
             <div className='quote'>
-              <h1 className='max-w-full w-full uppercase mt-0 mb-0 text-left  not-italic  font-quote text-[#fff] tracking-[2px] text-[40px] leading-[46.88px] sm:ml-0 sm:text-[28px] sm:tracking-[1px]'>{content.quote}</h1>
+              <h1 className='max-w-full w-full uppercase mt-0 mb-0 text-left  not-italic  font-quote text-[#fff] tracking-[2px] text-[40px] leading-[46.88px] sm:ml-0 sm:text-[22px] sm:leading-[30px] sm:tracking-[1px]'>{content.quote}</h1>
               <div className='uppercase mt-4 not-italic leading-10 font-use-one text-[#fff] font-use tracking-[2px] text-[24px] sm:leading-10 sm:ml-0 sm:text-[18px] sm:tracking-[1px]'>-{content.author}</div>
             </div>
           </div>
@@ -324,7 +329,7 @@ const index = ({ data }) => {
         <div className='flex flex-col relative items-start ml-auto mr-auto' style={{ zIndex: '1', maxWidth: '1200px' }}>
           <div className='w-full flex items-end justify-between ml-3' style={{ maxWidth: '1078px' }}>
             <div className=' box-border'>
-              <h2 className='uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:tracking-[1px]'>{content.newstitle}</h2>
+              <h2 className='uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px]'>{content.newstitle}</h2>
               <h1 className='max-w-full uppercase mt-0 mb-0   font-use text-[#fff] font-use tracking-[2px] text-[80px] leading-[100px] sm:leading-10 sm:ml-0 sm:text-[34px] sm:tracking-[1px]'>{content.newssubtitle}</h1>
             </div>
             <div className=' mb-5 more-from-news-button sm:hidden'>

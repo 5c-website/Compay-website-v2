@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link,graphql } from 'gatsby'
+import '../styles/global.css'
 import star from '../Assets/Solution/star.svg'
 import logo from '../Assets/Homepage/2-01.png'
 
@@ -108,6 +109,11 @@ function Radiologist({ data }) {
                                         </p>
                                     </li> */}
                                 </ul>
+                                <div className=' w-full max-w-full mt-7 flex'>
+                <button class="btn btn-2 hover-slide-up uppercase">
+                  <Link to='/Form1'><span>Reach Us</span></Link>
+                </button>
+              </div>
                             </div>
                             
                         </div>

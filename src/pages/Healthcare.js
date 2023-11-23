@@ -108,6 +108,11 @@ function Radiologist({ data }) {
                                         </p>
                                     </li> */}
                                 </ul>
+                                <div className='flex flex-row-reverse w-full max-w-full mt-7 flex'>
+                <button class="btn btn-2 hover-slide-up uppercase">
+                  <Link to='/Form1'><span>Reach Us</span></Link>
+                </button>
+              </div>
                             </div>
                         </div>
                         <div className='absolute top-auto bottom-0 left-0 right-auto '>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import '../styles/global.css'
 import './default-html'
 import logo from '../Assets/Homepage/2-01.png'
 
@@ -68,11 +69,11 @@ function Solutions({ data }) {
               <p className='mb-0 mt-0 font-use-one text-xl text-[#ffffffd6] content-solution'>{strapiContent.content.data.content}</p>
             </div>
             <div className='relative flex w-full max-w-full justify-around  solutions-home-container'>
-                <Link to="/Radiologist" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='underline-closing'>{strapiContent.menuItems[0].items}</span></Link>
-                <Link to="/Clinician" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='underline-closing'>{strapiContent.menuItems[1].items}</span></Link>
-                <Link to="/Hospital" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='underline-closing'>{strapiContent.menuItems[2].items}</span></Link>
-                <Link to="/diagnostic" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='underline-closing'>{strapiContent.menuItems[3].items}</span></Link>
-                <Link to="/Healthcare" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='underline-closing'>{strapiContent.menuItems[4].items}</span></Link>
+                <Link to="/Radiologist" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='action-underline underline-closing'>{strapiContent.menuItems[0].items}</span></Link>
+                <Link to="/Clinician" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='action-underline underline-closing'>{strapiContent.menuItems[1].items}</span></Link>
+                <Link to="/Hospital" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='action-underline underline-closing'>{strapiContent.menuItems[2].items}</span></Link>
+                <Link to="/diagnostic" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='action-underline underline-closing'>{strapiContent.menuItems[3].items}</span></Link>
+                <Link to="/Healthcare" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='action-underline underline-closing'>{strapiContent.menuItems[4].items}</span></Link>
             </div>
           </div>
         </div>

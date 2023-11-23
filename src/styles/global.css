@@ -20,8 +20,6 @@
 /* hamburger-menu */
 
 /* menu-hover */
-
-
 .hover-effect::after {
     position: absolute;
     content: "";
@@ -36,40 +34,6 @@
   }
 
   .hover-effect:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-
-  .hover-under::after{
-    content: "";
-    width: 50%;
-    height: 1.5px;
-    top: 30%;
-    left: 10%;
-    background: #00d4ff;
-    transition: transform 0.5s;
-    transform: scaleX(0);
-    transform-origin: right;
-  }
-
-  .hover-under:hover::after{
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-
-  .hover-under-1::after{
-    content: "";
-    width: 80%;
-    height: 1.5px;
-    top: 100%;
-    left: 10%;
-    background: #00d4ff;
-    transition: transform 0.5s;
-    transform: scaleX(0);
-    transform-origin: right;
-  }
-
-  .hover-under-1:hover::after{
     transform: scaleX(1);
     transform-origin: left;
   }
@@ -106,7 +70,6 @@
 .navlinks{
     margin-left: 0;
     margin-right: 0;
-    margin-bottom: 5px;
     padding: 1px 28px 8px 25px;
     font-size: 18px;
     font-weight: 600;
@@ -116,20 +79,6 @@
     flex-direction: column;
     font-family: 'Barlow', sans-serif;
     
-}
-
-.navlinks-1{
-  margin-left: 0;
-  margin-right: 0;
-  padding: 1px 28px 8px 25px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #fff;
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  font-family: 'Barlow', sans-serif;
-  
 }
 
 .DropDowntoggle:hover + .navbartoggle {
@@ -543,7 +492,7 @@ transition: all 0.4s ease-in;
 }
 
 
-/* .btn-1-hover-effects */
+/* button-hover-effects */
 
 ::before,
 ::after {
@@ -569,7 +518,7 @@ transition: all 0.4s ease-in;
   min-width: 150px;
   box-sizing: border-box;
 }
-  .btn .rounded-effect {         
+  .btn span {         
     position: relative;
     display: inline-block;
     font-size: 14px;
@@ -601,7 +550,7 @@ transition: all 0.4s ease-in;
   background-color: #00d4ff;
   transition: 0.3s ease-out;
 }
-.btn-2 .rounded-effect {
+.btn-2 span {
   color: #00d4ff;
   border: 1px solid #00d4ff;
   transition: 0.2s;
@@ -609,7 +558,7 @@ transition: all 0.4s ease-in;
   font-size: 18px;
   line-height: 21px;
 }  
-.btn-2 .rounded-effect:hover {
+.btn-2 span:hover {
   color: black; 
   transition: 0.2s 0.1s;
 }
@@ -677,7 +626,7 @@ transition: all 0.4s ease-in;
   -webkit-touch-callout: none;
 }
 
-#menuToggle .rounded-effect {
+#menuToggle span {
   display: block;
   width: 33px;
   height: 4px;
@@ -695,26 +644,26 @@ transition: all 0.4s ease-in;
     background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
 
-#menuToggle .rounded-effect:first-child {
+#menuToggle span:first-child {
   transform-origin: 0% 0%;
 }
 
-#menuToggle .rounded-effect:nth-last-child(2) {
+#menuToggle span:nth-last-child(2) {
   transform-origin: 0% 100%;
 }
 
-#menuToggle input:checked ~ .rounded-effect {
+#menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
 }
 
-#menuToggle input:checked ~ .rounded-effect:nth-last-child(3) {
+#menuToggle input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-#menuToggle input:checked ~ .rounded-effect:nth-last-child(2) {
+#menuToggle input:checked ~ span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
@@ -790,10 +739,18 @@ transition: all 0.4s ease-in;
   display: none;
 }
 
+.mobile-stars{
+  display:none;
+}
+
 /* media query */
 
 @media screen and (max-width: 639px) {
 
+  p{
+    font-size: 18px !important;
+    line-height: 28px  !important;
+  }
   html, body {
     overflow-x: hidden;
   }
@@ -817,6 +774,10 @@ transition: all 0.4s ease-in;
     .nav-division
     {
       display: none;
+    }
+
+    .mobile-stars{
+      display:block;
     }
     .stats-card{
       grid-row-gap: '16px';
@@ -861,8 +822,6 @@ transition: all 0.4s ease-in;
     padding-top: 10px;
     padding-bottom: 10px;
   }
-
-  
   .btn{
     min-width: 86%;
   }
@@ -921,7 +880,7 @@ transition: all 0.4s ease-in;
   grid-column-gap:16px;
   grid-row-gap:0px;
   grid-template-rows: auto auto auto;
-  grid-template-columns: 1fr 1fr ;
+  grid-template-columns: 1fr ;
   grid-auto-columns: 1fr;
 }
 .mfnb{
@@ -972,8 +931,7 @@ transition: all 0.4s ease-in;
 }  
 
 
-
-.btn-1{
+.buttons-1{
   display: inline-block;
   position: relative;
   background: none;
@@ -984,7 +942,7 @@ transition: all 0.4s ease-in;
   background: rgba(0,0,0,0.09);
 }
 
-.btn-1::before, .btn-1::after{
+.buttons-1::before, .buttons-1::after{
   content:"";
   width: 0;
   height: 2px;
@@ -1001,40 +959,59 @@ transition: all 0.4s ease-in;
   transition: all 0.2s linear;
   background: #00d4ff;
 }
-.btn-1:hover::before, .btn-1:hover::after{
+.buttons-1:hover::before, .buttons-1:hover::after{
   width: 100%;
 }
-.btn-1:hover .rounded-effect::before, .btn-1:hover .rounded-effect::after{
+.buttons-1:hover .rounded-effect::before, .buttons-1:hover .rounded-effect::after{
   height: 100%;
 }
 /*----- .btn-1 1 -----*/
-.btn-1::before, .btn-1::after{
+.buttons-1::before, .buttons-1::after{
   transition-delay: 0.2s;
 }
-.btn-1 .rounded-effect::before, .btn-1 .rounded-effect::after{
+.buttons-1 .rounded-effect::before, .buttons-1 .rounded-effect::after{
   transition-delay: 0s;
 }
-.btn-1::before{
+.buttons-1::before{
   right: 0;
   top: 0;
 }
-.btn-1::after{
+.buttons-1::after{
   left: 0;
   bottom: 0;
 }
-.btn-1 .rounded-effect::before{
+.buttons-1 .rounded-effect::before{
   left: 0;
   top: 0;
 }
-.btn-1 .rounded-effect::after{
+.buttons-1 .rounded-effect::after{
   right: 0;
   bottom: 0;
 }
-.btn-1:hover::before, .btn-1:hover::after{
+.buttons-1:hover::before, .buttons-1:hover::after{
   transition-delay: 0s;
 }
-.btn-1:hover .rounded-effect::before, .btn-1:hover .rounded-effect::after{
+.buttons-1:hover .rounded-effect::before, .buttons-1:hover .rounded-effect::after{
   transition-delay: 0.2s;
 }
 
 
+
+
+.action-underline {
+  cursor: pointer;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-repeat: no-repeat;
+  transition: 0.5s ease-out;
+}
+
+.underline-closing {
+  background-image: linear-gradient(to right, #00d4ff 45%, #fff 55%);
+  background-size: 220% 100%;
+  background-position: 100% 50%;
+  &:hover {
+    background-position: 0% 50%;
+  }
+}
