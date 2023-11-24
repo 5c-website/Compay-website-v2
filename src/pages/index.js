@@ -1,27 +1,22 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import { Helmet } from "react-helmet"
 import star from '../Assets/Solution/star.svg'
 import twoStar from '../Assets/Solution/two_star.svg'
 import logo from '../Assets/Homepage/2-01.png'
 import mobilestar from '../Assets/Solution/single-mobile.svg'
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 import hospital from '../Assets/Homepage/CT scan.gif'
 import radiologist from '../Assets/Homepage/Doctor.gif'
 
 const Index = ({ data }) => {
-  
-  const [open, setOpen] = useState(false)
-
-
-  const cancelButtonRef = useRef(null)
   const content = data.allStrapiHomepage.nodes[0];
+  const [open, setOpen] = useState(false)
+  const cancelButtonRef = useRef(null)
+ 
 
   function openSignInModal() {
     setOpen(true);
-    console.log("modal called")
  }
   
 
@@ -56,15 +51,15 @@ const Index = ({ data }) => {
             >
               <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
                 <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                  <div className="flex sm:flex sm:items-start m-[1rem]"> 
+                  <div className="flex sm:flex sm:items-start m-[1rem] sm:flex-col"> 
                    <a href='https://client.5cnetwork.com/' target="_blank" className='sign-wrapper'> <div className=' flex flex-col items-center'>
                   <img src={hospital} className='w-[50%]'></img>
-                  <label className='justify-center font-use'>Hospital/Diagnostic centre</label>
+                  <label className='justify-center font-use mt-[1.3rem] tracking-[1px] text-[18px]'>Hospital/Diagnostic centre</label>
                   </div></a>
                   <a href='https://rads.5cnetwork.com/' target="_blank" className='sign-wrapper'>
                   <div className=' flex flex-col items-center  m-[1rem]'>
                     <img src={radiologist} className='w-[50%]'></img>
-                    <label className='justify-center font-use'>Radiologist</label> 
+                    <label className='justify-center font-use tracking-[1px] text-[18px]'>Radiologist</label> 
                     </div>
                     </a>
                     
@@ -131,8 +126,10 @@ const Index = ({ data }) => {
                 
             <li><Link to="/Carrers">Careers</Link></li>
             <li><Link to="/Contact" target="_blank">Contact</Link></li>
+            <li><div onClick={openSignInModal}>SignIn</div></li>
           </ul>
         </div>
+        
       </nav>
 
 

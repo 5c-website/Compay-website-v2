@@ -12,7 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function ReachUs() {
     const [agreed, setAgreed] = useState(false)
-    const [state, handleSubmit] = useForm("meqbwbpa");
+    const [state, handleSubmit] = useForm("mzblqnaq");
     const [submitted, setSubmitted] = useState(false);
     const notify = () => toast("Successfully submitted");
     const [firstName, setFirstName] = useState('');
@@ -21,9 +21,11 @@ function ReachUs() {
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [message, setMessage] = useState('');
+    const [selectedValue, setSelectedValue] = useState('');
+    const [selectedGenre, setSelectedGenre] = useState('');
+    const genre = ['Engineering', 'Human Resource', 'Product', 'Sales','Delivery','IT','Finance'];
 
- 
-
+    
     function classNames(...classes) {
         return classes.filter(Boolean).join(' ')
       }
@@ -37,9 +39,17 @@ function ReachUs() {
           setEmail('');
           setPhoneNumber('');
           setMessage('');
-        }
+          setSelectedGenre('');
+        }   
       }, [state.succeeded, submitted]);
 
+     
+  
+
+  const handleSelectChange = (e) => {
+    setSelectedGenre(e.target.value);
+  };
+        
     
   return (
     <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
@@ -57,15 +67,24 @@ function ReachUs() {
         />
       </div>
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contact</h2>
+        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Carrers</h2>
         <p className="mt-2 text-lg leading-8 text-gray-600">
         Your Door to Join India’s leading AI Powered Radiology Group opens here!
         </p>
       </div>
       <form  onSubmit={(e) => {
                 e.preventDefault();
-                handleSubmit(e);
+                handleSubmit(e,{
+                  firstName,
+                  lastName,
+                  company,
+                  email,
+                  phoneNumber,
+                  message,
+                  selectedGenre,
+                });
                 setSubmitted(true);
+                
             }} method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20"> 
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
@@ -101,22 +120,7 @@ function ReachUs() {
               />
             </div>
           </div>
-          <div className="sm:col-span-2">
-            <label htmlFor="company" className="block text-sm font-semibold leading-6 text-gray-900">
-              Company
-            </label>
-            <div className="mt-2.5">
-              <input
-                type="text"
-                name="company"
-                id="company"
-                autoComplete="organization"
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6"
-                value={company}
-                onChange={(e) => setCompany(e.target.value)}
-              />
-            </div>
-          </div>
+          
           <div className="sm:col-span-2">
             <label htmlFor="email" className="block text-sm font-semibold leading-6 text-gray-900">
               Email
@@ -145,34 +149,69 @@ function ReachUs() {
                 <select
                   id="country"
                   name="country"
-                  className="h-full rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-9 text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm"
-                  
+                  className="h-full  rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-9 text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm"
                 >
                   <option>IN</option>
                   <option>US</option>
                   <option>CA</option>
                   <option>EU</option>
-                  
+
                 </select>
-                {/* <ChevronDownIcon
-                  className="pointer-events-none absolute right-3 top-0 h-full w-5 text-gray-400"
-                  aria-hidden="true"
-                /> */}
+                
               </div>
               <input
                 type="tel"
                 name="phone-number"
                 id="phone-number"
                 autoComplete="tel"
-                className="block w-full rounded-md border-0 px-3.5 py-2 pl-[7rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 px-3.5 py-2 pl-[6rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
               />
             </div>
           </div>
           <div className="sm:col-span-2">
+            <label htmlFor="company" className="block text-sm font-semibold leading-6 text-gray-900">
+              Position
+            </label>
+            <div className="mt-2.5">
+              <input
+                type="text"
+                name="company"
+                id="company"
+                autoComplete="organization"
+                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6"
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className="sm:col-span-2">
+          <label htmlFor="company" className="block text-sm font-semibold leading-6 text-gray-900">
+              Department
+            </label>
+            <div className="relative mt-2.5">
+      <select
+        className=" w-full border-2 p-2 focus:outline-none bg-white rounded-md "
+        id="designation"
+        name="designation"
+        value={selectedGenre}
+        onChange={handleSelectChange}
+      >
+        {genre.map((item, i) => (
+          <option value={item} key={i}>
+            {item}
+          </option>
+        ))}
+      </select>
+      </div>
+      </div>
+
+          
+          
+          <div className="sm:col-span-2">
             <label htmlFor="message" className="block text-sm font-semibold leading-6 text-gray-900">
-              Message
+              Cover Letter
             </label>
             <div className="mt-2.5">
               <textarea
@@ -186,7 +225,7 @@ function ReachUs() {
               />
             </div>
           </div>
-          <Switch.Group as="div" className="flex gap-x-4 sm:col-span-2">
+          {/* <Switch.Group as="div" className="flex gap-x-4 sm:col-span-2">
             <div className="flex h-6 items-center">
               <Switch
                 checked={agreed}
@@ -213,14 +252,14 @@ function ReachUs() {
               </a>
               .
             </Switch.Label>
-          </Switch.Group>
+          </Switch.Group> */}
         </div>
         <div className="mt-10">
           <button 
             type="submit"
             className="block w-full rounded-md bg-[black] px-3.5 py-2.5 text-center text-sm font-semibold text-[#00d4ff] shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  toast-btn"
           >
-            Let's talk
+            Submit
           </button>
         </div>
       </form>
