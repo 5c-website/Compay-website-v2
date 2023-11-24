@@ -196,7 +196,7 @@ const Index = ({ data }) => {
               <h1 className='uppercase mt-0 mb-0 font-normal font-barlow text-slate-50 text-[50px] sm:text-[22px] sm:leading-[26px] sm:tracking-[1px]  ' style={{ lineHeight: '60px', letterSpacing: '3px' }}>{content.abouttitle}</h1>
             </div>
             <div className='flex max-w-full flex-col items-start ml-6 justify-center w-[482px] sm:w-full' >
-              <div className='max-w-full w-[882px] sm:w-full'>
+              <div className='max-w-full w-[448px] sm:w-full'>
                 <p className='mb-0 mt-0 text-xl leading-8 font-barlow text-slate-50 third-div-content sm:w-[99%]'><div dangerouslySetInnerHTML={{ __html: content.aboutcontent.data.aboutcontent }}></div></p>
               </div>
               <div className=' w-full max-w-full mt-7 flex'>
