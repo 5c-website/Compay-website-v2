@@ -205,6 +205,7 @@ function Contact({ data }) {
                     <h2 className='uppercase mt-0 mb-0   font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.loctitle}</h2>
                     <h2 className='max-w-full uppercase mt-0 mb-0  font-use text-[#fff] text-[80px] tracking-[2px] leading-[100px] sm:tracking-[1px] sm:text-[38px] sm:leading-[50px] sm:ml-[10px]'>{strapiContent.locsubtitle}</h2>
                     <div className='flex mt-20 justify-between  sm:flex-col  sm:w-full'>
+                      <a href='https://www.google.com/maps/search/5c+network/@12.9155616,77.595932,14z/data=!3m1!4b1?entry=ttu' className='cursor-pointer  hover:border-[#fff] hover:underline' target='_blank'>
                         <div className='w-auto flex sm:mb-14 sm:max-w-[98%] sm:w-full'>            
                             <div>
                                 <img src={strapiContent.locationlogo.localFile.url} className='max-w-full inline-block align-middle' style={{ width: '50px', height: '50px' }}></img>
@@ -218,7 +219,9 @@ function Contact({ data }) {
                             </div>
                             
                         </div>
-                        <div className=' flex w-[480px] sm:w-full'>
+                        </a>
+                        <a href='https://maps.app.goo.gl/mn1BzVHbv9JKVLxf6' className='cursor-pointer  hover:border-[#fff] hover:underline' target='_blank'>
+                        <div className=' flex w-[362px] sm:w-full'>
                             <div>
                                 <img src={strapiContent.locationlogo.localFile.url} className='max-w-full inline-block align-middle' style={{ width: '40px', height: '50px' }}></img>
                             </div>
@@ -230,6 +233,8 @@ function Contact({ data }) {
                                 </p>
                             </div>
                         </div>
+                        </a>
+                        <a href='https://maps.app.goo.gl/c6feCEK7eisaFwsV6' className='cursor-pointer  hover:border-[#fff] hover:underline ' target='_blank'>
                         <div className='w-auto flex sm:mb-14 sm:max-w-[98%] sm:w-full'>            
                             <div>
                                 <img src={strapiContent.locationlogo.localFile.url} className='max-w-full inline-block align-middle w-[50px] sm:w-[70px]' style={{ height: '50px' }}></img>
@@ -243,6 +248,7 @@ function Contact({ data }) {
                             </div>
                             
                         </div>
+                        </a>
                     </div>
                 </div>
             </div>
