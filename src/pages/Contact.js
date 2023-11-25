@@ -69,13 +69,20 @@ function Contact({ data }) {
         </div>
       </Dialog>
     </Transition.Root>
-    <div onClick={openSignInModal} class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[99]">
+    <div onClick={openSignInModal} class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[99] sm:hidden">
         <span class="inner"></span>
         <span class="inner"></span>
         <span class="inner"></span>
         <span class="inner"></span>
         SignIn
       </div>
+      <a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[99] mobile-screen-signin">
+        <span class="inner"></span>
+        <span class="inner"></span>
+        <span class="inner"></span>
+        <span class="inner"></span>
+        SignIn
+      </a>
             <div className='absolute w-full max-w-full flex flex-col items-center bg-transparent nav-division' style={{ zIndex: '2', color: 'rgba(255, 255, 255, 0)', top: '0' }}>
                 <div className='w-full max-w-full pt-3 pb-3 ml-auto mr-auto' style={{ width: '79%' }}>
                     <nav className=' w-full max-w-full justify-around items-center flex relative float-right font-use nav-md'>
@@ -119,7 +126,7 @@ function Contact({ data }) {
           
       <li><Link to="/Carrers">Careers</Link></li>
       <li><Link to="/Contact" target="_blank">contact</Link></li>
-      <li><div onClick={openSignInModal}>SignIn</div></li>
+      {/* <li><div onClick={openSignInModal}>SignIn</div></li> */}
     </ul>
   </div>
 </nav>
@@ -130,6 +137,9 @@ function Contact({ data }) {
                         <div className=' max-w-full mt-8 text-[#fff] w-[500px] ml-[100px] sm:ml-[10px] sm:mt-0  sm:w-full'>
                             <p className=' mt-0 mb-0 leading-8 font-use-one font-medium sm:text-xl text-[20px] sm:w-[98%]' style={{color: 'rgba(255, 255, 255, .85)' }}>{strapiContent.titlecontent.data.titlecontent}</p>
                         </div>
+                        <button className="btn btn-2 hover-slide-up sm:w-[100%] mt-[2rem] ml-[6rem] sm:hidden">
+                            <Link to='/Contact'><span>{strapiContent.getintouch}</span></Link>
+                            </button>
                     </div>
                 </div>
             </div>
@@ -159,8 +169,8 @@ function Contact({ data }) {
                             </div>
                             </span>
                         </Link>
-                        <Link to='/Newsroom'  className='flex max-w-full uppercase text-lg items-center justify-center w-[460px] h-[142px] sm:w-[85%] sm:h-[9vh] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, .04)', border: '1px solid #333' }}>
-                        <span className='flex pt-[3rem]  rounded-effect justify-center sm:justify-center sm:pt-[20px] sm:pl-0'>
+                        <Link to='/ReachForms'  className='flex max-w-full uppercase text-lg items-center justify-center w-[460px] h-[142px] sm:w-[85%] sm:h-[9vh] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, .04)', border: '1px solid #333' }}>
+                        <span className='flex pt-[2.5rem] pl-[2rem] rounded-effect justify-center sm:justify-center sm:pt-[20px] sm:pl-0'>
                             <img src={strapiContent.helpimg[2].localFile.url} className='max-w-full inline-block align-middle mr-[30px] sm:mr-[20px] sm:h-[40px] sm:w-[40px]'></img>
                             <div>
                                 <div className=' leading-9 uppercase font-use  text-[30px] sm:text-[20px]' style={{lineHeight: '36px', letterSpacing: '3px' }}>{strapiContent.help[1].title}</div>
@@ -194,28 +204,44 @@ function Contact({ data }) {
                 <div className='relative flex flex-col items-start ml-auto mr-auto max-w-[1200px] z-[1] sm:max-w-full sm:w-full'>
                     <h2 className='uppercase mt-0 mb-0   font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.loctitle}</h2>
                     <h2 className='max-w-full uppercase mt-0 mb-0  font-use text-[#fff] text-[80px] tracking-[2px] leading-[100px] sm:tracking-[1px] sm:text-[38px] sm:leading-[50px] sm:ml-[10px]'>{strapiContent.locsubtitle}</h2>
-                    <div className='flex mt-20 justify-between w-[1020px] ml-[100px] sm:flex-col sm:ml-[10px] sm:w-full'>
-                        <div className='w-auto flex sm:mb-14 sm:max-w-[98%] sm:w-full'>
+                    <div className='flex mt-20 justify-between  sm:flex-col  sm:w-full'>
+                        <div className='w-auto flex sm:mb-14 sm:max-w-[98%] sm:w-full'>            
                             <div>
                                 <img src={strapiContent.locationlogo.localFile.url} className='max-w-full inline-block align-middle' style={{ width: '50px', height: '50px' }}></img>
-                            </div>
+                            </div>                
                             <div className='w-auto max-w-full'>
                                 <div className='uppercase text-[40px] sm:text-[20px]' style={{ letterSpacing: '2px', lineHeight: '48px', color: '#fff' }}>{strapiContent.locations[0].country}</div>
                                 <p className=' mt-3 mb-0 leading-8 font-use-one text-[20px] sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .85)' }}>
+                                <label className='text-[#fff] font-bold  w-[65%]'> RadHouse</label>
                                     <div dangerouslySetInnerHTML={{ __html: strapiContent.locations[0].address.data.address }}></div>
                                 </p>
                             </div>
+                            
                         </div>
                         <div className=' flex w-[480px] sm:w-full'>
                             <div>
-                                <img src={strapiContent.locationlogo.localFile.url} className='max-w-full inline-block align-middle' style={{ width: '50px', height: '50px' }}></img>
+                                <img src={strapiContent.locationlogo.localFile.url} className='max-w-full inline-block align-middle' style={{ width: '40px', height: '50px' }}></img>
                             </div>
-                            <div className='w-auto max-w-full'>
+                            <div className='w-auto sm:mb-14 max-w-full'>
                                 <div className='uppercase text-[40px] sm:text-[20px]' style={{ letterSpacing: '2px', lineHeight: '48px', color: '#fff' }}>{strapiContent.locations[1].country}</div>
                                 <p className=' mt-3 mb-0 leading-8 font-use-one text-[20px] sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .85)' }}>
+                                <label className='text-[#fff] font-bold  w-[65%]'> Cerebrum</label>
                                     <div dangerouslySetInnerHTML={{ __html: strapiContent.locations[1].address.data.address }}></div>
                                 </p>
                             </div>
+                        </div>
+                        <div className='w-auto flex sm:mb-14 sm:max-w-[98%] sm:w-full'>            
+                            <div>
+                                <img src={strapiContent.locationlogo.localFile.url} className='max-w-full inline-block align-middle w-[50px] sm:w-[70px]' style={{ height: '50px' }}></img>
+                            </div>                
+                            <div className='w-auto max-w-full'>
+                                <div className='uppercase text-[40px] sm:text-[20px]' style={{ letterSpacing: '2px', lineHeight: '48px', color: '#fff' }}>{strapiContent.locations[2].country}</div>
+                                <p className=' mt-3 mb-0 leading-8 font-use-one text-[20px] sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .85)' }}>
+                                <label className='text-[#fff] font-bold  w-[65%]'> Neocortex</label>
+                                    <div dangerouslySetInnerHTML={{ __html: strapiContent.locations[2].address.data.address }}></div>
+                                </p>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>

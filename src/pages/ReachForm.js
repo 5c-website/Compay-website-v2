@@ -175,7 +175,14 @@ function ReachUs() {
                   name="country"
                   className="h-full  rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-9 text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm"
                 >
-                  <option>IN</option>
+                  <option>+91</option>
+                  <option>+1</option>
+                  <option> +51</option>
+                  <option> +44</option>
+                  <option> +966</option>
+                  <option>+971</option>
+                  <option>+974</option>
+                  <option>+234</option>
                 </select>
                 
               </div>

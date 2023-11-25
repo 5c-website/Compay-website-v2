@@ -21,6 +21,7 @@ function ReachUs() {
     const [company, setCompany] = useState('');
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
+    const [cv,setCv]=useState('');
     const [message, setMessage] = useState('');
     const [selectedValue, setSelectedValue] = useState('');
     const [selectedGenre, setSelectedGenre] = useState('');
@@ -48,6 +49,7 @@ function ReachUs() {
           setPhoneNumber('');
           setMessage('');
           setSelectedGenre('');
+          setCv('');
         }   
       }, [state.succeeded, submitted]);
 
@@ -96,7 +98,7 @@ function ReachUs() {
                 });
                 setSubmitted(true);
                 
-            }} method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20"> 
+            }} method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20" > 
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
             <label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-gray-900">
@@ -162,10 +164,14 @@ function ReachUs() {
                   name="country"
                   className="h-full  rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-9 text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm"
                 >
-                  <option>IN</option>
-                  <option>US</option>
-                  <option>CA</option>
-                  <option>EU</option>
+                  <option>+91</option>
+                  <option>+1</option>
+                  <option> +51</option>
+                  <option> +44</option>
+                  <option> +966</option>
+                  <option>+971</option>
+                  <option>+974</option>
+                  <option>+234</option>
 
                 </select>
                 
@@ -182,30 +188,14 @@ function ReachUs() {
             </div>
           </div>
           <div className="sm:col-span-2">
-            <label htmlFor="company" className="block text-sm font-semibold leading-6 text-gray-900">
-              Position
-            </label>
-            <div className="mt-2.5">
-              <input
-                type="text"
-                name="company"
-                id="company"
-                autoComplete="organization"
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6"
-                value={company}
-                onChange={(e) => setCompany(e.target.value)}
-              />
-            </div>
-          </div>
-          <div className="sm:col-span-2">
           <label htmlFor="company" className="block text-sm font-semibold leading-6 text-gray-900">
               Department
             </label>
             <div className="relative mt-2.5">
       <select
         className=" w-full border-2 p-2 focus:outline-none bg-white rounded-md "
-        id="designation"
-        name="designation"
+        id="department"
+        name="department"
         value={selectedGenre}
         onChange={handleSelectChange}
       >
@@ -217,6 +207,23 @@ function ReachUs() {
       </select>
       </div>
       </div>
+          <div className="sm:col-span-2">
+            <label htmlFor="company" className="block text-sm font-semibold leading-6 text-gray-900">
+              Position
+            </label>
+            <div className="mt-2.5">
+              <input
+                type="text"
+                name="Position"
+                id="Position"
+                autoComplete="organization"
+                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6"
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
+              />
+            </div>
+          </div>
+          
 
           
           
@@ -236,6 +243,14 @@ function ReachUs() {
               />
             </div>
           </div>
+          {/* <div className="sm:col-span-2">
+          <label htmlFor="company" className="block text-sm font-semibold leading-6 text-gray-900">
+              Upload CV
+            </label>
+            <div className="relative mt-2.5">
+            <input type="file" name="uploadField" accept="image/png, image/jpeg" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6"/>
+      </div>
+      </div> */}
           {/* <Switch.Group as="div" className="flex gap-x-4 sm:col-span-2">
             <div className="flex h-6 items-center">
               <Switch

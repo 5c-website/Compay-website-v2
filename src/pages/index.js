@@ -73,13 +73,20 @@ const Index = ({ data }) => {
       </Dialog>
     </Transition.Root>
 
-    <div onClick={openSignInModal} class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[99]">
+    <div onClick={openSignInModal} class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[99] sm:hidden">
         <span class="inner"></span>
         <span class="inner"></span>
         <span class="inner"></span>
         <span class="inner"></span>
         SignIn
       </div>
+      <a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[99] mobile-screen-signin">
+        <span class="inner"></span>
+        <span class="inner"></span>
+        <span class="inner"></span>
+        <span class="inner"></span>
+        SignIn
+      </a>
 
 
 
@@ -132,7 +139,7 @@ const Index = ({ data }) => {
                 
             <li><Link to="/Carrers">Careers</Link></li>
             <li><Link to="/Contact" target="_blank">Contact</Link></li>
-            <li><div onClick={openSignInModal}>SignIn</div></li>
+            {/* <li><div onClick={openSignInModal}>SignIn</div></li> */}
           </ul>
         </div>
         
@@ -192,7 +199,7 @@ const Index = ({ data }) => {
         </div>
       </div>
       {/* about section(third division) */}
-      <div className=' mt-25 mb-20'>
+      {/* <div className=' mt-25 mb-20'>
         <div className='max-w-full flex justify-center ml-auto mr-auto'>
           <div className='flex max-w-full w-full sm:w-[90%] sm:flex-col third-div-img' style={{ backgroundImage: `url(${content.aboutimg.localFile.url})` }}>
             <div className='flex flex-col items-end sm:items-center sm:w-full sm:ml-0 sm:mt-5'>
@@ -204,15 +211,15 @@ const Index = ({ data }) => {
               </div>
               <div className=' w-full max-w-full mt-7 flex'>
                 <button class="btn btn-2 hover-slide-up uppercase">
-                  <Link to='/Solution'><span>{content.LearnMore}</span></Link>
+                  <Link to='/Solutions'><span>{content.LearnMore}</span></Link>
                 </button>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* about container(fourth division) */}
-      <div className='relative mt-60 pl-0 pr-0 overflow-hidden sm:mt-[5rem]'>
+      <div className='relative pl-0 pr-0 overflow-hidden sm:mt-[5rem]'>
         <div className='relative flex flex-col items-start ml-auto mr-auto' style={{ zIndex: '1', maxWidth: '1200px' }}>
           <div className='max-w-full relative ml-0 pl-4 pr-4 '>
             <h2 className='uppercase mt-0 mb-0  fourth-div-content text-slate-50 tracking-[2px] text-[50px] leading-[32px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px]'>{content.thirdsectitle}</h2>

@@ -70,13 +70,20 @@ function Solutions({ data }) {
         </div>
       </Dialog>
     </Transition.Root>
-    <div onClick={openSignInModal} class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[99]">
+    <div onClick={openSignInModal} class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[99] sm:hidden">
         <span class="inner"></span>
         <span class="inner"></span>
         <span class="inner"></span>
         <span class="inner"></span>
         SignIn
       </div>
+      <a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[99] mobile-screen-signin">
+        <span class="inner"></span>
+        <span class="inner"></span>
+        <span class="inner"></span>
+        <span class="inner"></span>
+        SignIn
+      </a>
       <div className='absolute w-full max-w-full flex flex-col items-center bg-transparent nav-division' style={{ zIndex: '2', color: 'rgba(255, 255, 255, 0)', top: '0' }}>
         <div className='w-full max-w-full pt-3 pb-3 ml-auto mr-auto' style={{ width: '79%' }}>
           <nav className=' w-full max-w-full justify-around items-center flex relative float-right font-use nav-md'>
@@ -119,12 +126,12 @@ function Solutions({ data }) {
           
       <li><Link to="/Carrers">Careers</Link></li>
       <li><Link to="/Contact" target="_blank">contact</Link></li>
-      <li><div onClick={openSignInModal}>SignIn</div></li>
+      {/* <li><div onClick={openSignInModal}>SignIn</div></li> */}
     </ul>
   </div>
 </nav>
 {/* hero section */}
-      <div className=' h-screen justify-start flex flex-col items-center bg-no-repeat mb-[125px] homepage-solution' style={{backgroundImage: `url(${strapiContent.solutionHomepage.localFile.url})`}}>
+      <div className=' h-screen justify-start flex flex-col items-center bg-no-repeat homepage-solution' style={{backgroundImage: `url(${strapiContent.solutionHomepage.localFile.url})`}}>
 
         <div className='max-w-full ml-auto mr-auto'>
           <div className='max-w-full relative w-[1200px] mt-[234px] sm:h-auto sm:mt-0 hero-section-solution'>

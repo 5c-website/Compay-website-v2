@@ -870,10 +870,16 @@ transition: all 0.4s ease-in;
 .mobile-resolution-video{
   display:none;
 }
-
+.mobile-screen-signin{
+  display: none;
+}
 /* media query */
 
 @media screen and (max-width: 639px) {
+
+  .mobile-screen-signin{
+    display: block;
+  }
 
   .mobile-resolution-video{
     display:block;
@@ -920,7 +926,7 @@ transition: all 0.4s ease-in;
     .homepage-solution{
       background-position: 100% 100%;
      background-size: 128%;
-     height: 100vh; 
+     height: auto; 
      padding-left: 16px;
      padding-right: 16px;
     }
