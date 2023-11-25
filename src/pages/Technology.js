@@ -75,14 +75,14 @@ function Technology({ data }) {
         <span class="inner"></span>
         <span class="inner"></span>
         <span class="inner"></span>
-        SignIn
+        Sign In
       </div>
       <a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[99] mobile-screen-signin">
         <span class="inner"></span>
         <span class="inner"></span>
         <span class="inner"></span>
         <span class="inner"></span>
-        SignIn
+        Sign In
       </a>
       <div className='absolute w-full max-w-full flex flex-col items-center bg-transparent nav-division' style={{ zIndex: '2', color: 'rgba(255, 255, 255, 0)', top: '0' }}>
         <div className='w-full max-w-full pt-3 pb-3 ml-auto mr-auto' style={{ width: '79%' }}>

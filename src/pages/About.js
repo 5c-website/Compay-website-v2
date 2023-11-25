@@ -53,12 +53,12 @@ function About({ data }) {
                   <div className="flex sm:flex sm:items-start m-[1rem] sm:flex-col"> 
                    <a href='https://client.5cnetwork.com/' target="_blank" className='sign-wrapper'> <div className=' flex flex-col items-center'>
                   <img src={hospital} className='w-[50%]'></img>
-                  <label className='justify-center font-use mt-[1.3rem] tracking-[1px] text-[18px]'>Hospital/Diagnostic centre</label>
+                  <label className='justify-center font-use mt-[1.3rem] tracking-[1px] text-[18px] uppercase'>Hospital/Diagnostic centre</label>
                   </div></a>
                   <a href='https://rads.5cnetwork.com/' target="_blank" className='sign-wrapper'>
                   <div className=' flex flex-col items-center  m-[1rem]'>
                     <img src={radiologist} className='w-[50%]'></img>
-                    <label className='justify-center font-use tracking-[1px] text-[18px]'>Radiologist</label> 
+                    <label className='justify-center font-use tracking-[1px] text-[18px] uppercase'>Radiologist</label> 
                     </div>
                     </a>
                     
@@ -76,14 +76,14 @@ function About({ data }) {
         <span class="inner"></span>
         <span class="inner"></span>
         <span class="inner"></span>
-        SignIn
+        Sign In
       </div>
       <a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[99] mobile-screen-signin">
         <span class="inner"></span>
         <span class="inner"></span>
         <span class="inner"></span>
         <span class="inner"></span>
-        SignIn
+        Sign In
       </a>
             <div className='absolute w-full max-w-full flex flex-col items-center bg-transparent nav-division' style={{ zIndex: '2', color: 'rgba(255, 255, 255, 0)', top: '0' }}>
                 <div className='w-full max-w-full pt-3 pb-3 ml-auto mr-auto' style={{ width: '79%' }}>

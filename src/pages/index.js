@@ -54,12 +54,12 @@ const Index = ({ data }) => {
                   <div className="flex sm:flex sm:items-start m-[1rem] sm:flex-col"> 
                    <a href='https://client.5cnetwork.com/' target="_blank" className='sign-wrapper'> <div className=' flex flex-col items-center'>
                   <img src={hospital} className='w-[50%]'></img>
-                  <label className='justify-center font-use mt-[1.3rem] tracking-[1px] text-[18px]'>Hospital/Diagnostic centre</label>
+                  <label className='justify-center font-use mt-[1.3rem] tracking-[1px] text-[18px] uppercase'>Hospital/Diagnostic centre</label>
                   </div></a>
                   <a href='https://rads.5cnetwork.com/' target="_blank" className='sign-wrapper'>
                   <div className=' flex flex-col items-center  m-[1rem]'>
                     <img src={radiologist} className='w-[50%]'></img>
-                    <label className='justify-center font-use tracking-[1px] text-[18px]'>Radiologist</label> 
+                    <label className='justify-center font-use tracking-[1px] text-[18px] uppercase'>Radiologist</label> 
                     </div>
                     </a>
                     
@@ -78,16 +78,16 @@ const Index = ({ data }) => {
         <span class="inner"></span>
         <span class="inner"></span>
         <span class="inner"></span>
-        SignIn
+        Sign In
       </div>
       <a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[99] mobile-screen-signin">
         <span class="inner"></span>
         <span class="inner"></span>
         <span class="inner"></span>
         <span class="inner"></span>
-        SignIn
+        Sign In
       </a>
-
+   
 
 
       <div className='absolute w-full max-w-full flex flex-col items-center bg-transparent nav-division' style={{ zIndex: '2', color: 'rgba(255, 255, 255, 0)', top: '0' }}>
@@ -144,6 +144,16 @@ const Index = ({ data }) => {
         </div>
         
       </nav>
+
+      {/* <div className='w-full h-full bg-transparent relative max-w-[1200px] pt-[12px] pb-[12px] ml-auto mr-auto'>
+        <div className=' h-full bg-transparent items-center mt-0 top-0 w-full max-h-none max-w-full justify-center flex absolute'>
+          <a className=' w-auto h-full ml-0 max-h-none mt-[8px] pl-0 block float-left relative'>
+            <div className=' w-auto h-full max-h-[77px] ml-0 mr-0 flex items-center'>
+              <img src={logo} className=' h-[50%] W-[50%]'></img>
+            </div>
+          </a>
+        </div>
+    </div> */}
 
 
 
@@ -224,14 +234,14 @@ const Index = ({ data }) => {
           <div className='max-w-full relative ml-0 pl-4 pr-4 '>
             <h2 className='uppercase mt-0 mb-0  fourth-div-content text-slate-50 tracking-[2px] text-[50px] leading-[32px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px]'>{content.thirdsectitle}</h2>
             <h1 className='max-w-full uppercase mt-0 mb-0 font-normal text-slate-50 text-[80px] leading-[100px] w-[1074px] tracking-[1px] sm:ml-0 sm:text-[34px] sm:leading-[40px] sm:mt-[8px]'>
-              <span className='hyperspectral-text'>{content.rainbowtext}</span>
+              <span>{content.rainbowtext}</span>
               {content.thirdsecsubtitle}
             </h1>
             <div className='max-w-full mt-20 ml-[100px] sm:ml-0 sm:mt-10' >
               <p className='font-normal mb-0 mt-0 text-xl hyper-content text-slate-50 leading-[32px] w-[72%] sm:leading-[28px] sm:text-lg sm:w-full' >
                 <div dangerouslySetInnerHTML={{ __html: content.thirdseccontent.data.thirdseccontent }}></div>
               </p>
-              <div className=' mt-20 w-[900px] sm:w-full'>
+              {/* <div className=' mt-20 w-[900px] sm:w-full'>
                 <div className='grid icons-grid'>
                   <div className='flex flex-col items-start justify-between'>
                     <div className='flex flex-col items-center'>
@@ -271,7 +281,7 @@ const Index = ({ data }) => {
                   </div>
 
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -282,7 +292,7 @@ const Index = ({ data }) => {
           <div className='relative max-w-full' style={{ width: '1200px' }}>
             <h2 className='text-slate-50 uppercase mt-0 mb-0 font-normal tracking-[2px] text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px] '>{content.fourthtitle}</h2>
             <h1 className='max-w-full text-slate-50 uppercase mt-0 mb-0 font-normal text-[80px] leading-[100px] w-[1074px] tracking-[1px] sm:ml-0 sm:text-[34px] sm:tracking-[1px] sm:leading-[40px]  sm:mt-[8px]'>
-              <span className='hyperspectral-text'>{content.fourthrainbowtext}&nbsp;</span>
+              <span >{content.fourthrainbowtext}&nbsp;</span>
               {content.fourthsubtitle}
             </h1>
           </div>
