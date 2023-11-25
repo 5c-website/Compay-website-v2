@@ -286,7 +286,7 @@ const Index = ({ data }) => {
             </div>
           </div>
         </div>
-        <img src={content.thirdsecimg.localFile.url} className=' inline-block max-w-full w-full object-cover h-[278px] mt-[9px] sm:h-[399px]'></img>
+        <img src={content.thirdsecimg.localFile.url} className=' inline-block max-w-full w-full object-cover h-[499px] mt-[-211px] sm:h-[399px]'></img>
       </div>
       <div className='pt-60 pl-4 pr-4 overflow-hidden sm:pt-32'>
         <div className='flex flex-col overflow-hidden items-start ml-auto mr-auto' style={{ maxWidth: '1200px' }}>
