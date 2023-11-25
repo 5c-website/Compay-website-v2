@@ -104,10 +104,10 @@
     font-family: 'Lato', sans-serif;
 }
 
-.rotation-effect
+/* .rotation-effect
 {
     animation: rotation 30s infinite linear;
-}
+} */
 
 @keyframes rotation{
  from{

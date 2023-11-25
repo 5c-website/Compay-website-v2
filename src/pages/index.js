@@ -6,74 +6,75 @@ import logo from '../Assets/Homepage/2-01.png'
 import mobilestar from '../Assets/Solution/single-mobile.svg'
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import hospital from '../Assets/Homepage/CT scan.gif'
-import radiologist from '../Assets/Homepage/Doctor.gif'
+import hospital from '../Assets/Homepage/2.png'
+import radiologist from '../Assets/Homepage/1.png'
 
 const Index = ({ data }) => {
   const content = data.allStrapiHomepage.nodes[0];
   const [open, setOpen] = useState(false)
   const cancelButtonRef = useRef(null)
- 
+
 
   function openSignInModal() {
     setOpen(true);
- }
-  
+  }
+
 
   return (
-    
+
     <div className='bg-black Homepage'>
-     
-     <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpen}>
-        <Transition.Child
-          as={Fragment}
-          enter="ease-out duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in duration-200"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
-        </Transition.Child>
 
-        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-          <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-              enterTo="opacity-100 translate-y-0 sm:scale-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-              leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-            >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                  <div className="flex sm:flex sm:items-start m-[1rem] sm:flex-col"> 
-                   <a href='https://client.5cnetwork.com/' target="_blank" className='sign-wrapper'> <div className=' flex flex-col items-center'>
-                  <img src={hospital} className='w-[50%]'></img>
-                  <label className='justify-center font-use mt-[1.3rem] tracking-[1px] text-[18px] uppercase'>Hospital/Diagnostic centre</label>
-                  </div></a>
-                  <a href='https://rads.5cnetwork.com/' target="_blank" className='sign-wrapper'>
-                  <div className=' flex flex-col items-center  m-[1rem]'>
-                    <img src={radiologist} className='w-[50%]'></img>
-                    <label className='justify-center font-use tracking-[1px] text-[18px] uppercase'>Radiologist</label> 
+      <Transition.Root show={open} as={Fragment}>
+        <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpen}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                enterTo="opacity-100 translate-y-0 sm:scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              >
+                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg w-[60%]">
+                  <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                    <div className="flex sm:flex sm:items-start m-[1rem] sm:flex-col">
+                      <a href='https://client.5cnetwork.com/' target="_blank" className='sign-wrapper'> 
+                      <div className=' flex flex-col items-center'>
+                        <img src={hospital} className='w-[50%]'></img>
+                        <label className='justify-center font-use mt-[1.3rem] tracking-[1px] text-[18px] uppercase'>Hospital/Diagnostic centre</label>
+                      </div>
+                      </a>
+                      <a href='https://rads.5cnetwork.com/' target="_blank" className='sign-wrapper'> 
+                      <div className=' flex flex-col items-center'>
+                        <img src={radiologist} className='w-[50%]'></img>
+                        <label className='justify-center font-use mt-[1.3rem] tracking-[1px] text-[18px] uppercase'>Hospital/Diagnostic centre</label>
+                      </div>
+                      </a>
                     </div>
-                    </a>
-                    
                   </div>
-                </div>
-                
-              </Dialog.Panel>
-            </Transition.Child>
-          </div>
-        </div>
-      </Dialog>
-    </Transition.Root>
 
-    <div onClick={openSignInModal} class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[99] sm:hidden">
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition.Root>
+
+      <div onClick={openSignInModal} class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[99] sm:hidden">
         <span class="inner"></span>
         <span class="inner"></span>
         <span class="inner"></span>
@@ -87,7 +88,7 @@ const Index = ({ data }) => {
         <span class="inner"></span>
         Sign In
       </a>
-   
+
 
 
       <div className='absolute w-full max-w-full flex flex-col items-center bg-transparent nav-division' style={{ zIndex: '2', color: 'rgba(255, 255, 255, 0)', top: '0' }}>
@@ -110,16 +111,16 @@ const Index = ({ data }) => {
             </div>
             <Link to='/Contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
             {/* <Link to='/Contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>SignIn</Link> */}
-            
+
 
 
           </nav>
-          
-          
+
+
         </div>
-        
+
       </div>
-      
+
       {/* Mobile responsive */}
       <nav role="navigation" className='mobile-nav'>
         <div id="menuToggle">
@@ -133,16 +134,16 @@ const Index = ({ data }) => {
             {/* <li><Link to="/Partners">Partners</Link></li> */}
             <li><Link to="/">Home</Link></li>
             <li><Link to="/About">About</Link></li>
-            
-                  <li><Link to="/Blogs">Blogs</Link></li>
-                  <li><Link to="/Newsroom">Newsroom</Link></li>
-                
+
+            <li><Link to="/Blogs">Blogs</Link></li>
+            <li><Link to="/Newsroom">Newsroom</Link></li>
+
             <li><Link to="/Carrers">Careers</Link></li>
             <li><Link to="/Contact" target="_blank">Contact</Link></li>
             {/* <li><div onClick={openSignInModal}>SignIn</div></li> */}
           </ul>
         </div>
-        
+
       </nav>
 
       {/* <div className='w-full h-full bg-transparent relative max-w-[1200px] pt-[12px] pb-[12px] ml-auto mr-auto'>
@@ -189,15 +190,15 @@ const Index = ({ data }) => {
               </button>
             </div>
             <div className='absolute z-[1] top-0 bottom-auto left-0 right-auto'>
-            <div className='z-[1] w-[342px] h-[264px] relative top-[-191px] right-[158px]'>
-            <div className='absolute z-[-100] h-[176px] opacity-[1] w-[182px] flex top-0 bottom-auto left-auto right-0'>
-                <img src={twoStar} alt='effects'></img>
-            </div>
-            </div>
+              <div className='z-[1] w-[342px] h-[264px] relative top-[-191px] right-[158px]'>
+                <div className='absolute z-[-100] h-[176px] opacity-[1] w-[182px] flex top-0 bottom-auto left-auto right-0'>
+                  <img src={twoStar} alt='effects'></img>
+                </div>
+              </div>
             </div>
             <div className='absolute z-[-1] w-[342px] flex top-auto bottom-[-29%] left-0 right-auto'>
-                <img src={twoStar} alt='effects'></img>
-                <img src={twoStar} alt='effects'></img>
+              <img src={twoStar} alt='effects'></img>
+              <img src={twoStar} alt='effects'></img>
             </div>
             <div className='flex flex-col justify-around items-center absolute top-0 bottom-0 left-auto right-[-34%] sm:justify-start sm:items-start sm:mt-[33px] sm:relative sm:right-0'>
               <div className='relative'>
@@ -285,7 +286,7 @@ const Index = ({ data }) => {
             </div>
           </div>
         </div>
-        <img src={content.thirdsecimg.localFile.childrenImageSharp[0].fluid.src} className=' inline-block max-w-full w-full object-cover h-[499px] mt-[-211px] sm:h-[399px]'></img>
+        <img src={content.thirdsecimg.localFile.url} className=' inline-block max-w-full w-full object-cover h-[278px] mt-[9px] sm:h-[399px]'></img>
       </div>
       <div className='pt-60 pl-4 pr-4 overflow-hidden sm:pt-32'>
         <div className='flex flex-col overflow-hidden items-start ml-auto mr-auto' style={{ maxWidth: '1200px' }}>
@@ -315,7 +316,7 @@ const Index = ({ data }) => {
               <div className='separator-effect sm:hidden'></div>
               <div className='separator-effect'></div>
               <div className='separator-effect sm:hidden'></div>
-              
+
               {/* <div className='separator-effect-md'></div> */}
               {/* <div className='w-auto max-w-full flex flex-col' style={{ marginRight: '100px', height: '110px' }}>
                 <h5 className='w-full max-w-full text-slate-50 uppercase mt-0 mb-0  font-use' style={{ letterSpacing: '3px', fontSize: '40px', lineHeight: '48px', letterSpacing: '3px' }}>{content.fourthcard4title}</h5>
@@ -328,8 +329,8 @@ const Index = ({ data }) => {
               </button>
             </div>
             <div className='absolute w-[347px] h-[407px] top-[-94%] bottom-0 left-auto right-[-13%] star-embed '>
-                              <img src={star} alt='effect'></img>
-                            </div>
+              <img src={star} alt='effect'></img>
+            </div>
           </div>
           <div className='max-w-full flex' style={{ width: '1000px', marginTop: '50px' }}></div>
           {/* <div className='relative flex w-full justify-center' style={{ marginTop: '60px', height: '459px' }}>
@@ -386,8 +387,8 @@ const Index = ({ data }) => {
               </div>
             </div>
             <div className='absolute w-[347px] h-[407px] top-[2%] bottom-auto left-auto right-0 star-embed sm:hidden '>
-                              <img src={star} alt='effect'></img>
-                            </div>
+              <img src={star} alt='effect'></img>
+            </div>
             <img src={content.sixthimg.localFile.childrenImageSharp[0].fluid.src} className='inline-block mt-20 max-w-full align-middle rounded-sm ml-[100px] sm:ml-0' style={{ width: '900px', border: '0' }}></img>
           </div>
           <img src={mobilestar} className=' sm:mt-[2rem] sm:ml-[1rem] mobile-stars'></img>
@@ -433,10 +434,10 @@ const Index = ({ data }) => {
             </div>
           </div>
           <div className='flex max-w-full mt-20 justify-between ml-[100px] w-[1000px] sm:ml-[0] sm:flex-col sm:w-full sm:mt-10'>
-            <Link to="https://economictimes.indiatimes.com/tech/startups/tata-1mg-backed-5c-network-acquires-ai-healthtech-startup-krayen/articleshow/98187918.cms" className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000'}}>
+            <Link to="https://economictimes.indiatimes.com/tech/startups/tata-1mg-backed-5c-network-acquires-ai-healthtech-startup-krayen/articleshow/98187918.cms" className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000' }}>
               <div className=' pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full rounded-effect' style={{ backgroundColor: '#19191a' }}>
                 <div className='flex items-start justify-between mb-10'>
-                  <img src={content.newslogo[1].localFile.url} className='max-w-full inline-block align-middle h-[30px] w-[14rem] sm:h-[20px]' style={{ border: '0'}}></img>
+                  <img src={content.newslogo[1].localFile.url} className='max-w-full inline-block align-middle h-[30px] w-[14rem] sm:h-[20px]' style={{ border: '0' }}></img>
                   <div className='uppercase text-xs font-use-one' style={{ color: 'rgba(255, 255, 255, .8)', lineHeight: '15px' }}>{content.newscards[0].date}</div>
                 </div>
                 <p className='mt-0 mb-0  font-use-one text-[28px] sm:text-[18px] uppercase' style={{ color: 'rgba(255, 255, 255, .95)', lineHeight: '38px' }}>
@@ -445,7 +446,7 @@ const Index = ({ data }) => {
               </div>
             </Link>
             <Link to="https://economictimes.indiatimes.com/tech/funding/digital-diagnostic-startup-5c-network-raises-4-6-million/articleshow/94819661.cms" className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000', textDecoration: 'none' }}>
-              <div className=' pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full  rounded-effect' style={{backgroundColor: '#19191a' }}>
+              <div className=' pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full  rounded-effect' style={{ backgroundColor: '#19191a' }}>
                 <div className='flex items-start justify-between mb-14'>
                   <img src={content.newslogo[0].localFile.url} className='max-w-full w-[14rem] inline-block align-middle h-[40px] sm:h-[20px]' style={{ border: '0', opacity: '.85' }}></img>
                   <div className='uppercase text-xs font-use-one' style={{ color: 'rgba(255, 255, 255, .8)', lineHeight: '15px' }}>{content.newscards[1].date}</div>
@@ -457,10 +458,10 @@ const Index = ({ data }) => {
             </Link>
           </div>
           <div className=' mb-5 mfnb mt-5 ml-3 sm:w-full'>
-              <button class="btn btn-2 hover-slide-up uppercase sm:min-w-[94%]">
-                <span>{content.aboutMedia}</span>
-              </button>
-            </div>
+            <button class="btn btn-2 hover-slide-up uppercase sm:min-w-[94%]">
+              <span>{content.aboutMedia}</span>
+            </button>
+          </div>
         </div>
 
       </div>
@@ -468,59 +469,59 @@ const Index = ({ data }) => {
       {/* footer section */}
 
       <div className='footer section pl-0 pr-0 '>
-                <div className='relative ml-auto mr-auto max-w-[1200px]'>
-                    <div className='flex justify-between items-start pb-0 pl-4 pr-4 mb-8 mt-[101px] sm:flex-col sm:mt-50px sm:mt-0 ' style={{border: '1px #7c4c4c', borderBottomColor: 'rgba(255, 255, 255, .5)' }}>
-                        <div className='flex flex-col items-start'>
-                            <div className='uppercase  font-use leading-[48px] text-[40px]' style={{ color: 'rgba(255, 255, 255, .85) '}}>{content.footertitle}</div>
-                            <p className=' text-xl leading-8 font-use-one w-[441px] mt-[30px] mb-[30px] sm:w-[100%] sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)'}}>{content.footerleftcontent.data.footerleftcontent}</p>
-                            {/* getintouchbutton */}
-                            <button className="btn btn-2 hover-slide-up sm:w-[100%]">
-                            <Link to='/Contact'><Link to='/Contact'><span>{content.getInTouch}</span></Link></Link>
-                            </button>
-                            <div className='social-platform font-use sm:w-[100%]'>
-                                <Link to="https://www.facebook.com/5cnetwork" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                                    <img src={content.footerlogo1.localFile.url} alt='facebook' className='mr-0 max-w-full inline-block align-middle'></img>
-                                </Link>
-                                <Link to="https://www.linkedin.com/company/5c-network?trk=top_nav_home" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                                    <img src={content.footerlogo3.localFile.url} alt='Twitter' className='mr-0 max-w-full inline-block align-middle'></img>
-                                </Link>
-                                <Link to="https://twitter.com/5c_network" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                                    <img src={content.footerlogo2.localFile.url} alt='Linkedin' className='mr-0 max-w-full inline-block align-middle'></img>
-                                </Link>
-                                
-                                <Link to="https://www.instagram.com/5cnetwork/" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                                    <img src={content.footerlogo4.localFile.url} alt='Medium' className='mr-0 max-w-full inline-block align-middle'></img>
-                                </Link>
-                            </div>
-                        </div>
-                        <div className='flex sm:mt-[65px] sm:w-[100%] sm:justify-between'>
-                            <div className='flex flex-col font-use ml-[60px] sm:ml-[5px]'>
-                            <Link to="/About" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
-                                <Link to="/Solutions" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>solutions</Link>
-                                <Link to="/Technology" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
-                                {/* <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>media</Link> */}
-                                <Link to="/Blogs" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>blogs</Link>
-                                <Link to="/Newsroom" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>newsroom</Link>
-                                {/* <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>annual returns</Link> */}
+        <div className='relative ml-auto mr-auto max-w-[1200px]'>
+          <div className='flex justify-between items-start pb-0 pl-4 pr-4 mb-8 mt-[101px] sm:flex-col sm:mt-50px sm:mt-0 ' style={{ border: '1px #7c4c4c', borderBottomColor: 'rgba(255, 255, 255, .5)' }}>
+            <div className='flex flex-col items-start'>
+              <div className='uppercase  font-use leading-[48px] text-[40px]' style={{ color: 'rgba(255, 255, 255, .85) ' }}>{content.footertitle}</div>
+              <p className=' text-xl leading-8 font-use-one w-[441px] mt-[30px] mb-[30px] sm:w-[100%] sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)' }}>{content.footerleftcontent.data.footerleftcontent}</p>
+              {/* getintouchbutton */}
+              <button className="btn btn-2 hover-slide-up sm:w-[100%]">
+                <Link to='/Contact'><Link to='/Contact'><span>{content.getInTouch}</span></Link></Link>
+              </button>
+              <div className='social-platform font-use sm:w-[100%]'>
+                <Link to="https://www.facebook.com/5cnetwork" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                  <img src={content.footerlogo1.localFile.url} alt='facebook' className='mr-0 max-w-full inline-block align-middle'></img>
+                </Link>
+                <Link to="https://www.linkedin.com/company/5c-network?trk=top_nav_home" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                  <img src={content.footerlogo3.localFile.url} alt='Twitter' className='mr-0 max-w-full inline-block align-middle'></img>
+                </Link>
+                <Link to="https://twitter.com/5c_network" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                  <img src={content.footerlogo2.localFile.url} alt='Linkedin' className='mr-0 max-w-full inline-block align-middle'></img>
+                </Link>
 
-                            </div>
-                            <div className='flex flex-col font-use ml-[60px]'>
-                                {/* <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>vision</Link> */}
-                                <Link to="/Carrers" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>careers</Link>
-                                <Link to="/Contact" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
-                                {/* <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>privacy policy</Link> */}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className='relative flex flex-row items-end mt-0 overflow-hidden' style={{ color: '#fff', height: '400px' }}>
-                    <video autoPlay loop muted className=' w-full h-full absolute m-auto object-cover bg-cover inline-block align-baseline ' style={{ backgroundPosition: '50%', top: '-100%', bottom: '-100%', left: '-100%', right: '-100%' }}>
-                        <source src={content.footervideo.localFile.url} type="video/mp4" />
-                    </video>
-                </div>
+                <Link to="https://www.instagram.com/5cnetwork/" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                  <img src={content.footerlogo4.localFile.url} alt='Medium' className='mr-0 max-w-full inline-block align-middle'></img>
+                </Link>
+              </div>
             </div>
+            <div className='flex sm:mt-[65px] sm:w-[100%] sm:justify-between'>
+              <div className='flex flex-col font-use ml-[60px] sm:ml-[5px]'>
+                <Link to="/About" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
+                <Link to="/Solutions" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>solutions</Link>
+                <Link to="/Technology" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
+                {/* <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>media</Link> */}
+                <Link to="/Blogs" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>blogs</Link>
+                <Link to="/Newsroom" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>newsroom</Link>
+                {/* <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>annual returns</Link> */}
 
-            
+              </div>
+              <div className='flex flex-col font-use ml-[60px]'>
+                {/* <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>vision</Link> */}
+                <Link to="/Carrers" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>careers</Link>
+                <Link to="/Contact" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
+                {/* <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>privacy policy</Link> */}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='relative flex flex-row items-end mt-0 overflow-hidden' style={{ color: '#fff', height: '400px' }}>
+          <video autoPlay loop muted className=' w-full h-full absolute m-auto object-cover bg-cover inline-block align-baseline ' style={{ backgroundPosition: '50%', top: '-100%', bottom: '-100%', left: '-100%', right: '-100%' }}>
+            <source src={content.footervideo.localFile.url} type="video/mp4" />
+          </video>
+        </div>
+      </div>
+
+
 
 
     </div>
@@ -624,11 +625,7 @@ query MyQuery {
         logo4content
         thirdsecimg {
           localFile {
-            childrenImageSharp {
-              fluid {
-                src
-              }
-            }
+            url
           }
         }
         rainbowtext
