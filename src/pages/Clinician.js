@@ -76,7 +76,7 @@ function Radiologist({ data }) {
         <span class="inner"></span>
         Sign In
       </div>
-      \<a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[99] mobile-screen-signin">
+      <a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[99] mobile-screen-signin">
         <span class="inner"></span>
         <span class="inner"></span>
         <span class="inner"></span>
@@ -201,7 +201,7 @@ function Radiologist({ data }) {
                 <div className='relative ml-auto mr-auto max-w-[1200px]'>
                     <div className='flex justify-between items-start pb-0 pl-4 pr-4 mb-8 mt-[101px] sm:flex-col sm:mt-50px ' style={{border: '1px #7c4c4c', borderBottomColor: 'rgba(255, 255, 255, .5)' }}>
                         <div className='flex flex-col items-start'>
-                            <div className='uppercase  font-use leading-[48px] text-[40px]' style={{ color: 'rgba(255, 255, 255, .85) '}}>{Content.footertitle}</div>
+                            <a href='https://open.spotify.com/show/6IAeIuksZiw6T3FkCjAbsP?si=ZhB_Sr8uT3-kr0tqeh25Kw' className='uppercase  font-use leading-[48px] text-[40px]' style={{ color: 'rgba(255, 255, 255, .85) '}}>{Content.footertitle}</a>
                             <p className=' text-xl leading-8 font-use-one w-[441px] mt-[30px] mb-[30px] sm:w-[100%] sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)'}}>{Content.footercontent.data.footercontent}</p>
                             {/* getintouchbutton */}
                             <button className="btn btn-2 hover-slide-up sm:w-[100%]">
