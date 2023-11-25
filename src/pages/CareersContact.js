@@ -10,6 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
+
 function ReachUs() {
     const [agreed, setAgreed] = useState(false)
     const [state, handleSubmit] = useForm("mzblqnaq");
@@ -24,11 +25,18 @@ function ReachUs() {
     const [selectedValue, setSelectedValue] = useState('');
     const [selectedGenre, setSelectedGenre] = useState('');
     const genre = ['Engineering', 'Human Resource', 'Product', 'Sales','Delivery','IT','Finance'];
+    
 
     
     function classNames(...classes) {
         return classes.filter(Boolean).join(' ')
       }
+
+      const handleIconClick = (event) => {
+        event.preventDefault()
+
+        navigate(-1)
+      };
 
       useEffect(() => {
         if (state.succeeded && submitted) {
@@ -54,6 +62,9 @@ function ReachUs() {
   return (
     <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
       <ToastContainer />
+      <div className=' absolute top-[20px] bottom-auto left-auto right-[20px]'>
+      <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/delete-sign--v1.png" alt="delete-sign--v1" className='cursor-pointer' onClick={handleIconClick}/>
+      </div>
       <div
         className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
         aria-hidden="true"
@@ -67,7 +78,7 @@ function ReachUs() {
         />
       </div>
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Carrers</h2>
+        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Careers</h2>
         <p className="mt-2 text-lg leading-8 text-gray-600">
         Your Door to Join India’s leading AI Powered Radiology Group opens here!
         </p>

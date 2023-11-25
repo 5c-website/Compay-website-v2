@@ -128,7 +128,8 @@
 }
 
 .outer {
-  position: relative;
+  /* position: relative; */
+  z-index: 1;
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
@@ -136,7 +137,7 @@
   text-transform: uppercase;
   overflow: hidden;
   transition: all .5s;
-  
+  margin-top: 1.5rem;
   letter-spacing: 4px;
   color: #03e9f4;
 }
@@ -416,7 +417,7 @@ transition: all 0.4s ease-in;
   }
   
   .image_wrapper img {
-    width: 80%;
+    width: 100%;
   }
   .partners-card{
     width: 1200px;
@@ -995,7 +996,7 @@ transition: all 0.4s ease-in;
   padding: 100px 10px;
 }
 .icons-grid{
-    width: 41%;
+    
     grid-column-gap: 40px;
     grid-row-gap: 40px;
     flex-flow: wrap;

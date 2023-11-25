@@ -49,11 +49,20 @@ function ReachUs() {
   const handleSelectChange = (e) => {
     setSelectedGenre(e.target.value);
   };
+
+  const handleIconClick = (event) => {
+    event.preventDefault()
+
+    navigate(-1)
+  };
         
     
   return (
     <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
       <ToastContainer />
+      <div className=' absolute top-[20px] bottom-auto left-auto right-[20px]'>
+      <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/delete-sign--v1.png" alt="delete-sign--v1" className='cursor-pointer' onClick={handleIconClick}/>
+      </div>
       <div
         className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
         aria-hidden="true"

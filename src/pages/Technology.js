@@ -70,6 +70,13 @@ function Technology({ data }) {
         </div>
       </Dialog>
     </Transition.Root>
+    <div onClick={openSignInModal} class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0">
+        <span class="inner"></span>
+        <span class="inner"></span>
+        <span class="inner"></span>
+        <span class="inner"></span>
+        SignIn
+      </div>
       <div className='absolute w-full max-w-full flex flex-col items-center bg-transparent nav-division' style={{ zIndex: '2', color: 'rgba(255, 255, 255, 0)', top: '0' }}>
         <div className='w-full max-w-full pt-3 pb-3 ml-auto mr-auto' style={{ width: '79%' }}>
           <nav className=' w-full max-w-full justify-around items-center flex relative float-right font-use nav-md'>
@@ -89,13 +96,7 @@ function Technology({ data }) {
               </nav>
             </div>
             <Link to='/Contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Contact</Link>
-            <div onClick={openSignInModal} class="outer inline-block ml-6 mr-6 text-base align-top relative uppercase cursor-pointer">
-        <span class="inner"></span>
-        <span class="inner"></span>
-        <span class="inner"></span>
-        <span class="inner"></span>
-        SignIn
-      </div>
+            
           </nav>
         </div>
       </div>
@@ -110,7 +111,7 @@ function Technology({ data }) {
       <li><Link to="/Solutions">Solutions</Link></li>
       <li><Link to="/Technology">Technology</Link></li>
       {/* <li><Link to="/Partners">Partners</Link></li> */}
-      <li><Link to="/">5C Network</Link></li>
+      <li><Link to="/">Home</Link></li>
       <li><Link to="/About">About</Link></li>
       
             <li><Link to="/Blogs">Blogs</Link></li>
@@ -132,7 +133,7 @@ function Technology({ data }) {
           </div>
         </div>
       </div>
-      <div className=' mt-60 sm:mt-2 sm:p-[1rem]'>
+      <div className=' mt-[4rem] sm:mt-2 sm:p-[1rem]'>
         <div className='max-w-full flex justify-center items-center ml-auto mr-auto'>
           <div className='max-w-full relative w-[1200px]'>
             <h2 className='uppercase mt-0 mb-0   font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.secondtitle}</h2>

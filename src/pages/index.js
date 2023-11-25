@@ -73,11 +73,19 @@ const Index = ({ data }) => {
       </Dialog>
     </Transition.Root>
 
+    <div onClick={openSignInModal} class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0">
+        <span class="inner"></span>
+        <span class="inner"></span>
+        <span class="inner"></span>
+        <span class="inner"></span>
+        SignIn
+      </div>
+
 
 
       <div className='absolute w-full max-w-full flex flex-col items-center bg-transparent nav-division' style={{ zIndex: '2', color: 'rgba(255, 255, 255, 0)', top: '0' }}>
         <div className='w-full max-w-full pt-3 pb-3 ml-auto mr-auto' style={{ width: '79%' }}>
-          <nav className=' w-full max-w-full justify-around items-center flex relative float-right font-use  nav-md'>
+          <nav className=' w-full max-w-full justify-around items-center flex relative  font-use  nav-md'>
             <Link to='/Solutions' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Solutions</Link>
             <Link to='/Technology' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
             <Link to='/About' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
@@ -95,18 +103,16 @@ const Index = ({ data }) => {
             </div>
             <Link to='/Contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
             {/* <Link to='/Contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>SignIn</Link> */}
-            <div onClick={openSignInModal} class="outer inline-block ml-6 mr-6 text-base align-top relative uppercase cursor-pointer">
-        <span class="inner"></span>
-        <span class="inner"></span>
-        <span class="inner"></span>
-        <span class="inner"></span>
-        SignIn
-      </div>
+            
 
 
           </nav>
+          
+          
         </div>
+        
       </div>
+      
       {/* Mobile responsive */}
       <nav role="navigation" className='mobile-nav'>
         <div id="menuToggle">
@@ -118,7 +124,7 @@ const Index = ({ data }) => {
             <li><Link to="/Solutions">Solutions</Link></li>
             <li><Link to="/Technology">Technology</Link></li>
             {/* <li><Link to="/Partners">Partners</Link></li> */}
-            <li><Link to="/">5C Network</Link></li>
+            <li><Link to="/">Home</Link></li>
             <li><Link to="/About">About</Link></li>
             
                   <li><Link to="/Blogs">Blogs</Link></li>
@@ -410,24 +416,24 @@ const Index = ({ data }) => {
             </div>
           </div>
           <div className='flex max-w-full mt-20 justify-between ml-[100px] w-[1000px] sm:ml-[0] sm:flex-col sm:w-full sm:mt-10'>
-            <Link className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000'}}>
+            <Link to="https://economictimes.indiatimes.com/tech/startups/tata-1mg-backed-5c-network-acquires-ai-healthtech-startup-krayen/articleshow/98187918.cms" className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000'}}>
               <div className=' pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full rounded-effect' style={{ backgroundColor: '#19191a' }}>
                 <div className='flex items-start justify-between mb-10'>
                   <img src={content.newslogo[1].localFile.url} className='max-w-full inline-block align-middle h-[30px] w-[14rem] sm:h-[20px]' style={{ border: '0'}}></img>
                   <div className='uppercase text-xs font-use-one' style={{ color: 'rgba(255, 255, 255, .8)', lineHeight: '15px' }}>{content.newscards[0].date}</div>
                 </div>
-                <p className='mt-0 mb-0 normal-case font-use-one text-[28px] sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .95)', lineHeight: '38px' }}>
+                <p className='mt-0 mb-0  font-use-one text-[28px] sm:text-[18px] uppercase' style={{ color: 'rgba(255, 255, 255, .95)', lineHeight: '38px' }}>
                   {content.newscards[0].newscontent.data.newscontent}
                 </p>
               </div>
             </Link>
-            <Link className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000', textDecoration: 'none' }}>
+            <Link to="https://economictimes.indiatimes.com/tech/funding/digital-diagnostic-startup-5c-network-raises-4-6-million/articleshow/94819661.cms" className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000', textDecoration: 'none' }}>
               <div className=' pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full  rounded-effect' style={{backgroundColor: '#19191a' }}>
                 <div className='flex items-start justify-between mb-14'>
                   <img src={content.newslogo[0].localFile.url} className='max-w-full w-[14rem] inline-block align-middle h-[40px] sm:h-[20px]' style={{ border: '0', opacity: '.85' }}></img>
                   <div className='uppercase text-xs font-use-one' style={{ color: 'rgba(255, 255, 255, .8)', lineHeight: '15px' }}>{content.newscards[1].date}</div>
                 </div>
-                <p className='mt-0 mb-0 normal-case font-use-one text-[28px] sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .95)', lineHeight: '38px' }}>
+                <p className='mt-0 mb-0 uppercase font-use-one text-[28px] sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .95)', lineHeight: '38px' }}>
                   <strong className=' font-normal'>{content.newscards[1].newscontent.data.newscontent}</strong>
                 </p>
               </div>

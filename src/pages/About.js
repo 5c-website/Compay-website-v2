@@ -71,6 +71,13 @@ function About({ data }) {
         </div>
       </Dialog>
     </Transition.Root>
+    <div onClick={openSignInModal} class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0">
+        <span class="inner"></span>
+        <span class="inner"></span>
+        <span class="inner"></span>
+        <span class="inner"></span>
+        SignIn
+      </div>
             <div className='absolute w-full max-w-full flex flex-col items-center bg-transparent nav-division' style={{ zIndex: '2', color: 'rgba(255, 255, 255, 0)', top: '0' }}>
                 <div className='w-full max-w-full pt-3 pb-3 ml-auto mr-auto' style={{ width: '79%' }}>
                     <nav className=' w-full max-w-full justify-around items-center flex relative float-right font-use nav-md'>
@@ -90,13 +97,7 @@ function About({ data }) {
                             </nav>
                         </div>
                         <Link to='/Contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Contact</Link>
-                        <div onClick={openSignInModal} class="outer inline-block ml-6 mr-6 text-base align-top relative uppercase cursor-pointer">
-        <span class="inner"></span>
-        <span class="inner"></span>
-        <span class="inner"></span>
-        <span class="inner"></span>
-        SignIn
-      </div>
+                        
                     </nav>
                 </div>
             </div>
@@ -111,7 +112,7 @@ function About({ data }) {
       <li><Link to="/Solutions">Solutions</Link></li>
       <li><Link to="/Technology">Technology</Link></li>
       {/* <li><Link to="/Partners">Partners</Link></li> */}
-      <li><Link to="/">5C Network</Link></li>
+      <li><Link to="/">Home</Link></li>
       <li><Link to="/About">About</Link></li>
       
             <li><Link to="/Blogs">Blogs</Link></li>
@@ -161,7 +162,7 @@ function About({ data }) {
                             <div className=' h-auto pr-4' style={{ paddingLeft: '15px' }}>
                                 <div className='flex relative items-end justify-between'>
                                     <div className='flex flex-col'>
-                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{ marginTop: '-19px', color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[0].firstname}</h3>
+                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{  color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[0].firstname}</h3>
                                         <h3 className=' text-2xl leading-8  mt-0 mb-0 uppercase font-use' style={{ color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[0].lastname}</h3>
                                     </div>
                                     <a href='https://www.linkedin.com/in/kalyan-sivasailam-3925074a/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
@@ -183,7 +184,7 @@ function About({ data }) {
                             <div className=' h-auto pr-4' style={{ paddingLeft: '15px' }}>
                                 <div className='flex relative items-end justify-between'>
                                     <div className='flex flex-col'>
-                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{ marginTop: '-19px', color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[1].firstname}</h3>
+                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{  color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[1].firstname}</h3>
                                         <h3 className=' text-2xl leading-8  mt-0 mb-0 uppercase font-use' style={{ color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[1].lastname}</h3>
                                     </div>
                                     <a href='https://www.linkedin.com/in/syed-s-ahmed-06553114/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
@@ -205,7 +206,7 @@ function About({ data }) {
                             <div className=' h-auto pr-4' style={{ paddingLeft: '15px' }}>
                                 <div className='flex relative items-end justify-between'>
                                     <div className='flex flex-col'>
-                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{ marginTop: '-19px', color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[2].firstname}</h3>
+                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{  color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[2].firstname}</h3>
                                         <h3 className=' text-2xl leading-8  mt-0 mb-0 uppercase font-use' style={{ color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[2].lastname}</h3>
                                     </div>
                                     <a href='https://www.linkedin.com/in/anandriyer/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
@@ -227,7 +228,7 @@ function About({ data }) {
                             <div className=' h-auto pr-4' style={{ paddingLeft: '15px' }}>
                                 <div className='flex relative items-end justify-between'>
                                     <div className='flex flex-col'>
-                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{ marginTop: '-19px', color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[3].firstname}</h3>
+                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{  color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[3].firstname}</h3>
                                         <h3 className=' text-2xl leading-8  mt-0 mb-0 uppercase font-use' style={{ color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[3].lastname}</h3>
                                     </div>
                                     <a href='https://www.linkedin.com/in/bargava/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
@@ -249,7 +250,7 @@ function About({ data }) {
                             <div className=' h-auto pr-4' style={{ paddingLeft: '15px' }}>
                                 <div className='flex relative items-end justify-between'>
                                     <div className='flex flex-col'>
-                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{ marginTop: '-19px', color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[4].firstname}</h3>
+                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{  color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[4].firstname}</h3>
                                         <h3 className=' text-2xl leading-8  mt-0 mb-0 uppercase font-use' style={{ color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[4].lastname}</h3>
                                     </div>
                                     <a href='https://www.linkedin.com/in/kirthiraj/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
@@ -271,7 +272,7 @@ function About({ data }) {
                             <div className=' h-auto pr-4' style={{ paddingLeft: '15px' }}>
                                 <div className='flex relative items-end justify-between'>
                                     <div className='flex flex-col'>
-                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{ marginTop: '-19px', color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[5].firstname}</h3>
+                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{  color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[5].firstname}</h3>
                                         <h3 className=' text-2xl leading-8  mt-0 mb-0 uppercase font-use' style={{ color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[5].lastname}</h3>
                                     </div>
                                     <a href='https://www.linkedin.com/in/vamshiavk/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
@@ -286,17 +287,17 @@ function About({ data }) {
                                 </div>
                             </div>
                         </div>
-                        {/* <div className=' h-auto object-cover mr-0 flex flex-col relative pb-5 w-[264px] sm:w-[95%]' style={{border: '1px solid #333', marginBottom: '60px' }}>
+                        <div className=' h-auto object-cover mr-0 flex flex-col relative pb-5 w-[264px] sm:w-[95%]' style={{border: '1px solid #333', marginBottom: '60px' }}>
                             <div>
                                 <img className='card-img' src={strapiContent.leadershipcardsimg[6].localFile.url}></img>
                             </div>
                             <div className=' h-auto pr-4' style={{ paddingLeft: '15px' }}>
                                 <div className='flex relative items-end justify-between'>
                                     <div className='flex flex-col'>
-                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{ marginTop: '-19px', color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[6].firstname}</h3>
+                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{  color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[6].firstname}</h3>
                                         <h3 className=' text-2xl leading-8  mt-0 mb-0 uppercase font-use' style={{ color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[6].lastname}</h3>
                                     </div>
-                                    <a href='https://www.linkedin.com/in/kalyan-sivasailam-3925074a/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
+                                    <a href='https://www.linkedin.com/in/prathyusha-mannar-462a147/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                         <div>
                                             <img src={strapiContent.socialplatform[2].localFile.url}></img>
                                         </div>
@@ -307,7 +308,7 @@ function About({ data }) {
                                     <div className=' text-lg leading-7 font-use-one' style={{ color: 'rgba(255, 255, 255, .75)' }}>{strapiContent.leadershipcards[6].position}</div>
                                 </div>
                             </div>
-                        </div> */}
+                        </div>
                         {/* <div className=' h-auto object-cover mr-0 flex flex-col relative pb-5 w-[264px] sm:w-[95%]' style={{border: '1px solid #333', marginBottom: '60px' }}>
                             <div>
                                 <img className='card-img' src={strapiContent.leadershipcardsimg[6].localFile.url}></img>
@@ -315,7 +316,7 @@ function About({ data }) {
                             <div className=' h-auto pr-4' style={{ paddingLeft: '15px' }}>
                                 <div className='flex relative items-end justify-between'>
                                     <div className='flex flex-col'>
-                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{ marginTop: '-19px', color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[7].firstname}</h3>
+                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{  color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[7].firstname}</h3>
                                         <h3 className=' text-2xl leading-8  mt-0 mb-0 uppercase font-use' style={{ color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[7].lastname}</h3>
                                     </div>
                                     <a href='https://www.linkedin.com/in/kalyan-sivasailam-3925074a/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
@@ -337,7 +338,7 @@ function About({ data }) {
                             <div className=' h-auto pr-4' style={{ paddingLeft: '15px' }}>
                                 <div className='flex relative items-end justify-between'>
                                     <div className='flex flex-col'>
-                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{ marginTop: '-19px', color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[8].firstname}</h3>
+                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{  color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[8].firstname}</h3>
                                         <h3 className=' text-2xl leading-8  mt-0 mb-0 uppercase font-use' style={{ color: '#fff', letterSpacing: '3px' }}>{strapiContent.leadershipcards[8].lastname}</h3>
                                     </div>
                                     <a href='https://www.linkedin.com/in/kalyan-sivasailam-3925074a/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
@@ -364,7 +365,7 @@ function About({ data }) {
                             <div className=' h-auto pr-4' style={{ paddingLeft: '15px' }}>
                                 <div className='flex relative items-end justify-between'>
                                     <div className='flex flex-col'>
-                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{ marginTop: '-19px', color: '#fff', letterSpacing: '3px' }}>{strapiContent.advisiorcard[0].firstname}</h3>
+                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{  color: '#fff', letterSpacing: '3px' }}>{strapiContent.advisiorcard[0].firstname}</h3>
                                         <h3 className=' text-2xl leading-8  mt-0 mb-0 uppercase font-use' style={{ color: '#fff', letterSpacing: '3px' }}>{strapiContent.advisiorcard[0].lastname}</h3>
                                     </div>
                                     <a href='https://www.linkedin.com/in/kalyan-sivasailam-3925074a/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
@@ -384,7 +385,7 @@ function About({ data }) {
                             <div className=' h-auto pr-4' style={{ paddingLeft: '15px' }}>
                                 <div className='flex relative items-end justify-between'>
                                     <div className='flex flex-col'>
-                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{ marginTop: '-19px', color: '#fff', letterSpacing: '3px' }}>{strapiContent.advisiorcard[1].firstname}</h3>
+                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{  color: '#fff', letterSpacing: '3px' }}>{strapiContent.advisiorcard[1].firstname}</h3>
                                         <h3 className=' text-2xl leading-8  mt-0 mb-0 uppercase font-use' style={{ color: '#fff', letterSpacing: '3px' }}>{strapiContent.advisiorcard[1].lastname}</h3>
                                     </div>
                                     <a href='https://www.linkedin.com/in/kalyan-sivasailam-3925074a/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
@@ -404,7 +405,7 @@ function About({ data }) {
                             <div className=' h-auto pr-4' style={{ paddingLeft: '15px' }}>
                                 <div className='flex relative items-end justify-between'>
                                     <div className='flex flex-col'>
-                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{ marginTop: '-19px', color: '#fff', letterSpacing: '3px' }}>{strapiContent.advisiorcard[2].firstname}</h3>
+                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{  color: '#fff', letterSpacing: '3px' }}>{strapiContent.advisiorcard[2].firstname}</h3>
                                         <h3 className=' text-2xl leading-8  mt-0 mb-0 uppercase font-use' style={{ color: '#fff', letterSpacing: '3px' }}>{strapiContent.advisiorcard[2].lastname}</h3>
                                     </div>
                                     <a href='https://www.linkedin.com/in/kalyan-sivasailam-3925074a/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
@@ -424,7 +425,7 @@ function About({ data }) {
                             <div className=' h-auto pr-4' style={{ paddingLeft: '15px' }}>
                                 <div className='flex relative items-end justify-between'>
                                     <div className='flex flex-col'>
-                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{ marginTop: '-19px', color: '#fff', letterSpacing: '3px' }}>{strapiContent.advisiorcard[3].firstname}</h3>
+                                        <h3 className=' text-2xl leading-8  mb-0 uppercase font-use' style={{  color: '#fff', letterSpacing: '3px' }}>{strapiContent.advisiorcard[3].firstname}</h3>
                                         <h3 className=' text-2xl leading-8  mt-0 mb-0 uppercase font-use' style={{ color: '#fff', letterSpacing: '3px' }}>{strapiContent.advisiorcard[3].lastname}</h3>
                                     </div>
                                     <a href='https://www.linkedin.com/in/kalyan-sivasailam-3925074a/' target='_blank' className=' w-8 h-8 justify-center items-center flex max-w-full uppercase text-lg no-underline' style={{ border: '1px solid #00d4ff', borderRadius: '100px', color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>

@@ -102,7 +102,7 @@ function Carrers({ data }) {
       <li><Link to="/Solutions">Solutions</Link></li>
       <li><Link to="/Technology">Technology</Link></li>
       {/* <li><Link to="/Partners">Partners</Link></li> */}
-      <li><Link to="/">5C Network</Link></li>
+      <li><Link to="/">Home</Link></li>
       <li><Link to="/About">About</Link></li>
       
             <li><Link to="/Blogs">Blogs</Link></li>
