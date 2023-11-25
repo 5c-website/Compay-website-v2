@@ -68,7 +68,7 @@ function Radiologist({ data }) {
         </div>
       </Dialog>
     </Transition.Root>
-    <div onClick={openSignInModal} class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0">
+    <div onClick={openSignInModal} class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[99]">
         <span class="inner"></span>
         <span class="inner"></span>
         <span class="inner"></span>
