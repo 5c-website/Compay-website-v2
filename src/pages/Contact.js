@@ -78,7 +78,7 @@ function Contact({ data }) {
         <span class="inner"></span>
         Sign In
       </div>
-      <a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[99] mobile-screen-signin">
+      <a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[1] mobile-screen-signin">
         <span class="inner"></span>
         <span class="inner"></span>
         <span class="inner"></span>
@@ -110,7 +110,7 @@ function Contact({ data }) {
             </div>
 
             {/* Mobile responsive */}
-<nav role="navigation" className='mobile-nav'>
+{/* <nav role="navigation" className='mobile-nav'>
   <div id="menuToggle">
     <input type="checkbox"/>
     <span></span>
@@ -119,7 +119,6 @@ function Contact({ data }) {
     <ul id="menu">
       <li><Link to="/Solutions">Solutions</Link></li>
       <li><Link to="/Technology">Technology</Link></li>
-      {/* <li><Link to="/Partners">Partners</Link></li> */}
       <li><Link to="/">Home</Link></li>
       <li><Link to="/About">About</Link></li>
       
@@ -127,11 +126,35 @@ function Contact({ data }) {
             <li><Link to="/Newsroom">Newsroom</Link></li>
           
       <li><Link to="/Carrers">Careers</Link></li>
-      <li><Link to="/Contact" target="_blank">contact</Link></li>
-      {/* <li><div onClick={openSignInModal}>SignIn</div></li> */}
+      <li><Link to="/Contact" >Contact</Link></li>
     </ul>
   </div>
-</nav>
+</nav> */}
+<div className=' bg-transparent p-[15px] flex justify-between items-center absolute z-[1] w-[65%] navbar-mb  '>
+      <nav role="navigation" className='mobile-nav'>
+        <div id="menuToggle" className='absolute m-[1rem] z-[99]'>
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="menu">
+            <li><Link to="/Solutions" className='font-use'>Solutions</Link></li>
+            <li><Link to="/Technology">Technology</Link></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/About">About</Link></li>
+
+            <li><Link to="/Blogs">Blogs</Link></li>
+            <li><Link to="/Newsroom">Newsroom</Link></li>
+
+            <li><Link to="/Carrers">Careers</Link></li>
+            <li><Link to="/Contact" >Contact</Link></li>
+          </ul>
+        </div>
+      </nav>
+      <img src={logo} alt='5C Network' className='w-[50%]'></img>
+    
+    
+  </div>
             <div className='Contact-page sm:p-[1rem]' style={{ backgroundImage: `url(${strapiContent.contactimg.localFile.url})` }}>
                 <div className='max-w-full ml-auto mr-auto sm:w-full'>
                     <div className='max-w-full relative mt-[234px] w-[1200px] sm:w-full sm:mt-28'>
@@ -171,7 +194,7 @@ function Contact({ data }) {
                             </div>
                             </span>
                         </Link>
-                        <Link to='/ReachForms'  className='flex max-w-full uppercase text-lg items-center justify-center w-[460px] h-[142px] sm:w-[85%] sm:h-[9vh] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, .04)', border: '1px solid #333' }}>
+                        <Link to='/ReachForm'  className='flex max-w-full uppercase text-lg items-center justify-center w-[460px] h-[142px] sm:w-[85%] sm:h-[9vh] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, .04)', border: '1px solid #333' }}>
                         <span className='flex pt-[2.5rem] pl-[2rem] rounded-effect justify-center sm:justify-center sm:pt-[20px] sm:pl-0'>
                             <img src={strapiContent.helpimg[2].localFile.url} className='max-w-full inline-block align-middle mr-[30px] sm:mr-[20px] sm:h-[40px] sm:w-[40px]'></img>
                             <div>
@@ -207,7 +230,7 @@ function Contact({ data }) {
                     <h2 className='uppercase mt-0 mb-0   font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.loctitle}</h2>
                     <h2 className='max-w-full uppercase mt-0 mb-0  font-use text-[#fff] text-[80px] tracking-[2px] leading-[100px] sm:tracking-[1px] sm:text-[38px] sm:leading-[50px] sm:ml-[10px]'>{strapiContent.locsubtitle}</h2>
                     <div className='flex mt-20 justify-between  sm:flex-col  sm:w-full'>
-                      <a href='https://www.google.com/maps/search/5c+network/@12.9155616,77.595932,14z/data=!3m1!4b1?entry=ttu' className='cursor-pointer  hover:border-[#fff] hover:underline' target='_blank'>
+                      <a href='https://www.google.com/maps/search/5c+network/@12.9155616,77.595932,14z/data=!3m1!4b1?entry=ttu' className='cursor-pointer  ' target='_blank'>
                         <div className='w-auto flex sm:mb-14 sm:max-w-[98%] sm:w-full'>            
                             <div>
                                 <img src={strapiContent.locationlogo.localFile.url} className='max-w-full inline-block align-middle' style={{ width: '50px', height: '50px' }}></img>
@@ -216,7 +239,7 @@ function Contact({ data }) {
                                 <div className='uppercase text-[40px] sm:text-[20px]' style={{ letterSpacing: '2px', lineHeight: '48px', color: '#fff' }}>{strapiContent.locations[0].country}</div>
                                 <p className=' mt-3 mb-0 leading-8 font-use-one text-[20px] sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .85)' }}>
                                 <label className='text-[#fff] font-bold  w-[65%]'> RadHouse</label>
-                                    <div dangerouslySetInnerHTML={{ __html: strapiContent.locations[0].address.data.address }}></div>
+                                    <div dangerouslySetInnerHTML={{ __html: strapiContent.locations[0].address.data.address }} className='footer-hover'></div>
                                 </p>
                             </div>
                             
@@ -231,7 +254,7 @@ function Contact({ data }) {
                                 <div className='uppercase text-[40px] sm:text-[20px]' style={{ letterSpacing: '2px', lineHeight: '48px', color: '#fff' }}>{strapiContent.locations[1].country}</div>
                                 <p className=' mt-3 mb-0 leading-8 font-use-one text-[20px] sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .85)' }}>
                                 <label className='text-[#fff] font-bold  w-[65%]'> Cerebrum</label>
-                                    <div dangerouslySetInnerHTML={{ __html: strapiContent.locations[1].address.data.address }}></div>
+                                    <div dangerouslySetInnerHTML={{ __html: strapiContent.locations[1].address.data.address }} className='footer-hover'></div>
                                 </p>
                             </div>
                         </div>
@@ -245,7 +268,7 @@ function Contact({ data }) {
                                 <div className='uppercase text-[40px] sm:text-[20px]' style={{ letterSpacing: '2px', lineHeight: '48px', color: '#fff' }}>{strapiContent.locations[2].country}</div>
                                 <p className=' mt-3 mb-0 leading-8 font-use-one text-[20px] sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .85)' }}>
                                 <label className='text-[#fff] font-bold  w-[65%]'> Neocortex</label>
-                                    <div dangerouslySetInnerHTML={{ __html: strapiContent.locations[2].address.data.address }}></div>
+                                    <div dangerouslySetInnerHTML={{ __html: strapiContent.locations[2].address.data.address }} className='footer-hover'></div>
                                 </p>
                             </div>
                             
@@ -282,20 +305,20 @@ function Contact({ data }) {
                         </div>
                         <div className='flex sm:mt-[65px] sm:w-[100%] sm:justify-between'>
                             <div className='flex flex-col font-use ml-[60px] sm:ml-[5px]'>
-                            <a href='https://borderlessradiology.com/' target='_blank' className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Borderless Radiology - For Radiologist </a>
-                <a href='https://play.google.com/store/apps/details?id=db.com.a5c&pcampaignid=web_share' to="/Solutions" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>ProtoCALL - for Radiographers</a>
-                <a href='https://ai.5cnetwork.com/' target='_blank' className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Pixel Predict - AI Newsletter </a>
-                {/* <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>media</Link> */}
-                <a href='https://osteocheck.5cnetwork.com/' target='_blank' className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Osteocheck</a>
-                <a href='https://chat.whatsapp.com/EXOCBtpLcpqB3JUSK3ifFl' target='_blank'  className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Radiographer - Community </a>
-                <a href='https://open.spotify.com/show/6IAeIuksZiw6T3FkCjAbsP' target='_blank' className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Podcast</a>
+                            <a href='https://borderlessradiology.com/' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Borderless Radiology - For Radiologist </a>
+                <a href='https://play.google.com/store/apps/details?id=db.com.a5c&pcampaignid=web_share' to="/Solutions" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>ProtoCALL - for Radiographers</a>
+                <a href='https://ai.5cnetwork.com/' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Pixel Predict - AI Newsletter </a>
+                {/* <Link to="#" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>media</Link> */}
+                <a href='https://osteocheck.5cnetwork.com/' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Osteocheck</a>
+                <a href='https://chat.whatsapp.com/EXOCBtpLcpqB3JUSK3ifFl' target='_blank'  className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Radiographer - Community </a>
+                <a href='https://open.spotify.com/show/6IAeIuksZiw6T3FkCjAbsP' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Podcast</a>
 
                             </div>
                             {/* <div className='flex flex-col font-use ml-[60px]'>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>vision</Link>
-                                <Link to="/Carrers" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>careers</Link>
-                                <Link to="/Contact" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>privacy policy</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>vision</Link>
+                                <Link to="/Carrers" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>careers</Link>
+                                <Link to="/Contact" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>privacy policy</Link>
                             </div> */}
                         </div>
                     </div>

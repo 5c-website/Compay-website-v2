@@ -75,7 +75,7 @@ function Blogs({data}) {
         <span class="inner"></span>
         Sign In
       </div>
-      <a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[99] mobile-screen-signin">
+      <a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[1] mobile-screen-signin">
         <span class="inner"></span>
         <span class="inner"></span>
         <span class="inner"></span>
@@ -106,7 +106,7 @@ function Blogs({data}) {
                 </div>
             </div>
             {/* Mobile responsive */}
-<nav role="navigation" className='mobile-nav'>
+{/* <nav role="navigation" className='mobile-nav'>
   <div id="menuToggle">
     <input type="checkbox"/>
     <span></span>
@@ -115,7 +115,6 @@ function Blogs({data}) {
     <ul id="menu">
       <li><Link to="/Solutions">Solutions</Link></li>
       <li><Link to="/Technology">Technology</Link></li>
-      {/* <li><Link to="/Partners">Partners</Link></li> */}
       <li><Link to="/">Home</Link></li>
       <li><Link to="/About">About</Link></li>
       
@@ -123,11 +122,35 @@ function Blogs({data}) {
             <li><Link to="/Newsroom">Newsroom</Link></li>
           
       <li><Link to="/Carrers">Careers</Link></li>
-      <li><Link to="/Contact" target="_blank">contact</Link></li>
-      {/* <li><div onClick={openSignInModal}>SignIn</div></li> */}
+      <li><Link to="/Contact" >Contact</Link></li>
     </ul>
   </div>
-</nav>
+</nav> */}
+<div className=' bg-transparent p-[15px] flex justify-between items-center absolute z-[1] w-[65%] navbar-mb  '>
+      <nav role="navigation" className='mobile-nav'>
+        <div id="menuToggle" className='absolute m-[1rem] z-[99]'>
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="menu">
+            <li><Link to="/Solutions" className='font-use'>Solutions</Link></li>
+            <li><Link to="/Technology">Technology</Link></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/About">About</Link></li>
+
+            <li><Link to="/Blogs">Blogs</Link></li>
+            <li><Link to="/Newsroom">Newsroom</Link></li>
+
+            <li><Link to="/Carrers">Careers</Link></li>
+            <li><Link to="/Contact" >Contact</Link></li>
+          </ul>
+        </div>
+      </nav>
+      <img src={logo} alt='5C Network' className='w-[50%]'></img>
+    
+    
+  </div>
             <div>
                 <div className='max-w-full justify-center flex ml-auto mr-auto' style={{marginBottom:'60px'}}>
                     <div className='max-w-full relative mt-20' style={{width:'1000px'}}>
@@ -142,7 +165,7 @@ function Blogs({data}) {
                                                         <img className='blog-img' src={strapiContent.images[0].localFile.url} alt="sample"></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[0].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] font-use' style={{letterSpacing:0,lineHeight:'120%',color:'#fff'}}>
                                                             {strapiContent.blogs[0].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
@@ -159,7 +182,7 @@ function Blogs({data}) {
                                                         <img className='blog-img' src={strapiContent.images[1].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[1].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] font-use' style={{letterSpacing:0,lineHeight:'120%',color:'#fff'}}>
                                                             {strapiContent.blogs[1].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
@@ -176,7 +199,7 @@ function Blogs({data}) {
                                                         <img className='blog-img' src={strapiContent.images[2].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[2].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] font-use' style={{letterSpacing:0,lineHeight:'120%',color:'#fff'}}>
                                                             {strapiContent.blogs[2].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
@@ -193,7 +216,7 @@ function Blogs({data}) {
                                                         <img className='blog-img' src={strapiContent.images[3].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[3].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] font-use' style={{letterSpacing:0,lineHeight:'120%',color:'#fff'}}>
                                                             {strapiContent.blogs[3].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
@@ -210,7 +233,7 @@ function Blogs({data}) {
                                                         <img className='blog-img' src={strapiContent.images[4].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[4].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] font-use' style={{letterSpacing:0,lineHeight:'120%',color:'#fff'}}>
                                                             {strapiContent.blogs[4].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
@@ -227,7 +250,7 @@ function Blogs({data}) {
                                                         <img className='blog-img' src={strapiContent.images[5].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[5].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] font-use' style={{letterSpacing:0,lineHeight:'120%',color:'#fff'}}>
                                                             {strapiContent.blogs[5].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
@@ -244,7 +267,7 @@ function Blogs({data}) {
                                                         <img className='blog-img' src={strapiContent.images[6].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[6].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] font-use' style={{letterSpacing:0,lineHeight:'120%',color:'#fff'}}>
                                                             {strapiContent.blogs[6].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
@@ -261,7 +284,7 @@ function Blogs({data}) {
                                                         <img className='blog-img' src={strapiContent.images[7].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[7].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] font-use' style={{letterSpacing:0,lineHeight:'120%',color:'#fff'}}>
                                                             {strapiContent.blogs[7].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
@@ -278,7 +301,7 @@ function Blogs({data}) {
                                                         <img className='blog-img' src={strapiContent.images[8].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[8].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] font-use' style={{letterSpacing:0,lineHeight:'120%',color:'#fff'}}>
                                                             {strapiContent.blogs[8].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
@@ -295,7 +318,7 @@ function Blogs({data}) {
                                                         <img className='blog-img' src={strapiContent.images[9].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[9].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] font-use' style={{letterSpacing:0,lineHeight:'120%',color:'#fff'}}>
                                                             {strapiContent.blogs[9].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
@@ -312,7 +335,7 @@ function Blogs({data}) {
                                                         <img className='blog-img' src={strapiContent.images[10].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[10].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] font-use' style={{letterSpacing:0,lineHeight:'120%',color:'#fff'}}>
                                                             {strapiContent.blogs[10].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
@@ -329,7 +352,7 @@ function Blogs({data}) {
                                                         <img className='blog-img' src={strapiContent.images[11].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[11].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] font-use' style={{letterSpacing:0,lineHeight:'120%',color:'#fff'}}>
                                                             {strapiContent.blogs[11].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
@@ -346,7 +369,7 @@ function Blogs({data}) {
                                                         <img className='blog-img' src={strapiContent.images[12].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[12].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] font-use' style={{letterSpacing:0,lineHeight:'120%',color:'#fff'}}>
                                                             {strapiContent.blogs[12].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
@@ -363,7 +386,7 @@ function Blogs({data}) {
                                                         <img className='blog-img' src={strapiContent.images[13].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[13].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] font-use' style={{letterSpacing:0,lineHeight:'120%',color:'#fff'}}>
                                                             {strapiContent.blogs[13].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
@@ -380,7 +403,7 @@ function Blogs({data}) {
                                                         <img className='blog-img' src={strapiContent.images[14].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[14].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] font-use' style={{letterSpacing:0,lineHeight:'120%',color:'#fff'}}>
                                                             {strapiContent.blogs[14].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
@@ -397,7 +420,7 @@ function Blogs({data}) {
                                                         <img className='blog-img' src={strapiContent.images[15].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[15].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] font-use' style={{letterSpacing:0,lineHeight:'120%',color:'#fff'}}>
                                                             {strapiContent.blogs[15].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
@@ -414,7 +437,7 @@ function Blogs({data}) {
                                                         <img className='blog-img' src={strapiContent.images[16].localFile.url}></img>
                                                         <div className='blog-content'>
                                                             <div className=' uppercase text-base leading-4 font-use' style={{letterSpacing:'1px',color:'#00d4ff'}}>{strapiContent.blogs[16].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0  font-use' style={{letterSpacing:0,fontSize:'40px',lineHeight:'120%',color:'#fff'}}>
+                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] font-use' style={{letterSpacing:0,lineHeight:'120%',color:'#fff'}}>
                                                             {strapiContent.blogs[16].content.data.content}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{lineHeight:'26px',color:'rgba(255, 255, 255, .5)'}}>
@@ -461,20 +484,20 @@ function Blogs({data}) {
                         </div>
                         <div className='flex sm:mt-[65px] sm:w-[100%] sm:justify-between'>
                             <div className='flex flex-col font-use ml-[60px] sm:ml-[5px]'>
-                            <a href='https://borderlessradiology.com/' target='_blank' className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Borderless Radiology - For Radiologist </a>
-                <a href='https://play.google.com/store/apps/details?id=db.com.a5c&pcampaignid=web_share' to="/Solutions" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>ProtoCALL - for Radiographers</a>
-                <a href='https://ai.5cnetwork.com/' target='_blank' className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Pixel Predict - AI Newsletter </a>
-                {/* <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>media</Link> */}
-                <a href='https://osteocheck.5cnetwork.com/' target='_blank' className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Osteocheck</a>
-                <a href='https://chat.whatsapp.com/EXOCBtpLcpqB3JUSK3ifFl' target='_blank' className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Radiographer - Community </a>
-                <a href='https://open.spotify.com/show/6IAeIuksZiw6T3FkCjAbsP' target='_blank' className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Podcast</a>
+                            <a href='https://borderlessradiology.com/' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover  ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Borderless Radiology - For Radiologist </a>
+                <a href='https://play.google.com/store/apps/details?id=db.com.a5c&pcampaignid=web_share' to="/Solutions" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>ProtoCALL - for Radiographers</a>
+                <a href='https://ai.5cnetwork.com/' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Pixel Predict - AI Newsletter </a>
+                {/* <Link to="#" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>media</Link> */}
+                <a href='https://osteocheck.5cnetwork.com/' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Osteocheck</a>
+                <a href='https://chat.whatsapp.com/EXOCBtpLcpqB3JUSK3ifFl' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Radiographer - Community </a>
+                <a href='https://open.spotify.com/show/6IAeIuksZiw6T3FkCjAbsP' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Podcast</a>
 
                             </div>
                             {/* <div className='flex flex-col font-use ml-[60px]'>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>vision</Link>
-                                <Link to="/Carrers" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>careers</Link>
-                                <Link to="/Contact" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5 ' style={{ color: 'rgba(255, 255, 255, .85)', letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>privacy policy</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>vision</Link>
+                                <Link to="/Carrers" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>careers</Link>
+                                <Link to="/Contact" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
+                                <Link to="#" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>privacy policy</Link>
                             </div> */}
                         </div>
                     </div>
