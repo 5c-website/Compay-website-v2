@@ -862,6 +862,12 @@ transition: all 0.4s ease-in;
   background-size: 67%;
 }
 
+.privacy-policy{
+  background-position: 100% 100%;
+  background-size: 67%;
+  /* background-image: url(../Assets/privacypolicy/privacy-policy-bannr.jpg); */
+}
+
 .separator-effect-md{
   display: none;
 }

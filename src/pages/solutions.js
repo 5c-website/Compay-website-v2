@@ -89,22 +89,22 @@ function Solutions({ data }) {
       <div className='absolute w-full max-w-full flex flex-col items-center bg-transparent nav-division' style={{ zIndex: '2', color: 'rgba(255, 255, 255, 0)', top: '0' }}>
         <div className='w-full max-w-full pt-3 pb-3 ml-auto mr-auto' style={{ width: '79%' }}>
           <nav className=' w-full max-w-full justify-around items-center flex relative float-right font-use nav-md'>
-            <Link to='/Solutions' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Solutions</Link>
-            <Link to='/Technology' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
-            <Link to='/About' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
+            <Link to='/solutions' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Solutions</Link>
+            <Link to='/technology' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
+            <Link to='/about' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
             {/* <Link to='/Partners' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Partners</Link> */}
             <Link to='/' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '102px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}><img src={logo} alt='5C Network'></img></Link>
-            <Link to='/Carrers' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Careers</Link>
+            <Link to='/careers' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Careers</Link>
             <div className='DropdDown'>
               <div className='DropDowntoggle'>
                 <div className=' inline-block ml-6 mr-6 text-base align-top relative uppercase ' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Resources</div>
               </div>
               <nav className='navbartoggle'>
-              <Link to='/Blogs' className='navlinks hover-under '>Blogs</Link>
-                <Link to='/Newsroom' className='navlinks  hover-under-1'>Newsroom</Link>
+              <Link to='/blogs' className='navlinks hover-under '>Blogs</Link>
+                <Link to='/newsroom' className='navlinks  hover-under-1'>Newsroom</Link>
               </nav>
             </div>
-            <Link to='/Contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Contact</Link>
+            <Link to='/contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Contact</Link>
             
           </nav>
         </div>
@@ -117,16 +117,16 @@ function Solutions({ data }) {
     <span></span>
     <span></span>
     <ul id="menu">
-      <li><Link to="/Solutions">Solutions</Link></li>
-      <li><Link to="/Technology">Technology</Link></li>
+      <li><Link to="/solutions">Solutions</Link></li>
+      <li><Link to="/technology">Technology</Link></li>
       <li><Link to="/">Home</Link></li>
-      <li><Link to="/About">About</Link></li>
+      <li><Link to="/about">About</Link></li>
       
-            <li><Link to="/Blogs">Blogs</Link></li>
-            <li><Link to="/Newsroom">Newsroom</Link></li>
+            <li><Link to="/blogs">Blogs</Link></li>
+            <li><Link to="/newsroom">Newsroom</Link></li>
           
-      <li><Link to="/Carrers">Careers</Link></li>
-      <li><Link to="/Contact" >Contact</Link></li>
+      <li><Link to="/careers">Careers</Link></li>
+      <li><Link to="/contact" >Contact</Link></li>
     </ul>
   </div>
 </nav> */}
@@ -138,16 +138,16 @@ function Solutions({ data }) {
           <span></span>
           <span></span>
           <ul id="menu">
-            <li><Link to="/Solutions" className='font-use'>Solutions</Link></li>
-            <li><Link to="/Technology">Technology</Link></li>
+            <li><Link to="/solutions" className='font-use'>Solutions</Link></li>
+            <li><Link to="/technology">Technology</Link></li>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/About">About</Link></li>
+            <li><Link to="/about">About</Link></li>
 
-            <li><Link to="/Blogs">Blogs</Link></li>
-            <li><Link to="/Newsroom">Newsroom</Link></li>
+            <li><Link to="/blogs">Blogs</Link></li>
+            <li><Link to="/newsroom">Newsroom</Link></li>
 
-            <li><Link to="/Carrers">Careers</Link></li>
-            <li><Link to="/Contact" >Contact</Link></li>
+            <li><Link to="/careers">Careers</Link></li>
+            <li><Link to="/contact" >Contact</Link></li>
           </ul>
         </div>
       </nav>
@@ -165,11 +165,11 @@ function Solutions({ data }) {
               <p className='mb-0 mt-0 font-use-one text-xl text-[#ffffffd6] content-solution'>{strapiContent.content.data.content}</p>
             </div>
             <div className='relative flex w-full max-w-full justify-around  solutions-home-container'>
-                <Link to="/Radiologist" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='action-underline underline-closing'>{strapiContent.menuItems[0].items}</span></Link>
-                <Link to="/Clinician" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='action-underline underline-closing'>{strapiContent.menuItems[1].items}</span></Link>
-                <Link to="/Hospital" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='action-underline underline-closing'>{strapiContent.menuItems[2].items}</span></Link>
-                <Link to="/diagnostic" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='action-underline underline-closing'>{strapiContent.menuItems[3].items}</span></Link>
-                <Link to="/Healthcare" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='action-underline underline-closing'>{strapiContent.menuItems[4].items}</span></Link>
+                <Link to="/radiologists" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='action-underline underline-closing'>{strapiContent.menuItems[0].items}</span></Link>
+                <Link to="/clinicians" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='action-underline underline-closing'>{strapiContent.menuItems[1].items}</span></Link>
+                <Link to="/hospitals" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='action-underline underline-closing'>{strapiContent.menuItems[2].items}</span></Link>
+                <Link to="/diagnosticcenters" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='action-underline underline-closing'>{strapiContent.menuItems[3].items}</span></Link>
+                <Link to="/healthcareaggregators" className=' font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items' style={{transition: 'all .25s ease-in' }}><span className='action-underline underline-closing'>{strapiContent.menuItems[4].items}</span></Link>
             </div>
           </div>
         </div>
@@ -183,7 +183,7 @@ function Solutions({ data }) {
                             <p className=' text-xl leading-8 font-use-one w-[441px] mt-[30px] mb-[30px] sm:w-[100%] sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)'}}>{strapiContent.footercontent.data.footercontent}</p>
                             {/* getintouchbutton */}
                             <button className="btn btn-2 hover-slide-up sm:w-[100%]">
-                            <Link to='/Contact'> <span>{strapiContent.git}</span></Link>
+                            <Link to='/contact'> <span>{strapiContent.git}</span></Link>
                             </button>
                             <div className='social-platform font-use sm:w-[100%]'>
                                 <Link to="https://www.facebook.com/5cnetwork" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
@@ -209,12 +209,14 @@ function Solutions({ data }) {
                 <a href='https://osteocheck.5cnetwork.com/' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Osteocheck</a>
                 <a href='https://chat.whatsapp.com/EXOCBtpLcpqB3JUSK3ifFl' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Radiographer - Community </a>
                 <a href='https://open.spotify.com/show/6IAeIuksZiw6T3FkCjAbsP' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Podcast</a>
+                <Link to="/privacy-policy" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Privacy policy</Link>
+
 
                             </div>
                             {/* <div className='flex flex-col font-use ml-[60px]'>
                                 <Link to="#" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>vision</Link>
-                                <Link to="/Carrers" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>careers</Link>
-                                <Link to="/Contact" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
+                                <Link to="/careers" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>careers</Link>
+                                <Link to="/contact" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
                                 <Link to="#" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>privacy policy</Link>
                             </div> */}
                         </div>

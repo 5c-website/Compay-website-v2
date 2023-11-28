@@ -98,23 +98,23 @@ const Index = ({ data }) => {
       <div className='absolute w-full max-w-full flex flex-col items-center bg-transparent nav-division' style={{ zIndex: '2', color: 'rgba(255, 255, 255, 0)', top: '0' }}>
         <div className='w-full max-w-full pt-3 pb-3 ml-auto mr-auto' style={{ width: '79%' }}>
           <nav className=' w-full max-w-full justify-around items-center flex relative  font-use  nav-md'>
-            <Link to='/Solutions' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Solutions</Link>
-            <Link to='/Technology' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
-            <Link to='/About' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
+            <Link to='/solutions' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Solutions</Link>
+            <Link to='/technology' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
+            <Link to='/about' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
             {/* <Link to='/Partners' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Partners</Link> */}
             <Link to='/' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '102px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}><img src={logo} alt='5C Network'></img></Link>
-            <Link to='/Carrers' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Careers</Link>
+            <Link to='/careers' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Careers</Link>
             <div className='DropdDown'>
               <div className='DropDowntoggle'>
                 <div className=' inline-block ml-6 mr-6 text-base align-top relative uppercase ' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Resources</div>
               </div>
               <nav className='navbartoggle'>
-                <Link to='/Blogs' className='navlinks '>Blogs</Link>
-                <Link to='/Newsroom' className='navlinks'>Newsroom</Link>
+                <Link to='/blogs' className='navlinks '>Blogs</Link>
+                <Link to='/newsroom' className='navlinks'>Newsroom</Link>
               </nav>
             </div>
-            <Link to='/Contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
-            {/* <Link to='/Contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>SignIn</Link> */}
+            <Link to='/contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
+            {/* <Link to='/contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>SignIn</Link> */}
 
 
 
@@ -134,16 +134,16 @@ const Index = ({ data }) => {
           <span></span>
           <span></span>
           <ul id="menu">
-            <li><Link to="/Solutions">Solutions</Link></li>
-            <li><Link to="/Technology">Technology</Link></li>
+            <li><Link to="/solutions">Solutions</Link></li>
+            <li><Link to="/technology">Technology</Link></li>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/About">About</Link></li>
+            <li><Link to="/about">About</Link></li>
 
-            <li><Link to="/Blogs">Blogs</Link></li>
-            <li><Link to="/Newsroom">Newsroom</Link></li>
+            <li><Link to="/blogs">Blogs</Link></li>
+            <li><Link to="/newsroom">Newsroom</Link></li>
 
-            <li><Link to="/Carrers">Careers</Link></li>
-            <li><Link to="/Contact" >Contact</Link></li>
+            <li><Link to="/careers">Careers</Link></li>
+            <li><Link to="/contact" >Contact</Link></li>
           </ul>
         </div>
       </nav>
@@ -164,16 +164,16 @@ const Index = ({ data }) => {
           <span></span>
           <span></span>
           <ul id="menu">
-            <li><Link to="/Solutions" className='font-use'>Solutions</Link></li>
-            <li><Link to="/Technology">Technology</Link></li>
+            <li><Link to="/solutions" className='font-use'>Solutions</Link></li>
+            <li><Link to="/technology">Technology</Link></li>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/About">About</Link></li>
+            <li><Link to="/about">About</Link></li>
 
-            <li><Link to="/Blogs">Blogs</Link></li>
-            <li><Link to="/Newsroom">Newsroom</Link></li>
+            <li><Link to="/blogs">Blogs</Link></li>
+            <li><Link to="/newsroom">Newsroom</Link></li>
 
-            <li><Link to="/Carrers">Careers</Link></li>
-            <li><Link to="/Contact" >Contact</Link></li>
+            <li><Link to="/careers">Careers</Link></li>
+            <li><Link to="/contact" >Contact</Link></li>
           </ul>
         </div>
       </nav>
@@ -222,7 +222,7 @@ const Index = ({ data }) => {
                 </p>
               </div>
               <button class="btn btn-2 hover-slide-up mt-7 uppercase sm:w-full">
-                <Link to='/About'><span>{content.moreAboutUs}</span></Link>
+                <Link to='/about'><span>{content.moreAboutUs}</span></Link>
               </button>
             </div>
             <div className='absolute z-[1] top-0 bottom-auto left-0 right-auto'>
@@ -258,7 +258,7 @@ const Index = ({ data }) => {
               </div>
               <div className=' w-full max-w-full mt-7 flex'>
                 <button class="btn btn-2 hover-slide-up uppercase">
-                  <Link to='/Solutions'><span>{content.LearnMore}</span></Link>
+                  <Link to='/solutions'><span>{content.LearnMore}</span></Link>
                 </button>
               </div>
             </div>
@@ -361,7 +361,7 @@ const Index = ({ data }) => {
             </div>
             <div className=' max-w-full flex w-[1000px] mt-[50px] sm:w-[90%]'>
               <button class="btn btn-2 hover-slide-up uppercase sm:min-w-[95%]">
-                <Link to='/Technology'><span>{content.moreAboutTechnology}</span></Link>
+                <Link to='/technology'><span>{content.moreAboutTechnology}</span></Link>
               </button>
             </div>
             <div className='absolute w-[347px] h-[407px] top-[-94%] bottom-0 left-auto right-[-13%] star-embed '>
@@ -418,7 +418,7 @@ const Index = ({ data }) => {
                   <p className=' text-xl mb-0 mt-0 leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)' }}>{content.sixthcontent.data.sixthcontent}</p>
                 </div>
                 <button class="btn btn-2 hover-slide-up uppercase mt-7 sm:min-w-full">
-                  <Link to='/Contact'><span>{content.askUs}</span></Link>
+                  <Link to='/contact'><span>{content.askUs}</span></Link>
                 </button>
               </div>
             </div>
@@ -446,7 +446,7 @@ const Index = ({ data }) => {
             </p>
             <div className=' mt-10 sm:max-w-full sm:w-full'>
               <button class="btn btn-2 hover-slide-up uppercase sm:max-w-full sm:w-full">
-                <Link to='/Technology'><span>{content.futureWith}</span></Link>
+                <Link to='/technology'><span>{content.futureWith}</span></Link>
               </button>
             </div>
           </div>
@@ -465,7 +465,7 @@ const Index = ({ data }) => {
             </div>
             <div className=' mb-5 more-from-news-button sm:hidden'>
               <button class="btn btn-2 hover-slide-up uppercase">
-                <Link to='/Newsroom'><span>{content.aboutMedia}</span></Link>
+                <Link to='/newsroom'><span>{content.aboutMedia}</span></Link>
               </button>
             </div>
           </div>
@@ -512,7 +512,7 @@ const Index = ({ data }) => {
               <p className=' text-xl leading-8 font-use-one w-[441px] mt-[30px] mb-[30px] sm:w-[100%] sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)' }}>{content.footerleftcontent.data.footerleftcontent}</p>
               {/* getintouchbutton */}
               <button className="btn btn-2 hover-slide-up sm:w-[100%]">
-                <Link to='/Contact'><Link to='/Contact'><span>{content.getInTouch}</span></Link></Link>
+                <Link to='/contact'><Link to='/contact'><span>{content.getInTouch}</span></Link></Link>
               </button>
               <div className='social-platform font-use sm:w-[100%]'>
                 <Link to="https://www.facebook.com/5cnetwork" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
@@ -539,12 +539,14 @@ const Index = ({ data }) => {
                 <a href='https://osteocheck.5cnetwork.com/' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Osteocheck</a>
                 <a href='https://chat.whatsapp.com/EXOCBtpLcpqB3JUSK3ifFl' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Radiographer - Community </a>
                 <a href='https://open.spotify.com/show/6IAeIuksZiw6T3FkCjAbsP' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Podcast</a>
+                <Link to="/privacy-policy" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Privacy policy</Link>
+
 
               </div>
               {/* <div className='flex flex-col font-use ml-[60px]'>
                 <Link to="#" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>vision</Link>
-                <Link to="/Carrers" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>careers</Link>
-                <Link to="/Contact" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
+                <Link to="/careers" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>careers</Link>
+                <Link to="/contact" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
                 <Link to="#" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>privacy policy</Link>
               </div> */}
             </div>

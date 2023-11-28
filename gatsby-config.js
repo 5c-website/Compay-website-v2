@@ -1,9 +1,7 @@
 const siteMetadata = {
   title: `5CNetwork`,
   description: `5CNetwork`,
-  // image: `/default-site-image.jpg`,
-  // twitterUsername: `@spences10`,
-  // authorName: `Scott Spence`,
+  
   favicon: `./src/Assets/Homepage/logo.png`,
   // backgroundColor: `#f7f0eb`,
   // themeColor: `#a2466c`,
@@ -39,8 +37,6 @@ module.exports = {
         name: `5C`,
         short_name: `5C`,
         start_url: `/`,
-        // background_color: siteMetadata.backgroundColor,
-        // theme_color: siteMetadata.themeColor,
         display: `standalone`,
         icon: siteMetadata.favicon,
       },
