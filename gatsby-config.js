@@ -1,6 +1,6 @@
 const siteMetadata = {
-  title: `5C`,
-  description: `Five Connects`,
+  title: `5CNetwork`,
+  description: `5CNetwork`,
   // image: `/default-site-image.jpg`,
   // twitterUsername: `@spences10`,
   // authorName: `Scott Spence`,
@@ -45,17 +45,17 @@ module.exports = {
         icon: siteMetadata.favicon,
       },
     },
-  //   {
-  //     resolve: `gatsby-plugin-clarity`,
-  //     options: {
-  //       // String value for your clarity project ID
-  //       clarity_project_id: process.env.CLARITY_KEY,
-  //       // Boolean value for enabling clarity while developing
-  //       // true will enable clarity tracking code on both development and production environments
-  //       // false will enable clarity tracking code on production environment only
-  //       enable_on_dev_env: true
-  //     },
-  // }
+    {
+      resolve: `gatsby-plugin-clarity`,
+      options: {
+        // String value for your clarity project ID
+        clarity_project_id: process.env.CLARITY_KEY,
+        // Boolean value for enabling clarity while developing
+        // true will enable clarity tracking code on both development and production environments
+        // false will enable clarity tracking code on production environment only
+        enable_on_dev_env: true
+      },
+  }
     // 'gatsby-plugin-offline'
   ],
   
