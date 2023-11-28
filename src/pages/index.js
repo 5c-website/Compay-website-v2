@@ -198,7 +198,7 @@ const Index = ({ data }) => {
         <video autoPlay loop muted className=' sm:none w-full h-full m-auto absolute object-cover bg-cover inline-block align-baseline' style={{ backgroundPosition: '50%', top: '-100%', bottom: '-100%', left: '-100%', right: '-100%' }}>
           <source src={content.headervideo.localFile.url} type="video/mp4" />
         </video>
-        <video autoPlay loop muted playsinline className=' mobile-resolution-video w-full h-full m-auto absolute object-cover bg-cover inline-block align-baseline' style={{ backgroundPosition: '50%', top: '-100%', bottom: '-100%', left: '-100%', right: '-100%' }}>
+        <video autoPlay loop muted playsInline preload='auto' className=' mobile-resolution-video w-full h-full m-auto absolute object-cover bg-cover inline-block align-baseline' style={{ backgroundPosition: '50%', top: '-100%', bottom: '-100%', left: '-100%', right: '-100%' }}>
           <source src={content.mobileresolutionvideo.localFile.url} type="video/mp4" />
         </video>
 
