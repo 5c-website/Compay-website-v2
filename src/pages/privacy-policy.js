@@ -174,7 +174,7 @@ function Privacypolicy({data}) {
     
     <div className='max-w-full flex justify-center items-center ml-auto mr-auto'>
         <div className=' w-[1200px] max-w-full pt-[120px] pb-[120px] relative'>
-            <div className='mt-[68rem] p-[1rem] privacy-content'>
+            <div className='sm:mt-[68rem] p-[1rem] privacy-content'>
             <p>&zwj;</p>
                 <h2 className='text-[36px] leading-[1.4] text-[#fff] tracking-[2px] uppercase mt-0 mb-0 font-use font-semibold underline sm:text-[20px]'>Your Personal Information</h2>
                 <p>&zwj;</p>
