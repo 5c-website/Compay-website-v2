@@ -96,10 +96,10 @@ function Post({ data, location }) {
 
 
       </div>
-      <div className='blog-section'>
-        <div className='max-w-full flex justify-center ml-auto mr-auto mb-[165px] mt-[120px] '>
+      <div className='blog-section sm:pt-[7rem] sm:p-[1rem]'>
+        <div className='max-w-full flex justify-center ml-auto mr-auto mb-[165px] mt-[120px] sm:mt-0 '>
           <div className='blog-wrapper w-[1200px] max-w-full flex flex-col justify-center items-center'>
-            <h1 className=' w-full  tracking-[0] mb-[16px] text-[56px] leading-[120%] text-[#fff]'>
+            <h1 className=' w-full  tracking-[0] mb-[16px] text-[56px] leading-[120%] sm:text-[30px] text-[#fff]'>
               {content.Title}
             </h1>
 
@@ -122,7 +122,7 @@ function Post({ data, location }) {
                   </p>
                 </div>
                
-                <div className=' flex gap-[8rem] justify-between mt-[20rem]'>
+                <div className=' flex gap-[8rem] justify-between mt-[20rem] sm:mt-[5rem] sm:flex-col'>
                 <a href={content.Recent_post_url}>
                   <div className=' flex flex-col '>
                     <img src={content.Recent_post_image.localFile.url} className=' w-full h-auto'></img>
