@@ -1,27 +1,62 @@
 import React from 'react'
 import '../styles/global.css'
+import { Helmet } from "react-helmet";
 import { Link, graphql } from 'gatsby'
 import star from '../Assets/Solution/star.svg'
 import twoStar from '../Assets/Solution/two_star.svg'
+import tablogo from '../Assets/Homepage/favicon.ico'
 import logo from '../Assets/Homepage/2-01.png'
 import mobilestar from '../Assets/Solution/single-mobile.svg'
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import hospital from '../Assets/Homepage/2.png'
 import radiologist from '../Assets/Homepage/doc.png'
+import iso2015 from '../Assets/Homepage/iso-2015.jpg'
+import iso2019 from '../Assets/Homepage/iso-2019.jpg'
+import iso2022 from '../Assets/Homepage/iso-2022.jpg'
+import Carousel from 'better-react-carousel'
+import isologo1 from '../Assets/Homepage/iso2015.png'
+import isologo2 from '../Assets/Homepage/iso27001.png'
+import isologo3 from '../Assets/Homepage/iso2019.jpg'
+
 
 const Index = ({ data }) => {
   const content = data.allStrapiHomepage.nodes[0];
   const [open, setOpen] = useState(false)
   const cancelButtonRef = useRef(null)
-
+  const [openIso, setopenIso] = useState(false)
+  const [openIso2, setopenIso2] = useState(false)
+  const [openIso3, setopenIso3] = useState(false)
+  const [openIso4, setopenIso4] = useState(false)
 
   function openSignInModal() {
     setOpen(true);
   }
 
+  function openIsoModal() {
+    setopenIso(true);
+  }
+
+  function openIso2Modal() {
+    setopenIso2(true);
+  }
+  function openIso3Modal() {
+    setopenIso3(true);
+  }
+  function openIso4Modal() {
+    setopenIso4(true);
+  }
 
   return (
+    <>
+      <Helmet>
+        <html lang="en" />
+        <title>{content.seo.metaTitle}</title>
+        <meta name="description" content={content.seo.metaDescription.data.metaDescription} />
+        <link rel="icon" href= {tablogo}
+          type="image/x-icon"/>
+        {/* <meta name="author" content={author} /> */}
+      </Helmet>
 
     <div className='bg-black Homepage'>
 
@@ -53,17 +88,17 @@ const Index = ({ data }) => {
                 <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg w-[60%]">
                   <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                     <div className="flex sm:flex sm:items-start m-[1rem] sm:flex-col">
-                      <a href='https://client.5cnetwork.com/' target="_blank" className='sign-wrapper'> 
-                      <div className=' flex flex-col items-center'>
-                        <img src={hospital} className='w-[50%]'></img>
-                        <label className='justify-center font-use mt-[1.3rem] tracking-[1px] text-[18px] uppercase font-semibold'>Hospital/Diagnostic centre</label>
-                      </div>
+                      <a href='https://client.5cnetwork.com/' target="_blank" className='sign-wrapper'>
+                        <div className=' flex flex-col items-center'>
+                          <img src={hospital} className='w-[50%]'></img>
+                          <label className='justify-center font-use mt-[1.3rem] tracking-[1px] text-[18px] uppercase font-semibold'>Hospital/Diagnostic centre</label>
+                        </div>
                       </a>
-                      <a href='https://rads.5cnetwork.com/' target="_blank" className='sign-wrapper'> 
-                      <div className=' flex flex-col items-center'>
-                        <img src={radiologist} className='w-[50%]'></img>
-                        <label className='justify-center font-use mt-[1.3rem] tracking-[1px] text-[18px] uppercase font-semibold'>Radiologist</label>
-                      </div>
+                      <a href='https://rads.5cnetwork.com/' target="_blank" className='sign-wrapper'>
+                        <div className=' flex flex-col items-center'>
+                          <img src={radiologist} className='w-[50%]'></img>
+                          <label className='justify-center font-use mt-[1.3rem] tracking-[1px] text-[18px] uppercase font-semibold'>Radiologist</label>
+                        </div>
                       </a>
                     </div>
                   </div>
@@ -82,7 +117,7 @@ const Index = ({ data }) => {
         <span class="inner"></span>
         Sign In
       </div>
-      
+
       <a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6  text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[1] mobile-screen-signin">
         <span class="inner"></span>
         <span class="inner"></span>
@@ -91,7 +126,7 @@ const Index = ({ data }) => {
         Sign In
       </a>
 
-      
+
 
 
 
@@ -111,6 +146,7 @@ const Index = ({ data }) => {
               <nav className='navbartoggle'>
                 <Link to='/blogs' className='navlinks '>Blogs</Link>
                 <Link to='/newsroom' className='navlinks'>Newsroom</Link>
+                {/* <Link to='/casestudies' className='navlinks'>Case Study</Link> */}
               </nav>
             </div>
             <Link to='/contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
@@ -157,30 +193,29 @@ const Index = ({ data }) => {
       </a>
       </div> */}
       <div className=' bg-transparent p-[15px] flex justify-between items-center absolute z-[1] w-[65%] navbar-mb  '>
-      <nav role="navigation" className='mobile-nav'>
-        <div id="menuToggle" className='absolute m-[1rem] z-[99]'>
-          <input type="checkbox" />
-          <span></span>
-          <span></span>
-          <span></span>
-          <ul id="menu">
-            <li><Link to="/solutions" className='font-use'>Solutions</Link></li>
-            <li><Link to="/technology">Technology</Link></li>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
+        <nav role="navigation" className='mobile-nav'>
+          <div id="menuToggle" className='absolute m-[1rem] z-[99]'>
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+              <li><Link to="/solutions" className='font-use'>Solutions</Link></li>
+              <li><Link to="/technology">Technology</Link></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/blogs">Blogs</Link></li>
+              <li><Link to="/newsroom">Newsroom</Link></li>
+              {/* <li><Link to="/casestudies">Case Study</Link></li> */}
+              <li><Link to="/careers">Careers</Link></li>
+              <li><Link to="/contact" >Contact</Link></li>
+            </ul>
+          </div>
+        </nav>
+        <img src={logo} alt='5C Network' className='w-[50%]'></img>
 
-            <li><Link to="/blogs">Blogs</Link></li>
-            <li><Link to="/newsroom">Newsroom</Link></li>
 
-            <li><Link to="/careers">Careers</Link></li>
-            <li><Link to="/contact" >Contact</Link></li>
-          </ul>
-        </div>
-      </nav>
-      <img src={logo} alt='5C Network' className='w-[50%]'></img>
-    
-    
-  </div>
+      </div>
 
       {/* <div className='w-full h-full bg-transparent relative max-w-[1200px] pt-[12px] pb-[12px] ml-auto mr-auto'>
         <div className=' h-full bg-transparent items-center mt-0 top-0 w-full max-h-none max-w-full justify-center flex absolute'>
@@ -236,7 +271,7 @@ const Index = ({ data }) => {
               <img src={twoStar} alt='effects'></img>
               <img src={twoStar} alt='effects'></img>
             </div>
-            <div className='flex flex-col justify-around items-center absolute top-0 bottom-0 left-auto right-[-34%] sm:justify-start sm:items-start sm:mt-[33px] sm:relative sm:right-0'>
+            <div className='flex flex-col justify-around items-center absolute top-0 bottom-0 left-auto right-[-22%] z-[-1] sm:justify-start sm:items-start sm:mt-[33px] sm:relative sm:right-0'>
               <div className='relative'>
                 <img src={content.unseenimg.localFile.url} onError={(e) => console.error('Image load error', e)} className=' h-auto inline-block align-middle w-[700px] sm:w-full  rotation-effect' alt='globeimage' />
                 {/* <img src={content.unseenimg.localFile.url} className='max-w-full align-middle object-cover ' style={{ width: '264px', height: '171px', display: 'none', top: '456px', bottom: '0', left: '247px' }}></img> */}
@@ -470,28 +505,73 @@ const Index = ({ data }) => {
             </div>
           </div>
           <div className='flex max-w-full mt-20 justify-between ml-[100px] w-[1000px] sm:ml-[0] sm:flex-col sm:w-full sm:mt-10'>
-            <Link to="https://economictimes.indiatimes.com/tech/startups/tata-1mg-backed-5c-network-acquires-ai-healthtech-startup-krayen/articleshow/98187918.cms" className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000' }}>
-              <div className=' pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full rounded-effect' style={{ backgroundColor: '#19191a' }}>
-                <div className='flex items-start justify-between mb-10'>
-                  <img src={content.newslogo[1].localFile.url} className='max-w-full inline-block align-middle h-[30px] w-[14rem] sm:h-[20px]' style={{ border: '0' }}></img>
-                  <div className='uppercase text-xs font-use-one' style={{ color: 'rgba(255, 255, 255, .8)', lineHeight: '15px' }}>{content.newscards[0].date}</div>
-                </div>
-                <p className='mt-0 mb-0  font-use-one text-[28px] sm:text-[18px] uppercase' style={{ color: 'rgba(255, 255, 255, .95)', lineHeight: '38px' }}>
-                  {content.newscards[0].newscontent.data.newscontent}
-                </p>
-              </div>
-            </Link>
-            <Link to="https://economictimes.indiatimes.com/tech/funding/digital-diagnostic-startup-5c-network-raises-4-6-million/articleshow/94819661.cms" className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000', textDecoration: 'none' }}>
-              <div className=' pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full  rounded-effect' style={{ backgroundColor: '#19191a' }}>
-                <div className='flex items-start justify-between mb-14'>
-                  <img src={content.newslogo[0].localFile.url} className='max-w-full w-[14rem] inline-block align-middle h-[40px] sm:h-[20px]' style={{ border: '0', opacity: '.85' }}></img>
-                  <div className='uppercase text-xs font-use-one' style={{ color: 'rgba(255, 255, 255, .8)', lineHeight: '15px' }}>{content.newscards[1].date}</div>
-                </div>
-                <p className='mt-0 mb-0 uppercase font-use-one text-[28px] sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .95)', lineHeight: '38px' }}>
-                  <strong className=' font-normal'>{content.newscards[1].newscontent.data.newscontent}</strong>
-                </p>
-              </div>
-            </Link>
+            <Carousel cols={2} rows={1} gap={10} loop showDots="true">
+              <Carousel.Item>
+                <Link to="https://economictimes.indiatimes.com/tech/startups/tata-1mg-backed-5c-network-acquires-ai-healthtech-startup-krayen/articleshow/98187918.cms" className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000' }}>
+                  <div className=' pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full rounded-effect' style={{ backgroundColor: '#19191a' }}>
+                    <div className='flex items-start justify-between mb-10'>
+                      <img src={content.newslogo[1].localFile.url} className='max-w-full inline-block align-middle h-[30px] w-[14rem] sm:h-[20px]' style={{ border: '0' }}></img>
+                      <div className='uppercase text-xs font-use-one' style={{ color: 'rgba(255, 255, 255, .8)', lineHeight: '15px' }}>{content.newscards[0].date}</div>
+                    </div>
+                    <p className='mt-0 mb-0  font-use-one text-[28px] sm:text-[18px] uppercase' style={{ color: 'rgba(255, 255, 255, .95)', lineHeight: '38px' }}>
+                      {content.newscards[0].newscontent.data.newscontent}
+                    </p>
+                  </div>
+                </Link>
+              </Carousel.Item>
+              <Carousel.Item>
+                <Link to="https://economictimes.indiatimes.com/tech/funding/digital-diagnostic-startup-5c-network-raises-4-6-million/articleshow/94819661.cms" className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000', textDecoration: 'none' }}>
+                  <div className=' pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full  rounded-effect' style={{ backgroundColor: '#19191a' }}>
+                    <div className='flex items-start justify-between mb-14'>
+                      <img src={content.newslogo[0].localFile.url} className='max-w-full w-[14rem] inline-block align-middle h-[40px] sm:h-[20px]' style={{ border: '0', opacity: '.85' }}></img>
+                      <div className='uppercase text-xs font-use-one' style={{ color: 'rgba(255, 255, 255, .8)', lineHeight: '15px' }}>{content.newscards[2].date}</div>
+                    </div>
+                    <p className='mt-0 mb-0 uppercase font-use-one text-[24px] sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .95)', lineHeight: '38px' }}>
+                      <strong className=' font-normal'>{content.newscards[2].newscontent.data.newscontent}</strong>
+                    </p>
+                  </div>
+                </Link>
+              </Carousel.Item>
+              <Carousel.Item>
+                <Link to="https://bangaloremirror.indiatimes.com/bangalore/others/ai-enabled-teleradiology-pushes-for-faster-scan-reports/articleshow/99943219.cms" className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000', textDecoration: 'none' }}>
+                  <div className=' pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full  rounded-effect' style={{ backgroundColor: '#19191a' }}>
+                    <div className='flex items-start justify-between mb-14'>
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/BangaloreMirrorLogo.png" className='max-w-full w-[14rem] inline-block align-middle h-[40px] sm:h-[20px]' style={{ border: '0', opacity: '.85' }}></img>
+                      <div className='uppercase text-xs font-use-one' style={{ color: 'rgba(255, 255, 255, .8)', lineHeight: '15px' }}>{content.newscards[4].date}</div>
+                    </div>
+                    <p className='mt-0 mb-0 uppercase font-use-one text-[24px] sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .95)', lineHeight: '38px' }}>
+                      <strong className=' font-normal'>{content.newscards[4].newscontent.data.newscontent}</strong>
+                    </p>
+                  </div>
+                </Link>
+              </Carousel.Item>
+              <Carousel.Item>
+                <Link to="https://economictimes.indiatimes.com/tech/funding/digital-diagnostic-startup-5c-network-raises-4-6-million/articleshow/94819661.cms" className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000', textDecoration: 'none' }}>
+                  <div className=' pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full  rounded-effect' style={{ backgroundColor: '#19191a' }}>
+                    <div className='flex items-start justify-between mb-14'>
+                      <img src="https://st.etb2bimg.com/Themes/Release/theme4/images/logos/health-logo-footer.svg?mod=2394" className='max-w-full w-[14rem] inline-block align-middle h-[40px] sm:h-[20px]' style={{ border: '0', opacity: '.85' }}></img>
+                      <div className='uppercase text-xs font-use-one' style={{ color: 'rgba(255, 255, 255, .8)', lineHeight: '15px' }}>{content.newscards[1].date}</div>
+                    </div>
+                    <p className='mt-0 mb-0 uppercase font-use-one text-[24px] sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .95)', lineHeight: '38px' }}>
+                      <strong className=' font-normal'>{content.newscards[1].newscontent.data.newscontent}</strong>
+                    </p>
+                  </div>
+                </Link>
+              </Carousel.Item>
+              <Carousel.Item>
+                <Link to="https://economictimes.indiatimes.com/tech/funding/digital-diagnostic-startup-5c-network-raises-4-6-million/articleshow/94819661.cms" className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000', textDecoration: 'none' }}>
+                  <div className=' pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full  rounded-effect' style={{ backgroundColor: '#19191a' }}>
+                    <div className='flex items-start justify-between mb-14'>
+                      <img src="https://www.speakin.co/edit/wp-content/uploads/2019/05/business-standard-logo-2.png" className='max-w-full w-[14rem] inline-block align-middle h-[40px] sm:h-[20px]' style={{ border: '0', opacity: '.85' }}></img>
+                      <div className='uppercase text-xs font-use-one' style={{ color: 'rgba(255, 255, 255, .8)', lineHeight: '15px' }}>{content.newscards[4].date}</div>
+                    </div>
+                    <p className='mt-0 mb-0 uppercase font-use-one text-[24px] sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .95)', lineHeight: '38px' }}>
+                      <strong className=' font-normal'>{content.newscards[4].newscontent.data.newscontent}</strong>
+                    </p>
+                  </div>
+                </Link>
+              </Carousel.Item>
+            </Carousel>
           </div>
           <div className=' mb-5 mfnb mt-5 ml-3 sm:w-full'>
             <button class="btn btn-2 hover-slide-up uppercase sm:min-w-[94%]">
@@ -502,10 +582,234 @@ const Index = ({ data }) => {
 
       </div>
 
+      <div className='Youtube-videos-section  mt-[5rem]  mb-0 pb-[5rem] sm:mt-0 overflow-hidden'>
+        <div class="video-card items-start flex flex-col mr-auto ml-auto relative max-w-[1200px]">
+          <div className='w-full flex items-end justify-between ml-3 mb-[5rem] sm:mb-0' style={{ maxWidth: '1078px' }}>
+            <div className=' box-border'>
+              <h2 className='uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-left text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px]'>Watch about</h2>
+              <h1 className='max-w-full uppercase mt-0 mb-0   font-use text-[#fff] font-use tracking-[2px] text-[80px] leading-[100px] sm:leading-10 sm:ml-0 sm:text-[34px] sm:tracking-[1px]'>5C Network</h1>
+            </div>
+          </div>
+          <Carousel cols={2} rows={1} gap={10} loop showDots="true">
+            <Carousel.Item>
+              <div class="video-card ">
+                <iframe  className="w-[560px] h-[315px] sm:w-full"src="https://www.youtube.com/embed/JIpAuvNgxcU?si=jeHgIb2jXUlRs32A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+            </Carousel.Item>
+            <Carousel.Item>
+              <div class="video-card ">
+                <iframe  className="w-[560px] h-[315px] sm:w-full" src="https://www.youtube.com/embed/CpCFaIG1VWw?si=xK2AkmbIJKAQzMM0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        </div>
+            </Carousel.Item>
+            <Carousel.Item>
+              <div class="video-card ">
+                <iframe className="w-[560px] h-[315px] sm:w-full" src="https://www.youtube.com/embed/PUpaRmX42vk?si=TTf-bGHuZlNq0Gje" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                {/* <iframe allowfullscreen="" class="YOUTUBE-iframe-video video-card-top" data-thumbnail-src="https://i.ytimg.com/vi/zV0zS1kMF4U/0.jpg" frameborder="0" src="https://www.youtube.com/embed/zV0zS1kMF4U?feature=player_embedded">
+          </iframe> */}
+              </div>
+            </Carousel.Item>
+          </Carousel>
+        </div>
+      </div>
+
+      <div className=' mb-60 relative flex flex-col mt-[5rem] sm:mt-0 items-start ml-auto mr-auto sm:p-[1rem] sm:mb-[5rem]' style={{ zIndex: '1', maxWidth: '1200px' }}>
+                <h2 className='max-w-full uppercase mt-0 mb-0   font-use text-[50px] sm:text-xl sm:ml-3' style={{ color: '#fff', letterSpacing: '2px', lineHeight: '60px' }}>Our Certifications
+                </h2>
+                <div className='w-full sm:ml-0 max-w-full mt-[60px] ml-[100px] sm:mt-[1rem]' >
+                    <div className='logos-container sm:gap-[3rem]'>
+                        
+                        <div onClick={openIsoModal} className='flex flex-col cursor-pointer'>
+                          <img className='logo-section max-w-full' src={isologo3}></img>
+                          <label className='text-[#fff] mt-[1rem] text-center'>ISO 27701:2019</label>
+                          </div>
+                          <div onClick={openIso3Modal} className=' flex flex-col cursor-pointer'>
+                          <img className='logo-section max-w-full' src={isologo1}></img>
+                          </div>
+                        <div onClick={openIso2Modal} className='flex flex-col cursor-pointer'>
+                          <img className='logo-section max-w-full' src={isologo2}></img>
+                          <label className='text-[#fff] mt-[1rem] text-center'>ISO 27701:2022</label>
+                          </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+      <Transition.Root show={openIso4} as={Fragment}>
+        <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setopenIso4}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                enterTo="opacity-100 translate-y-0 sm:scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              >
+                <Dialog.Panel className="relative  flex flex-col gap-[1rem] transform overflow-hidden rounded-lg  text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                  <img src={iso2015}></img>
+                  <img src={iso2019}></img>
+                  <img src={iso2022}></img>
+
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition.Root>
+      <Transition.Root show={openIso} as={Fragment}>
+        <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setopenIso}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                enterTo="opacity-100 translate-y-0 sm:scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              >
+                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                  <img src={iso2019}></img>
+
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition.Root>
+      <Transition.Root show={openIso2} as={Fragment}>
+        <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setopenIso2}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                enterTo="opacity-100 translate-y-0 sm:scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              >
+                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                  <img src={iso2022}></img>
+
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition.Root>
+      <Transition.Root show={openIso3} as={Fragment}>
+        <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setopenIso3}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                enterTo="opacity-100 translate-y-0 sm:scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              >
+                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                  <img src={iso2015}></img>
+
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition.Root>
+      {/* <Transition.Root show={openIso2} as={Fragment}>
+        <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setopenIso2}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                enterTo="opacity-100 translate-y-0 sm:scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              >
+                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                  <img src={iso2022}></img>
+
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition.Root> */}
       {/* footer section */}
 
       <div className='footer section pl-0 pr-0 '>
-        <div className='relative ml-auto mr-auto max-w-[1200px]'>
+        <div className='relative ml-auto mr-auto max-w-[1202px]'>
           <div className='flex justify-between items-start pb-0 pl-4 pr-4 mb-8 mt-[101px] sm:flex-col sm:mt-50px sm:mt-0 ' style={{ border: '1px #7c4c4c', borderBottomColor: 'rgba(255, 255, 255, .5)' }}>
             <div className='flex flex-col items-start'>
               <a href='https://open.spotify.com/show/6IAeIuksZiw6T3FkCjAbsP?si=ZhB_Sr8uT3-kr0tqeh25Kw' className='uppercase  font-use leading-[48px] text-[40px]' style={{ color: 'rgba(255, 255, 255, .85) ' }}>{content.footertitle}</a>
@@ -530,25 +834,25 @@ const Index = ({ data }) => {
                 </Link>
               </div>
             </div>
-            <div className='flex sm:mt-[65px] sm:w-[100%] sm:justify-between'>
+            <div className='flex sm:mt-[65px] sm:w-[100%] sm:justify-between ml-[13rem] sm:ml-0'>
               <div className='flex flex-col font-use ml-[60px] sm:ml-[5px]'>
-                <a href='https://borderlessradiology.com/' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Borderless Radiology - For Radiologist </a>
-                <a href='https://play.google.com/store/apps/details?id=db.com.a5c&pcampaignid=web_share' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>ProtoCALL - for Radiographers</a>
-                <a href='https://ai.5cnetwork.com/' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Pixel Predict - AI Newsletter </a>
+                <a href='https://borderlessradiology.com/' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Borderless Radiology - For Radiologists </a>
+                <a href='https://play.google.com/store/apps/details?id=db.com.a5c&pcampaignid=web_share' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>ProtoCALL - for Radiographers</a>
+                <a href='https://ai.5cnetwork.com/' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Pixel Predict - AI Newsletter </a>
                 {/* <Link to="#" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>media</Link> */}
-                <a href='https://osteocheck.5cnetwork.com/' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Osteocheck</a>
-                <a href='https://chat.whatsapp.com/EXOCBtpLcpqB3JUSK3ifFl' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Radiographer - Community </a>
-                <a href='https://open.spotify.com/show/6IAeIuksZiw6T3FkCjAbsP' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Podcast</a>
-                <Link to="/privacy-policy" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Privacy policy</Link>
+                <a href='https://osteocheck.5cnetwork.com/' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Osteocheck</a>
+                <a href='https://chat.whatsapp.com/EXOCBtpLcpqB3JUSK3ifFl' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Radiographers - Community </a>
+                <a href='https://open.spotify.com/show/6IAeIuksZiw6T3FkCjAbsP' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Podcast</a>
 
 
               </div>
-              {/* <div className='flex flex-col font-use ml-[60px]'>
-                <Link to="#" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>vision</Link>
-                <Link to="/careers" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>careers</Link>
-                <Link to="/contact" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
-                <Link to="#" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>privacy policy</Link>
-              </div> */}
+              <div className='flex flex-col font-use ml-[60px]'>
+                <Link to="/privacy-policy" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Privacy policy</Link>
+                <Link className='uppercase mb-4 text-sm leading-5 cursor-pointer  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}><div onClick={openIso4Modal}>Certifications</div></Link>
+                {/* <Link className='uppercase mb-4 text-sm leading-5 cursor-pointer footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}><div onClick={openIso2Modal}>ISO 27701:2022</div></Link> */}
+                <Link to="/complianceregulatory" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>compliance & regulatory</Link>
+                {/* <Link to="#" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>privacy policy</Link> */}
+              </div>
             </div>
           </div>
         </div>
@@ -563,6 +867,7 @@ const Index = ({ data }) => {
 
 
     </div>
+    </>
 
   )
 }
@@ -573,6 +878,14 @@ export const pageQuery = graphql`
 query MyQuery {
     allStrapiHomepage {
       nodes {
+        seo {
+          metaTitle
+          metaDescription {
+            data {
+              metaDescription
+            }
+          }
+        }
         mobileresolutionvideo {
           localFile {
             url

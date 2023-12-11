@@ -2,10 +2,11 @@ import React,{ useEffect }  from 'react'
 import '../styles/global.css'
 import { useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import tablogo from '../Assets/Homepage/favicon.ico'
 import { Switch } from '@headlessui/react'
 import { navigate } from 'gatsby';
 import { useForm } from '@formspree/react';
-import { Alert } from "flowbite-react";
+import { Helmet } from "react-helmet";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -58,6 +59,15 @@ function ReachUs() {
         
     
   return (
+    <>
+    <Helmet>
+      <html lang="en" />
+      <title>Reach-Us</title>
+      <meta name="description" content="Connect with us effortlessly through our reach us form. Whether you have questions, feedback, or collaboration inquiries, use our convenient reach us form to bridge the gap" />
+      <link rel="icon" href= {tablogo}
+        type="image/x-icon"/>
+      {/* <meta name="author" content={author} /> */}
+    </Helmet>
     <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
       <ToastContainer />
       <div className=' absolute top-[20px] bottom-auto left-auto right-[20px]'>
@@ -269,6 +279,7 @@ function ReachUs() {
         </div>
       </form>
     </div>
+    </>
   )
 }
 

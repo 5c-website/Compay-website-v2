@@ -1,46 +1,47 @@
-const siteMetadata = {
-  title: `5CNetwork`,
-  description: `5CNetwork`,
+// const siteMetadata = {
+//   title: `5CNetwork`,
+//   description: `5CNetwork`,
   
-  favicon: `./src/Assets/Homepage/logo.png`,
-  // backgroundColor: `#f7f0eb`,
-  // themeColor: `#a2466c`,
-}
+//   favicon: `./src/Assets/Homepage/logo.png`,
+//   // backgroundColor: `#f7f0eb`,
+//   // themeColor: `#a2466c`,
+// }
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-});
+})
 
 module.exports = {
-  siteMetadata: siteMetadata,
+  // siteMetadata: siteMetadata,
   plugins: [
     'gatsby-plugin-postcss',
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+     
     // ...
     {
       resolve: "gatsby-source-strapi",
       
       options: {
-        apiURL: process.env.GATSBY_API_URL ,
+        apiURL: process.env.GATSBY_API_URL,
         accessToken:process.env.API_KEY,
         collectionTypes: [
-          'homepage','solution','technology','about','carrer','blog','newsroom','contact','diagnostic','clinician','healthcare','hospital','radiologist'
+          'homepage','solution','technology','about','carrer','blog','newsroom','contact','diagnostic','clinician','healthcare','hospital','radiologist','blog-post','casestudy','casestudypost'
         ],
         
         queryLimit: 1000,
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `5C`,
-        short_name: `5C`,
-        start_url: `/`,
-        display: `standalone`,
-        icon: siteMetadata.favicon,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `5C`,
+    //     short_name: `5C`,
+    //     start_url: `/`,
+    //     display: `standalone`,
+    //     icon: siteMetadata.favicon,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-clarity`,
       options: {

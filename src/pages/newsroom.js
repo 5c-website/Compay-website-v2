@@ -5,20 +5,61 @@ import logo from '../Assets/Homepage/2-01.png'
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import hospital from '../Assets/Homepage/2.png'
+import Pagination from '../Utils/pagination'
+import tablogo from '../Assets/Homepage/favicon.ico'
+import { Helmet } from "react-helmet";
 import radiologist from '../Assets/Homepage/doc.png'
+import iso2015 from '../Assets/Homepage/iso-2015.jpg'
+import iso2019 from '../Assets/Homepage/iso-2019.jpg'
+import iso2022 from '../Assets/Homepage/iso-2022.jpg'
 
 
 function Newsroom({ data }) {
-    const strapiContent = data.allStrapiNewsroom.nodes[0];
+    // const strapiContent = data.news.nodes;
+    const strapiContent = data.news.nodes.sort((a, b) => new Date(b.current_date) - new Date(a.current_date));
+    const content= data.solutions.nodes[0];
     const [open, setOpen] = useState(false)
   const cancelButtonRef = useRef(null)
+  const [openIso,setopenIso]=useState(false)
+  const [openIso2,setopenIso2]=useState(false)
+
+  const blogsPerPage = 5; 
+    const [currentPage, setCurrentPage] = useState(1);
+  
+  
+    const indexOfLastBlog = currentPage * blogsPerPage;
+    const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
+    const currentBlogs = strapiContent.slice(indexOfFirstBlog, indexOfLastBlog);
+  
+    
+    const handlePageChange = (pageNumber) => {
+      setCurrentPage(pageNumber);
+    };
  
+
+  
+ function openIsoModal(){
+    setopenIso(true);
+  }
+
+  function openIso2Modal(){
+    setopenIso2(true);
+  }
 
   function openSignInModal() {
     setOpen(true);
  }
 
     return (
+      <>
+      <Helmet>
+        <html lang="en" />
+        <title>Newsroom</title>
+        <meta name="description" content="View the latest news, announcements and media resources from 5C Network" />
+        <link rel="icon" href= {tablogo}
+          type="image/x-icon"/>
+        {/* <meta name="author" content={author} /> */}
+      </Helmet>
         <div className=' bg-black Homepage'>
             <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpen}>
@@ -161,324 +202,25 @@ function Newsroom({ data }) {
                                 <div>
                                     <div className='mb-0'>
                                         <div>
-                                            <div className='blogitems'>
-                                                <a href='https://inc42.com/buzz/tata-1mg-backed-5c-network-acquires-healthtech-startup-krayen/' target='_blank' className='w-full max-w-full inline-block text-lg' style={{ lineHeight: '26px' }}>
+                                        {currentBlogs?.map((news,index) => (
+                                            <div key={index} className='blogitems'>
+                                                <a href={news.Url} target='_blank' className='w-full max-w-full inline-block text-lg' style={{ lineHeight: '26px' }}>
                                                     <div className='w-full max-w-full pl-5 pr-5' style={{ marginBottom: '60px' }}>
-                                                        <img className='blog-img' src={strapiContent.newsimg[0].localFile.url}></img>
+                                                        <img className='blog-img' src={news.featured_image.localFile.url}></img>
                                                         <div className='blog-content'>
-                                                            <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[0].title}</div>
+                                                            <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{news.tag}</div>
                                                             <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] text-[#fff] font-use   footer-hover' style={{ letterSpacing: 0, lineHeight: '120%' }}>
-                                                                {strapiContent.news[0].content.data.content}
+                                                                {news.title}
                                                             </h2>
                                                             <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
-                                                                <div className='3px'>{strapiContent.news[0].duration}</div> &nbsp;
+                                                                <div className='3px'>{news.duration}</div> &nbsp;
                                                                 {/* <div className='3px'>min read</div> */}
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </a>
                                             </div>
-                                            <div className='blogitems'>
-                                                <a href='https://inc42.com/buzz/tata-1mg-backed-digital-diagnostics-startup-5c-network-raises-4-6-mn-dollar/' target='_blank' className='w-full max-w-full inline-block  text-lg' style={{ lineHeight: '26px' }}>
-                                                    <div className='w-full max-w-full pl-5 pr-5' style={{ marginBottom: '60px' }}>
-                                                        <img className='blog-img' src={strapiContent.newsimg[1].localFile.url}></img>
-                                                        <div className='blog-content'>
-                                                            <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[1].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] text-[#fff] font-use   footer-hover' style={{ letterSpacing: 0, lineHeight: '120%' }}>
-                                                                {strapiContent.news[1].content.data.content}
-                                                            </h2>
-                                                            <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
-                                                                <div className='3px'>{strapiContent.news[1].duration}</div>&nbsp;
-                                                                {/* <div className='3px'>min read</div> */}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div className='blogitems'>
-                                                <a href='https://www.biospectrumindia.com/news/68/21973/5c-network-launches-academy-for-training-radiographers-and-radiologists.html' target='_blank' className='w-full max-w-full inline-block text-lg' style={{ lineHeight: '26px' }}>
-                                                    <div className='w-full max-w-full pl-5 pr-5' style={{ marginBottom: '60px' }}>
-                                                        <img className='blog-img' src={strapiContent.newsimg[2].localFile.url}></img>
-                                                        <div className='blog-content'>
-                                                            <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[2].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] text-[#fff] font-use   footer-hover' style={{ letterSpacing: 0,  lineHeight: '120%', }}>
-                                                                {strapiContent.news[2].content.data.content}
-                                                            </h2>
-                                                            <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
-                                                                <div className='3px'>{strapiContent.news[2].duration}</div>&nbsp;
-                                                                {/* <div className='3px'>min read</div> */}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div className='blogitems'>
-                                                <a href='https://health.economictimes.indiatimes.com/news/diagnostics/digital-diagnostic-platform-5c-network-introduces-quality-guarantee-and-borderless-radiology-programs/91552723' target='_blank' className='w-full max-w-full inline-block text-lg' style={{ lineHeight: '26px' }}>
-                                                    <div className='w-full max-w-full pl-5 pr-5' style={{ marginBottom: '60px' }}>
-                                                        <img className='blog-img' src={strapiContent.newsimg[3].localFile.url}></img>
-                                                        <div className='blog-content'>
-                                                            <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[3].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] text-[#fff] font-use   footer-hover' style={{ letterSpacing: 0,  lineHeight: '120%', }}>
-                                                                {strapiContent.news[3].content.data.content}
-                                                            </h2>
-                                                            <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
-                                                                <div className='3px'>{strapiContent.news[3].duration}</div>&nbsp;
-                                                                {/* <div className='3px'>min read</div> */}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div className='blogitems'>
-                                                <a href='https://www.equitypandit.com/digital-diagnostics-startup-5c-network-raises-4-6-million/' target='_blank' className='w-full max-w-full inline-block text-lg' style={{ lineHeight: '26px' }}>
-                                                    <div className='w-full max-w-full pl-5 pr-5' style={{ marginBottom: '60px' }}>
-                                                        <img className='blog-img' src={strapiContent.newsimg[4].localFile.url}></img>
-                                                        <div className='blog-content'>
-                                                            <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[4].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] text-[#fff] font-use   footer-hover' style={{ letterSpacing: 0, lineHeight: '120%', }}>
-                                                                {strapiContent.news[4].content.data.content}
-                                                            </h2>
-                                                            <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
-                                                                <div className='3px'>{strapiContent.news[4].duration}</div>&nbsp;
-                                                                {/* <div className='3px'>min read</div> */}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div className='blogitems'>
-                                                <a href='https://www.thehindubusinessline.com/specials/pulse/making-radio-diagnosis-accessible-to-all/article67105358.ece' target='_blank' className='w-full max-w-full inline-block text-lg' style={{ lineHeight: '26px' }}>
-                                                    <div className='w-full max-w-full pl-5 pr-5' style={{ marginBottom: '60px' }}>
-                                                        <img className='blog-img' src={strapiContent.newsimg[5].localFile.url}></img>
-                                                        <div className='blog-content'>
-                                                            <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[5].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] text-[#fff] font-use   footer-hover' style={{ letterSpacing: 0, lineHeight: '120%', }}>
-                                                                {strapiContent.news[5].content.data.content}
-                                                            </h2>
-                                                            <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
-                                                                <div className='3px'>{strapiContent.news[5].duration}</div>&nbsp;
-                                                                {/* <div className='3px'>min read</div> */}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div className='blogitems'>
-                                                <a href='https://www.thehindubusinessline.com/companies/tata-1mg-backed-5c-network-launches-diagnostics-on-demand-platform/article66887830.ece' target='https://www.thehindubusinessline.com/companies/tata-1mg-backed-5c-network-launches-diagnostics-on-demand-platform/article66887830.ece' className='w-full max-w-full inline-block text-lg' style={{ lineHeight: '26px' }}>
-                                                    <div className='w-full max-w-full pl-5 pr-5' style={{ marginBottom: '60px' }}>
-                                                        <img className='blog-img' src={strapiContent.newsimg[6].localFile.url}></img>
-                                                        <div className='blog-content'>
-                                                            <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[6].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] text-[#fff] footer-hover font-use' style={{ letterSpacing: 0, lineHeight: '120%', }}>
-                                                                {strapiContent.news[6].content.data.content}
-                                                            </h2>
-                                                            <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
-                                                                <div className='3px'>{strapiContent.news[6].duration}</div>&nbsp;
-                                                                {/* <div className='3px'>min read</div> */}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div className='blogitems'>
-                                                <a href='https://www.peoplematters.in/news/funding-investment/5c-network-raises-46-mn-in-series-a-funding-35663' target='_blank' className='w-full max-w-full inline-block text-lg' style={{ lineHeight: '26px' }}>
-                                                    <div className='w-full max-w-full pl-5 pr-5' style={{ marginBottom: '60px' }}>
-                                                        <img className='blog-img' src={strapiContent.newsimg[7].localFile.url}></img>
-                                                        <div className='blog-content'>
-                                                            <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[7].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] text-[#fff] font-use   footer-hover' style={{ letterSpacing: 0, lineHeight: '120%',}}>
-                                                                {strapiContent.news[7].content.data.content}
-                                                            </h2>
-                                                            <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
-                                                                <div className='3px'>{strapiContent.news[7].duration}</div>&nbsp;
-                                                                {/* <div className='3px'>min read</div> */}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-
-                                            </div>
-                                            <div className='blogitems'>
-                                                <a href='https://news.abplive.com/technology/ai-can-help-eliminate-preventable-mortality-here-s-how-1612078' target='_blank' className='w-full max-w-full inline-block text-lg' style={{ lineHeight: '26px' }}>
-                                                    <div className='w-full max-w-full pl-5 pr-5' style={{ marginBottom: '60px' }}>
-                                                        <img className='blog-img' src={strapiContent.newsimg[8].localFile.url}></img>
-                                                        <div className='blog-content'>
-                                                            <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[8].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] text-[#fff] font-use   footer-hover' style={{ letterSpacing: 0, lineHeight: '120%',}}>
-                                                                {strapiContent.news[8].content.data.content}
-                                                            </h2>
-                                                            <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
-                                                                <div className='3px'>{strapiContent.news[8].duration}</div>&nbsp;
-                                                                {/* <div className='3px'>min read</div> */}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-
-                                            </div>
-                                            <div className='blogitems'>
-                                                <a href='http://bwcio.businessworld.in/article/DRDO-Centre-for-Artificial-Intelligence-Robotic-develops-ATMAN-AI-alongwith-5C-Network-HCG-Academics/10-05-2021-389189' target='_blank' className='w-full max-w-full inline-block text-lg' style={{ lineHeight: '26px' }}>
-                                                    <div className='w-full max-w-full pl-5 pr-5' style={{ marginBottom: '60px' }}>
-                                                        <img className='blog-img' src={strapiContent.newsimg[9].localFile.url}></img>
-                                                        <div className='blog-content'>
-                                                            <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[9].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] text-[#fff] font-use   footer-hover' style={{ letterSpacing: 0, lineHeight: '120%',}}>
-                                                                {strapiContent.news[9].content.data.content}
-                                                            </h2>
-                                                            <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
-                                                                <div className='3px'>{strapiContent.news[9].duration}</div>&nbsp;
-                                                                {/* <div className='3px'>min read</div> */}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-
-                                            </div>
-                                            {/* <div className='blogitems'>
-                                                <a href='https://economictimes.indiatimes.com/tech/startups/tata-1mg-backed-5c-network-acquires-ai-healthtech-startup-krayen/articleshow/98187918.cms?from=mdr' target='_blank' className='w-full max-w-full inline-block text-lg' style={{ lineHeight: '26px' }}>
-                                                    <div className='w-full max-w-full pl-5 pr-5' style={{ marginBottom: '60px' }}>
-                                                        <img className='blog-img' src={strapiContent.newsimg[10].localFile.url}></img>
-                                                        <div className='blog-content'>
-                                                            <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[10].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] text-[#fff] font-use   footer-hover' style={{ letterSpacing: 0, lineHeight: '120%',}}>
-                                                                {strapiContent.news[10].content.data.content}
-                                                            </h2>
-                                                            <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
-                                                                <div className='3px'>{strapiContent.news[10].duration}</div>&nbsp;
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-
-                                            </div> */}
-                                            <div className='blogitems'>
-                                                <a href='https://www.business-standard.com/content/press-releases-ani/tata-1mg-backed-5c-network-launches-prodigi-pass-a-groundbreaking-diagnostics-on-demand-platform-123052400581_1.html' target='_blank' className='w-full max-w-full inline-block text-lg' style={{ lineHeight: '26px' }}>
-                                                    <div className='w-full max-w-full pl-5 pr-5' style={{ marginBottom: '60px' }}>
-                                                        <img className='blog-img' src={strapiContent.newsimg[10].localFile.url}></img>
-                                                        <div className='blog-content'>
-                                                            <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[10].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] text-[#fff] font-use   footer-hover' style={{ letterSpacing: 0, lineHeight: '120%',}}>
-                                                                {strapiContent.news[10].content.data.content}
-                                                            </h2>
-                                                            <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
-                                                                <div className='3px'>{strapiContent.news[10].duration}</div>&nbsp;
-                                                                {/* <div className='3px'>min read</div> */}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-
-                                            </div>
-                                            <div className='blogitems'>
-                                                <a href='https://www.financialexpress.com/healthcare/medicaldevices/5c-network-launches-ai-powered-platform-prodigi-for-radiologists/2645794/' target='_blank' className='w-full max-w-full inline-block text-lg' style={{ lineHeight: '26px' }}>
-                                                    <div className='w-full max-w-full pl-5 pr-5' style={{ marginBottom: '60px' }}>
-                                                        <img className='blog-img' src={strapiContent.newsimg[11].localFile.url}></img>
-                                                        <div className='blog-content'>
-                                                            <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[11].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] text-[#fff] font-use   footer-hover' style={{ letterSpacing: 0, lineHeight: '120%',}}>
-                                                                {strapiContent.news[11].content.data.content}
-                                                            </h2>
-                                                            <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
-                                                                <div className='3px'>{strapiContent.news[11].duration}</div>&nbsp;
-                                                                {/* <div className='3px'>min read</div> */}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-
-                                            </div>
-                                            <div className='blogitems'>
-                                                <a href='https://indianexpress.com/article/cities/bangalore/shortage-radiologists-research-ai-capabilities-experts-8884446/' target='_blank' className='w-full max-w-full inline-block text-lg' style={{ lineHeight: '26px' }}>
-                                                    <div className='w-full max-w-full pl-5 pr-5' style={{ marginBottom: '60px' }}>
-                                                        <img className='blog-img' src={strapiContent.newsimg[12].localFile.url}></img>
-                                                        <div className='blog-content'>
-                                                            <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[12].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] text-[#fff] font-use   footer-hover' style={{ letterSpacing: 0, lineHeight: '120%',}}>
-                                                                {strapiContent.news[12].content.data.content}
-                                                            </h2>
-                                                            <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
-                                                                <div className='3px'>{strapiContent.news[12].duration}</div>&nbsp;
-                                                                {/* <div className='3px'>min read</div> */}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-
-                                            </div>
-                                            <div className='blogitems'>
-                                                <a href='https://www.news18.com/india/india-has-just-one-radiologist-for-100-scans-a-day-heres-how-it-can-plug-the-shortage-8619426.html' target='_blank' className='w-full max-w-full inline-block text-lg' style={{ lineHeight: '26px' }}>
-                                                    <div className='w-full max-w-full pl-5 pr-5' style={{ marginBottom: '60px' }}>
-                                                        <img className='blog-img' src={strapiContent.newsimg[13].localFile.url}></img>
-                                                        <div className='blog-content'>
-                                                            <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[13].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] text-[#fff] font-use   footer-hover' style={{ letterSpacing: 0, lineHeight: '120%',}}>
-                                                                {strapiContent.news[13].content.data.content}
-                                                            </h2>
-                                                            <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
-                                                                <div className='3px'>{strapiContent.news[13].duration}</div>&nbsp;
-                                                                {/* <div className='3px'>min read</div> */}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-
-                                            </div>
-                                            <div className='blogitems'>
-                                                <a href='https://scroll.in/article/1050076/ai-cant-replace-a-doctor-not-yet-cautious-optimism-concern-over-new-tech-in-indian-healthcaree' target='_blank' className='w-full max-w-full inline-block text-lg' style={{ lineHeight: '26px' }}>
-                                                    <div className='w-full max-w-full pl-5 pr-5' style={{ marginBottom: '60px' }}>
-                                                        <img className='blog-img' src={strapiContent.newsimg[14].localFile.url}></img>
-                                                        <div className='blog-content'>
-                                                            <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[14].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] text-[#fff] font-use   footer-hover' style={{ letterSpacing: 0, lineHeight: '120%',}}>
-                                                                {strapiContent.news[14].content.data.content}
-                                                            </h2>
-                                                            <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
-                                                                <div className='3px'>{strapiContent.news[14].duration}</div>&nbsp;
-                                                                {/* <div className='3px'>min read</div> */}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-
-                                            </div>
-                                            <div className='blogitems'>
-                                                <a href='https://www.firstpost.com/business/indian-health-tech-platform-5c-network-bags-1-2-million-in-pre-series-a-funding-from-investors-9098031.html' target='_blank' className='w-full max-w-full inline-block text-lg' style={{ lineHeight: '26px' }}>
-                                                    <div className='w-full max-w-full pl-5 pr-5' style={{ marginBottom: '60px' }}>
-                                                        <img className='blog-img' src={strapiContent.newsimg[15].localFile.url}></img>
-                                                        <div className='blog-content'>
-                                                            <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[15].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] text-[#fff] font-use   footer-hover' style={{ letterSpacing: 0, lineHeight: '120%',}}>
-                                                                {strapiContent.news[15].content.data.content}
-                                                            </h2>
-                                                            <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
-                                                                <div className='3px'>{strapiContent.news[15].duration}</div>&nbsp;
-                                                                {/* <div className='3px'>min read</div> */}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-
-                                            </div>
-                                            <div className='blogitems'>
-                                                <a href='https://yourstory.com/2022/10/funding-roundup-yoho-5c-network-optiqai-raise-early-stage-deals' target='_blank' className='w-full max-w-full inline-block text-lg' style={{ lineHeight: '26px' }}>
-                                                    <div className='w-full max-w-full pl-5 pr-5' style={{ marginBottom: '60px' }}>
-                                                        <img className='blog-img' src={strapiContent.newsimg[16].localFile.url}></img>
-                                                        <div className='blog-content'>
-                                                            <div className=' uppercase text-base leading-4 font-use' style={{ letterSpacing: '1px', color: '#00d4ff' }}>{strapiContent.news[16].title}</div>
-                                                            <h2 className='uppercase mt-0 mb-0 text-[40px] sm:text-[28px] text-[#fff] font-use   footer-hover' style={{ letterSpacing: 0, lineHeight: '120%',}}>
-                                                                {strapiContent.news[16].content.data.content}
-                                                            </h2>
-                                                            <div className='mt-0 flex text-lg' style={{ lineHeight: '26px', color: 'rgba(255, 255, 255, .5)' }}>
-                                                                <div className='3px'>{strapiContent.news[16].duration}</div>&nbsp;
-                                                                {/* <div className='3px'>min read</div> */}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-
-                                            </div>
-
-                                            
+                                              ))}
                                         </div>
                                     </div>
                                 </div>
@@ -486,102 +228,175 @@ function Newsroom({ data }) {
                         </div>
                     </div>
                 </div>
+                <Pagination
+        currentPage={currentPage}
+        totalPages={Math.ceil(strapiContent.length / blogsPerPage)}
+        onPageChange={handlePageChange}
+      />
             </div>
+            <Transition.Root show={openIso} as={Fragment}>
+        <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setopenIso}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                enterTo="opacity-100 translate-y-0 sm:scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              >
+                <Dialog.Panel className="relative flex flex-col gap-[1rem] transform overflow-hidden rounded-lg  text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                <img src={iso2015}></img>
+                  <img src={iso2019}></img>
+                  <img src={iso2022}></img>
+
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition.Root>
             {/* footer section */}
             <div className='footer section pl-0 pr-0'>
                 <div className='relative ml-auto mr-auto max-w-[1200px]'>
                     <div className='flex justify-between items-start pb-0 pl-4 pr-4 mb-8 mt-[101px] sm:flex-col sm:mt-50px ' style={{border: '1px #7c4c4c', borderBottomColor: 'rgba(255, 255, 255, .5)' }}>
                         <div className='flex flex-col items-start'>
-                            <a href='https://open.spotify.com/show/6IAeIuksZiw6T3FkCjAbsP?si=ZhB_Sr8uT3-kr0tqeh25Kw' className='uppercase  font-use leading-[48px] text-[40px]' style={{ color: 'rgba(255, 255, 255, .85) '}}>{strapiContent.footertitle}</a>
-                            <p className=' text-xl leading-8 font-use-one w-[441px] mt-[30px] mb-[30px] sm:w-[100%] sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)'}}>{strapiContent.content.data.content}</p>
+                            <a href='https://open.spotify.com/show/6IAeIuksZiw6T3FkCjAbsP?si=ZhB_Sr8uT3-kr0tqeh25Kw' className='uppercase  font-use leading-[48px] text-[40px]' style={{ color: 'rgba(255, 255, 255, .85) '}}>{content.footerlefttitle}</a>
+                            <p className=' text-xl leading-8 font-use-one w-[441px] mt-[30px] mb-[30px] sm:w-[100%] sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)'}}>{content.footercontent.data.footercontent}</p>
                             {/* getintouchbutton */}
                             <button className="btn btn-2 hover-slide-up sm:w-[100%]">
-                            <Link to='/contact'><span>{strapiContent.getintouch}</span></Link>
+                            <Link to='/contact'> <span>{content.git}</span></Link>
                             </button>
                             <div className='social-platform font-use sm:w-[100%]'>
                                 <Link to="https://www.facebook.com/5cnetwork" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                                    <img src={strapiContent.sociallogo[1].localFile.url} alt='facebook' className='mr-0 max-w-full inline-block align-middle'></img>
+                                    <img src={content.facebook.localFile.url} alt='facebook' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
                                 <Link to="https://www.linkedin.com/company/5c-network?trk=top_nav_home" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                                    <img src={strapiContent.sociallogo[3].localFile.url} alt='Linkedin' className='mr-0 max-w-full inline-block align-middle'></img>
+                                    <img src={content.linkedin.localFile.url} alt='Linkedin' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
                                 <Link to="https://twitter.com/5c_network" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                                    <img src={strapiContent.sociallogo[2].localFile.url} alt='Twitter' className='mr-0 max-w-full inline-block align-middle'></img>
+                                    <img src={content.twitter.localFile.url} alt='Twitter' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
                                 <Link to="https://www.instagram.com/5cnetwork/" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                                    <img src={strapiContent.sociallogo[0].localFile.url} alt='Medium' className='mr-0 max-w-full inline-block align-middle'></img>
+                                    <img src={content.medium.localFile.url} alt='Medium' className='mr-0 max-w-full inline-block align-middle'></img>
                                 </Link>
                             </div>
                         </div>
-                        <div className='flex sm:mt-[65px] sm:w-[100%] sm:justify-between'>
+                        <div className='flex sm:mt-[65px] sm:w-[100%] sm:justify-between ml-[13rem] sm:ml-0'>
                             <div className='flex flex-col font-use ml-[60px] sm:ml-[5px]'>
-                            <a href='https://borderlessradiology.com/' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Borderless Radiology - For Radiologist </a>
+                            <a href='https://borderlessradiology.com/' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Borderless Radiology - For Radiologists </a>
                 <a href='https://play.google.com/store/apps/details?id=db.com.a5c&pcampaignid=web_share' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>ProtoCALL - for Radiographers</a>
-                <a href='https://ai.5cnetwork.com/' target='_blank'className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Pixel Predict - AI Newsletter </a>
+                <a href='https://ai.5cnetwork.com/'target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Pixel Predict - AI Newsletter </a>
                 {/* <Link to="#" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>media</Link> */}
-                <a href='https://osteocheck.5cnetwork.com/' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Osteocheck</a>
-                <a href='https://chat.whatsapp.com/EXOCBtpLcpqB3JUSK3ifFl' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Radiographer - Community </a>
-                <a href='https://open.spotify.com/show/6IAeIuksZiw6T3FkCjAbsP' target='_blank'className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Podcast</a>
-                <Link to="/privacy-policy" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Privacy policy</Link>
+                <a href='https://osteocheck.5cnetwork.com/' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Osteocheck</a>
+                <a href='https://chat.whatsapp.com/EXOCBtpLcpqB3JUSK3ifFl' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Radiographers - Community </a>
+                <a href='https://open.spotify.com/show/6IAeIuksZiw6T3FkCjAbsP' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Podcast</a>
+                {/* <Link to="/privacy-policy" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Privacy policy</Link> */}
+
 
                             </div>
-                            {/* <div className='flex flex-col font-use ml-[60px]'>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>vision</Link>
-                                <Link to="/careers" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>careers</Link>
-                                <Link to="/contact" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
-                                <Link to="#" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>privacy policy</Link>
-                            </div> */}
+                            <div className='flex flex-col font-use ml-[60px]'>
+                            <Link to="/privacy-policy" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Privacy policy</Link>
+                            <Link  className='uppercase mb-4 text-sm leading-5 cursor-pointer  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}><div onClick={openIsoModal}>Certifications</div></Link>
+                <Link to='/complianceregulatory' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>compliance & regulatory</Link>
+                                {/* <Link to="#" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>privacy policy</Link> */}
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div className='relative flex flex-row items-end mt-0 overflow-hidden' style={{ color: '#fff', height: '400px' }}>
                     <video autoPlay loop muted className=' w-full h-full absolute m-auto object-cover bg-cover inline-block align-baseline ' style={{ backgroundPosition: '50%', top: '-100%', bottom: '-100%', left: '-100%', right: '-100%' }}>
-                        <source src={strapiContent.footervideo[0].localFile.url} type="video/mp4" />
+                        <source src={content.footervideo.localFile.url} type="video/mp4" />
                     </video>
                 </div>
             </div>
         </div>
+        </>
     )
 }
 
 export default Newsroom
 
 export const pageQuery = graphql`
-query MyQuery {
-    allStrapiNewsroom {
-      nodes {
-        newsimg {
-          localFile {
-            url
-          }
-        }
-        news {
-          title
-          content {
-            data {
-              content
+query  {
+    news:allStrapiNewsroom {
+        nodes {
+          seo {
+            metaTitle
+            metaDescription {
+              data {
+                metaDescription
+              }
             }
           }
+          current_date
+          featured_image {
+            localFile {
+              url
+            }
+          }
+          tag
+          title
           duration
+          Url
         }
-        footertitle
-        content {
-          data {
-            content
-          }
-        }
-        sociallogo {
-          localFile {
-            url
-          }
-        }
-        footervideo {
-          localFile {
-            url
-          }
-        }
-        getintouch
       }
+  
+
+  solutions: allStrapiSolution {
+    nodes {
+      footerlefttitle
+      footercontent {
+        data {
+          footercontent
+        }
+      }
+      facebook {
+        localFile {
+          url
+        }
+      }
+      twitter {
+        localFile {
+          url
+        }
+      }
+      linkedin {
+        localFile {
+          url
+        }
+      }
+      medium {
+        localFile {
+          url
+        }
+      }
+      footervideo {
+        localFile {
+          url
+        }
+      }
+      solutionHomepage {
+        localFile {
+          url
+        }
+      }
+      git
     }
   }
+}
 `

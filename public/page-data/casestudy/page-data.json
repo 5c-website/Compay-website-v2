@@ -1,0 +1,1 @@
+{"componentChunkName":"component---src-pages-casestudy-js","path":"/casestudy/","result":{"errors":[{"message":"Variable \"$slug\" of required type \"String!\" was not provided.","locations":[{"line":1,"column":59}]}],"pageContext":{}},"staticQueryHashes":[],"slicesMap":{}}
