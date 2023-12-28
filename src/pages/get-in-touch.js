@@ -192,11 +192,12 @@ function ReachUs() {
                   value={selectedGenre}
                   onChange={handleSelectChange}
                 >
-                  {genre.map((item, i) => (
+                  {genre && genre.map((item, i) => (
                     <option value={item} key={i}>
                       {item}
                     </option>
                   ))}
+
                 </select>
               </div>
             </div>
