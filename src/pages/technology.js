@@ -1,39 +1,16 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { graphql } from 'gatsby';
+import Navbar from '../Utils/Navbar';
+import Navbarmd from '../Utils/Navbarmd';
 import star from '../Assets/Solution/star.svg'
 import twoStar from '../Assets/Solution/two_star.svg'
+import Footer from '../Utils/Footer';
 import { Helmet } from "react-helmet";
-import logo from '../Assets/Homepage/2-01.png'
-import { Fragment, useRef, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import hospital from '../Assets/Homepage/2.png'
-import radiologist from '../Assets/Homepage/doc.png'
 import tablogo from '../Assets/Homepage/favicon.ico'
-import iso2015 from '../Assets/Homepage/iso-2015.jpg'
-import iso2019 from '../Assets/Homepage/iso-2019.jpg'
-import iso2022 from '../Assets/Homepage/iso-2022.jpg'
 
 function Technology({ data }) {
   const strapiContent = data.allStrapiTechnology.nodes[0];
-  const [open, setOpen] = useState(false)
-  const cancelButtonRef = useRef(null)
-  const [openIso,setopenIso]=useState(false)
-  const [openIso2,setopenIso2]=useState(false)
- 
-
   
- function openIsoModal(){
-    setopenIso(true);
-  }
-
-  function openIso2Modal(){
-    setopenIso2(true);
-  }
-
-  function openSignInModal() {
-    setOpen(true);
-  }
 
   return (
     <>
@@ -41,367 +18,150 @@ function Technology({ data }) {
         <html lang="en" />
         <title>{strapiContent.seo.metaTitle}</title>
         <meta name="description" content={strapiContent.seo.metaDescription.data.metaDescription} />
-        <link rel="icon" href= {tablogo}
-          type="image/x-icon"/>
+        <link rel="icon" href={tablogo}
+          type="image/x-icon" />
         {/* <meta name="author" content={author} /> */}
       </Helmet>
-    <div className=' bg-black Homepage'>
-      <Transition.Root show={open} as={Fragment}>
-        <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpen}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
-          </Transition.Child>
+      <div className=' bg-black Homepage'>
+        
+        <a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[1] mobile-screen-signin">
+          <span class="inner"></span>
+          <span class="inner"></span>
+          <span class="inner"></span>
+          <span class="inner"></span>
+          Sign In
+        </a>
+        <Navbar />
+        {/* Mobile responsive */}
 
-          <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                enterTo="opacity-100 translate-y-0 sm:scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-              >
-                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg w-[60%]">
-                  <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                    <div className="flex sm:flex sm:items-start m-[1rem] sm:flex-col">
-                      <a href='https://client.5cnetwork.com/' target="_blank" className='sign-wrapper'>
-                        <div className=' flex flex-col items-center'>
-                          <img src={hospital} className='w-[50%]'></img>
-                          <label className='justify-center font-use mt-[1.3rem] tracking-[1px] text-[18px] uppercase font-semibold'>Hospital/Diagnostic centre</label>
-                        </div>
-                      </a>
-                      <a href='https://rads.5cnetwork.com/' target="_blank" className='sign-wrapper'>
-                        <div className=' flex flex-col items-center'>
-                          <img src={radiologist} className='w-[50%]'></img>
-                          <label className='justify-center font-use mt-[1.3rem] tracking-[1px] text-[18px] uppercase font-semibold'>Radiologist</label>
-                        </div>
-                      </a>
-
-                    </div>
-                  </div>
-
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
-          </div>
-        </Dialog>
-      </Transition.Root>
-      <div onClick={openSignInModal} class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[99] sm:hidden">
-        <span class="inner"></span>
-        <span class="inner"></span>
-        <span class="inner"></span>
-        <span class="inner"></span>
-        Sign In
-      </div>
-      <a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[1] mobile-screen-signin">
-        <span class="inner"></span>
-        <span class="inner"></span>
-        <span class="inner"></span>
-        <span class="inner"></span>
-        Sign In
-      </a>
-      <div className='absolute w-full max-w-full flex flex-col items-center bg-transparent nav-division' style={{ zIndex: '2', color: 'rgba(255, 255, 255, 0)', top: '0' }}>
-        <div className='w-full max-w-full pt-3 pb-3 ml-auto mr-auto' style={{ width: '79%' }}>
-          <nav className=' w-full max-w-full justify-around items-center flex relative float-right font-use nav-md'>
-            <Link to='/solutions' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Solutions</Link>
-            <Link to='/technology' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
-            <Link to='/about' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
-            {/* <Link to='/Partners' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Partners</Link> */}
-            <Link to='/' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '102px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}><img src={logo} alt='5C Network'></img></Link>
-            <Link to='/careers' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Careers</Link>
-            <div className='DropdDown'>
-              <div className='DropDowntoggle'>
-                <div className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  ' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Resources</div>
-              </div>
-              <nav className='navbartoggle'>
-                <Link to='/blogs' className='navlinks hover-under '>Blogs</Link>
-                <Link to='/newsroom' className='navlinks  hover-under-1'>Newsroom</Link>
-              </nav>
-            </div>
-            <Link to='/contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Contact</Link>
-          </nav>
-        </div>
-      </div>
-      {/* Mobile responsive */}
-      {/* <nav role="navigation" className='mobile-nav'>
-  <div id="menuToggle">
-    <input type="checkbox"/>
-    <span></span>
-    <span></span>
-    <span></span>
-    <ul id="menu">
-      <li><Link to="/solutions">Solutions</Link></li>
-      <li><Link to="/technology">Technology</Link></li>
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/about">About</Link></li>
-      
-            <li><Link to="/blogs">Blogs</Link></li>
-            <li><Link to="/newsroom">Newsroom</Link></li>
-          
-      <li><Link to="/careers">Careers</Link></li>
-      <li><Link to="/contact" >Contact</Link></li>
-    </ul>
-  </div>
-</nav> */}
-      <div className=' bg-transparent p-[15px] flex justify-between items-center absolute z-[1] w-[65%] navbar-mb  '>
-        <nav role="navigation" className='mobile-nav'>
-          <div id="menuToggle" className='absolute m-[1rem] z-[99]'>
-            <input type="checkbox" />
-            <span></span>
-            <span></span>
-            <span></span>
-            <ul id="menu">
-              <li><Link to="/solutions" className='font-use'>Solutions</Link></li>
-              <li><Link to="/technology">Technology</Link></li>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About</Link></li>
-
-              <li><Link to="/blogs">Blogs</Link></li>
-              <li><Link to="/newsroom">Newsroom</Link></li>
-
-              <li><Link to="/careers">Careers</Link></li>
-              <li><Link to="/contact" >Contact</Link></li>
-            </ul>
-          </div>
-        </nav>
-        <img src={logo} alt='5C Network' className='w-[50%]'></img>
-
-
-      </div>
-      <div className=' h-screen flex flex-col justify-start items-center bg-no-repeat technology-hero sm:h-[80vh] sm:p-[1rem]' style={{ backgroundImage: `url(${strapiContent.titleimg.localFile.url})` }}>
-        <div className=' max-w-full ml-auto mr-auto'>
-          <div className='max-w-full relative w-[1200px] mt-[234px] sm:mt-[6rem] sm:ml-[10px]'>
-            <h1 className='max-w-full uppercase mt-0 mb-0 font-medium font-use text-[#fff] tracking-[2px] leading-[100px] text-[80px] sm:text-[2.5rem]'>{strapiContent.title}</h1>
-            <div className='max-w-full mt-10 text-[#fff] w-[500px] ml-[100px] sm:ml-[10px] sm:mt-0  sm:w-[85%]'>
-              <p className='mb-0 text-xl mt-0 leading-8  font-use-one sm:text-base'>{strapiContent.content.data.content}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className=' mt-[4rem] sm:mt-2 sm:p-[1rem]'>
-        <div className='max-w-full flex justify-center items-center ml-auto mr-auto'>
-          <div className='max-w-full relative w-[1200px]'>
-            <h2 className='uppercase mt-0 mb-0   font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.secondtitle}</h2>
-            <h2 className='max-w-full uppercase mt-0 mb-0 font-light font-use-one text-[#fff] text-[80px] tracking-[2px] leading-[100px] sm:text-[2.5rem] sm:leading-[50px] sm:ml-[10px]'> {strapiContent.secondsubtitle}</h2>
-            <p className=' mb-0 text-xl leading-8 font-use-one w-[700px] mt-[50px] ml-[100px] sm:ml-[10px] sm:text-base sm:w-[99%]' style={{ color: 'rgba(255, 255, 255, .85)' }}>
-              <div dangerouslySetInnerHTML={{ __html: strapiContent.secondcontent.data.secondcontent }}></div>
-            </p>
-            <div className=' w-full max-w-full justify-center flex relative mt-[104px]'>
-              <div className='absolute top-auto bottom-0 left-0 right-auto '>
-                <img src={star} alt='effect'></img>
-              </div>
-              <img src={strapiContent.secondimg.localFile.url} className='h-auto object-fill max-w-full inline-block align-middle w-[800px] '></img>
-            </div>
-            <div className=' w-full justify-between items-center flex relative mt-[60px] sm:mt-[5rem] sm:flex-col'>
-              <div className='max-w-full w-[430px] ml-[100px] sm:ml-[5px]'>
-                <ul className='max-w-full flex flex-col pl-0 justify-between mt-0 w-[400px] h-[250px] mb-[10px]'>
-                  <li className='w-full max-w-full flex items-start mb-8 pl-0'>
-                    <div className='bullet-line-css'></div>
-                    <p className='mb-0 text-xl leading-8 mt-0 font-use-one sm:text-base' style={{ color: 'rgba(255, 255, 255, .85)' }}>{strapiContent.secondpoint1.data.secondpoint1}</p>
-                  </li>
-                  <li className='w-full max-w-full flex items-start mb-8 pl-0'>
-                    <div className='bullet-line-css'></div>
-                    <p className='mb-0 text-xl leading-8 mt-0 font-use-one' style={{ color: 'rgba(255, 255, 255, .85)' }}>{strapiContent.secondpoint2.data.secondpoint2}</p>
-                  </li>
-                </ul>
-              </div>
-              <div className='sm:mt-20 sm:w-full '>
-                <img src={strapiContent.secondpointsimg.localFile.url} className='object-cover max-w-full inline-block align-middle w-[617px] h-[345px] sm:object-contain'></img>
+        <Navbarmd />
+        <div className=' h-screen flex flex-col justify-start items-center bg-no-repeat technology-hero sm:h-[80vh] sm:p-[1rem]' style={{ backgroundImage: `url(${strapiContent.titleimg.localFile.url})` }}>
+          <div className=' max-w-full ml-auto mr-auto'>
+            <div className='max-w-full relative w-[1200px] mt-[234px] sm:mt-[6rem] sm:ml-[10px]'>
+              <h1 className='max-w-full uppercase mt-0 mb-0 font-medium font-use text-[#fff] tracking-[2px] leading-[100px] text-[80px] sm:text-[2.5rem]'>{strapiContent.title}</h1>
+              <div className='max-w-full mt-10 text-[#fff] w-[500px] ml-[100px] sm:ml-[10px] sm:mt-0  sm:w-[85%]'>
+                <p className='mb-0 text-xl mt-0 leading-8  font-use-one sm:text-base'>{strapiContent.content.data.content}</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      {/* <div className='mt-[208px] sm:mt-3 sm:ml-[10px]'>
-        <div className=' relative flex items-start flex-col ml-auto mr-auto max-w-[1200px] z-[1]'>
-          <div>
-            <h2 className=' uppercase mt-0 mb-0   font-use leading-[60px] text-[50px] text-[#fff] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.rgbtitle}</h2>
-            <h2 className=' max-w-full uppercase mt-0 mb-0   font-use leading-[100px] text-[#fff] text-[80px] sm:text-[34px] sm:leading-10 sm:tracking-[1px]'>{strapiContent.rgbsubtitle}</h2>
-          </div>
-          <div className=' w-full max-w-full mt-12'>
-            <img className=' max-w-full inline-block align-middle' src={strapiContent.rgbimg.localFile.url}></img>
-          </div>
-        </div>
-      </div> */}
-      <div className=' pl-4 pr-4 mt-80 sm:mt-0  sm:p-[1rem]'>
-        <div className='flex flex-col relative items-start  ml-auto mr-auto z-[1] max-w-[1200px]'>
-          <div className='absolute top-0 bottom-auto left-auto right-0 star-embed sm:hidden '>
-            <img src={star} alt='effect'></img>
-          </div>
-          <h2 className='uppercase mt-0 mb-0  font-use tracking-[2px] text-[50px] leading-[60px] text-[#fff] sm:text-[22px] sm:leading-10 sm:tracking-[1px] '>{strapiContent.thirdtitle}</h2>
-          <h2 className='uppercase mt-0 mb-0  max-w-full  font-use text-[#fff] tracking-[2px] text-[80px] leading-[100px] sm:text-[40px] sm:leading-10'>{strapiContent.thirdsubtitle}</h2>
-          <div className='w-[700px] mt-[60px] ml-[100px] sm:ml-0 sm:w-full'>
-            <p className='mb-0 leading-8 text-xl mt-0  font-use-one sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .85)' }}>
-              {strapiContent.thirdcontent.data.thirdcontent}
-            </p>
-          </div>
-          <div className='flex relative justify-center'>
-            <img className=' inline-block max-w-full align-middle' src={strapiContent.thirdimg.localFile.url}></img>
-          </div>
-          <div className='w-full max-w-full'>
-            <div className='flex justify-around stats-card'>
-              <div className='max-w-full' style={{ width: '351px' }}>
-                <h3 className='  leading-9 text-3xl uppercase mt-0 mb-0 font-use sm:text-[24px]' style={{ letterSpacing: '3px', color: '#fff' }}>{strapiContent.thirdcard1title}</h3>
-                <p className='mb-0 text-xl leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', marginTop: '8px' }}>{strapiContent.thirdcard1content}</p>
+        <div className=' mt-[4rem] sm:mt-2 sm:p-[1rem]'>
+          <div className='max-w-full flex justify-center items-center ml-auto mr-auto'>
+            <div className='max-w-full relative w-[1200px]'>
+              <h2 className='uppercase mt-0 mb-0   font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.secondtitle}</h2>
+              <h2 className='max-w-full uppercase mt-0 mb-0 font-light font-use-one text-[#fff] text-[80px] tracking-[2px] leading-[100px] sm:text-[2.5rem] sm:leading-[50px] sm:ml-[10px]'> {strapiContent.secondsubtitle}</h2>
+              <p className=' mb-0 text-xl leading-8 font-use-one w-[700px] mt-[50px] ml-[100px] sm:ml-[10px] sm:text-base sm:w-[99%]' style={{ color: 'rgba(255, 255, 255, .85)' }}>
+                <div dangerouslySetInnerHTML={{ __html: strapiContent.secondcontent.data.secondcontent }}></div>
+              </p>
+              <div className=' w-full max-w-full justify-center flex relative mt-[104px]'>
+                <div className='absolute top-auto bottom-0 left-0 right-auto '>
+                  <img  src={star} alt='effect'></img>
+                </div>
+                <img alt='effect' src={strapiContent.secondimg.localFile.url} className='h-auto object-fill max-w-full inline-block align-middle w-[800px] '></img>
               </div>
-              <div className=' separator-effect-md'></div>
-              {/* <div className=' max-w-full' style={{ width: '400px' }}>
-                <h3 className='  leading-9 text-3xl uppercase mt-0 mb-0 font-use sm:text-[24px]' style={{ letterSpacing: '3px', color: '#fff' }}>{strapiContent.thirdcard2title}</h3>
-                <p className='mb-0 text-xl leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', marginTop: '8px' }}>{strapiContent.thirdcard2content}</p>
-              </div> */}
-              {/* <div className=' separator-effect-md'></div> */}
-              <div className='max-w-full' style={{ width: '300px' }}>
-                <h3 className='  leading-9 text-3xl uppercase mt-0 mb-0 font-use sm:text-[24px]' style={{ letterSpacing: '3px', color: '#fff' }}>{strapiContent.thirdcard3title}</h3>
-                <p className='mb-0 text-xl leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', marginTop: '8px' }}>{strapiContent.thirdcard3content}</p>
-              </div>
-            </div>
-            <div className='absolute z-[-1] w-[342px] flex top-auto bottom-[-14%] left-0 right-auto'>
-              <img src={twoStar} alt='effects'></img>
-              <img src={twoStar} alt='effects'></img>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className=' overflow-visible mt-[276px] mb-[240px] sm:mt-[140px] sm:p-[1rem] sm:mb-0'>
-        <div className=' relative flex flex-col items-start ml-auto mr-auto z-[1] max-w-[1200px] sm:ml-0'>
-          <div className='max-w-full w-full overflow-hidden'>
-            <h2 className='uppercase mt-0 mb-0   font-use tracking-[2px] text-[#fff] text-[50px] leading-[60px] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.fourthtitle}</h2>
-            <h2 className='max-w-full uppercase mt-0 mb-0   font-use tracking-[2px] text-[#fff] text-[80px] leading-[100px] sm:leading-10 sm:text-[34px] sm:tracking-[1px] '> {strapiContent.fourthsubtitle}</h2>
-            <div className='absolute z-[-1] flex top-[4%] bottom-auto left-auto right-[-4%] star-embed sm:hidden'>
-              <img src={star} alt='effects'></img>
-            </div>
-            <div className='max-w-full overflow-hidden w-[1100px] mt-[60px] ml-[100px] sm:ml-[10px] sm:mt-[50px]'>
-              <div className=' w-[700px] sm:w-[95%]'>
-                <p className='mb-0 text-xl mt-0 leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)' }}>
-                  {strapiContent.fourthcontent.data.fourthcontent}
-                </p>
-              </div>
-              <div className=' w-full max-w-full justify-between items-center flex overflow-hidden mt-[60px] sm:items-start sm:flex-col'>
-                <div className='max-w-full flex flex-col justify-center items-center mt-0 w-[400px] h-[370px] sm:w-[96%]'>
-                  <ul className=' h-full flex flex-col justify-between pl-0 mt-0' style={{ marginBottom: '10px' }}>
-                    <li className='w-full max-w-full items-start pl-0 flex mb-3'>
+              <div className=' w-full justify-between items-center flex relative mt-[60px] sm:mt-[5rem] sm:flex-col'>
+                <div className='max-w-full w-[430px] ml-[100px] sm:ml-[5px]'>
+                  <ul className='max-w-full flex flex-col pl-0 justify-between mt-0 w-[400px] h-[250px] mb-[10px]'>
+                    <li className='w-full max-w-full flex items-start mb-8 pl-0'>
                       <div className='bullet-line-css'></div>
-                      <p className='mb-0 mt-0 leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', fontSize: '16px' }}>{strapiContent.fourthpoint1.data.fourthpoint1}</p>
+                      <p className='mb-0 text-xl leading-8 mt-0 font-use-one sm:text-base' style={{ color: 'rgba(255, 255, 255, .85)' }}>{strapiContent.secondpoint1.data.secondpoint1}</p>
                     </li>
-                    <li className='w-full max-w-full items-start pl-0 flex mb-4'>
+                    <li className='w-full max-w-full flex items-start mb-8 pl-0'>
                       <div className='bullet-line-css'></div>
-                      <p className='mb-0 mt-0 leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', fontSize: '16px' }}>{strapiContent.fourthpoint2.data.fourthpoint2}</p>
-                    </li>
-                    <li className='w-full max-w-full items-start pl-0 flex mb-4'>
-                      <div className='bullet-line-css'></div>
-                      <p className='mb-0 mt-0 leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', fontSize: '16px' }}>{strapiContent.fourthpoint3.data.fourthpoint3}</p>
+                      <p className='mb-0 text-xl leading-8 mt-0 font-use-one' style={{ color: 'rgba(255, 255, 255, .85)' }}>{strapiContent.secondpoint2.data.secondpoint2}</p>
                     </li>
                   </ul>
                 </div>
-                <div className='max-w-full w-[619px] sm:mt-[3rem] sm:w-full'>
-                  <img className=' inline-block max-w-full align-middle ' src={strapiContent.fourthimg.localFile.url}></img>
+                <div className='sm:mt-20 sm:w-full '>
+                  <img alt='Technology' src={strapiContent.secondpointsimg.localFile.url} className='object-cover max-w-full inline-block align-middle w-[617px] h-[345px] sm:object-contain'></img>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <Transition.Root show={openIso} as={Fragment}>
-        <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setopenIso}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
-          </Transition.Child>
 
-          <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                enterTo="opacity-100 translate-y-0 sm:scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-              >
-                <Dialog.Panel className="relative flex flex-col gap-[1rem] transform overflow-hidden rounded-lg  text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                <img src={iso2015}></img>
-                  <img src={iso2019}></img>
-                  <img src={iso2022}></img>
-
-                </Dialog.Panel>
-              </Transition.Child>
+        <div className=' pl-4 pr-4 mt-80 sm:mt-0  sm:p-[1rem]'>
+          <div className='flex flex-col relative items-start  ml-auto mr-auto z-[1] max-w-[1200px]'>
+            <div className='absolute top-0 bottom-auto left-auto right-0 star-embed sm:hidden '>
+              <img src={star} alt='effect'></img>
             </div>
-          </div>
-        </Dialog>
-      </Transition.Root>
-      {/* footer section */}
-      <div className='footer section pl-0 pr-0'>
-        <div className='relative ml-auto mr-auto max-w-[1200px]'>
-          <div className='flex justify-between items-start pb-0 pl-4 pr-4 mb-8 mt-[101px] sm:flex-col sm:mt-50px ' style={{ border: '1px #7c4c4c', borderBottomColor: 'rgba(255, 255, 255, .5)' }}>
-            <div className='flex flex-col items-start'>
-              <a href='https://open.spotify.com/show/6IAeIuksZiw6T3FkCjAbsP?si=ZhB_Sr8uT3-kr0tqeh25Kw' className='uppercase  font-use leading-[48px] text-[40px]' style={{ color: 'rgba(255, 255, 255, .85) ' }}>{strapiContent.footertitle}</a>
-              <p className=' text-xl leading-8 font-use-one w-[441px] mt-[30px] mb-[30px] sm:w-[100%] sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)' }}>{strapiContent.footercontent.data.footercontent}</p>
-              {/* getintouchbutton */}
-              <button className="btn btn-2 hover-slide-up sm:w-[100%]">
-                <Link to='/contact'><span>{strapiContent.git}</span></Link>
-              </button>
-              <div className='social-platform font-use sm:w-[100%]'>
-                <Link to="https://www.facebook.com/5cnetwork" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                  <img src={strapiContent.facebook.localFile.url} alt='facebook' className='mr-0 max-w-full inline-block align-middle'></img>
-                </Link>
-                <Link to="https://www.linkedin.com/company/5c-network?trk=top_nav_home" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                  <img src={strapiContent.linkedin.localFile.url} alt='Linkedin' className='mr-0 max-w-full inline-block align-middle'></img>
-                </Link>
-                <Link to="https://twitter.com/5c_network" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                  <img src={strapiContent.twitter.localFile.url} alt='Twitter' className='mr-0 max-w-full inline-block align-middle'></img>
-                </Link>
-                <Link to="https://www.instagram.com/5cnetwork/" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                  <img src={strapiContent.medium.localFile.url} alt='Medium' className='mr-0 max-w-full inline-block align-middle'></img>
-                </Link>
-              </div>
+            <h2 className='uppercase mt-0 mb-0  font-use tracking-[2px] text-[50px] leading-[60px] text-[#fff] sm:text-[22px] sm:leading-10 sm:tracking-[1px] '>{strapiContent.thirdtitle}</h2>
+            <h2 className='uppercase mt-0 mb-0  max-w-full  font-use text-[#fff] tracking-[2px] text-[80px] leading-[100px] sm:text-[40px] sm:leading-10'>{strapiContent.thirdsubtitle}</h2>
+            <div className='w-[700px] mt-[60px] ml-[100px] sm:ml-0 sm:w-full'>
+              <p className='mb-0 leading-8 text-xl mt-0  font-use-one sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .85)' }}>
+                {strapiContent.thirdcontent.data.thirdcontent}
+              </p>
             </div>
-            <div className='flex sm:mt-[65px] sm:w-[100%] sm:justify-between ml-[13rem] sm:ml-0'>
-              <div className='flex flex-col font-use ml-[60px] sm:ml-[5px]'>
-                <a href='https://borderlessradiology.com/' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Borderless Radiology - For Radiologists </a>
-                <a href='https://play.google.com/store/apps/details?id=db.com.a5c&pcampaignid=web_share' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>ProtoCALL - for Radiographers</a>
-                <a href='https://ai.5cnetwork.com/' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Pixel Predict - AI Newsletter </a>
-                {/* <Link to="#" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>media</Link> */}
-                <a href='https://osteocheck.5cnetwork.com/' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Osteocheck</a>
-                <a href='https://chat.whatsapp.com/EXOCBtpLcpqB3JUSK3ifFl' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Radiographers - Community </a>
-                <a href='https://open.spotify.com/show/6IAeIuksZiw6T3FkCjAbsP' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Podcast</a>
-                {/* <Link to="/privacy-policy" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Privacy policy</Link> */}
-
-
+            <div className='flex relative justify-center'>
+              <img alt='Technology' className=' inline-block max-w-full align-middle' src={strapiContent.thirdimg.localFile.url}></img>
+            </div>
+            <div className='w-full max-w-full'>
+              <div className='flex justify-around stats-card'>
+                <div className='max-w-full' style={{ width: '351px' }}>
+                  <h3 className='  leading-9 text-3xl uppercase mt-0 mb-0 font-use sm:text-[24px]' style={{ letterSpacing: '3px', color: '#fff' }}>{strapiContent.thirdcard1title}</h3>
+                  <p className='mb-0 text-xl leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', marginTop: '8px' }}>{strapiContent.thirdcard1content}</p>
+                </div>
+                <div className=' separator-effect-md'></div>
+                {/* <div className=' max-w-full' style={{ width: '400px' }}>
+                <h3 className='  leading-9 text-3xl uppercase mt-0 mb-0 font-use sm:text-[24px]' style={{ letterSpacing: '3px', color: '#fff' }}>{strapiContent.thirdcard2title}</h3>
+                <p className='mb-0 text-xl leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', marginTop: '8px' }}>{strapiContent.thirdcard2content}</p>
+              </div> */}
+                {/* <div className=' separator-effect-md'></div> */}
+                <div className='max-w-full' style={{ width: '300px' }}>
+                  <h3 className='  leading-9 text-3xl uppercase mt-0 mb-0 font-use sm:text-[24px]' style={{ letterSpacing: '3px', color: '#fff' }}>{strapiContent.thirdcard3title}</h3>
+                  <p className='mb-0 text-xl leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', marginTop: '8px' }}>{strapiContent.thirdcard3content}</p>
+                </div>
               </div>
-              <div className='flex flex-col font-use ml-[60px]'>
-              <Link to="/privacy-policy" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Privacy policy</Link>
-                            <Link  className='uppercase mb-4 text-sm leading-5 cursor-pointer  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}><div onClick={openIsoModal}>Certifications</div></Link>
-                <Link to='/complianceregulatory'className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>compliance & regulatory</Link>
-                                {/* <Link to="#" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>privacy policy</Link> */}
-                            </div>
+              <div className='absolute z-[-1] w-[342px] flex top-auto bottom-[-14%] left-0 right-auto'>
+                <img src={twoStar} alt='effects'></img>
+                <img src={twoStar} alt='effects'></img>
+              </div>
             </div>
           </div>
         </div>
-        <div className='relative flex flex-row items-end mt-0 overflow-hidden' style={{ color: '#fff', height: '400px' }}>
-          <video autoPlay loop muted className=' w-full h-full absolute m-auto object-cover bg-cover inline-block align-baseline ' style={{ backgroundPosition: '50%', top: '-100%', bottom: '-100%', left: '-100%', right: '-100%' }}>
-            <source src={strapiContent.footervideo.localFile.url} type="video/mp4" />
-          </video>
+        <div className=' overflow-visible mt-[276px] mb-[240px] sm:mt-[140px] sm:p-[1rem] sm:mb-0'>
+          <div className=' relative flex flex-col items-start ml-auto mr-auto z-[1] max-w-[1200px] sm:ml-0'>
+            <div className='max-w-full w-full overflow-hidden'>
+              <h2 className='uppercase mt-0 mb-0   font-use tracking-[2px] text-[#fff] text-[50px] leading-[60px] sm:text-[22px] sm:tracking-[1px]'>{strapiContent.fourthtitle}</h2>
+              <h2 className='max-w-full uppercase mt-0 mb-0   font-use tracking-[2px] text-[#fff] text-[80px] leading-[100px] sm:leading-10 sm:text-[34px] sm:tracking-[1px] '> {strapiContent.fourthsubtitle}</h2>
+              <div className='absolute z-[-1] flex top-[4%] bottom-auto left-auto right-[-4%] star-embed sm:hidden'>
+                <img src={star} alt='effects'></img>
+              </div>
+              <div className='max-w-full overflow-hidden w-[1100px] mt-[60px] ml-[100px] sm:ml-[10px] sm:mt-[50px]'>
+                <div className=' w-[700px] sm:w-[95%]'>
+                  <p className='mb-0 text-xl mt-0 leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)' }}>
+                    {strapiContent.fourthcontent.data.fourthcontent}
+                  </p>
+                </div>
+                <div className=' w-full max-w-full justify-between items-center flex overflow-hidden mt-[60px] sm:items-start sm:flex-col'>
+                  <div className='max-w-full flex flex-col justify-center items-center mt-0 w-[400px] h-[370px] sm:w-[96%]'>
+                    <ul className=' h-full flex flex-col justify-between pl-0 mt-0' style={{ marginBottom: '10px' }}>
+                      <li className='w-full max-w-full items-start pl-0 flex mb-3'>
+                        <div className='bullet-line-css'></div>
+                        <p className='mb-0 mt-0 leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', fontSize: '16px' }}>{strapiContent.fourthpoint1.data.fourthpoint1}</p>
+                      </li>
+                      <li className='w-full max-w-full items-start pl-0 flex mb-4'>
+                        <div className='bullet-line-css'></div>
+                        <p className='mb-0 mt-0 leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', fontSize: '16px' }}>{strapiContent.fourthpoint2.data.fourthpoint2}</p>
+                      </li>
+                      <li className='w-full max-w-full items-start pl-0 flex mb-4'>
+                        <div className='bullet-line-css'></div>
+                        <p className='mb-0 mt-0 leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', fontSize: '16px' }}>{strapiContent.fourthpoint3.data.fourthpoint3}</p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className='max-w-full w-[619px] sm:mt-[3rem] sm:w-full'>
+                    <img alt='Technology' className=' inline-block max-w-full align-middle ' src={strapiContent.fourthimg.localFile.url}></img>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        {/* footer section */}
+        <Footer data={data.allStrapiFooter.nodes[0]} />
       </div>
-    </div>
     </>
   )
 }
@@ -510,38 +270,43 @@ query MyQuery {
             fourthcontent
           }
         }
-        footertitle
-        footercontent {
-          data {
-            footercontent
+        
+        git
+      }
+    }
+    allStrapiFooter {
+      nodes {
+        Footer_Video {
+          localFile {
+            url
           }
         }
+        X {
+          localFile {
+            url
+          }
+        }
+        X_Url
         facebook {
           localFile {
             url
           }
         }
+        facebook_Url
+        instagram {
+          localFile {
+            url
+          }
+        }
+        instagram_Url
         linkedin {
           localFile {
             url
           }
         }
-        twitter {
-          localFile {
-            url
-          }
-        }
-        medium {
-          localFile {
-            url
-          }
-        }
-        footervideo {
-          localFile {
-            url
-          }
-        }
-        git
+        linkedin_Url
+        title
+        content
       }
     }
   }

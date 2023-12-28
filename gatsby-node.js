@@ -12,7 +12,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  const casestudy = await graphql(`
+  const casestudypost = await graphql(`
     query {
       casestudy: allStrapiCasestudy {
         nodes {
@@ -31,7 +31,7 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
-  casestudy.data.casestudy.nodes.forEach((blog) => {
+  casestudypost.data.casestudy.nodes.forEach((blog) => {
     createPage({
       path: `/casestudy/${blog.slug}`,
       component: path.resolve('./src/pages/casestudy.js'),

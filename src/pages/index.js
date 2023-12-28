@@ -1,11 +1,13 @@
 import React from 'react'
 import '../styles/global.css'
 import { Helmet } from "react-helmet";
+import Navbar from '../Utils/Navbar';
+import Navbarmd from '../Utils/Navbarmd';
 import { Link, graphql } from 'gatsby'
 import star from '../Assets/Solution/star.svg'
+import Footer from '../Utils/Footer';
 import twoStar from '../Assets/Solution/two_star.svg'
 import tablogo from '../Assets/Homepage/favicon.ico'
-import logo from '../Assets/Homepage/2-01.png'
 import mobilestar from '../Assets/Solution/single-mobile.svg'
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
@@ -22,9 +24,10 @@ import isologo3 from '../Assets/Homepage/iso2019.jpg'
 
 const Index = ({ data }) => {
   const content = data.allStrapiHomepage.nodes[0];
+  
   const [open, setOpen] = useState(false)
   const cancelButtonRef = useRef(null)
-  const [openIso, setopenIso] = useState(false)
+  const [openIso, setopenIso] = useState(false);
   const [openIso2, setopenIso2] = useState(false)
   const [openIso3, setopenIso3] = useState(false)
   const [openIso4, setopenIso4] = useState(false)
@@ -32,7 +35,6 @@ const Index = ({ data }) => {
   function openSignInModal() {
     setOpen(true);
   }
-
   function openIsoModal() {
     setopenIso(true);
   }
@@ -43,9 +45,8 @@ const Index = ({ data }) => {
   function openIso3Modal() {
     setopenIso3(true);
   }
-  function openIso4Modal() {
-    setopenIso4(true);
-  }
+
+  
 
   return (
     <>
@@ -53,171 +54,90 @@ const Index = ({ data }) => {
         <html lang="en" />
         <title>{content.seo.metaTitle}</title>
         <meta name="description" content={content.seo.metaDescription.data.metaDescription} />
-        <link rel="icon" href= {tablogo}
-          type="image/x-icon"/>
+        <link rel="icon" href={tablogo}
+          type="image/x-icon" />
         {/* <meta name="author" content={author} /> */}
       </Helmet>
 
-    <div className='bg-black Homepage'>
+      <div className='bg-black Homepage'>
 
-      <Transition.Root show={open} as={Fragment}>
-        <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpen}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
-          </Transition.Child>
+        <Transition.Root show={open} as={Fragment}>
+          <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpen}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+            </Transition.Child>
 
-          <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                enterTo="opacity-100 translate-y-0 sm:scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-              >
-                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg w-[60%]">
-                  <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                    <div className="flex sm:flex sm:items-start m-[1rem] sm:flex-col">
-                      <a href='https://client.5cnetwork.com/' target="_blank" className='sign-wrapper'>
-                        <div className=' flex flex-col items-center'>
-                          <img src={hospital} className='w-[50%]'></img>
-                          <label className='justify-center font-use mt-[1.3rem] tracking-[1px] text-[18px] uppercase font-semibold'>Hospital/Diagnostic centre</label>
-                        </div>
-                      </a>
-                      <a href='https://rads.5cnetwork.com/' target="_blank" className='sign-wrapper'>
-                        <div className=' flex flex-col items-center'>
-                          <img src={radiologist} className='w-[50%]'></img>
-                          <label className='justify-center font-use mt-[1.3rem] tracking-[1px] text-[18px] uppercase font-semibold'>Radiologist</label>
-                        </div>
-                      </a>
+            <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
+                <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                  enterTo="opacity-100 translate-y-0 sm:scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                  leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                >
+                  <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg w-[60%]">
+                    <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                      <div className="flex sm:flex sm:items-start m-[1rem] sm:flex-col">
+                        <a href='https://client.5cnetwork.com/' rel="noreferrer" target="_blank" className='sign-wrapper'>
+                          <div className=' flex flex-col items-center'>
+                            <img alt='Hospital/Diagnostic centre' src={hospital} className='w-[50%]'></img>
+                            <label htmlFor='Hospital/Diagnostic centre' className='justify-center font-use mt-[1.3rem] tracking-[1px] text-[18px] uppercase font-semibold'>Hospital/Diagnostic centre</label>
+                          </div>
+                        </a>
+                        <a href='https://rads.5cnetwork.com/' rel="noreferrer" target="_blank" className='sign-wrapper'>
+                          <div className=' flex flex-col items-center'>
+                            <img alt='radiologist' src={radiologist} className='w-[50%]'></img>
+                            <label htmlFor='Radiologist' className='justify-center font-use mt-[1.3rem] tracking-[1px] text-[18px] uppercase font-semibold'>Radiologist</label>
+                          </div>
+                        </a>
+                      </div>
                     </div>
-                  </div>
 
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
-          </div>
-        </Dialog>
-      </Transition.Root>
-
-      <div onClick={openSignInModal} class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[99] sm:hidden">
-        <span class="inner"></span>
-        <span class="inner"></span>
-        <span class="inner"></span>
-        <span class="inner"></span>
-        Sign In
-      </div>
-
-      <a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6  text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[1] mobile-screen-signin">
-        <span class="inner"></span>
-        <span class="inner"></span>
-        <span class="inner"></span>
-        <span class="inner"></span>
-        Sign In
-      </a>
-
-
-
-
-
-      <div className='absolute w-full max-w-full flex flex-col items-center bg-transparent nav-division' style={{ zIndex: '2', color: 'rgba(255, 255, 255, 0)', top: '0' }}>
-        <div className='w-full max-w-full pt-3 pb-3 ml-auto mr-auto' style={{ width: '79%' }}>
-          <nav className=' w-full max-w-full justify-around items-center flex relative  font-use  nav-md'>
-            <Link to='/solutions' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Solutions</Link>
-            <Link to='/technology' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
-            <Link to='/about' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
-            {/* <Link to='/Partners' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Partners</Link> */}
-            <Link to='/' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '102px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}><img src={logo} alt='5C Network'></img></Link>
-            <Link to='/careers' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Careers</Link>
-            <div className='DropdDown'>
-              <div className='DropDowntoggle'>
-                <div className=' inline-block ml-6 mr-6 text-base align-top relative uppercase ' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Resources</div>
+                  </Dialog.Panel>
+                </Transition.Child>
               </div>
-              <nav className='navbartoggle'>
-                <Link to='/blogs' className='navlinks '>Blogs</Link>
-                <Link to='/newsroom' className='navlinks'>Newsroom</Link>
-                {/* <Link to='/casestudies' className='navlinks'>Case Study</Link> */}
-              </nav>
             </div>
-            <Link to='/contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>contact</Link>
-            {/* <Link to='/contact' className=' inline-block ml-6 mr-6 text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>SignIn</Link> */}
+          </Dialog>
+        </Transition.Root>
+
+        {/* <div onClick={openSignInModal} class="outer inline-block ml-6 mr-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[99] sm:hidden">
+          <span class="inner"></span>
+          <span class="inner"></span>
+          <span class="inner"></span>
+          <span class="inner"></span>
+          Sign In
+        </div> */}
+
+        <a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6  text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[1] mobile-screen-signin">
+          <span class="inner"></span>
+          <span class="inner"></span>
+          <span class="inner"></span>
+          <span class="inner"></span>
+          Sign In
+        </a>
 
 
 
-          </nav>
 
 
-        </div>
+        <Navbar />
 
-      </div>
+        {/* Mobile responsive */}
 
-      {/* Mobile responsive */}
-      {/* <div className=' bg-transparent p-[15px] flex justify-between items-center'>
-      <nav role="navigation" className='mobile-nav'>
-        <div id="menuToggle">
-          <input type="checkbox" />
-          <span></span>
-          <span></span>
-          <span></span>
-          <ul id="menu">
-            <li><Link to="/solutions">Solutions</Link></li>
-            <li><Link to="/technology">Technology</Link></li>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
+        <Navbarmd />
 
-            <li><Link to="/blogs">Blogs</Link></li>
-            <li><Link to="/newsroom">Newsroom</Link></li>
-
-            <li><Link to="/careers">Careers</Link></li>
-            <li><Link to="/contact" >Contact</Link></li>
-          </ul>
-        </div>
-      </nav>
-      <img src={logo} alt='5C Network' className='w-[30%]'></img>
-      <a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6  text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[99] mobile-screen-signin">
-        <span class="inner"></span>
-        <span class="inner"></span>
-        <span class="inner"></span>
-        <span class="inner"></span>
-        Sign In
-      </a>
-      </div> */}
-      <div className=' bg-transparent p-[15px] flex justify-between items-center absolute z-[1] w-[65%] navbar-mb  '>
-        <nav role="navigation" className='mobile-nav'>
-          <div id="menuToggle" className='absolute m-[1rem] z-[99]'>
-            <input type="checkbox" />
-            <span></span>
-            <span></span>
-            <span></span>
-            <ul id="menu">
-              <li><Link to="/solutions" className='font-use'>Solutions</Link></li>
-              <li><Link to="/technology">Technology</Link></li>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/blogs">Blogs</Link></li>
-              <li><Link to="/newsroom">Newsroom</Link></li>
-              {/* <li><Link to="/casestudies">Case Study</Link></li> */}
-              <li><Link to="/careers">Careers</Link></li>
-              <li><Link to="/contact" >Contact</Link></li>
-            </ul>
-          </div>
-        </nav>
-        <img src={logo} alt='5C Network' className='w-[50%]'></img>
-
-
-      </div>
-
-      {/* <div className='w-full h-full bg-transparent relative max-w-[1200px] pt-[12px] pb-[12px] ml-auto mr-auto'>
+        {/* <div className='w-full h-full bg-transparent relative max-w-[1200px] pt-[12px] pb-[12px] ml-auto mr-auto'>
         <div className=' h-full bg-transparent items-center mt-0 top-0 w-full max-h-none max-w-full justify-center flex absolute'>
           <a className=' w-auto h-full ml-0 max-h-none mt-[8px] pl-0 block float-left relative'>
             <div className=' w-auto h-full max-h-[77px] ml-0 mr-0 flex items-center'>
@@ -229,59 +149,59 @@ const Index = ({ data }) => {
 
 
 
-      <div className='flex flex-col relative items-center justify-start overflow-hidden h-screen' style={{ zIndex: '0', top: '0' }}>
-        <video autoPlay loop muted className=' sm:none w-full h-full m-auto absolute object-cover bg-cover inline-block align-baseline' style={{ backgroundPosition: '50%', top: '-100%', bottom: '-100%', left: '-100%', right: '-100%' }}>
-          <source src={content.headervideo.localFile.url} type="video/mp4" />
-        </video>
-        <video autoPlay loop muted playsInline preload='auto' className=' mobile-resolution-video w-full h-full m-auto absolute object-cover bg-cover inline-block align-baseline' style={{ backgroundPosition: '50%', top: '-100%', bottom: '-100%', left: '-100%', right: '-100%' }}>
-          <source src={content.mobileresolutionvideo.localFile.url} type="video/mp4" />
-        </video>
+        <div className='flex flex-col relative items-center justify-start overflow-hidden h-screen' style={{ zIndex: '0', top: '0' }}>
+          <video autoPlay loop muted className=' sm:none w-full h-full m-auto absolute object-cover bg-cover inline-block align-baseline' style={{ backgroundPosition: '50%', top: '-100%', bottom: '-100%', left: '-100%', right: '-100%' }}>
+            <source src={content.headervideo.localFile.url} type="video/mp4" />
+          </video>
+          <video autoPlay loop muted playsInline preload='auto' className=' mobile-resolution-video w-full h-full m-auto absolute object-cover bg-cover inline-block align-baseline' style={{ backgroundPosition: '50%', top: '-100%', bottom: '-100%', left: '-100%', right: '-100%' }}>
+            <source src={content.mobileresolutionvideo.localFile.url} type="video/mp4" />
+          </video>
 
-      </div>
-      <div>
+        </div>
+        <div>
 
-      </div>
-      {/* unseen-container */}
-      <div className='relative flex flex-col justify-center w-full items-center overflow-hidden unseen-container'>
-        <div className='relative mr-auto ml-auto max-w-[1200px] sm:max-w-full sm:w-full'>
-          <div className='relative flex flex-col max-w-full z-10   second-content'>
-            <div>
-              <h2 className='text-slate-50 uppercase text-[50px] mt-0 mb-0  tracking-[2px] leading-[60px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px] '>{content.unseentitle}</h2>
-              <h1 className='text-slate-50 uppercase  max-w-full  mt-0 mb-0 text-[70px] tracking-[2px] leading-[80px] sm:text-[34px] sm:leading-[40px] sm:mt-[8px] sm:ml-0'>{content.unseensubtitle}</h1>
-            </div>
-
-            <div className='max-w-full flex flex-col justify-center items-start sm:ml-0  secondDivContent '>
-              <div className='max-w-full mt-10  container-content'>
-                <p className='text-xl leading-8 mb-0 secondDivParaContent sm:text-lg sm:text-[16px] sm:leading-[28px]'>
-                  <div dangerouslySetInnerHTML={{ __html: content.unseencontent.data.unseencontent }}></div>
-                </p>
+        </div>
+        {/* unseen-container */}
+        <div className='relative flex flex-col justify-center w-full items-center overflow-hidden unseen-container'>
+          <div className='relative mr-auto ml-auto max-w-[1200px] sm:max-w-full sm:w-full'>
+            <div className='relative flex flex-col max-w-full z-10   second-content'>
+              <div>
+                <h2 className='text-slate-50 uppercase text-[50px] mt-0 mb-0  tracking-[2px] leading-[60px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px] '>{content.unseentitle}</h2>
+                <h1 className='text-slate-50 uppercase  max-w-full  mt-0 mb-0 text-[70px] tracking-[2px] leading-[80px] sm:text-[34px] sm:leading-[40px] sm:mt-[8px] sm:ml-0'>{content.unseensubtitle}</h1>
               </div>
-              <button class="btn btn-2 hover-slide-up mt-7 uppercase sm:w-full">
-                <Link to='/about'><span>{content.moreAboutUs}</span></Link>
-              </button>
-            </div>
-            <div className='absolute z-[1] top-0 bottom-auto left-0 right-auto'>
-              <div className='z-[1] w-[342px] h-[264px] relative top-[-191px] right-[158px]'>
-                <div className='absolute z-[-100] h-[176px] opacity-[1] w-[182px] flex top-0 bottom-auto left-auto right-0'>
-                  <img src={twoStar} alt='effects'></img>
+
+              <div className='max-w-full flex flex-col justify-center items-start sm:ml-0  secondDivContent '>
+                <div className='max-w-full mt-10  container-content'>
+                  <p className='text-xl leading-8 mb-0 secondDivParaContent sm:text-lg sm:text-[16px] sm:leading-[28px]'>
+                    <div dangerouslySetInnerHTML={{ __html: content.unseencontent.data.unseencontent }}></div>
+                  </p>
+                </div>
+                <button role='action_button' aria-label='button' class="btn btn-2 hover-slide-up mt-7 uppercase sm:w-full">
+                  <Link to='/about'><span>{content.moreAboutUs}</span></Link>
+                </button>
+              </div>
+              <div className='absolute z-[1] top-0 bottom-auto left-0 right-auto'>
+                <div className='z-[1] w-[342px] h-[264px] relative top-[-191px] right-[158px]'>
+                  <div className='absolute z-[-100] h-[176px] opacity-[1] w-[182px] flex top-0 bottom-auto left-auto right-0'>
+                    <img src={twoStar} alt='effects'></img>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className='absolute z-[-1] w-[342px] flex top-auto bottom-[-29%] left-0 right-auto'>
-              <img src={twoStar} alt='effects'></img>
-              <img src={twoStar} alt='effects'></img>
-            </div>
-            <div className='flex flex-col justify-around items-center absolute top-0 bottom-0 left-auto right-[-22%] z-[-1] sm:justify-start sm:items-start sm:mt-[33px] sm:relative sm:right-0'>
-              <div className='relative'>
-                <img src={content.unseenimg.localFile.url} onError={(e) => console.error('Image load error', e)} className=' h-auto inline-block align-middle w-[700px] sm:w-full  rotation-effect' alt='globeimage' />
-                {/* <img src={content.unseenimg.localFile.url} className='max-w-full align-middle object-cover ' style={{ width: '264px', height: '171px', display: 'none', top: '456px', bottom: '0', left: '247px' }}></img> */}
+              <div className='absolute z-[-1] w-[342px] flex top-auto bottom-[-29%] left-0 right-auto'>
+                <img src={twoStar} alt='effects'></img>
+                <img src={twoStar} alt='effects'></img>
+              </div>
+              <div className='flex flex-col justify-around items-center absolute top-0 bottom-0 left-auto right-[-22%] z-[-1] sm:justify-start sm:items-start sm:mt-[33px] sm:relative sm:right-0'>
+                <div className='relative'>
+                  <img src={content.unseenimg.localFile.url} className=' h-auto inline-block align-middle w-[700px] sm:w-full  rotation-effect' alt='globeimage' />
+                  {/* <img src={content.unseenimg.localFile.url} className='max-w-full align-middle object-cover ' style={{ width: '264px', height: '171px', display: 'none', top: '456px', bottom: '0', left: '247px' }}></img> */}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      {/* about section(third division) */}
-      {/* <div className=' mt-25 mb-20'>
+        {/* about section(third division) */}
+        {/* <div className=' mt-25 mb-20'>
         <div className='max-w-full flex justify-center ml-auto mr-auto'>
           <div className='flex max-w-full w-full sm:w-[90%] sm:flex-col third-div-img' style={{ backgroundImage: `url(${content.aboutimg.localFile.url})` }}>
             <div className='flex flex-col items-end sm:items-center sm:w-full sm:ml-0 sm:mt-5'>
@@ -300,20 +220,20 @@ const Index = ({ data }) => {
           </div>
         </div>
       </div> */}
-      {/* about container(fourth division) */}
-      <div className='relative pl-0 pr-0 overflow-hidden sm:mt-[5rem]'>
-        <div className='relative flex flex-col items-start ml-auto mr-auto' style={{ zIndex: '1', maxWidth: '1200px' }}>
-          <div className='max-w-full relative ml-0 pl-4 pr-4 '>
-            <h2 className='uppercase mt-0 mb-0  fourth-div-content text-slate-50 tracking-[2px] text-[50px] leading-[32px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px]'>{content.thirdsectitle}</h2>
-            <h1 className='max-w-full uppercase mt-0 mb-0 font-normal text-slate-50 text-[80px] leading-[100px] w-[1074px] tracking-[1px] sm:ml-0 sm:text-[34px] sm:leading-[40px] sm:mt-[8px]'>
-              <span>{content.rainbowtext}</span>
-              {content.thirdsecsubtitle}
-            </h1>
-            <div className='max-w-full mt-20 ml-[100px] sm:ml-0 sm:mt-10' >
-              <p className='font-normal mb-0 mt-0 text-xl hyper-content text-slate-50 leading-[32px] w-[72%] sm:leading-[28px] sm:text-lg sm:w-full' >
-                <div dangerouslySetInnerHTML={{ __html: content.thirdseccontent.data.thirdseccontent }}></div>
-              </p>
-              {/* <div className=' mt-20 w-[900px] sm:w-full'>
+        {/* about container(fourth division) */}
+        <div className='relative pl-0 pr-0 overflow-hidden sm:mt-[5rem]'>
+          <div className='relative flex flex-col items-start ml-auto mr-auto' style={{ zIndex: '1', maxWidth: '1200px' }}>
+            <div className='max-w-full relative ml-0 pl-4 pr-4 '>
+              <h2 className='uppercase mt-0 mb-0  fourth-div-content text-slate-50 tracking-[2px] text-[50px] leading-[32px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px]'>{content.thirdsectitle}</h2>
+              <h1 className='max-w-full uppercase mt-0 mb-0 font-normal text-slate-50 text-[80px] leading-[100px] w-[1074px] tracking-[1px] sm:ml-0 sm:text-[34px] sm:leading-[40px] sm:mt-[8px]'>
+                <span>{content.rainbowtext}</span>
+                {content.thirdsecsubtitle}
+              </h1>
+              <div className='max-w-full mt-20 ml-[100px] sm:ml-0 sm:mt-10' >
+                <p className='font-normal mb-0 mt-0 text-xl hyper-content text-slate-50 leading-[32px] w-[72%] sm:leading-[28px] sm:text-lg sm:w-full' >
+                  <div dangerouslySetInnerHTML={{ __html: content.thirdseccontent.data.thirdseccontent }}></div>
+                </p>
+                {/* <div className=' mt-20 w-[900px] sm:w-full'>
                 <div className='grid icons-grid'>
                   <div className='flex flex-col items-start justify-between'>
                     <div className='flex flex-col items-center'>
@@ -354,57 +274,57 @@ const Index = ({ data }) => {
 
                 </div>
               </div> */}
+              </div>
             </div>
           </div>
+          <img alt='Healthcare' src={content.thirdsecimg.localFile.url} className=' inline-block max-w-full w-full object-cover h-[499px] mt-[-211px] sm:h-[399px]'></img>
         </div>
-        <img src={content.thirdsecimg.localFile.url} className=' inline-block max-w-full w-full object-cover h-[499px] mt-[-211px] sm:h-[399px]'></img>
-      </div>
-      <div className='pt-60 pl-4 pr-4 overflow-hidden sm:pt-32'>
-        <div className='flex flex-col overflow-hidden items-start ml-auto mr-auto' style={{ maxWidth: '1200px' }}>
-          <div className='relative max-w-full' style={{ width: '1200px' }}>
-            <h2 className='text-slate-50 uppercase mt-0 mb-0 font-normal tracking-[2px] text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px] '>{content.fourthtitle}</h2>
-            <h1 className='max-w-full text-slate-50 uppercase mt-0 mb-0 font-normal text-[80px] leading-[100px] w-[1074px] tracking-[1px] sm:ml-0 sm:text-[34px] sm:tracking-[1px] sm:leading-[40px]  sm:mt-[8px]'>
-              <span >{content.fourthrainbowtext}&nbsp;</span>
-              {content.fourthsubtitle}
-            </h1>
-          </div>
-          <div className='relative flex flex-col items-start mt-20 max-w-full w-[1000px] z-[1] ml-[100px] sm:w-[100%] sm:ml-[10px]'>
-            <div className='status-container justify-between grid max-w-full'>
-              <div className='w-auto max-w-full flex flex-col' style={{ marginRight: '100px', height: '110px' }}>
-                <h5 className='w-full max-w-full text-slate-50 uppercase mt-0 mb-0  font-use' style={{ letterSpacing: '3px', fontSize: '40px', lineHeight: '48px', letterSpacing: '3px' }}>{content.fourthcard1title}</h5>
-                <p className='uppercase mt-12px leading-7 font-use-one mb-0' style={{ color: 'rgba(255, 255, 255, .65)', marginTop: '12px', fontSize: '18px' }}>{content.fourthcard1content}</p>
-              </div>
-              <div className='separator-effect-md'></div>
-              <div className='w-auto max-w-full flex flex-col' style={{ marginRight: '100px', height: '110px' }}>
-                <h5 className='w-full max-w-full text-slate-50 uppercase mt-0 mb-0  font-use' style={{ letterSpacing: '3px', fontSize: '40px', lineHeight: '48px', letterSpacing: '3px' }}>{content.fourthcard2title}</h5>
-                <p className='text-slate-50 uppercase mt-12px leading-7 font-use-one mb-0' style={{ color: 'rgba(255, 255, 255, .65)', marginTop: '12px', fontSize: '18px' }}>{content.fourthcard2content}</p>
-              </div>
-              <div className='separator-effect-md'></div>
-              <div className='w-auto max-w-full flex flex-col' style={{ marginRight: '100px', height: '110px' }}>
-                <h5 className='w-full max-w-full text-slate-50 uppercase mt-0 mb-0  font-use' style={{ letterSpacing: '3px', fontSize: '40px', lineHeight: '48px', letterSpacing: '3px' }}>{content.fourthcard3title}</h5>
-                <p className='text-slate-50 uppercase mt-12px leading-7 font-use-one mb-0' style={{ color: 'rgba(255, 255, 255, .65)', marginTop: '12px', fontSize: '18px' }}>{content.fourthcard3content}</p>
-              </div>
-              <div className='separator-effect sm:hidden'></div>
-              <div className='separator-effect'></div>
-              <div className='separator-effect sm:hidden'></div>
+        <div className='pt-60 pl-4 pr-4 overflow-hidden sm:pt-32'>
+          <div className='flex flex-col overflow-hidden items-start ml-auto mr-auto' style={{ maxWidth: '1200px' }}>
+            <div className='relative max-w-full' style={{ width: '1200px' }}>
+              <h2 className='text-slate-50 uppercase mt-0 mb-0 font-normal tracking-[2px] text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px] '>{content.fourthtitle}</h2>
+              <h1 className='max-w-full text-slate-50 uppercase mt-0 mb-0 font-normal text-[80px] leading-[100px] w-[1074px] tracking-[1px] sm:ml-0 sm:text-[34px] sm:tracking-[1px] sm:leading-[40px]  sm:mt-[8px]'>
+                <span >{content.fourthrainbowtext}&nbsp;</span>
+                {content.fourthsubtitle}
+              </h1>
+            </div>
+            <div className='relative flex flex-col items-start mt-20 max-w-full w-[1000px] z-[1] ml-[100px] sm:w-[100%] sm:ml-[10px]'>
+              <div className='status-container justify-between grid max-w-full'>
+                <div className='w-auto max-w-full flex flex-col' style={{ marginRight: '100px', height: '110px' }}>
+                  <h5 className='w-full max-w-full text-slate-50 uppercase mt-0 mb-0  font-use' style={{ letterSpacing: '3px', fontSize: '40px', lineHeight: '48px' }}>{content.fourthcard1title}</h5>
+                  <p className='uppercase mt-12px leading-7 font-use-one mb-0' style={{ color: 'rgba(255, 255, 255, .65)', marginTop: '12px', fontSize: '18px' }}>{content.fourthcard1content}</p>
+                </div>
+                <div className='separator-effect-md'></div>
+                <div className='w-auto max-w-full flex flex-col' style={{ marginRight: '100px', height: '110px' }}>
+                  <h5 className='w-full max-w-full text-slate-50 uppercase mt-0 mb-0  font-use' style={{ letterSpacing: '3px', fontSize: '40px', lineHeight: '48px' }}>{content.fourthcard2title}</h5>
+                  <p className='text-slate-50 uppercase mt-12px leading-7 font-use-one mb-0' style={{ color: 'rgba(255, 255, 255, .65)', marginTop: '12px', fontSize: '18px' }}>{content.fourthcard2content}</p>
+                </div>
+                <div className='separator-effect-md'></div>
+                <div className='w-auto max-w-full flex flex-col' style={{ marginRight: '100px', height: '110px' }}>
+                  <h5 className='w-full max-w-full text-slate-50 uppercase mt-0 mb-0  font-use' style={{ letterSpacing: '3px', fontSize: '40px', lineHeight: '48px' }}>{content.fourthcard3title}</h5>
+                  <p className='text-slate-50 uppercase mt-12px leading-7 font-use-one mb-0' style={{ color: 'rgba(255, 255, 255, .65)', marginTop: '12px', fontSize: '18px' }}>{content.fourthcard3content}</p>
+                </div>
+                <div className='separator-effect sm:hidden'></div>
+                <div className='separator-effect'></div>
+                <div className='separator-effect sm:hidden'></div>
 
-              {/* <div className='separator-effect-md'></div> */}
-              {/* <div className='w-auto max-w-full flex flex-col' style={{ marginRight: '100px', height: '110px' }}>
+                {/* <div className='separator-effect-md'></div> */}
+                {/* <div className='w-auto max-w-full flex flex-col' style={{ marginRight: '100px', height: '110px' }}>
                 <h5 className='w-full max-w-full text-slate-50 uppercase mt-0 mb-0  font-use' style={{ letterSpacing: '3px', fontSize: '40px', lineHeight: '48px', letterSpacing: '3px' }}>{content.fourthcard4title}</h5>
                 <p className='text-slate-50 uppercase mt-12px leading-7 font-use-one mb-0' style={{ color: 'rgba(255, 255, 255, .65)', marginTop: '12px', fontSize: '18px' }}>{content.fourthcard4content}</p>
               </div> */}
+              </div>
+              <div className=' max-w-full flex w-[1000px] mt-[50px] sm:w-[90%]'>
+                <button class="btn btn-2 hover-slide-up uppercase sm:min-w-[95%]">
+                  <Link to='/technology'><span>{content.moreAboutTechnology}</span></Link>
+                </button>
+              </div>
+              <div className='absolute w-[347px] h-[407px] top-[-94%] bottom-0 left-auto right-[-13%] star-embed '>
+                <img src={star} alt='effect'></img>
+              </div>
             </div>
-            <div className=' max-w-full flex w-[1000px] mt-[50px] sm:w-[90%]'>
-              <button class="btn btn-2 hover-slide-up uppercase sm:min-w-[95%]">
-                <Link to='/technology'><span>{content.moreAboutTechnology}</span></Link>
-              </button>
-            </div>
-            <div className='absolute w-[347px] h-[407px] top-[-94%] bottom-0 left-auto right-[-13%] star-embed '>
-              <img src={star} alt='effect'></img>
-            </div>
-          </div>
-          <div className='max-w-full flex' style={{ width: '1000px', marginTop: '50px' }}></div>
-          {/* <div className='relative flex w-full justify-center' style={{ marginTop: '60px', height: '459px' }}>
+            <div className='max-w-full flex' style={{ width: '1000px', marginTop: '50px' }}></div>
+            {/* <div className='relative flex w-full justify-center' style={{ marginTop: '60px', height: '459px' }}>
             <img src={content.sateliteimg.localFile.url} className='max-w-full inline-block align-middle' style={{ width: '459px', height: '459px' }}></img>
             <div className='absolute w-[374px] h-[132px] flex top-[50%] bottom-0 left-auto right-0'>
                 <img src={twoStar} alt='effects'></img>
@@ -415,458 +335,323 @@ const Index = ({ data }) => {
                 <img src={twoStar} alt='effects'></img>
             </div>
           </div> */}
-        </div>
-      </div>
-      {/* fifth section */}
-      <div className='px-[16px] py-[50px] pt-[142px]  sm:py-[50px]'>
-        <div className='flex flex-col relative items-start justify-center ml-auto mr-auto' style={{ maxWidth: '1200px' }}>
-          <h2 className='uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px]'>{content.fifthtitle}</h2>
-          <div>
-            <h1 className='max-w-full uppercase mt-0 mb-0  text-[#fff] font-use tracking-[2px] text-[80px] leading-[100px] sm:leading-10 sm:ml-0 sm:text-[34px] sm:tracking-[1px] sm:mt-[8px'> {content.fifthsubtitle}</h1>
           </div>
-          <div className='max-w-full mt-20 relative ml-[100px] w-[1000px] sm:ml-0 sm:mt-10'>
-            {/* <div className='mb-10'>
+        </div>
+        {/* fifth section */}
+        <div className='px-[16px] py-[50px] pt-[142px]  sm:py-[50px]'>
+          <div className='flex flex-col relative items-start justify-center ml-auto mr-auto' style={{ maxWidth: '1200px' }}>
+            <h2 className='uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px]'>{content.fifthtitle}</h2>
+            <div>
+              <h1 className='max-w-full uppercase mt-0 mb-0  text-[#fff] font-use tracking-[2px] text-[80px] leading-[100px] sm:leading-10 sm:ml-0 sm:text-[34px] sm:tracking-[1px] sm:mt-[8px'> {content.fifthsubtitle}</h1>
+            </div>
+            <div className='max-w-full mt-20 relative ml-[100px] w-[1000px] sm:ml-0 sm:mt-10'>
+              {/* <div className='mb-10'>
               <p className='text-center text-xl mb-0 mt-0 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)', lineHeight: '38px' }}>{content.fifthcontent.data.fifthcontent}</p>
             </div> */}
-            <div className='image'>
-              <img src={content.fifthimg.localFile.childrenImageSharp[0].fluid.src} className='h-[553px] ml-[76px] sm:h-[227px] sm:ml-0' ></img>
+              <div className='image'>
+                <img alt='RADIOLOGISTS' src={content.fifthimg.localFile.childrenImageSharp[0].fluid.src} className='h-[553px] ml-[76px] sm:h-[227px] sm:ml-0' ></img>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      {/* card hover section */}
+        {/* card hover section */}
 
 
-      {/* card hover end section */}
+        {/* card hover end section */}
 
-      {/* sixth division */}
-      <div className=' pl-4 pr-4 py-[240px] sm:py-[3rem]'>
-        <div className=' ml-auto mr-auto max-w-[1200px]'>
-          <div className='max-w-full flex flex-col relative justify-between'>
-            <div className='flex flex-col items-start'>
-              <h2 className='uppercase mt-0 mb-0   font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px]'>{content.sixthtitle}</h2>
-              <h1 className=' max-w-full uppercase  mt-0 mb-0 font-use text-[#fff] font-use tracking-[2px] text-[80px] leading-[60px] sm:leading-10 sm:ml-0 sm:text-[34px] sm:tracking-[1px] sm:mt-[8px'>{content.sixthsubtitle}</h1>
-            </div>
-            <div className='flex justify-between ml-[100px] mt-[50px] sm:ml-0'>
-              <div className='max-w-full flex flex-col items-start' style={{ width: '800px' }}>
-                <div className=' w-full max-w-full' style={{ marginBottom: '30px' }}>
-                  <p className=' text-xl mb-0 mt-0 leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)' }}>{content.sixthcontent.data.sixthcontent}</p>
+        {/* sixth division */}
+        <div className=' pl-4 pr-4 py-[240px] sm:py-[3rem]'>
+          <div className=' ml-auto mr-auto max-w-[1200px]'>
+            <div className='max-w-full flex flex-col relative justify-between'>
+              <div className='flex flex-col items-start'>
+                <h2 className='uppercase mt-0 mb-0   font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px]'>{content.sixthtitle}</h2>
+                <h1 className=' max-w-full uppercase  mt-0 mb-0 font-use text-[#fff] font-use tracking-[2px] text-[80px] leading-[60px] sm:leading-10 sm:ml-0 sm:text-[34px] sm:tracking-[1px] sm:mt-[8px'>{content.sixthsubtitle}</h1>
+              </div>
+              <div className='flex justify-between ml-[100px] mt-[50px] sm:ml-0'>
+                <div className='max-w-full flex flex-col items-start' style={{ width: '800px' }}>
+                  <div className=' w-full max-w-full' style={{ marginBottom: '30px' }}>
+                    <p className=' text-xl mb-0 mt-0 leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)' }}>{content.sixthcontent.data.sixthcontent}</p>
+                  </div>
+                  <button class="btn btn-2 hover-slide-up uppercase mt-7 sm:min-w-full">
+                    <Link to='/contact'><span>{content.askUs}</span></Link>
+                  </button>
                 </div>
-                <button class="btn btn-2 hover-slide-up uppercase mt-7 sm:min-w-full">
-                  <Link to='/contact'><span>{content.askUs}</span></Link>
+              </div>
+              <div className='absolute w-[347px] h-[407px] top-[2%] bottom-auto left-auto right-0 star-embed sm:hidden '>
+                <img src={star} alt='effect'></img>
+              </div>
+              <img src={content.sixthimg.localFile.childrenImageSharp[0].fluid.src} alt='RADIOLOGISTS' className='inline-block mt-20 max-w-full align-middle rounded-sm ml-[100px] sm:ml-0' style={{ width: '900px', border: '0' }}></img>
+            </div>
+            <img src={mobilestar} alt='effect' className=' sm:mt-[2rem] sm:ml-[1rem] mobile-stars'></img>
+          </div>
+        </div>
+        {/* seventh division */}
+        <div className='flex flex-col items-center justify-center m-0 overflow-hidden'>
+          <div className='flex flex-col relative w-[900px] sm:max-w-full sm:w-full'>
+            <div className='flex pl-0' style={{ borderLeft: '8px #00d4ff' }}>
+              <div className='side-line-effects sm:mr-[8px] '></div>
+              <div className='quote'>
+                <h1 className='max-w-full w-full uppercase mt-0 mb-0 text-left  not-italic  font-quote text-[#fff] tracking-[2px] text-[40px] leading-[46.88px] sm:ml-0 sm:text-[22px] sm:leading-[30px] sm:tracking-[1px]'>{content.quote}</h1>
+                <div className='uppercase mt-4 not-italic leading-10 font-use-one text-[#fff] font-use tracking-[2px] text-[24px] sm:leading-10 sm:ml-0 sm:text-[18px] sm:tracking-[1px]'>-{content.author}</div>
+              </div>
+            </div>
+            <div className='max-w-full flex flex-col items-start ml-[140px] sm:ml-3 w-[670px] sm:max-w-full sm:w-[95%] mt-[60px]'>
+              <p className=' text-xl leading-8 mb-0 mt-0 font-use-one' style={{ color: 'rgba(255, 255, 255, .85)' }}>
+                <div dangerouslySetInnerHTML={{ __html: content.quotecontent.data.quotecontent }}></div>
+              </p>
+              <div className=' mt-10 sm:max-w-full sm:w-full'>
+                <button class="btn btn-2 hover-slide-up uppercase sm:max-w-full sm:w-full">
+                  <Link to='/technology'><span>{content.futureWith}</span></Link>
                 </button>
               </div>
             </div>
-            <div className='absolute w-[347px] h-[407px] top-[2%] bottom-auto left-auto right-0 star-embed sm:hidden '>
-              <img src={star} alt='effect'></img>
-            </div>
-            <img src={content.sixthimg.localFile.childrenImageSharp[0].fluid.src} className='inline-block mt-20 max-w-full align-middle rounded-sm ml-[100px] sm:ml-0' style={{ width: '900px', border: '0' }}></img>
           </div>
-          <img src={mobilestar} className=' sm:mt-[2rem] sm:ml-[1rem] mobile-stars'></img>
+          <div className='vision-img-container'>
+            <img src={content.quoteimg.localFile.childrenImageSharp[0].fluid.src} alt='quote' className='object-cover max-w-full inline-block align-middle mt-0 w-screen h-full' style={{ color: '#e4e3e3', zIndex: '-2', border: '0' }}></img>
+          </div>
         </div>
-      </div>
-      {/* seventh division */}
-      <div className='flex flex-col items-center justify-center m-0 overflow-hidden'>
-        <div className='flex flex-col relative w-[900px] sm:max-w-full sm:w-full'>
-          <div className='flex pl-0' style={{ borderLeft: '8px #00d4ff' }}>
-            <div className='side-line-effects sm:mr-[8px] '></div>
-            <div className='quote'>
-              <h1 className='max-w-full w-full uppercase mt-0 mb-0 text-left  not-italic  font-quote text-[#fff] tracking-[2px] text-[40px] leading-[46.88px] sm:ml-0 sm:text-[22px] sm:leading-[30px] sm:tracking-[1px]'>{content.quote}</h1>
-              <div className='uppercase mt-4 not-italic leading-10 font-use-one text-[#fff] font-use tracking-[2px] text-[24px] sm:leading-10 sm:ml-0 sm:text-[18px] sm:tracking-[1px]'>-{content.author}</div>
+        {/* eighth division */}
+        <div className='news-recents sm:pt-[6rem] sm:pb-[6rem]'>
+          <div className='flex flex-col relative items-start ml-auto mr-auto' style={{ zIndex: '1', maxWidth: '1200px' }}>
+            <div className='w-full flex items-end justify-between ml-3' style={{ maxWidth: '1078px' }}>
+              <div className=' box-border'>
+                <h2 className='uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px]'>{content.newstitle}</h2>
+                <h1 className='max-w-full uppercase mt-0 mb-0   font-use text-[#fff] font-use tracking-[2px] text-[80px] leading-[100px] sm:leading-10 sm:ml-0 sm:text-[34px] sm:tracking-[1px]'>{content.newssubtitle}</h1>
+              </div>
+              <div className=' mb-5 more-from-news-button sm:hidden'>
+                <button class="btn btn-2 hover-slide-up uppercase">
+                  <Link to='/newsroom'><span>{content.aboutMedia}</span></Link>
+                </button>
+              </div>
             </div>
-          </div>
-          <div className='max-w-full flex flex-col items-start ml-[140px] sm:ml-3 w-[670px] sm:max-w-full sm:w-[95%] mt-[60px]'>
-            <p className=' text-xl leading-8 mb-0 mt-0 font-use-one' style={{ color: 'rgba(255, 255, 255, .85)' }}>
-              <div dangerouslySetInnerHTML={{ __html: content.quotecontent.data.quotecontent }}></div>
-            </p>
-            <div className=' mt-10 sm:max-w-full sm:w-full'>
-              <button class="btn btn-2 hover-slide-up uppercase sm:max-w-full sm:w-full">
-                <Link to='/technology'><span>{content.futureWith}</span></Link>
+            <div className='flex max-w-full mt-20 justify-between ml-[100px] w-[1000px] sm:ml-[0] sm:flex-col sm:w-full sm:mt-10'>
+              <Carousel cols={2} rows={1} gap={10} loop showDots={true}>
+                {content.newscards.map((news, index) => (
+                  <Carousel.Item key={index}>
+                    <Link to={news.News_Url} target='_blank' className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000', textDecoration: 'none' }}>
+                      <div className='pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full rounded-effect' style={{ backgroundColor: '#19191a' }}>
+                        <div className='flex items-start justify-between mb-10'>
+                          <img  src={content.newslogo[index].localFile.url} className='max-w-full inline-block align-middle h-[30px] w-[14rem] sm:h-[20px]' style={{ border: '0' }} alt={`News Logo ${index}`} />
+                          <div className='uppercase text-xs font-use-one' style={{ color: 'rgba(255, 255, 255, .8)', lineHeight: '15px' }}>{news.date}</div>
+                        </div>
+                        <p className='mt-0 mb-0 font-use-one text-[28px] sm:text-[18px] uppercase' style={{ color: 'rgba(255, 255, 255, .95)', lineHeight: '38px' }}>
+                          {news.newscontent.data.newscontent}
+                        </p>
+                      </div>
+                    </Link>
+                  </Carousel.Item>
+                ))}
+              </Carousel>
+            </div>
+
+            <div className=' mb-5 mfnb mt-5 ml-3 sm:w-full'>
+              <button class="btn btn-2 hover-slide-up uppercase sm:min-w-[94%]">
+                <span>{content.aboutMedia}</span>
               </button>
             </div>
           </div>
+
         </div>
-        <div className='vision-img-container'>
-          <img src={content.quoteimg.localFile.childrenImageSharp[0].fluid.src} className='object-cover max-w-full inline-block align-middle mt-0 w-screen h-full' style={{ color: '#e4e3e3', zIndex: '-2', border: '0' }}></img>
-        </div>
-      </div>
-      {/* eighth division */}
-      <div className='news-recents sm:pt-[6rem] sm:pb-[6rem]'>
-        <div className='flex flex-col relative items-start ml-auto mr-auto' style={{ zIndex: '1', maxWidth: '1200px' }}>
-          <div className='w-full flex items-end justify-between ml-3' style={{ maxWidth: '1078px' }}>
-            <div className=' box-border'>
-              <h2 className='uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px]'>{content.newstitle}</h2>
-              <h1 className='max-w-full uppercase mt-0 mb-0   font-use text-[#fff] font-use tracking-[2px] text-[80px] leading-[100px] sm:leading-10 sm:ml-0 sm:text-[34px] sm:tracking-[1px]'>{content.newssubtitle}</h1>
+
+        <div className='Youtube-videos-section  mt-[5rem]  mb-0 pb-[5rem] sm:mt-0 overflow-hidden'>
+          <div class="video-card items-start flex flex-col mr-auto ml-auto relative max-w-[1200px]">
+            <div className='w-full flex items-end justify-between ml-3 mb-[5rem] sm:mb-0' style={{ maxWidth: '1078px' }}>
+              <div className=' box-border'>
+                <h2 className='uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-left text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px]'>Watch about</h2>
+                <h1 className='max-w-full uppercase mt-0 mb-0   font-use text-[#fff] font-use tracking-[2px] text-[80px] leading-[100px] sm:leading-10 sm:ml-0 sm:text-[34px] sm:tracking-[1px]'>5C Network</h1>
+              </div>
             </div>
-            <div className=' mb-5 more-from-news-button sm:hidden'>
-              <button class="btn btn-2 hover-slide-up uppercase">
-                <Link to='/newsroom'><span>{content.aboutMedia}</span></Link>
-              </button>
-            </div>
-          </div>
-          <div className='flex max-w-full mt-20 justify-between ml-[100px] w-[1000px] sm:ml-[0] sm:flex-col sm:w-full sm:mt-10'>
             <Carousel cols={2} rows={1} gap={10} loop showDots="true">
               <Carousel.Item>
-                <Link to="https://economictimes.indiatimes.com/tech/startups/tata-1mg-backed-5c-network-acquires-ai-healthtech-startup-krayen/articleshow/98187918.cms" className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000' }}>
-                  <div className=' pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full rounded-effect' style={{ backgroundColor: '#19191a' }}>
-                    <div className='flex items-start justify-between mb-10'>
-                      <img src={content.newslogo[1].localFile.url} className='max-w-full inline-block align-middle h-[30px] w-[14rem] sm:h-[20px]' style={{ border: '0' }}></img>
-                      <div className='uppercase text-xs font-use-one' style={{ color: 'rgba(255, 255, 255, .8)', lineHeight: '15px' }}>{content.newscards[0].date}</div>
-                    </div>
-                    <p className='mt-0 mb-0  font-use-one text-[28px] sm:text-[18px] uppercase' style={{ color: 'rgba(255, 255, 255, .95)', lineHeight: '38px' }}>
-                      {content.newscards[0].newscontent.data.newscontent}
-                    </p>
-                  </div>
-                </Link>
+                <div class="video-card ">
+                  <iframe className="w-[560px] h-[315px] sm:w-full" src="https://www.youtube.com/embed/JIpAuvNgxcU?si=jeHgIb2jXUlRs32A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
               </Carousel.Item>
               <Carousel.Item>
-                <Link to="https://economictimes.indiatimes.com/tech/funding/digital-diagnostic-startup-5c-network-raises-4-6-million/articleshow/94819661.cms" className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000', textDecoration: 'none' }}>
-                  <div className=' pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full  rounded-effect' style={{ backgroundColor: '#19191a' }}>
-                    <div className='flex items-start justify-between mb-14'>
-                      <img src={content.newslogo[0].localFile.url} className='max-w-full w-[14rem] inline-block align-middle h-[40px] sm:h-[20px]' style={{ border: '0', opacity: '.85' }}></img>
-                      <div className='uppercase text-xs font-use-one' style={{ color: 'rgba(255, 255, 255, .8)', lineHeight: '15px' }}>{content.newscards[2].date}</div>
-                    </div>
-                    <p className='mt-0 mb-0 uppercase font-use-one text-[24px] sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .95)', lineHeight: '38px' }}>
-                      <strong className=' font-normal'>{content.newscards[2].newscontent.data.newscontent}</strong>
-                    </p>
-                  </div>
-                </Link>
+                <div class="video-card ">
+                  <iframe className="w-[560px] h-[315px] sm:w-full" src="https://www.youtube.com/embed/CpCFaIG1VWw?si=xK2AkmbIJKAQzMM0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        </div>
               </Carousel.Item>
               <Carousel.Item>
-                <Link to="https://bangaloremirror.indiatimes.com/bangalore/others/ai-enabled-teleradiology-pushes-for-faster-scan-reports/articleshow/99943219.cms" className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000', textDecoration: 'none' }}>
-                  <div className=' pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full  rounded-effect' style={{ backgroundColor: '#19191a' }}>
-                    <div className='flex items-start justify-between mb-14'>
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/BangaloreMirrorLogo.png" className='max-w-full w-[14rem] inline-block align-middle h-[40px] sm:h-[20px]' style={{ border: '0', opacity: '.85' }}></img>
-                      <div className='uppercase text-xs font-use-one' style={{ color: 'rgba(255, 255, 255, .8)', lineHeight: '15px' }}>{content.newscards[4].date}</div>
-                    </div>
-                    <p className='mt-0 mb-0 uppercase font-use-one text-[24px] sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .95)', lineHeight: '38px' }}>
-                      <strong className=' font-normal'>{content.newscards[4].newscontent.data.newscontent}</strong>
-                    </p>
-                  </div>
-                </Link>
-              </Carousel.Item>
-              <Carousel.Item>
-                <Link to="https://economictimes.indiatimes.com/tech/funding/digital-diagnostic-startup-5c-network-raises-4-6-million/articleshow/94819661.cms" className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000', textDecoration: 'none' }}>
-                  <div className=' pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full  rounded-effect' style={{ backgroundColor: '#19191a' }}>
-                    <div className='flex items-start justify-between mb-14'>
-                      <img src="https://st.etb2bimg.com/Themes/Release/theme4/images/logos/health-logo-footer.svg?mod=2394" className='max-w-full w-[14rem] inline-block align-middle h-[40px] sm:h-[20px]' style={{ border: '0', opacity: '.85' }}></img>
-                      <div className='uppercase text-xs font-use-one' style={{ color: 'rgba(255, 255, 255, .8)', lineHeight: '15px' }}>{content.newscards[1].date}</div>
-                    </div>
-                    <p className='mt-0 mb-0 uppercase font-use-one text-[24px] sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .95)', lineHeight: '38px' }}>
-                      <strong className=' font-normal'>{content.newscards[1].newscontent.data.newscontent}</strong>
-                    </p>
-                  </div>
-                </Link>
-              </Carousel.Item>
-              <Carousel.Item>
-                <Link to="https://economictimes.indiatimes.com/tech/funding/digital-diagnostic-startup-5c-network-raises-4-6-million/articleshow/94819661.cms" className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000', textDecoration: 'none' }}>
-                  <div className=' pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full  rounded-effect' style={{ backgroundColor: '#19191a' }}>
-                    <div className='flex items-start justify-between mb-14'>
-                      <img src="https://www.speakin.co/edit/wp-content/uploads/2019/05/business-standard-logo-2.png" className='max-w-full w-[14rem] inline-block align-middle h-[40px] sm:h-[20px]' style={{ border: '0', opacity: '.85' }}></img>
-                      <div className='uppercase text-xs font-use-one' style={{ color: 'rgba(255, 255, 255, .8)', lineHeight: '15px' }}>{content.newscards[4].date}</div>
-                    </div>
-                    <p className='mt-0 mb-0 uppercase font-use-one text-[24px] sm:text-[18px]' style={{ color: 'rgba(255, 255, 255, .95)', lineHeight: '38px' }}>
-                      <strong className=' font-normal'>{content.newscards[4].newscontent.data.newscontent}</strong>
-                    </p>
-                  </div>
-                </Link>
+                <div class="video-card ">
+                  <iframe className="w-[560px] h-[315px] sm:w-full" src="https://www.youtube.com/embed/PUpaRmX42vk?si=TTf-bGHuZlNq0Gje" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  {/* <iframe allowfullscreen="" class="YOUTUBE-iframe-video video-card-top" data-thumbnail-src="https://i.ytimg.com/vi/zV0zS1kMF4U/0.jpg" frameborder="0" src="https://www.youtube.com/embed/zV0zS1kMF4U?feature=player_embedded">
+          </iframe> */}
+                </div>
               </Carousel.Item>
             </Carousel>
           </div>
-          <div className=' mb-5 mfnb mt-5 ml-3 sm:w-full'>
-            <button class="btn btn-2 hover-slide-up uppercase sm:min-w-[94%]">
-              <span>{content.aboutMedia}</span>
-            </button>
+        </div>
+
+        <div className=' mb-60 relative flex flex-col mt-[5rem] sm:mt-0 items-start ml-auto mr-auto sm:p-[1rem] sm:mb-[5rem]' style={{ zIndex: '1', maxWidth: '1200px' }}>
+          <h2 className='max-w-full uppercase mt-0 mb-0   font-use text-[50px] sm:text-xl sm:ml-3' style={{ color: '#fff', letterSpacing: '2px', lineHeight: '60px' }}>Our Certifications
+          </h2>
+          <div className='w-full sm:ml-0 max-w-full mt-[60px] ml-[100px] sm:mt-[1rem]' >
+            <div className='logos-container sm:gap-[3rem]'>
+
+              <div onClick={openIsoModal} className='flex flex-col cursor-pointer'>
+                <img alt='ISO' className='logo-section max-w-full' src={isologo3}></img>
+                <label className='text-[#fff] mt-[1rem] text-center'>ISO 27701:2019</label>
+              </div>
+              <div onClick={openIso3Modal} className=' flex flex-col cursor-pointer'>
+                <img alt='ISO' className='logo-section max-w-full' src={isologo1}></img>
+              </div>
+              <div onClick={openIso2Modal} className='flex flex-col cursor-pointer'>
+                <img alt='ISO' className='logo-section max-w-full' src={isologo2}></img>
+                <label className='text-[#fff] mt-[1rem] text-center'>ISO 27701:2022</label>
+              </div>
+
+            </div>
           </div>
         </div>
+
+
+        <Transition.Root show={openIso4} as={Fragment}>
+          <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setopenIso4}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
+                <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                  enterTo="opacity-100 translate-y-0 sm:scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                  leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                >
+                  <Dialog.Panel className="relative  flex flex-col gap-[1rem] transform overflow-hidden rounded-lg  text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                    <img alt='ISO' src={iso2015}></img>
+                    <img alt='ISO' src={iso2019}></img>
+                    <img alt='ISO' src={iso2022}></img>
+
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition.Root>
+        <Transition.Root show={openIso} as={Fragment}>
+          <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setopenIso}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
+                <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                  enterTo="opacity-100 translate-y-0 sm:scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                  leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                >
+                  <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                    <img alt='ISO' src={iso2022}></img>
+
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition.Root>
+        <Transition.Root show={openIso2} as={Fragment}>
+          <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setopenIso2}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
+                <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                  enterTo="opacity-100 translate-y-0 sm:scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                  leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                >
+                  <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                    <img alt='ISO' src={iso2022}></img>
+
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition.Root>
+        <Transition.Root show={openIso3} as={Fragment}>
+          <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setopenIso3}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
+                <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                  enterTo="opacity-100 translate-y-0 sm:scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                  leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                >
+                  <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                    <img alt='ISO' src={iso2015}></img>
+
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition.Root>
+
+        {/* footer section */}
+
+        <Footer data={data.allStrapiFooter.nodes[0]} />
+
+
+
 
       </div>
-
-      <div className='Youtube-videos-section  mt-[5rem]  mb-0 pb-[5rem] sm:mt-0 overflow-hidden'>
-        <div class="video-card items-start flex flex-col mr-auto ml-auto relative max-w-[1200px]">
-          <div className='w-full flex items-end justify-between ml-3 mb-[5rem] sm:mb-0' style={{ maxWidth: '1078px' }}>
-            <div className=' box-border'>
-              <h2 className='uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-left text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px]'>Watch about</h2>
-              <h1 className='max-w-full uppercase mt-0 mb-0   font-use text-[#fff] font-use tracking-[2px] text-[80px] leading-[100px] sm:leading-10 sm:ml-0 sm:text-[34px] sm:tracking-[1px]'>5C Network</h1>
-            </div>
-          </div>
-          <Carousel cols={2} rows={1} gap={10} loop showDots="true">
-            <Carousel.Item>
-              <div class="video-card ">
-                <iframe  className="w-[560px] h-[315px] sm:w-full"src="https://www.youtube.com/embed/JIpAuvNgxcU?si=jeHgIb2jXUlRs32A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-              </div>
-            </Carousel.Item>
-            <Carousel.Item>
-              <div class="video-card ">
-                <iframe  className="w-[560px] h-[315px] sm:w-full" src="https://www.youtube.com/embed/CpCFaIG1VWw?si=xK2AkmbIJKAQzMM0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        </div>
-            </Carousel.Item>
-            <Carousel.Item>
-              <div class="video-card ">
-                <iframe className="w-[560px] h-[315px] sm:w-full" src="https://www.youtube.com/embed/PUpaRmX42vk?si=TTf-bGHuZlNq0Gje" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                {/* <iframe allowfullscreen="" class="YOUTUBE-iframe-video video-card-top" data-thumbnail-src="https://i.ytimg.com/vi/zV0zS1kMF4U/0.jpg" frameborder="0" src="https://www.youtube.com/embed/zV0zS1kMF4U?feature=player_embedded">
-          </iframe> */}
-              </div>
-            </Carousel.Item>
-          </Carousel>
-        </div>
-      </div>
-
-      <div className=' mb-60 relative flex flex-col mt-[5rem] sm:mt-0 items-start ml-auto mr-auto sm:p-[1rem] sm:mb-[5rem]' style={{ zIndex: '1', maxWidth: '1200px' }}>
-                <h2 className='max-w-full uppercase mt-0 mb-0   font-use text-[50px] sm:text-xl sm:ml-3' style={{ color: '#fff', letterSpacing: '2px', lineHeight: '60px' }}>Our Certifications
-                </h2>
-                <div className='w-full sm:ml-0 max-w-full mt-[60px] ml-[100px] sm:mt-[1rem]' >
-                    <div className='logos-container sm:gap-[3rem]'>
-                        
-                        <div onClick={openIsoModal} className='flex flex-col cursor-pointer'>
-                          <img className='logo-section max-w-full' src={isologo3}></img>
-                          <label className='text-[#fff] mt-[1rem] text-center'>ISO 27701:2019</label>
-                          </div>
-                          <div onClick={openIso3Modal} className=' flex flex-col cursor-pointer'>
-                          <img className='logo-section max-w-full' src={isologo1}></img>
-                          </div>
-                        <div onClick={openIso2Modal} className='flex flex-col cursor-pointer'>
-                          <img className='logo-section max-w-full' src={isologo2}></img>
-                          <label className='text-[#fff] mt-[1rem] text-center'>ISO 27701:2022</label>
-                          </div>
-                        
-                    </div>
-                </div>
-            </div>
-
-
-      <Transition.Root show={openIso4} as={Fragment}>
-        <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setopenIso4}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
-          </Transition.Child>
-
-          <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                enterTo="opacity-100 translate-y-0 sm:scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-              >
-                <Dialog.Panel className="relative  flex flex-col gap-[1rem] transform overflow-hidden rounded-lg  text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                  <img src={iso2015}></img>
-                  <img src={iso2019}></img>
-                  <img src={iso2022}></img>
-
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
-          </div>
-        </Dialog>
-      </Transition.Root>
-      <Transition.Root show={openIso} as={Fragment}>
-        <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setopenIso}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
-          </Transition.Child>
-
-          <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                enterTo="opacity-100 translate-y-0 sm:scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-              >
-                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                  <img src={iso2019}></img>
-
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
-          </div>
-        </Dialog>
-      </Transition.Root>
-      <Transition.Root show={openIso2} as={Fragment}>
-        <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setopenIso2}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
-          </Transition.Child>
-
-          <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                enterTo="opacity-100 translate-y-0 sm:scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-              >
-                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                  <img src={iso2022}></img>
-
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
-          </div>
-        </Dialog>
-      </Transition.Root>
-      <Transition.Root show={openIso3} as={Fragment}>
-        <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setopenIso3}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
-          </Transition.Child>
-
-          <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                enterTo="opacity-100 translate-y-0 sm:scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-              >
-                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                  <img src={iso2015}></img>
-
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
-          </div>
-        </Dialog>
-      </Transition.Root>
-      {/* <Transition.Root show={openIso2} as={Fragment}>
-        <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setopenIso2}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
-          </Transition.Child>
-
-          <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                enterTo="opacity-100 translate-y-0 sm:scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-              >
-                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                  <img src={iso2022}></img>
-
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
-          </div>
-        </Dialog>
-      </Transition.Root> */}
-      {/* footer section */}
-
-      <div className='footer section pl-0 pr-0 '>
-        <div className='relative ml-auto mr-auto max-w-[1202px]'>
-          <div className='flex justify-between items-start pb-0 pl-4 pr-4 mb-8 mt-[101px] sm:flex-col sm:mt-50px sm:mt-0 ' style={{ border: '1px #7c4c4c', borderBottomColor: 'rgba(255, 255, 255, .5)' }}>
-            <div className='flex flex-col items-start'>
-              <a href='https://open.spotify.com/show/6IAeIuksZiw6T3FkCjAbsP?si=ZhB_Sr8uT3-kr0tqeh25Kw' className='uppercase  font-use leading-[48px] text-[40px]' style={{ color: 'rgba(255, 255, 255, .85) ' }}>{content.footertitle}</a>
-              <p className=' text-xl leading-8 font-use-one w-[441px] mt-[30px] mb-[30px] sm:w-[100%] sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)' }}>{content.footerleftcontent.data.footerleftcontent}</p>
-              {/* getintouchbutton */}
-              <button className="btn btn-2 hover-slide-up sm:w-[100%]">
-                <Link to='/contact'><Link to='/contact'><span>{content.getInTouch}</span></Link></Link>
-              </button>
-              <div className='social-platform font-use sm:w-[100%]'>
-                <Link to="https://www.facebook.com/5cnetwork" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                  <img src={content.footerlogo1.localFile.url} alt='facebook' className='mr-0 max-w-full inline-block align-middle'></img>
-                </Link>
-                <Link to="https://www.linkedin.com/company/5c-network?trk=top_nav_home" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                  <img src={content.footerlogo3.localFile.url} alt='Twitter' className='mr-0 max-w-full inline-block align-middle'></img>
-                </Link>
-                <Link to="https://twitter.com/5c_network" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                  <img src={content.footerlogo2.localFile.url} alt='Linkedin' className='mr-0 max-w-full inline-block align-middle'></img>
-                </Link>
-
-                <Link to="https://www.instagram.com/5cnetwork/" target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
-                  <img src={content.footerlogo4.localFile.url} alt='Medium' className='mr-0 max-w-full inline-block align-middle'></img>
-                </Link>
-              </div>
-            </div>
-            <div className='flex sm:mt-[65px] sm:w-[100%] sm:justify-between ml-[13rem] sm:ml-0'>
-              <div className='flex flex-col font-use ml-[60px] sm:ml-[5px]'>
-                <a href='https://borderlessradiology.com/' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Borderless Radiology - For Radiologists </a>
-                <a href='https://play.google.com/store/apps/details?id=db.com.a5c&pcampaignid=web_share' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>ProtoCALL - for Radiographers</a>
-                <a href='https://ai.5cnetwork.com/' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Pixel Predict - AI Newsletter </a>
-                {/* <Link to="#" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>media</Link> */}
-                <a href='https://osteocheck.5cnetwork.com/' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Osteocheck</a>
-                <a href='https://chat.whatsapp.com/EXOCBtpLcpqB3JUSK3ifFl' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Radiographers - Community </a>
-                <a href='https://open.spotify.com/show/6IAeIuksZiw6T3FkCjAbsP' target='_blank' className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Podcast</a>
-
-
-              </div>
-              <div className='flex flex-col font-use ml-[60px]'>
-                <Link to="/privacy-policy" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Privacy policy</Link>
-                <Link className='uppercase mb-4 text-sm leading-5 cursor-pointer  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}><div onClick={openIso4Modal}>Certifications</div></Link>
-                {/* <Link className='uppercase mb-4 text-sm leading-5 cursor-pointer footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}><div onClick={openIso2Modal}>ISO 27701:2022</div></Link> */}
-                <Link to="/complianceregulatory" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{ letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>compliance & regulatory</Link>
-                {/* <Link to="#" className='uppercase mb-4 text-sm leading-5  footer-hover ' style={{  letterSpacing: '2px', backgroundColor: 'rgba(255, 255, 255, 0)' }}>privacy policy</Link> */}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className='relative flex flex-row items-end mt-0 overflow-hidden' style={{ color: '#fff', height: '400px' }}>
-          <video autoPlay loop muted className=' w-full h-full absolute m-auto object-cover bg-cover inline-block align-baseline ' style={{ backgroundPosition: '50%', top: '-100%', bottom: '-100%', left: '-100%', right: '-100%' }}>
-            <source src={content.footervideo.localFile.url} type="video/mp4" />
-          </video>
-        </div>
-      </div>
-
-
-
-
-    </div>
     </>
 
   )
@@ -1048,43 +833,14 @@ query MyQuery {
         newssubtitle
         newscards {
           date
+          News_Url
           newscontent {
             data {
               newscontent
             }
           }
         }
-        footertitle
-        footerleftcontent {
-          data {
-            footerleftcontent
-          }
-        }
-        footerlogo1 {
-          localFile {
-            url
-          }
-        }
-        footerlogo2 {
-          localFile {
-            url
-          }
-        }
-        footerlogo3 {
-          localFile {
-            url
-          }
-        }
-        footerlogo4 {
-          localFile {
-            url
-          }
-        }
-        footervideo {
-          localFile {
-            url
-          }
-        }
+       
         newslogo {
             localFile {
               url
@@ -1097,6 +853,41 @@ query MyQuery {
           futureWith
           aboutMedia
           getInTouch
+      }
+    }
+    allStrapiFooter {
+      nodes {
+        Footer_Video {
+          localFile {
+            url
+          }
+        }
+        X {
+          localFile {
+            url
+          }
+        }
+        X_Url
+        facebook {
+          localFile {
+            url
+          }
+        }
+        facebook_Url
+        instagram {
+          localFile {
+            url
+          }
+        }
+        instagram_Url
+        linkedin {
+          localFile {
+            url
+          }
+        }
+        linkedin_Url
+        title
+        content
       }
     }
   }
