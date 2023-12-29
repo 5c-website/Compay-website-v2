@@ -1,11 +1,4 @@
-// const siteMetadata = {
-//   title: `5CNetwork`,
-//   description: `5CNetwork`,
-  
-//   favicon: `./src/Assets/Homepage/logo.png`,
-//   // backgroundColor: `#f7f0eb`,
-//   // themeColor: `#a2466c`,
-// }
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -17,13 +10,42 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-git-lastmod`,
      
     // ...
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `
+        {
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+          allSitePage {
+            nodes {
+              path
+              pageContext
+            }
+          }
+        }
+        `,
+        serialize: ({ path, pageContext }) => {
+          return {
+            url: path,
+            changefreq: 'weekly', 
+            priority: path === '/' ? 1 : 0.7,            
+            lastmod: pageContext?.lastMod,
+          }
+        },
+      },
+    },
     {
       resolve: "gatsby-source-strapi",
       
       options: {
-        apiURL: process.env.GATSBY_API_URL,
+        apiURL:process.env.GATSBY_API_URL,
         accessToken:process.env.API_KEY,
         collectionTypes: [
           'homepage','solution','technology','about','carrer','blog','newsroom','contact','diagnostic','clinician','healthcare','hospital','radiologist','blog-post','casestudy','casestudypost','footer','privacypolicy','complianceandregulatory','newsroomseo','rxpert','protocall','osteocheck'
@@ -32,16 +54,7 @@ module.exports = {
         queryLimit: 1000,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `5C`,
-    //     short_name: `5C`,
-    //     start_url: `/`,
-    //     display: `standalone`,
-    //     icon: siteMetadata.favicon,
-    //   },
-    // },
+   
     {
       resolve: `gatsby-plugin-clarity`,
       options: {
