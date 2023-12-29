@@ -5,6 +5,9 @@ require("dotenv").config({
 
 module.exports = {
   // siteMetadata: siteMetadata,
+  siteMetadata: {
+    siteUrl: `https://www.5cnetwork.com`,
+  },
   plugins: [
     'gatsby-plugin-postcss',
     `gatsby-plugin-image`,
