@@ -43,6 +43,12 @@ function Contact({ data }) {
               <div className=' max-w-full mt-8 text-[#fff] w-[500px] ml-[100px] sm:ml-[10px] sm:mt-0  sm:w-full'>
                 <p className=' mt-0 mb-0 leading-8 font-use-one font-medium sm:text-xl text-[20px] sm:w-[98%]' style={{ color: 'rgba(255, 255, 255, .85)' }}>{strapiContent.titlecontent.data.titlecontent}</p>
               </div>
+              <div className=' max-w-full mt-[0.5rem] text-[#fff] w-[500px] ml-[100px] sm:ml-[10px] sm:mt-[1.5rem]  sm:w-full'>
+                <p className=' mt-0 mb-0 leading-8 font-use-one font-medium sm:text-xl text-[20px] sm:w-[98%]' style={{ color: 'rgba(255, 255, 255, .85)' }}>
+                   
+                   <label className=' inline-block mb-[-5px]'><img width="25" height="48" src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="whatsapp--v1"/></label> &nbsp; or &nbsp; <label className=' inline-block mb-[-5px]'><img width="25" height="64" src="https://img.icons8.com/glyph-neue/64/4293fe/phone.png" alt="phone"/></label> &nbsp; 5C-Shanaya <label className='text-[#00d4ff]'>+91-9587274858</label> <br/> email <label className='text-[#00d4ff]'>helpline@5cnetwork.com</label>
+                  </p>
+              </div>
               <button className="btn btn-2 hover-slide-up sm:w-[100%] mt-[2rem] ml-[6rem] sm:hidden">
                 <Link to='/reachus'><span>{strapiContent.getintouch}</span></Link>
               </button>
@@ -66,6 +72,7 @@ function Contact({ data }) {
 
             <h2 className='uppercase mt-0 mb-0   font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:leading-10 sm:text-[22px] sm:tracking-[1px]'>{strapiContent.sectitle}</h2>
             <h2 className='max-w-full uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-[80px] leading-[100px] sm:leading-10 sm:ml-[10px] sm:text-[28px] sm:tracking-[1px]'>{strapiContent.secsubtitle}</h2>
+            
             <div className='contact-link'>
               <Link to='/reachus' className='flex max-w-full uppercase text-lg items-center justify-center w-[460px] h-[142px] sm:w-[85%] sm:h-[9vh]  buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, .04)', border: '1px solid #333' }}>
                 <span className='flex pt-[2rem] rounded-effect sm:pt-[1rem] sm:justify-center'>
