@@ -26,7 +26,7 @@ function Carrers({ data }) {
         {/* <meta name="author" content={author} /> */}
       </Helmet>
       <div className=" bg-black Homepage">
-        
+
         <Navbar />
         {/* Mobile responsive */}
 
@@ -96,6 +96,78 @@ function Carrers({ data }) {
                         className=" list-none m-0 text-xs"
                         style={{ padding: "10px 0 0 0" }}
                       >
+                        <li
+                          className=" clear-both m-0 list-none"
+                          style={{ color: "#686868" }}
+                        >
+                          <div
+                            className=" text-base  font-use"
+                            style={{ color: "#fff" }}
+                          >
+                            {strapiContent.openposition[4].title}
+                          </div>
+                          <ul
+                            className=" text-xs mt-0"
+                            style={{
+                              padding: "2px 20px 12px 20px",
+                              borderBottom: "1px solid #d7d7d7",
+                              marginBottom: "10px",
+                            }}
+                          >
+                            <li
+                              className=" list-none m-0 clear-both"
+                              style={{ color: "#686868" }}
+                            >
+                              <Link
+                                to="/careerscontact"
+                                className=" openings-position"
+                              >
+                                {strapiContent.openposition[9].position}
+                              </Link>
+                              <span
+                                className="float-right font-use"
+                                style={{ paddingTop: "9px", color: "#fff" }}
+                              >
+                                {strapiContent.openposition[9].location}
+                              </span>
+                            </li>
+                            <li
+                              className=" list-none m-0 clear-both"
+                              style={{ color: "#686868" }}
+                            >
+                              <Link
+                                to="/careerscontact"
+                                className=" openings-position"
+                              >
+                                {strapiContent.openposition[4].position}
+                              </Link>
+                              <span
+                                className="float-right font-use"
+                                style={{ paddingTop: "9px", color: "#fff" }}
+                              >
+                                {strapiContent.openposition[4].location}
+                              </span>
+                            </li>
+                            <li
+                              className=" list-none m-0 clear-both"
+                              style={{ color: "#686868" }}
+                            >
+                              <Link
+                                to="/careerscontact"
+                                className=" openings-position"
+                              >
+                                {strapiContent.openposition[5].position}
+                              </Link>
+                              <span
+                                className="float-right font-use"
+                                style={{ paddingTop: "9px", color: "#fff" }}
+                              >
+                                {strapiContent.openposition[5].location}
+                              </span>
+                            </li>
+
+                          </ul>
+                        </li>
                         <li
                           className=" clear-both m-0 list-none"
                           style={{ color: "#686868" }}
@@ -224,60 +296,7 @@ function Carrers({ data }) {
                             </li>
                           </ul>
                         </li>
-                        <li
-                          className=" clear-both m-0 list-none"
-                          style={{ color: "#686868" }}
-                        >
-                          <div
-                            className=" text-base  font-use"
-                            style={{ color: "#fff" }}
-                          >
-                            {strapiContent.openposition[4].title}
-                          </div>
-                          <ul
-                            className=" text-xs mt-0"
-                            style={{
-                              padding: "2px 20px 12px 20px",
-                              borderBottom: "1px solid #d7d7d7",
-                              marginBottom: "10px",
-                            }}
-                          >
-                            <li
-                              className=" list-none m-0 clear-both"
-                              style={{ color: "#686868" }}
-                            >
-                              <Link
-                                to="/careerscontact"
-                                className=" openings-position"
-                              >
-                                {strapiContent.openposition[4].position}
-                              </Link>
-                              <span
-                                className="float-right font-use"
-                                style={{ paddingTop: "9px", color: "#fff" }}
-                              >
-                                {strapiContent.openposition[4].location}
-                              </span>
-                            </li>
-                            <li
-                              className=" list-none m-0 clear-both"
-                              style={{ color: "#686868" }}
-                            >
-                              <Link
-                                to="/careerscontact"
-                                className=" openings-position"
-                              >
-                                {strapiContent.openposition[5].position}
-                              </Link>
-                              <span
-                                className="float-right font-use"
-                                style={{ paddingTop: "9px", color: "#fff" }}
-                              >
-                                {strapiContent.openposition[5].location}
-                              </span>
-                            </li>
-                          </ul>
-                        </li>
+
                         <li
                           className=" clear-both m-0 list-none"
                           style={{ color: "#686868" }}
