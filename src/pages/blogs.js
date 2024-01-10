@@ -53,7 +53,7 @@ function Blogs({ data }) {
                                         <div>
                                             {currentBlogs?.map((blog,index) => (
                                                 <div key={index} className='blogitems'>
-                                                    <Link to={`/blog/${blog.slug}`} state={{ blogTitle: blog.title }} className='w-full max-w-full inline-block text-lg' style={{ lineHeight: '26px' }}>
+                                                    <Link to={`/blog/${blog.slug}`}  className='w-full max-w-full inline-block text-lg' style={{ lineHeight: '26px' }}>
                                                         <div className='w-full max-w-full pl-5 pr-5' style={{ marginBottom: '60px' }}>
                                                             <img className='blog-img' src={blog.featured_image.localFile.url} alt='sample'></img>
                                                             <div className='blog-content'>

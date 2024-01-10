@@ -15,12 +15,11 @@ import iso2022 from '../Assets/Homepage/iso-2022.jpg'
 
 
 function Post({ data, location }) {
-  const blogSlug = location.state?.slug;
+
+  const slugFromUrl = location.pathname.substring('/blog/'.length).replace(/\/$/, '');
+  const content = data.blogPosts.nodes.find((post) => post.slug === slugFromUrl);
 
 
-
-
-  const content = data.blogPosts.nodes.find((post) => post.slug === blogSlug);
 
   if (!content) {
     return <div>Content not found.</div>;
@@ -68,7 +67,7 @@ function Post({ data, location }) {
                     {/* <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{content.content.data.content}</ReactMarkdown> */}
                   </p>
                 </div>
-
+                  {console.log("slug values from cms",content.slug)}
                 <div className=' flex gap-[8rem] justify-between mt-[20rem] sm:mt-[5rem] sm:flex-col'>
                 <a href={content.Recent_post_url}>
                   <div className=' flex flex-col '>
@@ -99,6 +98,7 @@ export const pageQuery = graphql`
 query {
   blogPosts: allStrapiBlogPost  {
     nodes {
+      slug
       seo {
         metaTitle
         metaDescription {

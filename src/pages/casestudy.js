@@ -6,12 +6,8 @@ import Footer from '../Utils/Footer';
 import Navbar from '../Utils/Navbar'
 
 function Post({data,location}) {
-  const blogSlug = location.state?.slug;
-
-
-
-
-  const content = data.casestudyposts.nodes.find((post) => post.slug === blogSlug);
+  const slugFromUrl = location.pathname.substring('/blog/'.length).replace(/\/$/, '');
+  const content = data.casestudyposts.nodes.find((post) => post.slug === slugFromUrl);
 
   if (!content) {
     return <div>Content not found.</div>;
@@ -66,6 +62,7 @@ export const pageQuery=graphql`
 query {
   casestudyposts: allStrapiCasestudypost {
     nodes {
+      slug
       Heroimage {
         localFile {
           url
