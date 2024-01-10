@@ -4,9 +4,11 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const result = await graphql(`
     query {
-      blogs: allStrapiBlog {
-        nodes {
-          slug
+      blogs:  allStrapiBlog {
+        edges {
+          node {
+            slug
+          }
         }
       }
     }
@@ -15,28 +17,30 @@ exports.createPages = async ({ graphql, actions }) => {
   const casestudypost = await graphql(`
     query {
       casestudy: allStrapiCasestudy {
-        nodes {
-          slug
+        edges {
+          node {
+            slug
+          }
         }
       }
     }
   `);
 
-  result.data.blogs.nodes.forEach((blog) => {
+  result.data.blogs.edges.forEach((blog) => {
     createPage({
-      path: `/blog/${blog.slug}`,
+      path: `/blog/${blog.node.slug}`,
       component: path.resolve('./src/pages/blog.js'),
       context: {
-        slug: blog.slug,
+        slug: blog.node.slug,
       },
     });
   });
-  casestudypost.data.casestudy.nodes.forEach((blog) => {
+  casestudypost.data.casestudy.edges.forEach((blog) => {
     createPage({
-      path: `/casestudy/${blog.slug}`,
+      path: `/casestudy/${blog.node.slug}`,
       component: path.resolve('./src/pages/casestudy.js'),
       context: {
-        slug: blog.slug,
+        slug: blog.node.slug,
       },
     });
   });

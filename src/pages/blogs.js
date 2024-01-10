@@ -1,42 +1,38 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Navbar from '../Utils/Navbar'
-import logo from '../Assets/Homepage/2-01.png'
+
 import { Fragment, useRef, useState } from 'react'
 import Navbarmd from '../Utils/Navbarmd'
 import Footer from '../Utils/Footer';
 import Pagination from '../Utils/pagination'
 import { Dialog, Transition } from '@headlessui/react'
-import hospital from '../Assets/Homepage/2.png'
-import radiologist from '../Assets/Homepage/doc.png'
-import iso2015 from '../Assets/Homepage/iso-2015.jpg'
-import iso2019 from '../Assets/Homepage/iso-2019.jpg'
-import iso2022 from '../Assets/Homepage/iso-2022.jpg'
+
 
 function Blogs({ data }) {
     // const strapiContent = data.blogs.nodes;
     const strapiContent = data.blogs.nodes.sort((a, b) => new Date(b.current_date) - new Date(a.current_date));
-  
 
-    const blogsPerPage = 5; 
+
+    const blogsPerPage = 5;
     const [currentPage, setCurrentPage] = useState(1);
-  
-  
+
+
     const indexOfLastBlog = currentPage * blogsPerPage;
     const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
     const currentBlogs = strapiContent.slice(indexOfFirstBlog, indexOfLastBlog);
-  
-    
+
+
     const handlePageChange = (pageNumber) => {
       setCurrentPage(pageNumber);
     };
 
-   
-    
+
+
 
     return (
         <div className=' bg-black Homepage'>
-         
+
             <a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[1] mobile-screen-signin">
                 <span class="inner"></span>
                 <span class="inner"></span>
@@ -92,7 +88,7 @@ function Blogs({ data }) {
         onPageChange={handlePageChange}
       />
             </div>
-            
+
             {/* footer section */}
             <Footer data={data.allStrapiFooter.nodes[0]}/>
         </div>
@@ -116,7 +112,7 @@ export const pageQuery = graphql`
           duration
         }
       }
-  
+
 
   allStrapiFooter {
     nodes {

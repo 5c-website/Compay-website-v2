@@ -6,21 +6,20 @@ import Footer from '../Utils/Footer';
 import Navbar from '../Utils/Navbar'
 
 function Post({data,location}) {
-  const blogTitle = location.state?.blogTitle || 'Default Title'; 
- 
+  const blogSlug = location.state?.slug;
 
-  
- 
 
-  const content = data.casestudyposts.nodes.find((post) => post.title === blogTitle);
+
+
+  const content = data.casestudyposts.nodes.find((post) => post.slug === blogSlug);
 
   if (!content) {
     return <div>Content not found.</div>;
   }
-   
 
-    
-    
+
+
+
     return (
         <div className='bg-black Homepage'>
             <Navbar />
@@ -32,9 +31,9 @@ function Post({data,location}) {
                     <h1 className=' w-full  tracking-[0] mb-[16px] text-[56px] mt-[6rem] sm:mt-0 leading-[120%] text-[#fff] sm:text-[36px]'>
                         {content.title}
                         </h1>
-                        
+
                         <img src={content.Heroimage.localFile.url} className=' w-full max-w-full mt-[40px] mb-[80px] pt-0 pb-0 align-middle'></img>
-                        
+
                         <div className=' w-[1200px] max-w-full flex flex-col justify-center items-center'>
                             <div className='blog_content text-[16px] leading-[150%]' style={{color:'rgba(255,255,255,0.8)'}}>
                                 <p className='mb-[12px] texxt-[18px] leading-[170%] font-use-one' style={{color:'rgba(255,255,255,0.8)'}}>
@@ -48,14 +47,14 @@ function Post({data,location}) {
                                 <div dangerouslySetInnerHTML={{ __html: content.content.data.content }}></div>{}
                                 </p>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-      
+
+
       <Footer data={data.allStrapiFooter.nodes[0]}/>
         </div>
     )
@@ -91,7 +90,7 @@ query {
     }
   }
 
-  
+
   allStrapiFooter {
     nodes {
       Footer_Video {

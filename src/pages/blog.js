@@ -15,12 +15,12 @@ import iso2022 from '../Assets/Homepage/iso-2022.jpg'
 
 
 function Post({ data, location }) {
-  const blogTitle = location.state?.blogTitle || 'Default Title';
+  const blogSlug = location.state?.slug;
 
 
 
-  
-  const content = data.blogPosts.nodes.find((post) => post.Title === blogTitle);
+
+  const content = data.blogPosts.nodes.find((post) => post.slug === blogSlug);
 
   if (!content) {
     return <div>Content not found.</div>;
@@ -68,7 +68,7 @@ function Post({ data, location }) {
                     {/* <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{content.content.data.content}</ReactMarkdown> */}
                   </p>
                 </div>
-               
+
                 <div className=' flex gap-[8rem] justify-between mt-[20rem] sm:mt-[5rem] sm:flex-col'>
                 <a href={content.Recent_post_url}>
                   <div className=' flex flex-col '>
@@ -115,7 +115,7 @@ query {
           url
         }
       }
-      
+
       Title
       Blog_content {
         data {
