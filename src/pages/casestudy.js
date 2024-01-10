@@ -6,7 +6,7 @@ import Footer from '../Utils/Footer';
 import Navbar from '../Utils/Navbar'
 
 function Post({data,location}) {
-  const slugFromUrl = location.pathname.substring('/blog/'.length).replace(/\/$/, '');
+  const slugFromUrl = location.pathname.substring('/casestudy/'.length).replace(/\/$/, '');
   const content = data.casestudyposts.nodes.find((post) => post.slug === slugFromUrl);
 
   if (!content) {
