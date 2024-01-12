@@ -1,7 +1,7 @@
 
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+// require("dotenv").config({
+//   path: `.env.${process.env.NODE_ENV}`,
+// })
 
 module.exports = {
   // siteMetadata: siteMetadata,
@@ -48,8 +48,8 @@ module.exports = {
       resolve: "gatsby-source-strapi",
 
       options: {
-        apiURL:process.env.GATSBY_API_URL,
-        accessToken:process.env.API_KEY,
+        apiURL:"https://katturai.cubebase.ai/",
+        accessToken:"e56c2503ae0b35a6a98be8fad95ba56e82116b9f1f27b233579f7616a6d5f562e930c8ca887e27b062165692f353ba69275f4fe041a39f826b3dac0250fadf6a7fd271c65aff8aeab05af2dbe38a3b8e724993ac131f1e49b3076e0c9285270d550382069060aa2eca49f818fbbfa10c2ef0a485d0930d6d70e661728736f6d4",
         collectionTypes: [
           'homepage','solution','technology','about','carrer','blog','newsroom','contact','diagnostic','clinician','healthcare','hospital','radiologist','blog-post','casestudy','casestudypost','footer','privacypolicy','complianceandregulatory','newsroomseo','rxpert','protocall','osteocheck'
         ],
