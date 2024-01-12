@@ -103,44 +103,11 @@ query {
           }
         }
       }
-      strapi_id
-      Recent_post_url
-      CTA_Url
-      Heroimage {
-        localFile {
-          url
-        }
-      }
-
-      Title
-      Blog_content {
-        data {
-          Blog_content
-        }
-      }
-      content_image {
-        localFile {
-          url
-        }
-        strapi_id
-      }
       content {
         data {
           content
         }
       }
-      Recent_post_image {
-        localFile {
-          url
-        }
-      }
-      Recent_post_title
-      CTA_image {
-        localFile {
-          url
-        }
-      }
-      CTA_title
     }
   }
 

@@ -24,7 +24,7 @@ function Contact({ data }) {
         {/* <meta name="author" content={author} /> */}
       </Helmet>
       <div className=' bg-black Homepage'>
-        
+
         <a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[1] mobile-screen-signin">
           <span class="inner"></span>
           <span class="inner"></span>
@@ -45,7 +45,7 @@ function Contact({ data }) {
               </div>
               <div className=' max-w-full mt-[0.5rem] text-[#fff] w-[500px] ml-[100px] sm:ml-[10px] sm:mt-[1.5rem]  sm:w-full'>
                 <p className=' mt-0 mb-0 leading-8 font-use-one font-medium sm:text-xl text-[20px] sm:w-[98%]' style={{ color: 'rgba(255, 255, 255, .85)' }}>
-                   
+
                    <label className=' inline-block mb-[-5px]'><img width="25" height="48" src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="whatsapp--v1"/></label> &nbsp; or &nbsp; <label className=' inline-block mb-[-5px]'><img width="25" height="64" src="https://img.icons8.com/glyph-neue/64/4293fe/phone.png" alt="phone"/></label> &nbsp; 5C-Shanaya <label className='text-[#00d4ff]'>+91-9587274858</label> <br/> email <label className='text-[#00d4ff]'>helpline@5cnetwork.com</label>
                   </p>
               </div>
@@ -57,12 +57,12 @@ function Contact({ data }) {
         </div>
         <div className='relative sm:p-[1rem]'>
           <div className='flex flex-col relative items-start ml-auto mr-auto' style={{ zIndex: '1', maxWidth: '1200px' }} >
-            <div className='absolute top-0 bottom-auto left-auto right-[310px] star-embed-up sm:hidden '>
+            {/* <div className='absolute top-0 bottom-auto left-auto right-[310px] star-embed-up sm:hidden '>
               <img src={star} alt='effect'></img>
             </div>
             <div className='absolute top-0 bottom-auto left-auto right-0 star-embed-up sm:hidden '>
               <img src={star} alt='effect'></img>
-            </div>
+            </div> */}
             <div className='absolute top-auto bottom-[-387px] left-auto right-0 star-embed-up sm:hidden '>
               <img src={leftdown} alt='effect'></img>
             </div>
@@ -70,9 +70,9 @@ function Contact({ data }) {
               <img src={leftdown} alt='effect'></img>
             </div>
 
-            <h2 className='uppercase mt-0 mb-0   font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:leading-10 sm:text-[22px] sm:tracking-[1px]'>{strapiContent.sectitle}</h2>
-            <h2 className='max-w-full uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-[80px] leading-[100px] sm:leading-10 sm:ml-[10px] sm:text-[28px] sm:tracking-[1px]'>{strapiContent.secsubtitle}</h2>
-            
+            {/* <h2 className='uppercase mt-0 mb-0   font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-[10px] sm:leading-10 sm:text-[22px] sm:tracking-[1px]'>{strapiContent.sectitle}</h2> */}
+            {/* <h2 className='max-w-full uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-[80px] leading-[100px] sm:leading-10 sm:ml-[10px] sm:text-[28px] sm:tracking-[1px]'>{strapiContent.secsubtitle}</h2> */}
+
             <div className='contact-link'>
               <Link to='/reachus' className='flex max-w-full uppercase text-lg items-center justify-center w-[460px] h-[142px] sm:w-[85%] sm:h-[9vh]  buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, .04)', border: '1px solid #333' }}>
                 <span className='flex pt-[2rem] rounded-effect sm:pt-[1rem] sm:justify-center'>

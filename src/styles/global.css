@@ -7,7 +7,7 @@
 
 /* body{
   background-color: black;
-  
+
 } */
 .star-embed {
   transform: rotateX(0) rotateY(180deg) rotateZ(0);
@@ -474,8 +474,8 @@
 }
 
 .Contact-page {
-  height: 100vh;
-  background-position: 114% 208%;
+  height: 80vh;
+  background-position: 114% 76%;
   background-size: 81%;
   justify-content: flex-start;
   background-repeat: no-repeat;
@@ -964,7 +964,7 @@
 
   .navbar-mb {
     display: flex;
-   
+
   }
 
   .mobile-screen-signin {
