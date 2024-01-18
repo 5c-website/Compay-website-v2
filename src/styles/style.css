@@ -36,6 +36,7 @@
   background-color: #19191A;
   color: white;
   transform: rotateY(180deg);
+  border: solid 2px #00d4ff;
 }
 
 .container {
