@@ -14,11 +14,11 @@ import { useState } from 'react'
 function Osteocheck({ data }) {
   const Content = data.allStrapiOsteocheck.nodes[0];
   // const genre = ['Facility Owner', 'Facility Manager', 'Radiographer', 'Others'];
-  
+
   const handleBookDemoClick = () => {
     navigate('/get-in-touch', { state: { osteocheckData: ['Facility Owner', 'Facility Manager', 'Radiographer', 'Others'],Title:"Osteocheck" } });
   };
- 
+
 
 
 
@@ -34,7 +34,7 @@ function Osteocheck({ data }) {
         {/* <meta name="author" content={author} /> */}
       </Helmet>
       <div className=' bg-black Homepage'>
-       
+
         <a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[1] mobile-screen-signin">
           <span class="inner"></span>
           <span class="inner"></span>
@@ -92,7 +92,7 @@ function Osteocheck({ data }) {
             </div>
           </div>
         </div>
-        
+
         <Footer data={data.allStrapiFooter.nodes[0]} />
       </div>
     </>

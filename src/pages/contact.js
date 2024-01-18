@@ -8,6 +8,7 @@ import Footer from '../Utils/Footer';
 import leftdown from '../Assets/Solution/downarrow.svg'
 import { Helmet } from "react-helmet";
 import tablogo from '../Assets/Homepage/favicon.ico'
+import Actionbutton from '../components/Actionbutton'
 
 
 function Contact({ data }) {
@@ -49,9 +50,9 @@ function Contact({ data }) {
                    <label className=' inline-block mb-[-5px]'><img width="25" height="48" src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="whatsapp--v1"/></label> &nbsp; or &nbsp; <label className=' inline-block mb-[-5px]'><img width="25" height="64" src="https://img.icons8.com/glyph-neue/64/4293fe/phone.png" alt="phone"/></label> &nbsp; 5C-Shanaya <label className='text-[#00d4ff]'>+91-9587274858</label> <br/> email <label className='text-[#00d4ff]'>helpline@5cnetwork.com</label>
                   </p>
               </div>
-              <button className="btn btn-2 hover-slide-up sm:w-[100%] mt-[2rem] ml-[6rem] sm:hidden">
-                <Link to='/reachus'><span>{strapiContent.getintouch}</span></Link>
-              </button>
+                <Link to='/reachus' className='flex ml-[6rem] sm:ml-0 sm:hidden'>
+                  <Actionbutton label="Get in touch" />
+                  </Link>
             </div>
           </div>
         </div>

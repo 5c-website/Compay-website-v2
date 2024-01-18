@@ -7,11 +7,12 @@ import star from '../Assets/Solution/star.svg'
 import tablogo from '../Assets/Homepage/favicon.ico'
 import Footer from '../Utils/Footer';
 import { Helmet } from "react-helmet";
+import Actionbutton from '../components/Actionbutton'
 
 
 function Radiologist({ data }) {
   const Content = data.allStrapiRadiologist.nodes[0];
-  
+
 
   return (
     <>
@@ -24,7 +25,7 @@ function Radiologist({ data }) {
         {/* <meta name="author" content={author} /> */}
       </Helmet>
       <div className=' bg-black Homepage'>
-       
+
         <a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[1] mobile-screen-signin">
           <span class="inner"></span>
           <span class="inner"></span>
@@ -66,11 +67,10 @@ function Radiologist({ data }) {
   ))}
 </ul>
 
-                  <div className=' w-full max-w-full mt-7 flex sm:justify-center'>
-                    <button role="button" aria-label="reachus"
-                      class="btn btn-2 hover-slide-up uppercase">
-                      <a href='https://borderlessradiology.com/' rel="noreferrer" target='_blank'><span>Reach Us</span></a>
-                    </button>
+                  <div className=' w-full max-w-full flex sm:block sm:justify-center'>
+                      <a href='https://borderlessradiology.com/' rel="noreferrer" target='_blank'>
+                        <Actionbutton label="Reach Us"/>
+                      </a>
                   </div>
                 </div>
 
@@ -126,7 +126,7 @@ query MyQuery {
             }
           }
         }
-        
+
         git
       }
     }

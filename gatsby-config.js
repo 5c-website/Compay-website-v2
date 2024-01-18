@@ -76,6 +76,19 @@ module.exports = {
       },
     },
   },
+  {
+    resolve: `gatsby-plugin-google-gtag`,
+    options: {
+      trackingIds: [
+        process.env.GTAG_TOKEN,
+      ],
+      pluginConfig: {
+        head: false,
+        respectDNT: true,
+        exclude: ["/preview/**", "/do-not-track/me/too/"],
+      },
+    },
+  },
     // 'gatsby-plugin-offline'
   ],
 

@@ -6,13 +6,14 @@ import { Dialog, Transition } from '@headlessui/react'
 import iso2015 from '../Assets/Homepage/iso-2015.jpg'
 import iso2019 from '../Assets/Homepage/iso-2019.jpg'
 import iso2022 from '../Assets/Homepage/iso-2022.jpg'
+import Actionbutton from '../components/Actionbutton'
 
 function Footer({ data }) {
     const strapiContent = data;
     const cancelButtonRef = useRef(null)
     const [openIso,setopenIso]=useState(false)
 
-    
+
 
     function openIsoModal(){
         setopenIso(true);
@@ -56,17 +57,17 @@ function Footer({ data }) {
           </div>
         </Dialog>
       </Transition.Root>     */}
-   
+
     <div className='footer section pl-0 pr-0'>
                 <div className='relative ml-auto mr-auto max-w-[1200px]'>
                     <div className='flex justify-between items-start pb-0 pl-4 pr-4 mb-8 mt-[101px] sm:flex-col sm:mt-50px ' style={{border: '1px #7c4c4c', borderBottomColor: 'rgba(255, 255, 255, .5)' }}>
                         <div className='flex flex-col items-start'>
                             <a href='https://open.spotify.com/show/6IAeIuksZiw6T3FkCjAbsP?si=ZhB_Sr8uT3-kr0tqeh25Kw' className='uppercase  font-use leading-[48px] text-[40px]' style={{ color: 'rgba(255, 255, 255, .85) '}}>{strapiContent.title}</a>
-                            <p className=' text-xl leading-8 font-use-one w-[441px] mt-[30px] mb-[30px] sm:w-[100%] sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)'}}>{strapiContent.content}</p>
+                            <p className=' text-xl leading-8 font-use-one w-[441px] mt-[30px] sm:w-[100%] sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)'}}>{strapiContent.content}</p>
                             {/* getintouchbutton */}
-                            <button className="btn btn-2 hover-slide-up sm:w-[100%]">
-                            <Link to='/contact'> <span className=' uppercase'>Get In Touch</span></Link>
-                            </button>
+                            <Link to='/contact' className=' sm:w-full'>
+                            <Actionbutton label="Get In Touch"/>
+                            </Link>
                             <div className='social-platform font-use sm:w-[100%]'>
                                 <a href={strapiContent.facebook_Url} target='_blank' className=' mt-6 mr-6 max-w-full inline-block uppercase text-lg' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px' }}>
                                     <img src={strapiContent.facebook.localFile.url} alt='facebook' className='mr-0 max-w-full inline-block align-middle'></img>

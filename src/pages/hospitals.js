@@ -6,6 +6,7 @@ import star from '../Assets/Solution/star.svg'
 import Footer from '../Utils/Footer';
 import tablogo from '../Assets/Homepage/favicon.ico'
 import { Helmet } from "react-helmet";
+import Actionbutton from '../components/Actionbutton'
 
 function Radiologist({ data }) {
   const Content = data.allStrapiHospital.nodes[0];
@@ -22,7 +23,7 @@ function Radiologist({ data }) {
         {/* <meta name="author" content={author} /> */}
       </Helmet>
       <div className=' bg-black Homepage'>
-        
+
         <a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6 text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[1] mobile-screen-signin">
           <span class="inner"></span>
           <span class="inner"></span>
@@ -63,10 +64,10 @@ function Radiologist({ data }) {
     </li>
   ))}
 </ul>
-                  <div className=' flex flex-row-reverse w-full max-w-full mt-7 sm:justify-center'>
-                    <button class="btn btn-2 hover-slide-up uppercase">
-                      <Link to='/reachform'><span>Reach Us</span></Link>
-                    </button>
+                  <div className=' flex flex-row-reverse w-full max-w-full sm:block  sm:justify-center'>
+                      <Link to='/reachform'>
+                        <Actionbutton label="Reach Us"/>
+                      </Link>
                   </div>
                 </div>
               </div>

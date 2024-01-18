@@ -20,11 +20,13 @@ import Carousel from 'better-react-carousel'
 import isologo1 from '../Assets/Homepage/iso2015.png'
 import isologo2 from '../Assets/Homepage/iso27001.png'
 import isologo3 from '../Assets/Homepage/iso2019.jpg'
+import Actionbutton from '../components/Actionbutton';
+import Newscard from '../components/Newscard';
 
 
 const Index = ({ data }) => {
   const content = data.allStrapiHomepage.nodes[0];
-  
+
   const [open, setOpen] = useState(false)
   const cancelButtonRef = useRef(null)
   const [openIso, setopenIso] = useState(false);
@@ -46,7 +48,7 @@ const Index = ({ data }) => {
     setopenIso3(true);
   }
 
-  
+
 
   return (
     <>
@@ -176,9 +178,9 @@ const Index = ({ data }) => {
                     <div dangerouslySetInnerHTML={{ __html: content.unseencontent.data.unseencontent }}></div>
                   </p>
                 </div>
-                <button role='action_button' aria-label='button' class="btn btn-2 hover-slide-up mt-7 uppercase sm:w-full">
-                  <Link to='/about'><span>{content.moreAboutUs}</span></Link>
-                </button>
+                  <Link to='/about'>
+                    <Actionbutton label="About Us"/>
+                  </Link>
               </div>
               <div className='absolute z-[1] top-0 bottom-auto left-0 right-auto'>
                 <div className='z-[1] w-[342px] h-[264px] relative top-[-191px] right-[158px]'>
@@ -315,9 +317,9 @@ const Index = ({ data }) => {
               </div> */}
               </div>
               <div className=' max-w-full flex w-[1000px] mt-[50px] sm:w-[90%]'>
-                <button class="btn btn-2 hover-slide-up uppercase sm:min-w-[95%]">
-                  <Link to='/technology'><span>{content.moreAboutTechnology}</span></Link>
-                </button>
+                  <Link to='/technology'>
+                    <Actionbutton label="More about our technology"/>
+                  </Link>
               </div>
               <div className='absolute w-[347px] h-[407px] top-[-94%] bottom-0 left-auto right-[-13%] star-embed '>
                 <img src={star} alt='effect'></img>
@@ -372,9 +374,9 @@ const Index = ({ data }) => {
                   <div className=' w-full max-w-full' style={{ marginBottom: '30px' }}>
                     <p className=' text-xl mb-0 mt-0 leading-8 font-use-one sm:text-lg' style={{ color: 'rgba(255, 255, 255, .85)' }}>{content.sixthcontent.data.sixthcontent}</p>
                   </div>
-                  <button class="btn btn-2 hover-slide-up uppercase mt-7 sm:min-w-full">
-                    <Link to='/contact'><span>{content.askUs}</span></Link>
-                  </button>
+                    <Link to='/contact'>
+                      <Actionbutton label="Ask Us How"/>
+                    </Link>
                 </div>
               </div>
               <div className='absolute w-[347px] h-[407px] top-[2%] bottom-auto left-auto right-0 star-embed sm:hidden '>
@@ -400,9 +402,9 @@ const Index = ({ data }) => {
                 <div dangerouslySetInnerHTML={{ __html: content.quotecontent.data.quotecontent }}></div>
               </p>
               <div className=' mt-10 sm:max-w-full sm:w-full'>
-                <button class="btn btn-2 hover-slide-up uppercase sm:max-w-full sm:w-full">
-                  <Link to='/technology'><span>{content.futureWith}</span></Link>
-                </button>
+                  <Link to='/technology'>
+                    <Actionbutton label="see the future with us"/>
+                  </Link>
               </div>
             </div>
           </div>
@@ -418,17 +420,26 @@ const Index = ({ data }) => {
                 <h2 className='uppercase mt-0 mb-0  font-use text-[#fff] tracking-[2px] text-[50px] leading-[60px] sm:ml-0 sm:text-[22px] sm:leading-[26px] sm:tracking-[1px]'>{content.newstitle}</h2>
                 <h1 className='max-w-full uppercase mt-0 mb-0   font-use text-[#fff] font-use tracking-[2px] text-[80px] leading-[100px] sm:leading-10 sm:ml-0 sm:text-[34px] sm:tracking-[1px]'>{content.newssubtitle}</h1>
               </div>
-              <div className=' mb-5 more-from-news-button sm:hidden'>
+              {/* <div className=' mb-5 more-from-news-button sm:hidden'>
                 <button class="btn btn-2 hover-slide-up uppercase">
                   <Link to='/newsroom'><span>{content.aboutMedia}</span></Link>
                 </button>
-              </div>
+
+              </div> */}
+
+              <Link to='/newsroom' className=' sm:hidden'><Actionbutton label="More from the Media"/></Link>
+
+
             </div>
             <div className='flex max-w-full mt-20 justify-between ml-[100px] w-[1000px] sm:ml-[0] sm:flex-col sm:w-full sm:mt-10'>
               <Carousel cols={2} rows={1} gap={10} loop showDots={true}>
                 {content.newscards.map((news, index) => (
-                  <Carousel.Item key={index}>
-                    <Link to={news.News_Url} target='_blank' className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000', textDecoration: 'none' }}>
+
+
+
+
+                        <Carousel.Item >
+                          {/* <Link to={news.News_Url} target='_blank' className='inline-block uppercase text-lg max-w-full sm:pl-[8px] sm:pr-[10px] sm:pb-[10px] buttons-1' style={{ color: '#fff', backgroundColor: 'rgba(255, 255, 255, 0)', lineHeight: '26px', border: '1px solid #000', textDecoration: 'none' }}>
                       <div className='pt-5 pl-5 pr-5 w-[484px] h-[271px] sm:w-full rounded-effect' style={{ backgroundColor: '#19191a' }}>
                         <div className='flex items-start justify-between mb-10'>
                           <img  src={content.newslogo[index].localFile.url} className='max-w-full inline-block align-middle h-[30px] w-[14rem] sm:h-[20px]' style={{ border: '0' }} alt={`News Logo ${index}`} />
@@ -438,16 +449,23 @@ const Index = ({ data }) => {
                           {news.newscontent.data.newscontent}
                         </p>
                       </div>
-                    </Link>
-                  </Carousel.Item>
+
+                    </Link> */}
+                          <Newscard homedata={data.allStrapiHomepage.nodes[0]} data={news} indexValue={index}/>
+
+                        </Carousel.Item>
+
+
+
+
                 ))}
               </Carousel>
             </div>
 
-            <div className=' mb-5 mfnb mt-5 ml-3 sm:w-full'>
-              <button class="btn btn-2 hover-slide-up uppercase sm:min-w-[94%]">
-                <span>{content.aboutMedia}</span>
-              </button>
+            <div className=' mb-5 mfnb mt-5 ml-3 sm:ml-0 sm:p-[0.5rem] sm:w-full'>
+              <Link to="/newsroom">
+              <Actionbutton label="More from the media"/>
+              </Link>
             </div>
           </div>
 
@@ -839,8 +857,13 @@ query MyQuery {
               newscontent
             }
           }
+          news_head{
+            data{
+              news_head
+            }
+          }
         }
-       
+
         newslogo {
             localFile {
               url
