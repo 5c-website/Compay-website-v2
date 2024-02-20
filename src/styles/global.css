@@ -9,6 +9,51 @@
   background-color: black;
 
 } */
+
+.ribbon {
+  position: absolute;
+  right: -5px; top: -5px;
+  z-index: 1;
+  overflow: hidden;
+  width: 75px; height: 75px;
+  text-align: right;
+}
+.ribbon span {
+  font-size: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold; line-height: 20px;
+  transform: rotate(45deg);
+  width: 100px; display: block;
+  background: #38b000;
+  background: linear-gradient(#70e000 0%, #9ef01a 100%);
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 19px; right: -21px;
+}
+.ribbon span::before {
+  content: '';
+  position: absolute;
+  left: 0px; top: 100%;
+  z-index: -1;
+  border-left: 3px solid #70e000;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #70e000;
+}
+.ribbon span::after {
+  content: '';
+  position: absolute;
+  right: 0%; top: 100%;
+  z-index: -1;
+  border-right: 3px solid #70e000;
+  border-left: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #70e000;
+}
+
+
 .star-embed {
   transform: rotateX(0) rotateY(180deg) rotateZ(0);
   transform-style: preserve-3d;
@@ -955,6 +1000,47 @@
   box-shadow: 16px 13px 42px -17px rgba(0, 0, 0, 0.69);
   height: 350px;
   width: 600px;
+}
+
+/* urgent-flow */
+.review-logo-container{
+  width: 202px;
+  height: 202px;
+  background-position: 50% 50%;
+  margin: -101px auto 0;
+  position: relative;
+  border-radius: 50% !important;
+  color: #111111;
+  object-fit: cover;
+  display: block;
+  vertical-align: middle;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+/* book-demo */
+.invalid-feedback,
+      .empty-feedback {
+        display: none;
+      }
+
+      .was-validated :placeholder-shown:invalid ~ .empty-feedback {
+        display: block;
+      }
+
+      .was-validated :not(:placeholder-shown):invalid ~ .invalid-feedback {
+        display: block;
+      }
+
+      .is-invalid,
+      .was-validated :invalid {
+        border-color: #dc3545;
+      }
+
+      .is-invalid,
+      .was-validated :invalid:focus {
+    --tw-ring-color: rgba(220, 53, 69, 0.2);
 }
 
 @media screen and (max-width: 639px) {

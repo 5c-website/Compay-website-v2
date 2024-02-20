@@ -65,10 +65,18 @@ const Navbar = () => {
           </Dialog>
         </Transition.Root>
 
-    
+
     <div className='absolute w-full max-w-full flex flex-col items-center bg-transparent nav-division' style={{ zIndex: '2', color: 'rgba(255, 255, 255, 0)', top: '0' }}>
         <div className='w-full max-w-full pt-3 pb-3 ml-auto mr-auto' style={{ width: '86%' }}>
           <nav className=' w-full max-w-full justify-around items-center flex relative float-right font-use nav-md'>
+          <div className='DropdDown'>
+              <div className='DropDowntoggle'>
+                <div className=' inline-block  text-base align-top relative uppercase ' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Features</div>
+              </div>
+              <nav className='navbartoggle'>
+              <Link to='/urgentflow' className='navlinks hover-under '>Urgent Flow</Link>
+              </nav>
+            </div>
           <div className='DropdDown'>
               <div className='DropDowntoggle'>
                 <div className=' inline-block  text-base align-top relative uppercase ' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>AI Tools</div>

@@ -1,5 +1,7 @@
 import React from 'react'
 import '../styles/global.css'
+import { useEffect } from 'react';
+import Modal from '../Utils/Modal';
 import { Helmet } from "react-helmet";
 import Navbar from '../Utils/Navbar';
 import Navbarmd from '../Utils/Navbarmd';
@@ -22,10 +24,12 @@ import isologo2 from '../Assets/Homepage/iso27001.png'
 import isologo3 from '../Assets/Homepage/iso2019.jpg'
 import Actionbutton from '../components/Actionbutton';
 import Newscard from '../components/Newscard';
+import Speeddial from '../components/speeddial'
 
 
 const Index = ({ data }) => {
   const content = data.allStrapiHomepage.nodes[0];
+  const [showModal, setShowModal] = useState(false);
 
   const [open, setOpen] = useState(false)
   const cancelButtonRef = useRef(null)
@@ -48,6 +52,26 @@ const Index = ({ data }) => {
     setopenIso3(true);
   }
 
+  useEffect(() => {
+    function handleScroll() {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.body.scrollHeight;
+      const scrollPercentage = (scrollPosition / (documentHeight - windowHeight)) * 100;
+
+      if (scrollPercentage >= 50) {
+        setShowModal(true);
+        window.removeEventListener('scroll', handleScroll);
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
 
 
   return (
@@ -60,6 +84,7 @@ const Index = ({ data }) => {
           type="image/x-icon" />
         {/* <meta name="author" content={author} /> */}
       </Helmet>
+      {showModal && <Modal />}
 
       <div className='bg-black Homepage'>
 
@@ -665,9 +690,6 @@ const Index = ({ data }) => {
         {/* footer section */}
 
         <Footer data={data.allStrapiFooter.nodes[0]} />
-
-
-
 
       </div>
     </>
