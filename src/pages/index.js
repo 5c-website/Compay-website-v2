@@ -59,7 +59,7 @@ const Index = ({ data }) => {
       const documentHeight = document.body.scrollHeight;
       const scrollPercentage = (scrollPosition / (documentHeight - windowHeight)) * 100;
 
-      if (scrollPercentage >= 50) {
+      if (scrollPercentage >= 30) {
         setShowModal(true);
         window.removeEventListener('scroll', handleScroll);
       }

@@ -19,25 +19,7 @@ function Post({ data, location }) {
   const slugFromUrl = location.pathname.substring('/blog/'.length).replace(/\/$/, '');
   const content = data.blogPosts.nodes.find((post) => post.slug === slugFromUrl);
 
-  useEffect(() => {
-    function handleScroll() {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.body.scrollHeight;
-      const scrollPercentage = (scrollPosition / (documentHeight - windowHeight)) * 100;
 
-      if (scrollPercentage >= 50) {
-        setShowModal(true);
-        window.removeEventListener('scroll', handleScroll);
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
 
   if (!content) {
@@ -81,7 +63,7 @@ function Post({ data, location }) {
           </div>
         </div>
         <Footer data={data.allStrapiFooter.nodes[0]} />
-        {showModal && <Modal />}
+
       </div>
 
     </>
