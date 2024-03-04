@@ -25,7 +25,7 @@ function Bookdemo() {
                       <div class="mb-5">
                         <label
                           for="name"
-                          class="mb-3 uppercase block text-center text-2xl font-medium text-[#F5F5DC]"
+                          class="mb-3 uppercase block text-center text-2xl font-bold text-[#F5F5DC] font-use-one"
                         >
                           Schedule a Live Demo Today
                         </label>
@@ -47,7 +47,7 @@ function Bookdemo() {
                       <div class="mb-5">
                         <label
                           for="name"
-                          class="mb-3 block text-base font-medium text-[#F5F5DC]"
+                          class="mb-3 block text-base font-medium text-[#F5F5DC] font-use-one"
                         >
                           Full Name
                         </label>
@@ -57,13 +57,13 @@ function Bookdemo() {
                           id="name"
                           placeholder="Full Name"
                           required
-                          class="w-full rounded-md border border-[#313030] bg-[#313030] py-3 px-6 text-base font-medium text-[#F5F5DC] outline-none focus:border-[#313030] focus:shadow-md"
+                          class="font-use-one w-full rounded-md border border-[#313030] bg-[#313030] py-3 px-6 text-base font-medium text-[#F5F5DC] outline-none focus:border-[#313030] focus:shadow-md"
                         />
                       </div>
                       <div class="mb-5">
                         <label
                           for="email"
-                          class="mb-3 block text-base font-medium text-[#F5F5DC]"
+                          class="mb-3 block text-base font-medium text-[#F5F5DC] font-use-one"
                         >
                           Email Address
                         </label>
@@ -73,13 +73,13 @@ function Bookdemo() {
                           id="email"
                           placeholder="example@domain.com"
                           required
-                          class="w-full rounded-md border border-[#313030] bg-[#313030] py-3 px-6 text-base font-medium text-[#F5F5DC] outline-none focus:border-[#313030] focus:shadow-md"
+                          class=" font-use-one w-full rounded-md border border-[#313030] bg-[#313030] py-3 px-6 text-base font-medium text-[#F5F5DC] outline-none focus:border-[#313030] focus:shadow-md"
                         />
                       </div>
                       <div class="mb-5">
                         <label
                           for="Mobile-Number"
-                          class="mb-3 block text-base font-medium text-[#F5F5DC]"
+                          class="mb-3 block text-base font-medium text-[#F5F5DC] font-use-one"
                         >
                           Mobile Number
                         </label>
@@ -89,13 +89,13 @@ function Bookdemo() {
                           id="Mobile-Number"
                           placeholder="Enter your Mobile Number"
                           required
-                          class="w-full rounded-md border border-[#313030] bg-[#313030] py-3 px-6 text-base font-medium text-[#F5F5DC] outline-none focus:border-[#313030] focus:shadow-md"
+                          class="font-use-one w-full rounded-md border border-[#313030] bg-[#313030] py-3 px-6 text-base font-medium text-[#F5F5DC] outline-none focus:border-[#313030] focus:shadow-md"
                         />
                       </div>
                       <div class="mb-5">
                         <label
                           for="Mobile-Number"
-                          class="mb-3 block text-base font-medium text-[#F5F5DC]"
+                          class="mb-3 block text-base font-medium text-[#F5F5DC] font-use-one"
                         >
                           Diagnostic/Hospital Name
                         </label>
@@ -105,12 +105,12 @@ function Bookdemo() {
                           id="Diagnostic/Hospital Name"
                           placeholder="Enter your Diagnostic/Hospital Name"
                           required
-                          class="w-full rounded-md border border-[#313030] bg-[#313030] py-3 px-6 text-base font-medium text-[#F5F5DC] outline-none focus:border-[#313030] focus:shadow-md"
+                          class="w-full rounded-md border border-[#313030] bg-[#313030] py-3 px-6 text-base font-medium text-[#F5F5DC] outline-none focus:border-[#313030] focus:shadow-md font-use-one"
                         />
                       </div>
                       <div>
                         <button
-                          class="hover:shadow-form rounded-md bg-[#0E7452] py-3 px-8 text-base font-semibold text-white outline-none"
+                          class="hover:shadow-form rounded-md bg-[#0E7452] py-3 px-8 text-base font-semibold text-white outline-none font-use-one"
                         >
                           Submit
                         </button>

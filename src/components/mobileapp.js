@@ -18,16 +18,16 @@ function mobileapp() {
 
     <div className=' pl-[5px] pr-[5px] text-center flex justify-center relative grow-0 shrink-0 basis-full'>
         <span className=' break-words leading-[1.5]'>
-            <div className=' uppercase text-[#CB110A] text-[2.7rem] mb-0 leading-[1.5]'>5c mobile app</div>
-            <div className=' text-center text-[0.9rem] text-[#1677FF] mt-[1rem] mb-0 leading-[1.5]'>For the first time in India:</div>
-            <div className='text-center text-[0.9rem] text-[#1677FF] mb-0 leading-[1.5]'>Award Winning Mobile App for Radiology</div>
+            <div className=' uppercase text-[#CB110A] text-[2.7rem] mb-0 leading-[1.5] font-use'>5c mobile app</div>
+            <div className=' text-center text-[0.9rem] text-[#1677FF] mt-[1rem] mb-0 leading-[1.5] font-use-one'>For the first time in India:</div>
+            <div className='text-center text-[0.9rem] text-[#1677FF] mb-0 leading-[1.5] font-use-one'>Award Winning Mobile App for Radiology</div>
         </span>
     </div>
     </div>
     <div className=' flex justify-between mt-[2rem]'>
         <div className=' flex flex-col justify-center'>
         {listItems.map((item, index) => (
-              <li key={index} className='flex text-[1rem] items-center mt-[0.2rem] text-[#fff] font-use tracking-[1.5px]'>
+              <li key={index} className='flex text-[0.9rem] items-center mt-[0.2rem] text-[#fff] font-use tracking-[1.5px] font-use-one'>
                 <div className='h-[1.4rem] w-[1.4rem] flex justify-center flex-col text-center mx-[0.625rem] my-0 '>
                   <img src='https://client.5cnetwork.com/Icons/logo_5c.svg' alt='5c Logo' />
                 </div>
@@ -39,7 +39,7 @@ function mobileapp() {
                 <div className=' h-[1.4rem] w-[1.4rem] mx-[0.625px] my-0 flex text-center flex-col'>
                     <img src={playstore}></img>
                 </div>
-                <span className=' ml-[10px]'>
+                <span className=' ml-[10px] font-use'>
                     Download Now</span>
             </button>
             </a>
