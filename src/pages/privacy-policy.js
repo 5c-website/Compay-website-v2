@@ -10,7 +10,7 @@ import tablogo from '../Assets/Homepage/favicon.ico'
 
 function Privacypolicy({ data }) {
   const strapicontent = data.allStrapiPrivacypolicy.nodes[0];
-  
+
 
   return (
     <>
@@ -23,7 +23,7 @@ function Privacypolicy({ data }) {
         {/* <meta name="author" content={author} /> */}
       </Helmet>
       <div className='bg-black homepage'>
-        
+
 
         <a href='https://play.google.com/store/apps/details?id=db.com.a5c' class="outer inline-block ml-6  text-base align-top absolute uppercase cursor-pointer top-0 bottom-auto left-auto right-0 z-[1] mobile-screen-signin">
           <span class="inner"></span>
@@ -413,10 +413,23 @@ function Privacypolicy({ data }) {
                 <li className=' w-full max-w-full items-start mb-8 pl-0 flex'>
                   <div className='bullet-line-css'></div>
                   <p className=' mt-0 mb-0 leading-8 text-xl  font-use-one' style={{ color: 'rgba(255, 255, 255, .85)' }}>
-                    he Company may modify this Policy in its sole discretion at any time. While
+                    The Company may modify this Policy in its sole discretion at any time. While
                     the Company shall make best efforts to notify you of any such modification, it
                     shall be your responsibility to read and understand the Policy as prevalent from
                     time to time.
+                  </p>
+                </li>
+              </ul>
+
+              <p>&zwj;</p>
+              <h2 className='text-[36px] leading-[1.4] text-[#fff] tracking-[2px] uppercase mt-0 mb-0 font-use font-semibold underline sm:text-[20px]'>Refund Policy</h2>
+              <p>&zwj;</p>
+              <ul className='ml-[2rem] sm:ml-0'>
+                <li className=' w-full max-w-full items-start mb-8 pl-0 flex'>
+                  <div className='bullet-line-css'></div>
+                  <p className=' mt-0 mb-0 leading-8 text-xl  font-use-one' style={{ color: 'rgba(255, 255, 255, .85)' }}>
+                  Please be aware that because our services are customized to each client and based on specific agreements,
+                   refund policies may vary according to the terms of the contract.
                   </p>
                 </li>
               </ul>

@@ -1043,7 +1043,57 @@
     --tw-ring-color: rgba(220, 53, 69, 0.2);
 }
 
+/* comparative study */
+.comparative-container{
+  min-height: 512px;
+  height: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-image: url(../Assets/hero-compare.png);
+  background-position: 100% 66.37%;
+  overflow: visible;
+  text-align: left;
+  display: flex;
+  position: relative;
+  object-fit: cover;
+  vertical-align: middle;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.testimonial-container{
+  overflow:visible;
+  background-position: 50% 50%;
+  text-align: left;
+  object-fit: cover;
+  display: block;
+  background-size: cover;
+  vertical-align: middle;
+  position: relative;
+  background-image: url(https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/e8af5196ab7555cda6319d8a/pexels-photo-2387793.jpeg?version=);
+  background-repeat: no-repeat;
+}
+.testimonial-image-wrapper{
+  overflow: visible;
+  min-height: 300px;
+  background-image: url(../Assets/test.jpg);
+  background-position: 50% 50%;
+  flex: 0 0 35%;
+  max-width: 35%;
+  min-width: 35%;
+  position: relative;
+  display: flex;
+  object-fit: cover;
+  vertical-align: middle;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 @media screen and (max-width: 639px) {
+
+  .comparative-container{
+    background-position: 55% 66.37%;
+  }
   .blog-img {
     height: 200px;
   }

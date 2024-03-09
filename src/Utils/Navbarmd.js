@@ -38,7 +38,7 @@ function Navbarmd() {
       </svg>
     </label>
     <label class="m-menu__overlay" for="menu"></label>
-  
+
     <div class="m-menu">
       <div class="m-menu__header">
         <label class="m-menu__toggle" for="menu">
@@ -71,6 +71,24 @@ function Navbarmd() {
               </ul>
           </div>
         </li>
+        <li>
+          <label class="a-label__chevron" for="item-3" style={{paddingLeft:'18px'}}>Features</label>
+          <input type="checkbox" id="item-3" name="item-3" class="m-menu__checkbox"/>
+          <div class="m-menu">
+            <div class="m-menu__header">
+              <label class="m-menu__toggle" for="item-3">
+                <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs">
+                  <path d="M19 12H6M12 5l-7 7 7 7"/>
+                </svg>
+              </label>
+              <span>Features</span>
+            </div>
+            <ul>
+              <li><Link to='/urgentflow'><label>Urgent Flow</label></Link></li>
+              <li><Link to='/comparativestudy'><label>Comparative Study</label></Link></li>
+              </ul>
+          </div>
+        </li>
         <li><Link to='/technology'><label>Technology</label></Link></li>
         <li><Link to='/about'><label>About</label></Link></li>
         <li><Link to='/'><label>Home</label></Link></li>
@@ -95,16 +113,16 @@ function Navbarmd() {
           </div>
         </li>
         <li><Link to='/contact'><label>Contact</label></Link></li>
-      </ul>  
+      </ul>
     </div>
     <Link to='/' className='w-[50%]'><img src={logo} alt='5C Network'></img></Link>
     {/* <img src={logo} alt='5C Network' className='w-[50%]'></img> */}
   </nav>
-  
+
 </div>
-      
-    
-    
+
+
+
   </div>
   )
 }

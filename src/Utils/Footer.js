@@ -21,7 +21,7 @@ function Footer({ data }) {
 
   return (
     <>
-    {/* <Transition.Root show={openIso} as={Fragment}>
+    <Transition.Root show={openIso} as={Fragment}>
         <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setopenIso}>
           <Transition.Child
             as={Fragment}
@@ -56,7 +56,7 @@ function Footer({ data }) {
             </div>
           </div>
         </Dialog>
-      </Transition.Root>     */}
+      </Transition.Root>
 
     <div className='footer section pl-0 pr-0'>
                 <div className='relative ml-auto mr-auto max-w-[1200px]'>

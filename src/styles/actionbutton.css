@@ -13,7 +13,7 @@
     z-index: 1;
     position: relative;
     padding: 20px 46px;
-    margin-bottom: 30px;
+    margin-bottom: 0;
     text-align: center;
     text-transform: uppercase;
     color:var(--background-color);
