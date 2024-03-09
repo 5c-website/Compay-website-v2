@@ -151,7 +151,7 @@ function Urgentflow({ data }) {
                     <h3 className=' text-[3.4rem]'>Contact Us</h3>
                     <h6 className=' text-[1rem]'>Ready to elevate your patient care with "Compare With"? Contact us today.</h6>
                     <div className=' !mt-0'>
-                    <Link to='/reachus' className='flex ml-[6rem] sm:ml-0 sm:hidden'>
+                    <Link to='/reachus' className='flex sm:ml-0 mb-[2rem]'>
                   <Actionbutton label="Get in touch" />
                   </Link>
                     </div>
