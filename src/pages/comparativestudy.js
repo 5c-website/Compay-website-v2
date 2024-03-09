@@ -129,7 +129,7 @@ function Urgentflow({ data }) {
                                     <div className=' flex flex-row flex-wrap max-w-full min-h-fit sm:flex-col'>
                                         <div className=' min-h-[506px] text-left max-w-[65%] min-w-[65%] relative flex max-h-full sm:max-w-full'>
                                             <div className=' p-[30px] justify-center flex flex-col relative flex-1 max-w-full sm:p-[15px]'>
-                                                <h4 className=' text-[2.25rem] mt-0 mr-auto mb-0 ml-0 p-0   text-[#ffffff] relative flex-shrink-0 table align-self-start w-fit sm:text-justify'>What People say</h4>
+                                                {/* <h4 className=' text-[2.25rem] mt-0 mr-auto mb-0 ml-0 p-0   text-[#ffffff] relative flex-shrink-0 table align-self-start w-fit sm:text-justify'>What People say</h4> */}
                                                 <span className=' h-[150px] w-[150px] mt-[20px] mr-auto ml-0 mb-0 opacity-[0.45] text-[#ffffff]  rounded-[50%] block leading-[0] relative flex-shrink-0'>
                                                 <img width="80" height="80" src="https://img.icons8.com/glyph-neue/64/FFFFFF/quote-right.png" alt="quote-right"/>
                                                 </span>

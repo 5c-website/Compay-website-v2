@@ -75,7 +75,7 @@ const Navbar = () => {
               </div>
               <nav className='navbartoggle'>
               <Link to='/urgentflow' className='navlinks hover-under '>Urgent Flow</Link>
-              <Link to='/comparativestudy' className='navlinks hover-under '>Comparative study</Link>
+              <Link to='/comparativestudy' className='navlinks hover-under '>Comparative Study</Link>
 
               </nav>
             </div>
