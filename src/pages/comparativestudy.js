@@ -19,8 +19,8 @@ function Urgentflow({ data }) {
         <>
             <Helmet>
                 <html lang="en" />
-                <title>urgentflow</title>
-                <meta name="description" content="urgentflow" />
+                <title>Comparative Study</title>
+                <meta name="description" content="In the world of healthcare, where follow-ups are crucial,Compare With offers a seamless way to generate comparative reports by linking to previous studies" />
                 <link rel="icon" href={tablogo}
                     type="image/x-icon" />
                 {/* <meta name="author" content={author} /> */}

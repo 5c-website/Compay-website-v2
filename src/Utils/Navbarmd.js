@@ -86,6 +86,7 @@ function Navbarmd() {
             <ul>
               <li><Link to='/urgentflow'><label>Urgent Flow</label></Link></li>
               <li><Link to='/comparativestudy'><label>Comparative Study</label></Link></li>
+              <li><Link to='/mergestudy'><label>Merge Study</label></Link></li>
               </ul>
           </div>
         </li>

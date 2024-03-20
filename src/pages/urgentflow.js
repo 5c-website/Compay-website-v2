@@ -18,7 +18,7 @@ function Urgentflow({ data }) {
     <>
       <Helmet>
         <html lang="en" />
-        <title>urgentflow</title>
+        <title>Urgentflow</title>
         <meta name="description" content="urgentflow" />
         <link rel="icon" href={tablogo}
           type="image/x-icon" />

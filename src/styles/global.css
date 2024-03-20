@@ -1018,6 +1018,25 @@
   background-repeat: no-repeat;
 }
 
+/* merge-study */
+.mergestudy-hero{
+  /* min-height: 632px; */
+  background-image: url(https://cdn.castleconnolly.com/dims4/default/7a3d393/2147483647/strip/true/crop/1200x675+0+0/resize/840x472!/quality/90/?url=http%3A%2F%2Fcastle-connolly-brightspot.s3.us-east-1.amazonaws.com%2Ffc%2F15%2Fde62e4dc410c815da398197715f0%2Fpillar-diagnostic-radiology-46-1200x675.jpg);
+  background-position: 50% 50%;
+  text-align: left;
+  max-width: 50%;
+  display: flex;
+ position: relative;
+ max-height: 100%;
+ object-fit: cover;
+ background-size: cover;
+ vertical-align: middle;
+ background-repeat: no-repeat;
+ overflow: visible;
+ flex: 0 0 50%;
+ max-width: 50%;
+ margin-top: 6rem;
+}
 
 /* book-demo */
 .invalid-feedback,
@@ -1090,6 +1109,24 @@
 }
 
 @media screen and (max-width: 639px) {
+  .mergestudy-hero{
+    min-height: 200px;
+    background-image: url(https://cdn.castleconnolly.com/dims4/default/7a3d393/2147483647/strip/true/crop/1200x675+0+0/resize/840x472!/quality/90/?url=http%3A%2F%2Fcastle-connolly-brightspot.s3.us-east-1.amazonaws.com%2Ffc%2F15%2Fde62e4dc410c815da398197715f0%2Fpillar-diagnostic-radiology-46-1200x675.jpg);
+    background-position: 50% 50%;
+    text-align: left;
+    max-width: 50%;
+    display: flex;
+   position: relative;
+   max-height: 100%;
+   object-fit: cover;
+   background-size: cover;
+   vertical-align: middle;
+   background-repeat: no-repeat;
+   overflow: visible;
+   flex: 0 0 50%;
+   max-width: 100%;
+   margin-top: 1rem;
+  }
 
   .comparative-container{
     background-position: 55% 66.37%;
