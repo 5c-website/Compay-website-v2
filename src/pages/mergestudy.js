@@ -105,8 +105,8 @@ function Urgentflow({ data }) {
             </div>
           </div>
         </section>
-        <div className='features max-w-full w-full flex justify-around bg-[#19191a] p-10 sm:flex-col sm:gap-[5rem] sm:mt-[2rem]'>
-=                <div  className='flex gap-3'>
+        <div className='features max-w-full w-full flex justify-around bg-[#19191a] p-10 sm:flex-col sm:gap-[2rem] sm:mt-[2rem]'>
+               <div  className='flex gap-3'>
                   <img width="50" height="50" src="https://img.icons8.com/ios/50/FFFFFF/request-service.png" alt="request-service"/>
                   <div className='text-[16px] font-medium tracking-[1.5px] font-use flex w-fukk items-center' style={{ color: 'rgba(255, 255, 255, 0.85)' }}>
                   Comprehensive RTA Case Management
