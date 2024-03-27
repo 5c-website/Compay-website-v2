@@ -51,45 +51,13 @@ function Navbarmd() {
         {/* <img src={logo} alt='5C Network' className='w-[50%]'></img> */}
       </div>
       <ul>
+        <li><Link to='/features' className='pl-0'><label>Features</label></Link></li>
+
+        <li><Link to='/aitools' className='pl-0'><label>AI Tools</label></Link></li>
         <li><Link to='/solutions' className='pl-0'><label>Solutions</label></Link></li>
-        <li>
-          <label class="a-label__chevron" for="item-2" style={{paddingLeft:'18px'}}>AI Tools</label>
-          <input type="checkbox" id="item-2" name="item-2" class="m-menu__checkbox"/>
-          <div class="m-menu">
-            <div class="m-menu__header">
-              <label class="m-menu__toggle" for="item-2">
-                <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs">
-                  <path d="M19 12H6M12 5l-7 7 7 7"/>
-                </svg>
-              </label>
-              <span>AI Tools</span>
-            </div>
-            <ul>
-              <li><Link to='/rxpert'><label>Rxpert</label></Link></li>
-              <li><Link to='/osteocheck'><label>Osteocheck</label></Link></li>
-              <li><Link to='/protocall'><label>Protocall</label></Link></li>
-              </ul>
-          </div>
-        </li>
-        <li>
-          <label class="a-label__chevron" for="item-3" style={{paddingLeft:'18px'}}>Features</label>
-          <input type="checkbox" id="item-3" name="item-3" class="m-menu__checkbox"/>
-          <div class="m-menu">
-            <div class="m-menu__header">
-              <label class="m-menu__toggle" for="item-3">
-                <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs">
-                  <path d="M19 12H6M12 5l-7 7 7 7"/>
-                </svg>
-              </label>
-              <span>Features</span>
-            </div>
-            <ul>
-              <li><Link to='/urgentflow'><label>Urgent Flow</label></Link></li>
-              <li><Link to='/comparativestudy'><label>Comparative Study</label></Link></li>
-              <li><Link to='/mergestudy'><label>Merge Study</label></Link></li>
-              </ul>
-          </div>
-        </li>
+
+
+
         <li><Link to='/technology'><label>Technology</label></Link></li>
         <li><Link to='/about'><label>About</label></Link></li>
         <li><Link to='/'><label>Home</label></Link></li>

@@ -69,27 +69,10 @@ const Navbar = () => {
     <div className='absolute w-full max-w-full flex flex-col items-center bg-transparent nav-division' style={{ zIndex: '2', color: 'rgba(255, 255, 255, 0)', top: '0' }}>
         <div className='w-full max-w-full pt-3 pb-3 ml-auto mr-auto' style={{ width: '86%' }}>
           <nav className=' w-full max-w-full justify-around items-center flex relative float-right font-use nav-md'>
-          <div className='DropdDown'>
-              <div className='DropDowntoggle'>
-                <div className=' inline-block  text-base align-top relative uppercase ' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Features</div>
-              </div>
-              <nav className='navbartoggle'>
-              <Link to='/urgentflow' className='navlinks hover-under '>Urgent Flow</Link>
-              <Link to='/comparativestudy' className='navlinks hover-under '>Comparative Study</Link>
-              <Link to='/mergestudy' className='navlinks hover-under '>Merge Study</Link>
+          <Link to='/features' className=' inline-block  text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Features</Link>
 
-              </nav>
-            </div>
-          <div className='DropdDown'>
-              <div className='DropDowntoggle'>
-                <div className=' inline-block  text-base align-top relative uppercase ' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>AI Tools</div>
-              </div>
-              <nav className='navbartoggle'>
-              <Link to='/rxpert' className='navlinks hover-under '>RXpert</Link>
-                <Link to='/osteocheck' className='navlinks  hover-under-1'>OsteoCheck</Link>
-                <Link to='/protocall' className='navlinks  hover-under-1'>ProtoCALL</Link>
-              </nav>
-            </div>
+          <Link to='/aitools' className=' inline-block  text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>AI Tools</Link>
+
             <Link to='/solutions' className=' inline-block  text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Solutions</Link>
             <Link to='/technology' className=' inline-block  text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Technology</Link>
             <Link to='/about' className=' inline-block  text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
