@@ -6,6 +6,7 @@ function Bookdemo() {
      const [email, setEmail] = useState('');
      const [mobileNumber, setMobileNumber] = useState('');
      const [DiagnosticFacilityName, setDiagnosticFacilityName] = useState('');
+     const bearer="e56c2503ae0b35a6a98be8fad95ba56e82116b9f1f27b233579f7616a6d5f562e930c8ca887e27b062165692f353ba69275f4fe041a39f826b3dac0250fadf6a7fd271c65aff8aeab05af2dbe38a3b8e724993ac131f1e49b3076e0c9285270d550382069060aa2eca49f818fbbfa10c2ef0a485d0930d6d70e661728736f6d4";
 
      const handleSubmit = async (e) => {
           e.preventDefault();
@@ -20,12 +21,12 @@ function Bookdemo() {
           };
 
           try {
-               console.log("access token",process.env.API_KEY)
+               
                const response = await fetch('https://katturai.cubebase.ai/api/bookdemodatas', {
                     method: 'POST',
                     headers: {
                          'Content-Type': 'application/json',
-                         'Authorization': `Bearer ${process.env.API_KEY}`,
+                         'Authorization': `Bearer ${bearer}`,
                     },
                     body: JSON.stringify(formData),
                });
