@@ -5,7 +5,6 @@ import { useState } from 'react'
 import tablogo from '../Assets/Homepage/favicon.ico'
 import { Switch } from '@headlessui/react'
 import { navigate } from 'gatsby';
-import { useForm } from '@formspree/react';
 import { Helmet } from "react-helmet";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -13,16 +12,12 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function ReachUs() {
   const [agreed, setAgreed] = useState(false)
-  const [state, handleSubmit] = useForm("mzblqnaq");
-  const [submitted, setSubmitted] = useState(false);
   const notify = () => toast("Successfully submitted");
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [company, setCompany] = useState('');
-  const [email, setEmail] = useState('');
+  const [name, setname] = useState('');
+  const [DiagnosticFacilityName, setDiagnosticFacilityName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [message, setMessage] = useState('');
-  const [selectedGenre, setSelectedGenre] = useState('');
+  const [role, setrole] = useState('');
   const location = useLocation();
   const osteocheckData = location.state?.osteocheckData || null;
   const Title = location.state?.Title || null;
@@ -33,24 +28,49 @@ function ReachUs() {
     return classes.filter(Boolean).join(' ')
   }
 
-  useEffect(() => {
-    if (state.succeeded && submitted) {
-      notify();
-      setFirstName('');
-      setLastName('');
-      setCompany('');
-      setEmail('');
-      setPhoneNumber('');
-      setMessage('');
-      setSelectedGenre('');
+
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    const formData = {
+      data: {
+        name,
+        DiagnosticFacilityName,
+        phoneNumber,
+        role,
+        message,
+      }
+    };
+  
+    try {
+      const response = await fetch('https://katturai.cubebase.ai/api/get-in-touch-datas', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${process.env.API_KEY}`,
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        notify(); 
+        setname('');
+        setDiagnosticFacilityName('');
+        setPhoneNumber('');
+        setrole('');
+        setMessage('');
+      } else {
+        throw new Error('Failed to submit form');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
     }
-  }, [state.succeeded, submitted]);
-
-
-
+  };
 
   const handleSelectChange = (e) => {
-    setSelectedGenre(e.target.value);
+    setrole(e.target.value);
   };
 
   const handleIconClick = (event) => {
@@ -96,15 +116,12 @@ function ReachUs() {
         <form onSubmit={(e) => {
           e.preventDefault();
           handleSubmit(e, {
-            firstName,
-            lastName,
-            company,
-            email,
+            name,
+            DiagnosticFacilityName,
             phoneNumber,
             message,
-            selectedGenre,
+            role,
           });
-          setSubmitted(true);
 
         }} method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
@@ -119,26 +136,26 @@ function ReachUs() {
                   id="first-name"
                   autoComplete="given-name"
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6" required
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
+                  value={name}
+                  onChange={(e) => setname(e.target.value)}
                 />
 
               </div>
             </div>
 
             <div className="sm:col-span-2">
-              <label htmlFor="company" className="block text-sm font-semibold leading-6 text-gray-900">
+              <label htmlFor="DiagnosticFacilityName" className="block text-sm font-semibold leading-6 text-gray-900">
                 Diagnostic Facility Name
               </label>
               <div className="mt-2.5">
                 <input
                   type="text"
-                  name="company"
-                  id="company"
+                  name="DiagnosticFacilityName"
+                  id="DiagnosticFacilityName"
                   autoComplete="organization"
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6"
-                  value={company}
-                  onChange={(e) => setCompany(e.target.value)}
+                  value={DiagnosticFacilityName}
+                  onChange={(e) => setDiagnosticFacilityName(e.target.value)}
                 />
               </div>
             </div>
@@ -189,7 +206,7 @@ function ReachUs() {
                   className=" border-2 w-full p-2 focus:outline-none bg-white rounded-md "
                   id="designation"
                   name="designation"
-                  value={selectedGenre}
+                  value={role}
                   onChange={handleSelectChange}
                 >
                   {genre && genre.map((item, i) => (

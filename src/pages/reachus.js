@@ -3,7 +3,6 @@ import '../styles/global.css'
 import { useState } from 'react'
 import { Switch } from '@headlessui/react'
 import { navigate } from 'gatsby';
-import { useForm } from '@formspree/react';
 import { Helmet } from "react-helmet";
 import tablogo from '../Assets/Homepage/favicon.ico'
 import { ToastContainer, toast } from 'react-toastify';
@@ -12,14 +11,12 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function ReachUs() {
   const [agreed, setAgreed] = useState(false)
-  const [state, handleSubmit] = useForm("mzblqnaq");
-  const [submitted, setSubmitted] = useState(false);
   const notify = () => toast("Successfully submitted");
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [firstname, setfirstname] = useState('');
+  const [lastname, setlastname] = useState('');
   const [company, setCompany] = useState('');
   const [email, setEmail] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [mobileNumber, setmobileNumber] = useState('');
   const [message, setMessage] = useState('');
 
 
@@ -28,17 +25,47 @@ function ReachUs() {
     return classes.filter(Boolean).join(' ')
   }
 
-  useEffect(() => {
-    if (state.succeeded && submitted) {
-      notify();
-      setFirstName('');
-      setLastName('');
-      setCompany('');
-      setEmail('');
-      setPhoneNumber('');
-      setMessage('');
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    const formData = {
+      data: {
+        firstname,
+        lastname,
+        company,
+        email,
+        mobileNumber,
+        message,
+      }
+    };
+  
+    try {
+      const response = await fetch('https://katturai.cubebase.ai/api/contactformdatas', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${process.env.API_KEY}`,
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        notify(); 
+        setfirstname('');
+        setlastname('');
+        setCompany('');
+        setEmail('');
+        setmobileNumber('');
+        setMessage('');
+      } else {
+        throw new Error('Failed to submit form');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
     }
-  }, [state.succeeded, submitted]);
+  };
 
   const handleIconClick = (event) => {
     event.preventDefault()
@@ -83,7 +110,6 @@ function ReachUs() {
         <form onSubmit={(e) => {
           e.preventDefault();
           handleSubmit(e);
-          setSubmitted(true);
         }} method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
             <div>
@@ -97,8 +123,8 @@ function ReachUs() {
                   id="first-name"
                   autoComplete="given-name"
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6" required
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
+                  value={firstname}
+                  onChange={(e) => setfirstname(e.target.value)}
                 />
 
               </div>
@@ -114,8 +140,8 @@ function ReachUs() {
                   id="last-name"
                   autoComplete="family-name"
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
+                  value={lastname}
+                  onChange={(e) => setlastname(e.target.value)}
                 />
               </div>
             </div>
@@ -187,8 +213,8 @@ function ReachUs() {
                   id="phone-number"
                   autoComplete="tel"
                   className="block w-full rounded-md border-0 px-3.5 py-2 pl-[7rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6"
-                  value={phoneNumber}
-                  onChange={(e) => setPhoneNumber(e.target.value)}
+                  value={mobileNumber}
+                  onChange={(e) => setmobileNumber(e.target.value)}
                 />
               </div>
             </div>

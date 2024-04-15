@@ -49,7 +49,7 @@ module.exports = {
         apiURL:process.env.GATSBY_API_URL,
         accessToken:process.env.API_KEY,
         collectionTypes: [
-          'homepage','solution','technology','about','carrer','blog','newsroom','contact','diagnostic','clinician','healthcare','hospital','radiologist','blog-post','casestudy','casestudypost','footer','privacypolicy','complianceandregulatory','newsroomseo','rxpert','protocall','osteocheck','urgentflow'
+          'homepage','solution','technology','about','carrer','blog','newsroom','contact','diagnostic','clinician','healthcare','hospital','radiologist','blog-post','casestudy','casestudypost','footer','privacypolicy','complianceandregulatory','newsroomseo','rxpert','protocall','osteocheck','urgentflow','careerdata'
         ],
 
         queryLimit: 1000,

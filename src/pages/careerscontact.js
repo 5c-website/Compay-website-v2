@@ -9,18 +9,17 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function ReachUs() {
-  const [state, handleSubmit] = useForm("mzblqnaq");
   const [submitted, setSubmitted] = useState(false);
   const notify = () => toast("Successfully submitted");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [company, setCompany] = useState("");
+  const [firstname, setfirstname] = useState("");
+  const [lastname, setlastname] = useState("");
+  const [position, setposition] = useState("");
   const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [cv, setCv] = useState("");
-  const [message, setMessage] = useState("");
-  const [selectedGenre, setSelectedGenre] = useState("");
-  const genre = [
+  const [phonenumber, setphonenumber] = useState("");
+  const [cvDriveLink, setcvDriveLink] = useState("");
+  const [coverLetter, setcoverLetter] = useState("");
+  const [selecteddepartment, setSelecteddepartment] = useState("");
+  const department = [
     "Engineering",
     "Human Resource",
     "Product",
@@ -36,23 +35,58 @@ function ReachUs() {
     navigate(-1);
   };
 
-  useEffect(() => {
-    if (state.succeeded && submitted) {
-      notify();
-      setFirstName("");
-      setLastName("");
-      setCompany("");
-      setEmail("");
-      setPhoneNumber("");
-      setMessage("");
-      setSelectedGenre("");
-      setCv("");
-    }
-  }, [state.succeeded, submitted]);
+  
+
 
   const handleSelectChange = (e) => {
-    setSelectedGenre(e.target.value);
+    setSelecteddepartment(e.target.value);
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    const formData = {
+      data: {
+        firstname,
+        lastname,
+        email,
+        mobileNumber: phonenumber,
+        department: selecteddepartment.toLowerCase(),
+        position,
+        coverLetter,
+        cvDriveLink
+      }
+    };
+  
+    try {
+      const response = await fetch('https://katturai.cubebase.ai/api/careerdatas', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${process.env.API_KEY}`,
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        notify(); 
+        setfirstname('');
+        setlastname('');
+        setposition('');
+        setEmail('');
+        setphonenumber('');
+        setcoverLetter('');
+        setSelecteddepartment('');
+        setcvDriveLink('');
+      } else {
+        throw new Error('Failed to submit form');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
+  };
+  
+  
 
   return (
     <>
@@ -103,14 +137,14 @@ function ReachUs() {
           onSubmit={(e) => {
             e.preventDefault();
             handleSubmit(e, {
-              firstName,
-              lastName,
-              company,
+              firstname,
+              lastname,
+              position,
               email,
-              phoneNumber,
-              message,
-              selectedGenre,
-              cv,
+              phonenumber,
+              coverLetter,
+              selecteddepartment,
+              cvDriveLink,
             });
             setSubmitted(true);
           }}
@@ -133,8 +167,8 @@ function ReachUs() {
                   autoComplete="given-name"
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6"
                   required
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
+                  value={firstname}
+                  onChange={(e) => setfirstname(e.target.value)}
                 />
               </div>
             </div>
@@ -152,8 +186,8 @@ function ReachUs() {
                   id="last-name"
                   autoComplete="family-name"
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
+                  value={lastname}
+                  onChange={(e) => setlastname(e.target.value)}
                 />
               </div>
             </div>
@@ -210,14 +244,14 @@ function ReachUs() {
                   id="phone-number"
                   autoComplete="tel"
                   className="block w-full rounded-md border-0 px-3.5 py-2 pl-[6rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6"
-                  value={phoneNumber}
-                  onChange={(e) => setPhoneNumber(e.target.value)}
+                  value={phonenumber}
+                  onChange={(e) => setphonenumber(e.target.value)}
                 />
               </div>
             </div>
             <div className="sm:col-span-2">
               <label
-                htmlFor="company"
+                htmlFor="position"
                 className="block text-sm font-semibold leading-6 text-gray-900"
               >
                 Department
@@ -227,10 +261,10 @@ function ReachUs() {
                   className=" w-full border-2 p-2 focus:outline-none bg-white rounded-md "
                   id="department"
                   name="department"
-                  value={selectedGenre}
+                  value={selecteddepartment}
                   onChange={handleSelectChange}
                 >
-                  {genre.map((item, i) => (
+                  {department.map((item, i) => (
                     <option value={item} key={i}>
                       {item}
                     </option>
@@ -240,7 +274,7 @@ function ReachUs() {
             </div>
             <div className="sm:col-span-2">
               <label
-                htmlFor="company"
+                htmlFor="position"
                 className="block text-sm font-semibold leading-6 text-gray-900"
               >
                 Position
@@ -252,8 +286,8 @@ function ReachUs() {
                   id="Position"
                   autoComplete="organization"
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6"
-                  value={company}
-                  onChange={(e) => setCompany(e.target.value)}
+                  value={position}
+                  onChange={(e) => setposition(e.target.value)}
                 />
               </div>
             </div>
@@ -267,19 +301,19 @@ function ReachUs() {
               </label>
               <div className="mt-2.5">
                 <textarea
-                  name="message"
-                  id="message"
+                  name="coverLetter"
+                  id="coverLetter"
                   rows={4}
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6"
                   defaultValue={""}
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
+                  value={coverLetter}
+                  onChange={(e) => setcoverLetter(e.target.value)}
                 />
               </div>
             </div>
             <div className="sm:col-span-2">
               <div className="flex gap-[0.5rem]">
-          <label htmlFor="company" className="block text-sm font-semibold leading-6 text-gray-900">
+          <label htmlFor="position" className="block text-sm font-semibold leading-6 text-gray-900">
               CV Google Drive Link
             </label>
             <img width="20" height="20" src="https://img.icons8.com/ios-filled/50/link--v1.png" alt="link--v1"/>
@@ -291,8 +325,8 @@ function ReachUs() {
                   id="Resume"
                   autoComplete="organization"
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6"
-                  value={cv}
-                  onChange={(e) => setCv(e.target.value)}
+                  value={cvDriveLink}
+                  onChange={(e) => setcvDriveLink(e.target.value)}
                 /> 
                </div>
       </div>

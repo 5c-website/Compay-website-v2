@@ -2,26 +2,44 @@ import React from 'react'
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import {ToastContainer} from "react-toastify"
-import { useForm, ValidationError } from '@formspree/react';
 
 function Modal() {
   const [open, setOpen] = useState(true)
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [mobileNumber, setMobileNumber] = useState('');
+  const [DiagnosticFacilityName, setDiagnosticFacilityName] = useState('');
   const cancelButtonRef = useRef(null)
-  const [state, handleSubmit] = useForm("xpzvdnkn");
-  if (state.succeeded) {
-      return <ToastContainer
-      position="top-right"
-      autoClose={5000}
-      hideProgressBar={false}
-      newestOnTop={false}
-      closeOnClick
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-      theme="light"
-      />;
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = {
+         data: {
+              name,
+              email,
+              mobileNumber,
+              DiagnosticFacilityName,
+         }
+    };
+
+    try {
+         const response = await fetch('https://katturai.cubebase.ai/api/bookdemodatas', {
+              method: 'POST',
+              headers: {
+                   'Content-Type': 'application/json',
+                   'Authorization': `Bearer ${process.env.API_KEY}`,
+              },
+              body: JSON.stringify(formData),
+         });
+
+         if (response.ok) {
+         } else {
+              throw new Error('Failed to submit form');
+         }
+    } catch (error) {
+         console.error('Error submitting form:', error);
+    }
+};
 
 
   return (
@@ -92,6 +110,8 @@ function Modal() {
                           type="text"
                           name="name"
                           id="name"
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
                           placeholder="Full Name"
                           required
                           class="w-full rounded-md border border-[#313030] bg-[#313030] py-3 px-6 text-base font-medium text-[#F5F5DC] outline-none focus:border-[#313030] focus:shadow-md"
@@ -108,6 +128,8 @@ function Modal() {
                           type="email"
                           name="email"
                           id="email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
                           placeholder="example@domain.com"
                           required
                           class="w-full rounded-md border border-[#313030] bg-[#313030] py-3 px-6 text-base font-medium text-[#F5F5DC] outline-none focus:border-[#313030] focus:shadow-md"
@@ -124,6 +146,8 @@ function Modal() {
                           type="text"
                           name="Mobile-Number"
                           id="Mobile-Number"
+                          value={mobileNumber}
+                          onChange={(e) => setMobileNumber(e.target.value)}
                           placeholder="Enter your Mobile Number"
                           required
                           class="w-full rounded-md border border-[#313030] bg-[#313030] py-3 px-6 text-base font-medium text-[#F5F5DC] outline-none focus:border-[#313030] focus:shadow-md"
@@ -140,6 +164,8 @@ function Modal() {
                           type="text"
                           name="Diagnostic/Hospital Name"
                           id="Diagnostic/Hospital Name"
+                          value={DiagnosticFacilityName}
+                          onChange={(e) => setDiagnosticFacilityName(e.target.value)}
                           placeholder="Enter your Diagnostic/Hospital Name"
                           required
                           class="w-full rounded-md border border-[#313030] bg-[#313030] py-3 px-6 text-base font-medium text-[#F5F5DC] outline-none focus:border-[#313030] focus:shadow-md"

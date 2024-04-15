@@ -4,7 +4,6 @@ import { useState } from 'react'
 import tablogo from '../Assets/Homepage/favicon.ico'
 import { Switch } from '@headlessui/react'
 import { navigate } from 'gatsby';
-import { useForm } from '@formspree/react';
 import { Helmet } from "react-helmet";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -12,41 +11,68 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function ReachUs() {
   const [agreed, setAgreed] = useState(false)
-  const [state, handleSubmit] = useForm("mzblqnaq");
   const [submitted, setSubmitted] = useState(false);
   const notify = () => toast("Successfully submitted");
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [firstname, setfirstname] = useState('');
+  const [lastname, setlastname] = useState('');
   const [company, setCompany] = useState('');
   const [email, setEmail] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [mobileNumber, setmobileNumber] = useState('');
   const [message, setMessage] = useState('');
-  const [selectedGenre, setSelectedGenre] = useState('');
-  const genre = ['Radiologist', 'Clinicians', 'Hospitals', 'Diagnostic centers', 'Healthcare aggregators'];
+  const [selectedcategory, setSelectedcategory] = useState('');
+  const category = ['Radiologist', 'Clinicians', 'Hospitals', 'Diagnostic centers', 'Healthcare aggregators'];
 
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
   }
 
-  useEffect(() => {
-    if (state.succeeded && submitted) {
-      notify();
-      setFirstName('');
-      setLastName('');
-      setCompany('');
-      setEmail('');
-      setPhoneNumber('');
-      setMessage('');
-      setSelectedGenre('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    const formData = {
+      data: {
+        firstname,
+        lastname,
+        email,
+        mobileNumber: mobileNumber,
+        category:selectedcategory,
+        message,
+        company
+      }
+    };
+  
+    try {
+      const response = await fetch('https://katturai.cubebase.ai/api/reachformdatas', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${process.env.API_KEY}`,
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        notify(); 
+        setfirstname('');
+        setlastname('');
+        setCompany('');
+        setEmail('');
+        setmobileNumber('');
+        setSelectedcategory('');
+        setMessage('');
+      } else {
+        throw new Error('Failed to submit form');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
     }
-  }, [state.succeeded, submitted]);
-
-
+  };
 
 
   const handleSelectChange = (e) => {
-    setSelectedGenre(e.target.value);
+    setSelectedcategory(e.target.value);
   };
 
   const handleIconClick = (event) => {
@@ -92,13 +118,13 @@ function ReachUs() {
         <form onSubmit={(e) => {
           e.preventDefault();
           handleSubmit(e, {
-            firstName,
-            lastName,
+            firstname,
+            lastname,
             company,
             email,
-            phoneNumber,
+            mobileNumber,
             message,
-            selectedGenre,
+            selectedcategory,
           });
           setSubmitted(true);
 
@@ -115,8 +141,8 @@ function ReachUs() {
                   id="first-name"
                   autoComplete="given-name"
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6" required
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
+                  value={firstname}
+                  onChange={(e) => setfirstname(e.target.value)}
                 />
 
               </div>
@@ -132,8 +158,8 @@ function ReachUs() {
                   id="last-name"
                   autoComplete="family-name"
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
+                  value={lastname}
+                  onChange={(e) => setlastname(e.target.value)}
                 />
               </div>
             </div>
@@ -200,8 +226,8 @@ function ReachUs() {
                   id="phone-number"
                   autoComplete="tel"
                   className="block w-full rounded-md border-0 px-3.5 py-2 pl-[6rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6"
-                  value={phoneNumber}
-                  onChange={(e) => setPhoneNumber(e.target.value)}
+                  value={mobileNumber}
+                  onChange={(e) => setmobileNumber(e.target.value)}
                 />
               </div>
             </div>
@@ -210,10 +236,10 @@ function ReachUs() {
               className=" border-2 p-2 focus:outline-none bg-white rounded-md "
               id="designation"
               name="designation"
-              value={selectedGenre}
+              value={selectedcategory}
               onChange={handleSelectChange}
             >
-              {genre.map((item, i) => (
+              {category.map((item, i) => (
                 <option value={item} key={i}>
                   {item}
                 </option>
