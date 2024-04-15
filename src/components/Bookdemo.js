@@ -20,6 +20,7 @@ function Bookdemo() {
           };
 
           try {
+               console.log("access token",process.env.API_KEY)
                const response = await fetch('https://katturai.cubebase.ai/api/bookdemodatas', {
                     method: 'POST',
                     headers: {

@@ -56,39 +56,39 @@ module.exports = {
       },
     },
 
-    {
-      resolve: `gatsby-plugin-clarity`,
-      options: {
-        clarity_project_id: process.env.CLARITY_KEY,
-        enable_on_dev_env: true
-      },
-  },
-  {
-    resolve: `gatsby-plugin-google-gtag`,
-    options: {
-      trackingIds: [
-       process.env.GOOGLE_ANALYTICS_ID,
-      ],
-      pluginConfig: {
-        head: true,
-        respectDNT: true,
-        exclude: ["/preview/**", "/do-not-track/me/too/"],
-      },
-    },
-  },
-  {
-    resolve: `gatsby-plugin-google-gtag`,
-    options: {
-      trackingIds: [
-        process.env.GTAG_TOKEN,
-      ],
-      pluginConfig: {
-        head: false,
-        respectDNT: true,
-        exclude: ["/preview/**", "/do-not-track/me/too/"],
-      },
-    },
-  },
+  //   {
+  //     resolve: `gatsby-plugin-clarity`,
+  //     options: {
+  //       clarity_project_id: process.env.CLARITY_KEY,
+  //       enable_on_dev_env: true
+  //     },
+  // },
+  // {
+  //   resolve: `gatsby-plugin-google-gtag`,
+  //   options: {
+  //     trackingIds: [
+  //      process.env.GOOGLE_ANALYTICS_ID,
+  //     ],
+  //     pluginConfig: {
+  //       head: true,
+  //       respectDNT: true,
+  //       exclude: ["/preview/**", "/do-not-track/me/too/"],
+  //     },
+  //   },
+  // },
+  // {
+  //   resolve: `gatsby-plugin-google-gtag`,
+  //   options: {
+  //     trackingIds: [
+  //       process.env.GTAG_TOKEN,
+  //     ],
+  //     pluginConfig: {
+  //       head: false,
+  //       respectDNT: true,
+  //       exclude: ["/preview/**", "/do-not-track/me/too/"],
+  //     },
+  //   },
+  // },
     // 'gatsby-plugin-offline'
   ],
 
