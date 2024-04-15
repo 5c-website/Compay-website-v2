@@ -40,6 +40,7 @@ function ReachUs() {
         message,
       }
     };
+    console.log("env key",process.env.API_KEY)
   
     try {
       const response = await fetch('https://katturai.cubebase.ai/api/contactformdatas', {
