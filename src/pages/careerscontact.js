@@ -7,6 +7,7 @@ import { useForm } from "@formspree/react";
 import { Helmet } from "react-helmet";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Popup from "../Utils/Popup";
 
 function ReachUs() {
   const [submitted, setSubmitted] = useState(false);
@@ -19,6 +20,8 @@ function ReachUs() {
   const [cvDriveLink, setcvDriveLink] = useState("");
   const [coverLetter, setcoverLetter] = useState("");
   const [selecteddepartment, setSelecteddepartment] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const department = [
     "Engineering",
     "Human Resource",
@@ -30,6 +33,8 @@ function ReachUs() {
   ];
 
   const handleIconClick = (event) => {
+    setIsSubmitting(true);
+    setShowPopup(true);
     event.preventDefault();
 
     navigate(-1);
@@ -362,12 +367,14 @@ function ReachUs() {
           <div className="mt-10">
             <button
               type="submit"
+              disabled={isSubmitting}
               className="block w-full rounded-md bg-[black] px-3.5 py-2.5 text-center text-sm font-semibold text-[#00d4ff] shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  toast-btn"
             >
               Submit
             </button>
           </div>
         </form>
+        {showPopup && <Popup />}
       </div>
     </>
   );

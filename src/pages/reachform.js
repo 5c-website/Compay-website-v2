@@ -7,6 +7,8 @@ import { navigate } from 'gatsby';
 import { Helmet } from "react-helmet";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Popup from '../Utils/Popup';
+
 
 
 function ReachUs() {
@@ -20,7 +22,10 @@ function ReachUs() {
   const [mobileNumber, setmobileNumber] = useState('');
   const [message, setMessage] = useState('');
   const [selectedcategory, setSelectedcategory] = useState('');
-  const category = ['Radiologist', 'Clinicians', 'Hospitals', 'Diagnostic centers', 'Healthcare aggregators'];
+    const category = ['Radiologist', 'Clinicians', 'Hospitals', 'Diagnostic centers', 'Healthcare aggregators'];
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [showPopup, setShowPopup] = useState(false);
+
 
 
   function classNames(...classes) {
@@ -29,6 +34,8 @@ function ReachUs() {
 
 
   const handleSubmit = async (e) => {
+    setIsSubmitting(true);
+    setShowPopup(true);
     e.preventDefault();
     
     const formData = {
@@ -296,12 +303,14 @@ function ReachUs() {
           <div className="mt-10">
             <button
               type="submit"
+              disabled={isSubmitting}
               className="block w-full rounded-md bg-[black] px-3.5 py-2.5 text-center text-sm font-semibold text-[#00d4ff] shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  toast-btn"
             >
               Let's talk
             </button>
           </div>
         </form>
+        {showPopup && <Popup />}
       </div>
     </>
   )

@@ -7,17 +7,19 @@ import { Helmet } from "react-helmet";
 import tablogo from '../Assets/Homepage/favicon.ico'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import Popup from '../Utils/Popup';
 
 function ReachUs() {
   const [agreed, setAgreed] = useState(false)
   const notify = () => toast("Successfully submitted");
   const [firstname, setfirstname] = useState('');
   const [lastname, setlastname] = useState('');
+  const [showPopup, setShowPopup] = useState(false);
   const [company, setCompany] = useState('');
   const [email, setEmail] = useState('');
   const [mobileNumber, setmobileNumber] = useState('');
   const [message, setMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
 
 
@@ -28,6 +30,8 @@ function ReachUs() {
 
 
   const handleSubmit = async (e) => {
+    setIsSubmitting(true);
+    setShowPopup(true);
     e.preventDefault();
     
     const formData = {
@@ -53,7 +57,7 @@ function ReachUs() {
       });
   
       if (response.ok) {
-        notify(); 
+        
         setfirstname('');
         setlastname('');
         setCompany('');
@@ -70,6 +74,7 @@ function ReachUs() {
 
   const handleIconClick = (event) => {
     event.preventDefault()
+    setIsSubmitting(true);
 
     navigate(-1)
   };
@@ -267,12 +272,14 @@ function ReachUs() {
           <div className="mt-10">
             <button
               type="submit"
+              disabled={isSubmitting}
               className="block w-full rounded-md bg-[black] px-3.5 py-2.5 text-center text-sm font-semibold text-[#00d4ff] shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  toast-btn"
             >
               Let's talk
             </button>
           </div>
         </form>
+        {showPopup && <Popup />}
       </div>
     </>
   )

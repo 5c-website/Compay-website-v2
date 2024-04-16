@@ -10,7 +10,9 @@ function Modal() {
   const [mobileNumber, setMobileNumber] = useState('');
   const [DiagnosticFacilityName, setDiagnosticFacilityName] = useState('');
   const cancelButtonRef = useRef(null)
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const handleSubmit = async (e) => {
+    setIsSubmitting(true);
     e.preventDefault();
 
     const formData = {
@@ -33,6 +35,10 @@ function Modal() {
          });
 
          if (response.ok) {
+          setName('');
+          setEmail('');
+          setMobileNumber('');
+          setDiagnosticFacilityName('');
          } else {
               throw new Error('Failed to submit form');
          }
@@ -173,6 +179,7 @@ function Modal() {
                       </div>
                       <div>
                         <button
+                        disabled={isSubmitting}
                           class="hover:shadow-form rounded-md bg-[#0E7452] py-3 px-8 text-base font-semibold text-white outline-none"
                         >
                           Submit
