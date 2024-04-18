@@ -116,7 +116,9 @@ function ReachUs() {
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{Title}</h2>
           <p className="mt-2 text-lg leading-8 text-gray-600">
-            Your Door to Join India’s leading AI Powered Radiology Group opens here!
+            Your Door to Join India’s leading <a href="#" className="font-bold text-[#00d4ff] text-xl">
+            AI Powered Radiology
+              </a> Group opens here!
           </p>
         </div>
         <form onSubmit={(e) => {

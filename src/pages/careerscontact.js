@@ -134,7 +134,9 @@ function ReachUs() {
             Careers
           </h2>
           <p className="mt-2 text-lg leading-8 text-gray-600">
-            Your Door to Join India’s leading AI Powered Radiology Group opens
+            Your Door to Join India’s leading <a href="#" className="font-bold text-[#00d4ff] text-xl">
+            AI Powered Radiology
+              </a> Group opens
             here!
           </p>
         </div>
