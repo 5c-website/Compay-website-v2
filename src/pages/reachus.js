@@ -76,7 +76,7 @@ function ReachUs() {
     event.preventDefault()
     setIsSubmitting(true);
 
-    navigate(-1)
+    navigate("/")
   };
 
 
