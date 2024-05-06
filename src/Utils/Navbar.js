@@ -67,7 +67,7 @@ const Navbar = () => {
 
 
     <div className='absolute w-full max-w-full flex flex-col items-center bg-transparent nav-division' style={{ zIndex: '2', color: 'rgba(255, 255, 255, 0)', top: '0' }}>
-        <div className='w-full max-w-full pt-3 pb-3 ml-auto mr-auto' style={{ width: '86%' }}>
+        <div className='w-full max-w-full pt-3 pb-3 ml-auto mr-auto' style={{ width: '100%' }}>
           <nav className=' w-full max-w-full justify-around items-center flex relative float-right font-use nav-md'>
           <Link to='/features' className=' inline-block  text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Features</Link>
 
@@ -89,6 +89,7 @@ const Navbar = () => {
                 <Link to='/casestudies' className='navlinks  hover-under-1'>Case Study</Link>
               </nav>
             </div>
+            <Link to='https://getradx.com' target='_blank' className=' inline-block  text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Rad Club</Link>
             <Link to='/contact' className=' inline-block  text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Contact</Link>
             <div onClick={openSignInModal}  class="outer inline-block  text-base align-top relative uppercase cursor-pointer  sm:hidden">
           <span class="inner"></span>
