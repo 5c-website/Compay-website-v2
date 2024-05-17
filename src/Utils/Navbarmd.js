@@ -81,7 +81,7 @@ function Navbarmd() {
               </ul>
           </div>
         </li>
-        <li><Link to='https://getradx.com' target='_blank' className=' ml-[10px]'>Rad Club</Link></li>
+        <li><Link to='https://krayen.com/' target='_blank' className=' ml-[10px]'>Krayen</Link></li>
         <li><Link to='/contact'><label>Contact</label></Link></li>
       </ul>
     </div>
