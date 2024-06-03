@@ -15,9 +15,6 @@ function Post({data,location}) {
   const slugFromUrl = location.pathname.substring('/casestudy/'.length).replace(/\/$/, '');
   const content = data.casestudyposts.nodes.find((post) => post.slug === slugFromUrl);
 
-  console.log("data",content.seo.metaTitle)
-  console.log("url",slugFromUrl);
-  
   if (!content) {
     return <div>Content not found.</div>;
   }
