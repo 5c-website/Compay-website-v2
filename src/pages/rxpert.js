@@ -47,7 +47,7 @@ function Rxpert({ data }) {
                 <h1 className=' max-w-full text-[#fff] tracking-[2px] uppercase mt-0 mb-0 text-[80px]  leading-[100px] font-use sm:text-[40px] sm:leading-[40px] sm:tracking-[1px]'>{Content.title}</h1>
               </div>
               <div className=' h-auto max-w-full justify-between items-center flex relative ml-[100px] mb-[140px] w-[1100px] sm:flex-col sm:w-full sm:ml-0'>
-                <div className=' w-[541px] h-[580px] max-w-full items-center mr-0 flex relative px-[50px] py-[47px] sm:h-[284px] sm:mb-0 sm:p-5'>
+                <div className='rxpert-img-container w-[541px] h-[580px] max-w-full items-center mr-0 flex relative px-[50px] py-[47px] sm:h-[284px] sm:mb-0 sm:p-5'>
                   <img alt="radiologist" className=' z-[1] w-[200px] h-[200px] object-cover absolute top-0 bottom-auto left-0 right-auto sm:w-[95px] sm:h-[95px] sm:left-[8px]' src={Content.top.localFile.url}></img>
                   <img alt="radiologist" className=' w-[440px] h-[440px] object-cover bg-[rgba(0, 212, 255, 0)] relative max-w-full sm:w-full sm:h-full' style={{ filter: 'grayscale(1)' }} src={Content.center.localFile.url}></img>
                   <img alt="radiologist" className=' z-[1] w-[200px] h-[200px] object-cover absolute top-auto bottom-0 left-auto right-0 sm:w-[95px] sm:h-[95px] sm:right-[8px]' src={Content.bottom.localFile.url}></img>
