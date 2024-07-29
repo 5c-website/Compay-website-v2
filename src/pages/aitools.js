@@ -57,7 +57,7 @@ function Solutions({ data }) {
                 5C Network uses different AI models to make accurate radiology reports. But it's not just about the reports. Our platform augments radiologists' capabilities to do their jobs better so they are faster and more accurate in radiology reporting                </p>
               </div>
               <div className="relative flex w-full max-w-full justify-around  solutions-home-container">
-                <Link
+                {/* <Link
                   to="/rxpert"
                   className=" font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items"
                   style={{ transition: "all .25s ease-in" }}
@@ -65,7 +65,7 @@ function Solutions({ data }) {
                   <span className="action-underline underline-closing">
                     Rxpert
                   </span>
-                </Link>
+                </Link> */}
                 <Link
                   to="/osteocheck"
                   className=" font-medium uppercase text-lg  font-use text-[#fff] tracking-[2px] leading-[21px] bg-[#ffffff0] solution-items"
