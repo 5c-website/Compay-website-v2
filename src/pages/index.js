@@ -24,6 +24,7 @@ import isologo2 from '../Assets/Homepage/iso27001.png'
 import isologo3 from '../Assets/Homepage/iso2019.jpg'
 import Actionbutton from '../components/Actionbutton';
 import Newscard from '../components/Newscard';
+import hippa from '../Assets/Homepage/hippa.png'
 import Speeddial from '../components/speeddial'
 
 
@@ -542,7 +543,10 @@ const Index = ({ data }) => {
                 <img alt='ISO' className='logo-section max-w-full' src={isologo2}></img>
                 <label className='text-[#fff] mt-[1rem] text-center'>ISO 27701:2022</label>
               </div>
-
+              <div className='flex flex-col '>
+                <img alt='HIPPA' className='logo-section max-w-full w-full max-h-full !h-[200px]' src={hippa}></img>
+                {/* <label className='text-[#fff] mt-[1rem] text-center'>ISO 27701:2022</label> */}
+              </div>
             </div>
           </div>
         </div>

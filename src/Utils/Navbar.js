@@ -89,7 +89,7 @@ const Navbar = () => {
                 <Link to='/casestudies' className='navlinks  hover-under-1'>Case Study</Link>
               </nav>
             </div>
-            <Link to='https://krayen.com/' target='_blank' className=' inline-block  text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Krayen</Link>
+            {/* <Link to='https://krayen.com/' target='_blank' className=' inline-block  text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Krayen</Link> */}
             <Link to='/contact' className=' inline-block  text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Contact</Link>
             <div onClick={openSignInModal}  class="outer inline-block  text-base align-top relative uppercase cursor-pointer  sm:hidden">
           <span class="inner"></span>
