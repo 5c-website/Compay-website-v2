@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/global.css'
 import { Link } from 'gatsby';
 import logo from '../Assets/Homepage/2-01.png'
+import prodigi from '../Assets/prodigi.svg'
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import hospital from '../Assets/Homepage/2.png'
@@ -78,6 +79,7 @@ const Navbar = () => {
             <Link to='/about' className=' inline-block  text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>about</Link>
             {/* <Link to='/Partners' className=' inline-block  text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Partners</Link> */}
             <Link to='/' className=' inline-block  text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '102px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}><img src={logo} alt='5C Network'></img></Link>
+            <Link to='/' className=' inline-block  text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '102px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}><img src={prodigi} alt='Prodigi'></img></Link>
             <Link to='/careers' className=' inline-block  text-base align-top relative uppercase  hover-effect' style={{ maxWidth: '1200px', color: '#fff', letterSpacing: '2px', padding: '6px 0', lineHeight: '26.6px', textAlign: 'left', backgroundColor: 'rgba(255, 255, 255, 0)' }}>Careers</Link>
             <div className='DropdDown'>
               <div className='DropDowntoggle'>
