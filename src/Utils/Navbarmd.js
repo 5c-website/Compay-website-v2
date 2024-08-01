@@ -48,6 +48,7 @@ function Navbarmd() {
           </svg>
         </label>
         <span className='flex justify-center'> <img src={logo} alt='5C Network' className='w-[40%]'></img></span>
+        
         {/* <img src={logo} alt='5C Network' className='w-[50%]'></img> */}
       </div>
       <ul>
