@@ -20,6 +20,8 @@ function Contact({ data }) {
         <html lang="en" />
         <title>{strapiContent.seo.metaTitle}</title>
         <meta name="description" content={strapiContent.seo.metaDescription.data.metaDescription} />
+        <meta name="google-site-verification" content="google3324f12ef9a97f3e" />
+
         <link rel="icon" href={tablogo}
           type="image/x-icon" />
         {/* <meta name="author" content={author} /> */}

@@ -20,6 +20,7 @@ function Solutions({ data }) {
           name="description"
           content='5C Network uses different AI models to make accurate radiology reports. But it not just about the reports Our platform augments radiologists capabilities to do their jobs better so they are faster and more accurate in radiology reporting'
         />
+        <meta name="google-site-verification" content="google3324f12ef9a97f3e" />
         <link rel="icon" href={tablogo} type="image/x-icon" />
         {/* <meta name="author" content={author} /> */}
       </Helmet>

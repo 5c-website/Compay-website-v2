@@ -20,6 +20,8 @@ function Solutions({ data }) {
           name="description"
           content='Discover 5C Network, where cutting-edge features help deliver highly precise radiology reports. We ensure that our platform is constantly updated, regularly revisiting and refreshing its features. This ensures that healthcare professionals always have the latest information at their fingertips, empowering them to make informed decisions and deliver optimal care to patients'
         />
+                  <meta name="google-site-verification" content="google3324f12ef9a97f3e" />
+
         <link rel="icon" href={tablogo} type="image/x-icon" />
         {/* <meta name="author" content={author} /> */}
       </Helmet>

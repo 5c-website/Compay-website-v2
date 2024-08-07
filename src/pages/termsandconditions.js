@@ -20,6 +20,8 @@ function Urgentflow({ data }) {
       <Helmet>
         <html lang="en" />
         <title>Terms and Conditions</title>
+        <meta name="google-site-verification" content="google3324f12ef9a97f3e" />
+
         <meta name="description" content="Read our comprehensive terms and conditions to understand your rights and obligations when using our services. Stay informed about privacy policies, usage guidelines, and legal requirements. Your agreement is essential for accessing our platform. Explore our terms now!" />
         <link rel="icon" href={tablogo}
           type="image/x-icon" />

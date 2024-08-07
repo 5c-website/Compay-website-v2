@@ -85,6 +85,8 @@ function ReachUs() {
       <Helmet>
         <html lang="en" />
         <title>Reach-Us</title>
+        <meta name="google-site-verification" content="google3324f12ef9a97f3e" />
+
         <meta name="description" content="Connect with us effortlessly through our reach us form. Whether you have questions, feedback, or collaboration inquiries, use our convenient reach us form to bridge the gap" />
         <link rel="icon" href={tablogo}
           type="image/x-icon" />

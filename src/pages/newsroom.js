@@ -35,6 +35,8 @@ function Newsroom({ data }) {
       <Helmet>
         <html lang="en" />
         <title>Newsroom</title>
+        <meta name="google-site-verification" content="google3324f12ef9a97f3e" />
+
         <meta name="description" content="View the latest news, announcements and media resources from 5C Network" />
         <link rel="icon" href={tablogo}
           type="image/x-icon" />
