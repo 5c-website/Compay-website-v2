@@ -5,7 +5,7 @@ export const corsProxyUrl = "https://cors-anywhere.herokuapp.com/";
 
 export const SLACK_CHANNELS_KEYS = {
   DEMO_REQUEST:
-    process.env.demo_request_channel || "B07NSAY97EF/cV5wgQOCZLcpJx7M9d6d8ooG",
+    process.env.demo_request_channel || "B07NHKCSVE0/PXS8PIfvjqGsDVnFri0mtTw",
   JOB_REQUEST:
     process.env.job_request_channel || "B07N56YSK2T/qRkLeUIWnTBDvj3ZoIOjHW0G",
 };
