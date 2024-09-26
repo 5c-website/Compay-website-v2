@@ -180,7 +180,7 @@ function aboutUs() {
           <div className="flex flex-row justify-start items-center pl-6 md:pl-10">
             <h1 className="text-[#1B3363] text-[24px] md:text-[44px] font-bold">
               {" "}
-              Client{" "}
+              Clients{" "}
             </h1>
             <div className="h-[8px] w-[8px] bg-red-500 relative top-3 left-2 md:block hidden"></div>
           </div>

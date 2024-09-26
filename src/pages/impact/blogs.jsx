@@ -11,6 +11,7 @@ import blog4 from "../../../public/img/impact/blogs/b2.png";
 import blog5 from "../../../public/img/impact/blogs/b3.png";
 import blog6 from "../../../public/img/impact/blogs/b4.png";
 import blog7 from "../../../public/img/impact/blogs/b6.png";
+import BlogGridComponent from "../../components/BlogGridComponent";
 
 function blogs() {
   const BlogsData = [
@@ -451,13 +452,6 @@ function blogs() {
     "Radiologists",
   ];
 
-  const isMobileDevice = () => {
-    if (typeof window !== "undefined") {
-      return window.innerWidth <= 768;
-    }
-    return false;
-  };
-
   return (
     <>
       <div>
@@ -476,7 +470,7 @@ function blogs() {
           />
         </div>
         <div className="w-[100%]">
-          <GridComponent
+          <BlogGridComponent
             section={"Blogs"}
             comInformation={BlogsData}
             comCategories={BlogsCategories}

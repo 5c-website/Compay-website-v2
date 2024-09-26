@@ -255,8 +255,11 @@ const Footer = () => {
         <a href="/" className="text-white hover:underline">
           Copyright
         </a>
-        <a href="/" className="text-white hover:underline">
+        <a href="/privacy-policy" className="text-white hover:underline">
           Privacy Policy
+        </a>
+        <a href="/compliance" className="text-white hover:underline">
+          Compliance Regulatory
         </a>
         <a href="/" className="text-white hover:underline">
           Terms and Conditions

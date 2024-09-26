@@ -125,7 +125,7 @@ const IndexPage = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <h1 className="hidden md:block text-xl md:text-2xl lg:text-4xl font-bold mb-4 md:text-left">
-                  Building here
+                  Building
                   <span className="text-red-500"> Multi-Modal AI </span> Systems
                 </h1>
                 <h1 className="block md:hidden text-xl md:text-2xl lg:text-4xl font-bold md:text-left">
