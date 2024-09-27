@@ -129,8 +129,9 @@ const IndexPage = () => {
                   <span className="text-red-500"> Multi-Modal AI </span> Systems
                 </h1>
                 <h1 className="block md:hidden text-xl md:text-2xl lg:text-4xl font-bold md:text-left">
-                  <span className="text-red-500"> Multi-Modal AI </span> Systems
-                  for
+                  Building
+                  <span className="text-red-500"> Multi-Modal AI </span>
+                  <br /> Systems for
                 </h1>
                 <div className="flex flex-col md:flex-row justify-center md:justify-start items-start md:items-center">
                   <div className="hidden md:block mb-[68px] p-0">
@@ -154,14 +155,14 @@ const IndexPage = () => {
                       ]}
                       wrapper="p"
                       speed={50}
-                      className="text-xl sm:text-[20px] md:text-[22px] lg:text-[34px] xl:text-[36px] font-semibold text-[#ffff] md:text-[#F04444]  md:pl-2 inline-block"
+                      className="text-xl sm:text-[20px] md:text-[22px] lg:text-[34px] xl:text-[36px] font-semibold text-[#F04444]  md:pl-2 inline-block"
                       repeat={Infinity}
                       cursor={false}
                     />
                   </div>
                 </div>
 
-                <div className="relative top-[-40px] md:top-[-30px]">
+                <div className="relative top-[-60px] md:top-[-30px]">
                   <p className="text-xs md:text-[18px] lg:text-[22px] mt-3 mb-3 md:mb-6 md:text-left">
                     Elevating Diagnosis Capabilities Through Advanced AI
                   </p>

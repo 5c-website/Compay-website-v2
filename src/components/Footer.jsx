@@ -251,17 +251,17 @@ const Footer = () => {
         </p>
         <hr className="w-full border-t border-white my-2 md:my-0" />
       </div>
-      <div className="text-[14px] flex flex-row md:gap-[80px] justify-around md:justify-end items-center w-[100%] md:pr-10 py-2">
-        <a href="/" className="text-white hover:underline">
+      <div className="text-[12px] gap-[40px] flex flex-row md:gap-[80px] justify-around md:justify-end items-center w-[100%] md:pr-10 py-2">
+        <a href="/" className="text-white hover:underline ">
           Copyright
         </a>
-        <a href="/privacy-policy" className="text-white hover:underline">
+        <a href="/privacy-policy" className="text-white hover:underline ">
           Privacy Policy
         </a>
-        <a href="/compliance" className="text-white hover:underline">
+        <a href="/compliance" className="text-white hover:underline ">
           Compliance Regulatory
         </a>
-        <a href="/" className="text-white hover:underline">
+        <a href="/" className="text-white hover:underline ">
           Terms and Conditions
         </a>
       </div>

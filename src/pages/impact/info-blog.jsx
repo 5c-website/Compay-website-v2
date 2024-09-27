@@ -5,9 +5,13 @@ import { useLocation } from "@reach/router";
 import prodigiImg from "../../../public/img/ai-products/prodigi_three.png";
 import prodigiScanner from "../../../public/img/blog-info/blog_scan.png";
 import bgImg from "../../../public/img/blog-info/blog_contact.png";
+import { slackAlerts } from "../../api/SlackTiggers";
+import { NocoFetch } from "../../api/NocoDBEndpoints";
+import { ToastContainer, toast } from "react-toastify";
 
 function InfoBlog() {
   const { search } = useLocation();
+  const notify = () => toast("Demo Request submitted");
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -24,9 +28,41 @@ function InfoBlog() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
+
+    try {
+      const payload = {
+        "Form-name": "Book-a-demo",
+        "First name": formData.fullName,
+        Email: formData.email,
+        "Mobile Number": formData.phone,
+        "Diagnostic Center Name": formData.hospitalName,
+      };
+      const response = await NocoFetch.createDemoRequestEntry(payload);
+
+      const demoRequestAlertAttributes = {
+        client_name: formData.fullName,
+        email: formData.email,
+        mobile_number: formData.phoneNumber,
+        hospitalName: formData.hospitalName,
+      };
+      await slackAlerts.demoRequestAlert(demoRequestAlertAttributes);
+      if (response.status === 200) {
+        notify();
+        setFormData({
+          fullName: "",
+          email: "",
+          phoneNumber: "",
+          hospitalName: "",
+        });
+      } else {
+        throw new Error("Failed to submit form");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
     setFormData({
       fullName: "",
       email: "",
@@ -43,12 +79,13 @@ function InfoBlog() {
         </header>
       </div>
       <div className="w-[100%] flex flex-col justify-center items-center pt-[55px] pb-[14px]">
+        <ToastContainer />
         <div className="bg-[#F3F7FF] h-[16vh] flex flex-col justify-center items-center w-[100%] my-4">
-        <h1 className="text-[#000] text-[18px] font-bold md:text-[24px] text-center px-[4px] md:px-[10px]">
-                {parsedBlogInfo &&
-                  parsedBlogInfo.length !== 0 &&
-                  parsedBlogInfo[0]?.title}
-              </h1>
+          <h1 className="text-[#000] text-[18px] font-bold md:text-[24px] text-center px-[4px] md:px-[10px]">
+            {parsedBlogInfo &&
+              parsedBlogInfo.length !== 0 &&
+              parsedBlogInfo[0]?.title}
+          </h1>
         </div>
 
         <div className="md:min-h-[80vh] w-[100%] flex flex-col md:flex-row justify-center items-start">
