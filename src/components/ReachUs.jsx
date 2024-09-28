@@ -29,6 +29,7 @@ function ReachUs() {
     "Delivery",
     "IT",
     "Finance",
+    "AI",
   ];
 
   const handleIconClick = (event) => {
@@ -123,15 +124,8 @@ function ReachUs() {
         </div>
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Careers
+            Careers@5cnetwork.com
           </h2>
-          <p className="mt-2 text-lg leading-8 text-gray-600">
-            Your door to Join India’s leading
-            <a href="#" className="font-bold text-[#152D5B] text-xl">
-              &nbsp;AI Powered Radiology
-            </a>
-            &nbsp;Group opens here!
-          </p>
         </div>
         <form
           onSubmit={(e) => {

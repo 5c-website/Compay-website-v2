@@ -77,8 +77,7 @@ function Career() {
           {
             heading: "Job Summary",
             points: [
-              "We are seeking a proactive and detail-oriented IT Administrator (Hardware) to manage and maintain our organisation’s hardware infrastructure.",
-              "The ideal candidate will have in-depth knowledge of computer hardware, troubleshooting, and system setup, ensuring smooth day-to-day operations of all hardware-related systems.",
+              "5C Network is building multi-modal AI for autonomous diagnosis of medical imaging. This role focuses on developing advanced AI models for medical imaging analysis using Large Language Models.",
             ],
           },
           {
@@ -255,6 +254,59 @@ function Career() {
         ],
       },
     },
+    {
+      title: "Senior Data Scientist - AI",
+      location: "Bangalore, Karnataka, India",
+      detailedInformation: {
+        no_of_positions: "NA",
+        type: "Full Time",
+        job_expiration: "NA",
+        required_experience: "2+ years",
+        skills: ["Deep learning algorithms &  Python"],
+        full_description: [
+          {
+            heading: "Job Summary",
+            points: [
+              "5C Network is building multi-modal AI for autonomous diagnosis of medical imaging. This role focuses on developing advanced AI models for medical imaging analysis using Computer Vision and Vision Language Models.",
+            ],
+          },
+          {
+            heading: "Key Responsibilities",
+            points: [
+              "Develop and implement Computer Vision Models, VLM (Vision Language Models) and 3D models on CT and MRI scans to classify/segment/detect findings on the scans.",
+              "Collaborate with top radiologists and AI scientists in India and US.",
+              "Work with the Product and Engineering teams to operationalize the models.",
+              "Contribute to cutting-edge research in medical image analysis and AI-assisted diagnostics",
+              "Assist in writing and publishing academic papers in peer-reviewed journals and conferences.",
+            ],
+          },
+          {
+            heading: "Qualifications",
+            points: [
+              "Bachelor's or Master's degree in Computer Science, Data Science, or related field.",
+              "Demonstrated experience in training and deploying computer vision models.",
+              "Prior experience or strong interest in healthcare AI applications.",
+              "Excellent problem-solving and analytical skills.",
+              "Strong communication skills and ability to work in a collaborative research environment.",
+            ],
+          },
+          {
+            heading: "Technical Requirements",
+            points: [
+              "2+ years experience in Deep Learning.",
+              "Strong fundamentals in deep learning algorithms.",
+              "5+ yrs of experience as a business development manager, sales manager, or in a similar role.",
+              "Proficiency in Python and the Deep Learning framework PyTorch.",
+              "Experience with well-known computer vision architectures (e.g., ResNet, DenseNet, U-Net, Vision Transformers, V-Net, etc).",
+              "In-depth knowledge of market dynamics.",
+              "Experience in building deep learning architectures from scratch.",
+              "Experience in Large Language Models.",
+              "Experience in model pruning and quantization and in scaling model training and inference using GPUs.",
+            ],
+          },
+        ],
+      },
+    },
   ];
 
   const handleApply = (title) => {
@@ -310,17 +362,15 @@ function Career() {
           email!
         </motion.p>
       </div>
-      <div className="mx-6 mt-4 md:mt-10 md:mx-[60px] flex flex my-6">
-        <div className="flex flex-col md:flex-row justify-between items-start w-[100%] flex-wrap gap-4 md:gap-4">
-          {JobsData?.map((job) => {
-            return (
-              <JobCard
-                title={job?.title}
-                location={job?.location}
-                onApply={() => handleApply(job?.title)}
-              />
-            );
-          })}
+      <div className="mx-4 mt-4 md:mt-10 md:mx-[60px] my-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {JobsData?.map((job) => (
+            <JobCard
+              title={job.title}
+              location={job.location}
+              onApply={() => handleApply(job.title)}
+            />
+          ))}
         </div>
       </div>
       <div className="h-[14vh] flex flex-row justify-center items-center">

@@ -13,13 +13,19 @@ const JobCard = ({ title, location, onApply }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={controls}
       transition={{ duration: 1.5 }}
-      className="w-[100%] md:w-[32%] min-h-[150px] bg-[#fff] rounded-2xl shadow-lg flex flex-col justify-between items-start p-[18px] md:p-6 gap-2"
+      className="bg-white rounded-2xl shadow-lg flex flex-col justify-between p-4 sm:p-6 gap-4 border-2 h-full"
     >
-      <p className="text-[#1B3363] text-[18px] md:text-[20px] font-medium">{title}</p>
-      <p className="text-[#0070C0] text-[16px] md:text-[18px] font-medium">{location}</p>
+      <div>
+        <p className="text-[#1B3363] text-lg sm:text-xl font-medium mb-2">
+          {title}
+        </p>
+        <p className="text-[#0070C0] text-base sm:text-lg font-medium">
+          {location}
+        </p>
+      </div>
       <button
         onClick={onApply}
-        className="px-2 py-1 md:px-4 md:py-2 border-[#000] border-solid border-2 rounded-full md:mt-2"
+        className="px-3 py-1 text-sm border-black border-solid border-2 rounded-full mt-2 transition-colors duration-300 hover:bg-black hover:text-white self-start"
       >
         Apply Now
       </button>

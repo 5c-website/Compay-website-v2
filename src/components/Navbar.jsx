@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import { useLocation } from "@reach/router";
 import { ChevronDown } from "lucide-react";
 import SignInModal from "./SignInModal";
+import Helmet from "react-helmet";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -80,6 +81,9 @@ const Navbar = () => {
   return (
     <>
       <header className="bg-white shadow-sm fixed top-0 z-40 w-[100%]">
+        <Helmet>
+          <title>5C - Network</title>
+        </Helmet>
         <div className="lg:mx-auto px-4 py-3 flex items-center justify-between w-[100%] lg:w-[90%]">
           <Link to="/">
             <motion.img

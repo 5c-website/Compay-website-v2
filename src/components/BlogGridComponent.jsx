@@ -30,14 +30,14 @@ const GridComponent = ({
   };
 
   return (
-    <div className="w-full px-4 md:px-10 py-6">
-      <h2 className="text-2xl md:text-3xl font-bold mb-6">{section}</h2>
-      <div className="flex flex-wrap gap-4 mb-6">
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <h2 className="text-xl md:text-2xl font-bold mb-4">{section}</h2>
+      <div className="flex flex-wrap gap-2 mb-4">
         {categories.map((category, index) => (
           <button
             key={index}
             onClick={() => setActiveCategory(category)}
-            className={`px-3 py-1.5 text-sm md:text-base rounded-full border transition-all ${
+            className={`px-2 py-1 text-xs md:text-sm rounded-full border transition-all ${
               activeCategory === category
                 ? "bg-[#1B3366] text-white"
                 : "bg-gray-200 text-black"
@@ -47,41 +47,37 @@ const GridComponent = ({
           </button>
         ))}
       </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
         {filteredNews.map((news, index) => (
           <div
             key={index}
-            className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col"
+            className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col transform transition duration-300 hover:scale-105 hover:shadow-xl w-full max-w-sm cursor-pointer"
+            onClick={() => {
+              if (isNewsRoom) {
+                window.location.href = news.redirectionURL;
+              } else {
+                getBlog(news.title);
+              }
+            }}
           >
-            <img
-              src={news.imageUrl}
-              alt={news.title}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4 flex flex-col flex-grow">
-              <h3 className="text-lg font-semibold mb-2 text-[#1B3363] line-clamp-2">
+            <div className="relative overflow-hidden">
+              <img
+                src={news.imageUrl}
+                alt={news.title}
+                className="w-full h-40 object-cover transition duration-300 transform hover:scale-110"
+              />
+            </div>
+            <div className="p-3 flex flex-col flex-grow">
+              <h3 className="text-base font-semibold mb-1 text-[#1B3363] line-clamp-2">
                 {news.title}
               </h3>
-              <p className="text-sm text-gray-600 mb-4 flex-grow">
-                {truncateText(news.description[0], 20)}
+              <p className="text-xs text-gray-600 mb-2 flex-grow">
+                {truncateText(news.description[0], 15)}
               </p>
               <div className="flex justify-between items-center">
-                <span className="text-sm font-medium text-[#0070C0]">
+                <span className="text-xs font-medium text-[#0070C0]">
                   {news.category}
                 </span>
-                <button
-                  className="px-4 py-2 bg-[#0070C0] text-white rounded-md hover:bg-[#1B3366] transition duration-300 text-sm"
-                  onClick={() => {
-                    if (isNewsRoom) {
-                      window.location.href = news.redirectionURL;
-                    } else {
-                      getBlog(news.title);
-                    }
-                  }}
-                >
-                  Know More
-                </button>
               </div>
             </div>
           </div>
