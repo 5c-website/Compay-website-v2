@@ -20,14 +20,13 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-2">
               <span>
-                <Phone size={20} />
+                <a href="tel:09587274858">
+                  <Phone size={20} />
+                </a>
               </span>
-              <a
-                href="tel:09587274858"
-                className="text-white text-[14px] md:text-[24px] hover:underline"
-              >
-                095872 74858
-              </a>
+              <div className="text-white text-[14px] md:text-[24px] hover:underline">
+                95872 74858
+              </div>
             </div>
             <div className="hidden md:block">
               <div className="flex flex-row flex-wrap justify-center items-center my-4 gap-4">
@@ -68,7 +67,7 @@ const Footer = () => {
                   />
                 </a>
                 <a
-                  href="mailto:someone@example.com"
+                  href="mailto:helpline@5cnetwork.com"
                   className="flex items-center"
                 >
                   <img

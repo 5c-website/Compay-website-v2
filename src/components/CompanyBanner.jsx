@@ -7,8 +7,8 @@ const CompanyBanner = ({
   description,
   containerClassName,
   contentClassName,
+  headerClassName,
   descriptionClassName,
-  isMobile,
 }) => {
   return (
     <div
@@ -21,7 +21,7 @@ const CompanyBanner = ({
         className={`h-[200px] md:w-[41%] md:ml-[80px] p-3 md:p-0 mt-4 md:mt-0 ${contentClassName}`}
       >
         <motion.h1
-          className="text-[#fff] text-[18px] md:text-[44px] font-bold"
+          className={`text-[#fff] text-[18px] md:text-[44px] font-bold ${headerClassName} `}
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 10 }}
           transition={{ duration: 0.8 }}

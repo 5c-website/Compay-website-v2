@@ -7,6 +7,7 @@ import PROne from "../../../public/img/classroom/class_2.png";
 import PRTwo from "../../../public/img/classroom/class_3.png";
 import PRThree from "../../../public/img/classroom/class_4.webp";
 import PRFour from "../../../public/img/classroom/class_5.jpg";
+import PRFive from "../../../public/img/classroom/class_6.png";
 import BlogGridComponent from "../../components/BlogGridComponent";
 
 function newsroom() {
@@ -40,6 +41,13 @@ function newsroom() {
       imageUrl: PRFour,
       redirectionURL:
         "https://scroll.in/article/1050076/ai-cant-replace-a-doctor-not-yet-cautious-optimism-concern-over-new-tech-in-indian-healthcaree",
+    },
+    {
+      category: "Press Release",
+      title: "SPONSORSHIP, 5C NETWORK, AMERICAN GAMBITS",
+      imageUrl: PRFive,
+      redirectionURL:
+        "https://www.linkedin.com/posts/kalyansivasailam_ok-heres-a-huge-announcement-thats-very-activity-7243864271225307137-iPH7?utm_source=share&utm_medium=member_ios",
     },
   ];
 

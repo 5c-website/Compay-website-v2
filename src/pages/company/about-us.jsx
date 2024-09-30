@@ -35,7 +35,7 @@ function aboutUs() {
     {
       img: profileThree,
       name: "Anand Iyer",
-      role: "Chief Operational Officer",
+      role: "Chief Operating Officer",
       linkedin: "https://www.linkedin.com/in/anandriyer/",
       info: "Anand holds a management degree from the Indian Institute of Management (IIM), Bangalore, and brings over 30 years of experience in sales, marketing, and operations management. His leadership ensures operational efficiency across 5C Network’s AI solutions.",
     },

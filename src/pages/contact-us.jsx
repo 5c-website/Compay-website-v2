@@ -18,13 +18,6 @@ function ContactUs() {
     message: "",
   });
 
-  const isMobileDevice = () => {
-    if (typeof window !== "undefined") {
-      return window.innerWidth <= 768;
-    }
-    return false;
-  };
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -83,10 +76,9 @@ function ContactUs() {
           <CompanyBanner
             img={contactImgBg}
             heading={"Get in touch!"}
-            contentClassName={
-              "flex flex-col justify-center items-center pl-6 pr-6 md:flex-none md:px-0"
-            }
-            descriptionClassName={"text-center w-full"}
+            contentClassName="w-full md:w-[41%] flex flex-col justify-center"
+            headerClassName="text-center md:text-left"
+            descriptionClassName="text-center md:text-left"
             description={
               <>
                 Have an inquiry or potential opportunity for us?

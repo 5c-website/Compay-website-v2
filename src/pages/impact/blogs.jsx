@@ -463,7 +463,6 @@ function blogs() {
           <CompanyBanner
             img={BannerImg}
             heading={"Blogs"}
-            className="border-2 border-white"
             containerClassName={"items-center md:items-start"}
             contentClassName={"flex items-center"}
           />
