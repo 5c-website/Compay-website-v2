@@ -54,20 +54,6 @@ const IndexPage = () => {
 
   useEffect(() => {
     checkAndSetCookie();
-    if (typeof window !== "undefined") {
-      const handleVisibilityChange = () => {
-        if (document.visibilityState === "visible") {
-          navigate("/");
-        }
-      };
-      document.addEventListener("visibilitychange", handleVisibilityChange);
-      return () => {
-        document.removeEventListener(
-          "visibilitychange",
-          handleVisibilityChange
-        );
-      };
-    }
   }, []);
 
   const heroImg = isMobileDevice() ? mobileHeroImage : desktopHeroImage;

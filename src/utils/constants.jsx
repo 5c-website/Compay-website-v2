@@ -1,7 +1,5 @@
 export const NOCO_DB_BASE_URL = "https://answermagic.5cn.co.in";
-export const SLACK_TRIGGER_BASE_URL =
-  "https://hooks.slack.com/services/T036W17T0M8/";
-export const corsProxyUrl = "https://cors-anywhere.herokuapp.com/";
+export const SLACK_TRIGGER_BASE_URL = "https://groot.5cn.co.in";
 
 export const SLACK_CHANNELS_KEYS = {
   DEMO_REQUEST:

@@ -60,15 +60,6 @@ function kronos() {
 
         <div className="md:min-h-[26vh] bg-[#F3F7FF] my-[5px]">
           <div className="flex flex-col justify-center items-center px-[20px] md:px-[40px] gap-2 md:gap-4 py-[20px] md:py-[40px]">
-            <div className="text-center flex flex-col justify-center items-center px-[10px] md:px-[40px] py-5">
-              <p className="text-[12px] md:text-[20px] text-[#000]">
-                Kronos stands at the forefront of medical innovation as a
-                state-of-the-art intelligent assistant meticulously crafted for
-                neuroradiology. Powered by 5C Network’s groundbreaking Large
-                Language Models, Kronos redefines how professionals access
-                critical neuroradiology insights.
-              </p>
-            </div>
             <div className="flex flex-col md:flex-row justify-between items-center min-h-[44vh] md:h-[44vh] w-[94%] gap-4 md:gap-0">
               <div className="h-[100%] md:w-[30%] rounded-3xl shadow-lg bg-white flex flex-col justify-center items-center p-4 gap-4 md:gap-8 px-[30px]">
                 <h1 className="text-[#1B3363] text-[14px] md:text-[24px] text-center font-extrabold">

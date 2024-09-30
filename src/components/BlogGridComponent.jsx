@@ -71,13 +71,18 @@ const GridComponent = ({
               <h3 className="text-base font-semibold mb-1 text-[#1B3363] line-clamp-2">
                 {news.title}
               </h3>
-              <p className="text-xs text-gray-600 mb-2 flex-grow">
-                {truncateText(news.description[0], 15)}
-              </p>
-              <div className="flex justify-between items-center">
+              {!isNewsRoom && (
+                <p className="text-xs text-gray-600 mb-2 flex-grow">
+                  {truncateText(news.description[0], 15)}
+                </p>
+              )}
+              <div className="flex justify-between items-center mt-auto">
                 <span className="text-xs font-medium text-[#0070C0]">
                   {news.category}
                 </span>
+                {!isNewsRoom && (
+                  <span className="text-xs text-[#0070C0]">Read More</span>
+                )}
               </div>
             </div>
           </div>

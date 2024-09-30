@@ -3,7 +3,6 @@ import Navbar from "../../components/Navbar";
 import CompanyBanner from "../../components/CompanyBanner";
 import BannerImg from "../../../public/img/impact/blog_top.png";
 import Footer from "../../components/Footer";
-import GridComponent from "../../components/GridComponent";
 import TechOne from "../../../public/img/impact/tech_blog_1.png";
 import DcOne from "../../../public/img/impact/dc_blog_1.jpg";
 import blog3 from "../../../public/img/impact/blogs/b1.png";

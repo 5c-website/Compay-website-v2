@@ -3,19 +3,13 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import bannerImg from "../../../public/img/impact/classroom_bg.jpg";
 import CompanyBanner from "../../components/CompanyBanner";
-import GridComponent from "../../components/GridComponent";
 import PROne from "../../../public/img/classroom/class_2.png";
 import PRTwo from "../../../public/img/classroom/class_3.png";
 import PRThree from "../../../public/img/classroom/class_4.webp";
 import PRFour from "../../../public/img/classroom/class_5.jpg";
+import BlogGridComponent from "../../components/BlogGridComponent";
 
 function newsroom() {
-  const isMobileDevice = () => {
-    if (typeof window !== "undefined") {
-      return window.innerWidth <= 768;
-    }
-    return false;
-  };
   const PRData = [
     {
       category: "Press Release",
@@ -68,7 +62,7 @@ function newsroom() {
           />
         </div>
         <div className="w-[100%]">
-          <GridComponent
+          <BlogGridComponent
             section={"Newsroom"}
             comInformation={PRData}
             comCategories={PRCategories}

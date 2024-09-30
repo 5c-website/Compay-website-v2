@@ -3,9 +3,9 @@ import Navbar from "../../components/Navbar";
 import topBanner from "../../../public/img/case_study.png";
 import CompanyBanner from "../../components/CompanyBanner";
 import Footer from "../../components/Footer";
-import GridComponent from "../../components/GridComponent";
 import imageOne from "../../../public/img/user_studies/study1.png";
 import imageTwo from "../../../public/img/user_studies/study2.png";
+import BlogGridComponent from "../../components/BlogGridComponent";
 
 function caseStudies() {
   const isMobileDevice = () => {
@@ -122,7 +122,7 @@ function caseStudies() {
           />
         </div>
         <div className="w-[100%]">
-          <GridComponent
+          <BlogGridComponent
             section={"Studies"}
             comInformation={StudyData}
             comCategories={Studycategories}
