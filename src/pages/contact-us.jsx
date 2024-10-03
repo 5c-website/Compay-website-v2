@@ -76,7 +76,7 @@ function ContactUs() {
           <CompanyBanner
             img={contactImgBg}
             heading={"Get in touch!"}
-            contentClassName="w-full md:w-[41%] flex flex-col justify-center"
+            contentClassName="w-full md:w-[42%] flex flex-col justify-center"
             headerClassName="text-center md:text-left"
             descriptionClassName="text-center md:text-left"
             description={

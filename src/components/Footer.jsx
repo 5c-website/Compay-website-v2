@@ -118,7 +118,7 @@ const Footer = () => {
                 />
               </a>
               <a
-                href="mailto:someone@example.com"
+                href="mailto:helpline@5cnetwork.com"
                 className="flex items-center"
               >
                 <img
