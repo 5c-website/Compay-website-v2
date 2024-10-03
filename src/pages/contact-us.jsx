@@ -89,7 +89,7 @@ function ContactUs() {
         </div>
         <div className="w-[100%] md:min-h-[30vh] my-[60px] ">
           <div className="flex flex-col-reverse md:flex-row justify-center items-center">
-            <div className="w-[90%] md:w-[50%] h-[100%] md:ml-3 my-2 md:my-0">
+            <div className="w-[90%] md:w-[50%] h-[100%] md:ml-3 my-2 md:my-0 mt-12">
               <div className="flex flex-row md:justify-start md:items-start justify-center items-center">
                 <h1 className="text-[#1B3363] text-center md:text-left text-[28px] md:text-[42px] font-bold">
                   Locations
