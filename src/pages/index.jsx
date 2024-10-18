@@ -16,12 +16,15 @@ import mobileHeroImage from "../../public/img/homepage/mb_hero.png";
 import EnhanceImg from "../../public/img/homepage/bionic_svg.svg";
 import EnhanceSection from "../components/EnhanceSection";
 import NewMockImg from "../../public/img/new_mockup_bg.svg";
+import VideoModal from "../components/video_modal";
+import AmericanGambits from "../../public/videos/5c_Network_American_Gambit.mp4";
 // Lazy load images
 const LazyImage = lazy(() => import("../components/LazyLoad"));
 
 const IndexPage = () => {
   const [renderCookie, setRenderCookie] = useState(true);
   const [validCookies, setValidCookies] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
@@ -33,6 +36,12 @@ const IndexPage = () => {
     }
     return false;
   };
+
+  const openModal = () => {
+    console.log("clicking--->");
+    setIsModalOpen(true);
+  };
+  const closeModal = () => setIsModalOpen(false);
 
   const checkAndSetCookie = () => {
     if (typeof window !== "undefined") {
@@ -98,9 +107,22 @@ const IndexPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <header>
-        <Navbar />
+        <div className="fixed top-0 left-0 right-0 z-40 flex items-center justify-center font-['Poppins'] bg-[#A4317F] p-3 gap-1 md:gap-3">
+          <p className="text-white text-[0.8rem] md:text-md">
+            5C Network partners with American Gambits, marking a new era in
+            healthcare
+          </p>
+          <button
+            className="bg-white text-black rounded-full px-3 md:px-6 py-1 text-[0.7rem] md:text-xs font-['Poppins'] min-w-[5.5rem]"
+            onClick={openModal}
+          >
+            Watch Now
+          </button>
+        </div>
+        <Navbar topClassName={"lg:top-[45px] top-[60px]"} />
       </header>
-      <main className="pt-[70px]">
+
+      <main className="pt-[120px]">
         <section className="relative h-56 md:h-[60vh] lg:h-[70vh] overflow-hidden bg-gray-100 flex items-center justify-center">
           <div className="absolute left-0 top-10 md:left-5 md:top-[110px] lg:top-[115px] xl:left-[70px] xl:top-[145px] z-30 text-white w-full max-w-2xl">
             <div className="mx-auto px-6 md:px-8 md:py-4 flex flex-col items-center md:flex-row md:items-center">
@@ -400,6 +422,11 @@ const IndexPage = () => {
       <footer>
         <Footer />
       </footer>
+      <VideoModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        videoSrc={AmericanGambits}
+      />
     </div>
   );
 };

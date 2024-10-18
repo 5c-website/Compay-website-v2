@@ -6,7 +6,7 @@ import { ChevronDown } from "lucide-react";
 import SignInModal from "./SignInModal";
 import Helmet from "react-helmet";
 
-const Navbar = () => {
+const Navbar = ({topClassName}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(null);
   const [showSignIn, setShowSignIn] = useState(false);
@@ -80,7 +80,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="bg-white shadow-sm fixed top-0 z-40 w-[100%]">
+      <header className={`bg-white shadow-sm fixed top-0 z-40 w-[100%] ${topClassName}`}>
         <Helmet>
           <title>5C - Network</title>
         </Helmet>
@@ -242,7 +242,7 @@ const Navbar = () => {
               ))}
             </ul>
 
-            <div className="mt-4 flex flex-col space-y-2">
+            {/* <div className="mt-4 flex flex-col space-y-2">
               <motion.button
                 className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition-colors duration-300"
                 whileHover={{ scale: 1.05 }}
@@ -251,7 +251,7 @@ const Navbar = () => {
               >
                 Sign In
               </motion.button>
-            </div>
+            </div> */}
           </motion.div>
         )}
       </header>
