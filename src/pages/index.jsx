@@ -75,7 +75,7 @@ const IndexPage = () => {
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 100, opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="fixed bottom-0 w-full bg-[#1C3363] text-white p-4"
+        className="fixed bottom-0 w-full bg-[#1C3363] text-white p-4 z-[999]"
       >
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
           <p className="text-sm md:w-4/5">
@@ -107,7 +107,7 @@ const IndexPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <header>
-        <div className="fixed top-0 left-0 right-0 z-40 flex items-center justify-center font-['Poppins'] bg-[#A4317F] p-3 gap-1 md:gap-3">
+        {/* <div className="fixed top-0 left-0 right-0 z-40 flex items-center justify-center font-['Poppins'] bg-[#A4317F] p-3 gap-1 md:gap-3">
           <p className="text-white text-[0.8rem] md:text-md">
             5C Network partners with American Gambits, marking a new era in
             healthcare
@@ -118,8 +118,24 @@ const IndexPage = () => {
           >
             Watch Now
           </button>
+        </div> */}
+        {/* <NvidiaSummitModal /> */}
+        <div className="fixed top-0 left-0 right-0 z-40 flex items-center justify-center font-['Poppins'] bg-[linear-gradient(90deg,#FFD452_0%,#FCC219_73%,#FBBC04_100%)] p-3 gap-1 md:gap-3">
+          <p className="text-black text-[0.6rem] md:text-sm">
+            Meet us at the{" "}
+            <b className="font-semibold">9th Annual Radiology Meeting (ARM) </b>{" "}
+            in UAE. Locate us at - A24, ARM 2024, DWTC
+          </p>
+          <button
+            className="bg-white text-black rounded-full px-3 md:px-6 py-1 text-[0.6rem] md:text-sm font-['Poppins'] min-w-[8rem]"
+            onClick={() =>
+              window.open("https://forms.gle/CF1uZGL6c5AbU9Qs9", "_blank")
+            }
+          >
+            Book a meeting now
+          </button>
         </div>
-        <Navbar topClassName={"lg:top-[45px] top-[60px]"} />
+        <Navbar topClassName={"lg:top-[50px] top-[60px]"} />
       </header>
 
       <main className="pt-[120px]">
