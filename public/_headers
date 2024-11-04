@@ -5,95 +5,15 @@
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
   Referrer-Policy: same-origin
-/static/prodigi_three-619df921b5a5c493a1ea51e1d9a599ee.png
+/static/hero-0e14dae7202e6eca0fa661e1d1481750.png
   Cache-Control: public, max-age=31536000, immutable
-/static/blog_scan-befdbf23e688d47fc21f5f51a4ba8090.png
+/static/mb_hero-58d0d4e7b8f59167892309d77289dd48.png
   Cache-Control: public, max-age=31536000, immutable
-/static/blog_contact-cc35ffc76e9d1628df8ab7bb3f076c16.png
+/static/bionic_svg-fc2d89100c0ea67b4684e4998c72717b.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/iso_2019-4dc2890f621dd2bc36b75b9899d7ea97.jpg
+/static/new_mockup_bg-a74ed57b17a41d1787b4e2b5b1b1fd91.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/iso_2022-b8d79027a5bcc6de9bac824c9707a383.jpg
-  Cache-Control: public, max-age=31536000, immutable
-/static/iso_2024-068096c25d3fa6255545735cd6c8d41b.jpeg
-  Cache-Control: public, max-age=31536000, immutable
-/static/borderless_radiology-68047164205ae466403e70bcdafdcd5b.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/borderless2-ce7468c9e42d296b7941808917c9e263.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/protocall-cd5cf7ada3e5855ea4b49b6ec7e072ac.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/protocall_logo-5b3a457f401f282542538404e794f382.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/prodigi_top_bg-8f0721e448e27d78e4ee24ee4b0b4f8f.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/prodigi_one-975cc25218ae1478a4f547b137594fdc.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/prodigi_two-b4eecc9f21be6a71a14a147848d7079e.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/prodigi-1819c11475ce81d954636980266038c1.mp4
-  Cache-Control: public, max-age=31536000, immutable
-/static/os_check_top-9ad2293cef580bdb32d13e062b8d0e45.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/os_bone_check-a8873daec6203c8ee22ef95a0e51600f.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/os_sym_one-02ac47a8bc613113a154324ed6367b7e.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/os_sym_two-5d41b1ed11b206c5a52fce558fa25522.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/os_sym_three-314e880995c2dbc0479925302bc37968.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/os_foo_one-c8145e2fc4e02d02d35a5972807a96bf.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/os_foo_two-360e59696f114fb019d1b22063f60774.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/os_foo_thre-d8c4b418947f7ce5ff1b02cccebbb68c.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/os_foo_four-d3b9498a6a6ec2df0a62416c079b7c1a.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/top_bg-221a0c180cb94552854aeaf5b47d4f84.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/top_bg-0859f672873751c90fb463e2d3d622b7.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/bionic-8912fe86f4f163ab83418b58218f609b.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/b_one-727ebb8f0ac4b87b8b090b725bab3b5b.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/b_three-3034684122186782fa47e2586c4d941f.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/b_two-0e3146e78e99ff10ec7fe3634abce558.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/client-c5a273c6cc5933899745a3ea0b736968.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/rads-3e49dff6b62b85ebd475f507e46da6dc.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/bg_img-7ac5c18ff574ee0baf0e89a2c3b640fc.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/one_img-0e6c53fb11e60d24cf83bc938b209350.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/two_img-070da66c7e9d73b05ed12fb05267246c.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/three_img-89da4df56b75806d40b3227408644926.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/four_img-7572128f89ee9878e685eca3e9186ce8.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/five_img-3a0854ab1c2a9152196c2847d04eb7bf.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/six_img-a4b3b9f59c13241e7e0d4548642c0e40.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/seven_img-9f3ac25a78eccda29aac8f550a502995.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/eight_img-cf957466ceafa9b534804197ccaf0869.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/top-bf40cbfdfde09607750f2258dab17b34.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/os_bone_one-0b4a93d7ece019a511f72ffef0c0254b.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/os_bone_two-c7cbaa1bc7dc8b02f59b2c119bc27d71.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/os_bone_three-c01cda1baf5ce1d2c698b590928b9432.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/os_bone_four-93b0fe01453deef017aa339bf465300f.png
+/static/5c_Network_American_Gambit-a91fdd21a3f32f65c956e98f0d48c61a.mp4
   Cache-Control: public, max-age=31536000, immutable
 /static/classroom_bg-301362dee19840dd73aa8a86394f22fd.jpg
   Cache-Control: public, max-age=31536000, immutable
@@ -106,6 +26,12 @@
 /static/class_5-0cd446529ea15c029acee719a0b602d6.jpg
   Cache-Control: public, max-age=31536000, immutable
 /static/class_6-04adb16ec50989d0577eeaf8a057c19f.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/prodigi_three-619df921b5a5c493a1ea51e1d9a599ee.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/blog_scan-befdbf23e688d47fc21f5f51a4ba8090.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/blog_contact-cc35ffc76e9d1628df8ab7bb3f076c16.png
   Cache-Control: public, max-age=31536000, immutable
 /static/case_study-892a3db1be0089096cf006bc4323673a.png
   Cache-Control: public, max-age=31536000, immutable
@@ -131,6 +57,34 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/contact_us-c92361ba79a73d65c4849dcfcdeb4d31.png
   Cache-Control: public, max-age=31536000, immutable
+/static/iso_2019-4dc2890f621dd2bc36b75b9899d7ea97.jpg
+  Cache-Control: public, max-age=31536000, immutable
+/static/iso_2022-b8d79027a5bcc6de9bac824c9707a383.jpg
+  Cache-Control: public, max-age=31536000, immutable
+/static/iso_2024-068096c25d3fa6255545735cd6c8d41b.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+/static/bg_img-7ac5c18ff574ee0baf0e89a2c3b640fc.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/one_img-0e6c53fb11e60d24cf83bc938b209350.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/two_img-070da66c7e9d73b05ed12fb05267246c.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/three_img-89da4df56b75806d40b3227408644926.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/four_img-7572128f89ee9878e685eca3e9186ce8.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/five_img-3a0854ab1c2a9152196c2847d04eb7bf.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/six_img-a4b3b9f59c13241e7e0d4548642c0e40.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/seven_img-9f3ac25a78eccda29aac8f550a502995.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/eight_img-cf957466ceafa9b534804197ccaf0869.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/top-bf40cbfdfde09607750f2258dab17b34.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/top_bg-aabf1b97963053e5ffa7a35e4a5736ca.png
+  Cache-Control: public, max-age=31536000, immutable
 /static/pro_one-7ee9b2ee6c2b47b104fc887f343edb84.png
   Cache-Control: public, max-age=31536000, immutable
 /static/pro_two-17a33c8d6c3ead7a0cb816d79154c9e8.png
@@ -151,9 +105,61 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/investor_four-425fccdfc2df838d8ad2d125e95ceed3.png
   Cache-Control: public, max-age=31536000, immutable
+/static/borderless_radiology-68047164205ae466403e70bcdafdcd5b.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/borderless2-ce7468c9e42d296b7941808917c9e263.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/protocall-cd5cf7ada3e5855ea4b49b6ec7e072ac.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/protocall_logo-5b3a457f401f282542538404e794f382.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/prodigi_one-975cc25218ae1478a4f547b137594fdc.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/prodigi_top_bg-8f0721e448e27d78e4ee24ee4b0b4f8f.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/prodigi_two-b4eecc9f21be6a71a14a147848d7079e.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/prodigi-1819c11475ce81d954636980266038c1.mp4
+  Cache-Control: public, max-age=31536000, immutable
+/static/os_check_top-9ad2293cef580bdb32d13e062b8d0e45.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/os_bone_check-a8873daec6203c8ee22ef95a0e51600f.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/os_sym_one-02ac47a8bc613113a154324ed6367b7e.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/os_sym_two-5d41b1ed11b206c5a52fce558fa25522.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/os_sym_three-314e880995c2dbc0479925302bc37968.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/os_foo_one-c8145e2fc4e02d02d35a5972807a96bf.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/os_foo_two-360e59696f114fb019d1b22063f60774.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/os_foo_thre-d8c4b418947f7ce5ff1b02cccebbb68c.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/os_foo_four-d3b9498a6a6ec2df0a62416c079b7c1a.png
+  Cache-Control: public, max-age=31536000, immutable
 /static/kronos_top-60966ee0ef1fba1d654c2e5bad6105f9.png
   Cache-Control: public, max-age=31536000, immutable
 /static/kronos_logo-72735d0dfe64e7ce2a055d3bd5f17857.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/top_bg-0859f672873751c90fb463e2d3d622b7.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/bionic-8912fe86f4f163ab83418b58218f609b.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/b_one-727ebb8f0ac4b87b8b090b725bab3b5b.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/b_two-0e3146e78e99ff10ec7fe3634abce558.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/b_three-3034684122186782fa47e2586c4d941f.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/client-c5a273c6cc5933899745a3ea0b736968.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/rads-3e49dff6b62b85ebd475f507e46da6dc.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/mb_points-1dd1b89bc5eb30edf0a49917dc191195.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/mb_sample-8276678ae2bb693899fa057fd6080ff6.png
   Cache-Control: public, max-age=31536000, immutable
 /static/mar_one-279f7e3805420903e825921bebe011fc.png
   Cache-Control: public, max-age=31536000, immutable
@@ -163,19 +169,13 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/mar_four-fd876f098874fa94d4ec0fd5b8a3b367.png
   Cache-Control: public, max-age=31536000, immutable
-/static/hero-0e14dae7202e6eca0fa661e1d1481750.png
+/static/os_bone_one-0b4a93d7ece019a511f72ffef0c0254b.png
   Cache-Control: public, max-age=31536000, immutable
-/static/mb_hero-58d0d4e7b8f59167892309d77289dd48.png
+/static/os_bone_two-c7cbaa1bc7dc8b02f59b2c119bc27d71.png
   Cache-Control: public, max-age=31536000, immutable
-/static/bionic_svg-fc2d89100c0ea67b4684e4998c72717b.svg
+/static/os_bone_three-c01cda1baf5ce1d2c698b590928b9432.png
   Cache-Control: public, max-age=31536000, immutable
-/static/new_mockup_bg-a74ed57b17a41d1787b4e2b5b1b1fd91.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/5c_Network_American_Gambit-a91fdd21a3f32f65c956e98f0d48c61a.mp4
-  Cache-Control: public, max-age=31536000, immutable
-/static/mb_points-1dd1b89bc5eb30edf0a49917dc191195.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/mb_sample-8276678ae2bb693899fa057fd6080ff6.png
+/static/os_bone_four-93b0fe01453deef017aa339bf465300f.png
   Cache-Control: public, max-age=31536000, immutable
 /styles.e17c3fb7d5464a784376.css
   Cache-Control: public, max-age=31536000, immutable
@@ -223,7 +223,7 @@
   Cache-Control: public, max-age=31536000, immutable
 /app-86fe70e33a8b7aed4def.js
   Cache-Control: public, max-age=31536000, immutable
-/webpack-runtime-555cfb9d8efbf61c8550.js
+/webpack-runtime-21e36d4f11a7d87ce251.js
   Cache-Control: public, max-age=31536000, immutable
 /component---src-pages-ai-products-bionic-suite-jsx-709408a60514b72a3dd7.js
   Cache-Control: public, max-age=31536000, immutable
@@ -285,7 +285,7 @@
   Cache-Control: public, max-age=31536000, immutable
 /app-86fe70e33a8b7aed4def.js.map
   Cache-Control: public, max-age=31536000, immutable
-/webpack-runtime-555cfb9d8efbf61c8550.js.map
+/webpack-runtime-21e36d4f11a7d87ce251.js.map
   Cache-Control: public, max-age=31536000, immutable
 /component---src-pages-ai-products-bionic-suite-jsx-709408a60514b72a3dd7.js.map
   Cache-Control: public, max-age=31536000, immutable
@@ -450,6 +450,10 @@
 /app-04e26046f76de639a0b7.js.LICENSE.txt
   Cache-Control: public, max-age=31536000, immutable
 /app-04e26046f76de639a0b7.js.map
+  Cache-Control: public, max-age=31536000, immutable
+/app-04e7278b3e6e521d35dd.js.LICENSE.txt
+  Cache-Control: public, max-age=31536000, immutable
+/app-04e7278b3e6e521d35dd.js.map
   Cache-Control: public, max-age=31536000, immutable
 /app-0f649657d8df670e1b48.js.LICENSE.txt
   Cache-Control: public, max-age=31536000, immutable
@@ -1096,6 +1100,8 @@
 /webpack-runtime-446099cb73c96141bccd.js.map
   Cache-Control: public, max-age=31536000, immutable
 /webpack-runtime-4be9a718d28cf5fb5b2b.js.map
+  Cache-Control: public, max-age=31536000, immutable
+/webpack-runtime-555cfb9d8efbf61c8550.js.map
   Cache-Control: public, max-age=31536000, immutable
 /webpack-runtime-6072c824c020f53ba678.js.map
   Cache-Control: public, max-age=31536000, immutable
