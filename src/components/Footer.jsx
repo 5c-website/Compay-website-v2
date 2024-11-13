@@ -240,6 +240,11 @@ const Footer = () => {
                   Newsroom
                 </Link>
               </li>
+              <li>
+                <Link to="/RSNA-2024" className="text-white hover:underline">
+                  RSNA 2024
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
