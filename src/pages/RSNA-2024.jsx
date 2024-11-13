@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Footer from "../components/Footer";
-import BannerImg from "../../public/img/rsna2024/RSA_brochure.png";
+import BannerImg from "../../public/img/rsna2024/RSA_Brochure.png";
 import Segment from "../../public/img/rsna2024/segment.png";
 import Measure from "../../public/img/rsna2024/measure.png";
 import Detect from "../../public/img/rsna2024/detect.png";
