@@ -121,15 +121,17 @@ const IndexPage = () => {
         </div> */}
         {/* <NvidiaSummitModal /> */}
         <div className="fixed top-0 left-0 right-0 z-40 flex items-center justify-center font-['Poppins'] bg-[linear-gradient(90deg,#FFD452_0%,#FCC219_73%,#FBBC04_100%)] p-3 gap-1 md:gap-3">
-          <p className="text-black text-[0.6rem] md:text-sm">
-            Meet us at the{" "}
-            <b className="font-semibold">9th Annual Radiology Meeting (ARM) </b>{" "}
-            in UAE. Locate us at - A24, ARM 2024, DWTC
+        <p className="text-black text-[0.6rem] md:text-sm">
+            Meet us at RSNA 2024 in Chicago! Find us at Booth 5714, South Hall
+            Level 3, McCormick Place.
           </p>
           <button
             className="bg-white text-black rounded-full px-3 md:px-6 py-1 text-[0.6rem] md:text-sm font-['Poppins'] min-w-[8rem]"
             onClick={() =>
-              window.open("https://forms.gle/CF1uZGL6c5AbU9Qs9", "_blank")
+              window.open(
+                "https://calendly.com/product-5c/connect-with-5c-network-at-rsna",
+                "_blank"
+              )
             }
           >
             Book a meeting now
