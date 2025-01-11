@@ -121,15 +121,15 @@ const IndexPage = () => {
         </div> */}
         {/* <NvidiaSummitModal /> */}
         <div className="fixed top-0 left-0 right-0 z-40 flex items-center justify-center font-['Poppins'] bg-[linear-gradient(90deg,#FFD452_0%,#FCC219_73%,#FBBC04_100%)] p-3 gap-1 md:gap-3">
-        <p className="text-black text-[0.6rem] md:text-sm">
-            Meet us at RSNA 2024 in Chicago! Find us at Booth 5714, South Hall
-            Level 3, McCormick Place.
+          <p className="text-black text-[0.6rem] md:text-sm">
+            Meet us at AOCR 2025! Find us at Booth 26, Chennai Trade Center,
+            Nandambakkam.
           </p>
           <button
             className="bg-white text-black rounded-full px-3 md:px-6 py-1 text-[0.6rem] md:text-sm font-['Poppins'] min-w-[8rem]"
             onClick={() =>
               window.open(
-                "https://calendly.com/product-5c/connect-with-5c-network-at-rsna",
+                "https://calendly.com/5caocr-5cnetwork/meet-with-5c-network-aocr-2025-booth-no-26",
                 "_blank"
               )
             }

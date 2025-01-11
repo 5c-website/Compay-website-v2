@@ -241,8 +241,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/RSNA-2024" className="text-white hover:underline">
-                  RSNA 2024
+                <Link to="/AOCR-2025" className="text-white hover:underline">
+                  AOCR 2025
                 </Link>
               </li>
             </ul>
