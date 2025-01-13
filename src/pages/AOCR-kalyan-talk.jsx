@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Footer from "../components/Footer";
-import BannerImg from "../../public/img/Promotional-banners/AOCR-speaker.png";
+import BannerImg from "../../public/img/Promotional-banners/AOCR-speaker-cover.png";
 import SpeakerImg from "../../public/img/Promotional-banners/speaker-register-img.png";
 
 function AOCR() {
