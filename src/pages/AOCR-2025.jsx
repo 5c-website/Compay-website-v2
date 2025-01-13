@@ -255,7 +255,15 @@ function AOCR() {
                 innovation at 5C, transforming diagnostics, and helping
                 radiologists lead the way in advanced healthcare.
               </p>
-              <button className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors w-fit">
+              <button
+                className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors w-fit"
+                onClick={() =>
+                  window.open(
+                    "https://calendly.com/5caocr-5cnetwork/ai-powered-radiology-kalyan-sivasailam-at-aocr-2025",
+                    "_blank"
+                  )
+                }
+              >
                 Register Now
               </button>
             </div>
