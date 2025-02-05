@@ -6,7 +6,7 @@ import { ChevronDown } from "lucide-react";
 import SignInModal from "./SignInModal";
 import Helmet from "react-helmet";
 
-const Navbar = ({topClassName}) => {
+const Navbar = ({ topClassName }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(null);
   const [showSignIn, setShowSignIn] = useState(false);
@@ -57,6 +57,7 @@ const Navbar = ({topClassName}) => {
       subItems: ["Blogs", "Case Study", "Newsroom"],
       route: "/impact/blogs",
     },
+    { label: "Explore 5C", route: "/explore-5C" },
     { label: "Contact Us", route: "/contact-us" },
   ];
 
@@ -80,7 +81,9 @@ const Navbar = ({topClassName}) => {
 
   return (
     <>
-      <header className={`bg-white shadow-sm fixed top-0 z-40 w-[100%] ${topClassName}`}>
+      <header
+        className={`bg-white shadow-sm fixed top-0 z-40 w-[100%] ${topClassName}`}
+      >
         <Helmet>
           <title>5C - Network</title>
         </Helmet>

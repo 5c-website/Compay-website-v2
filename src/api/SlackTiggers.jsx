@@ -24,4 +24,15 @@ export const slackAlerts = {
       console.error(e);
     }
   },
+  leadRequestAlert: async (data) => {
+    try {
+      const url = `${SLACK_TRIGGER_BASE_URL}/webhook/lead-request`;
+      const headers = {
+        "Content-Type": "application/json",
+      };
+      return axios.post(url, data, { headers });
+    } catch (e) {
+      console.error(e);
+    }
+  },
 };
