@@ -36,11 +36,6 @@ const IndexPage = () => {
     }
     return false;
   };
-
-  const openModal = () => {
-    console.log("clicking--->");
-    setIsModalOpen(true);
-  };
   const closeModal = () => setIsModalOpen(false);
 
   const checkAndSetCookie = () => {
