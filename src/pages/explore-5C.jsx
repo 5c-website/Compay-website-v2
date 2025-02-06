@@ -848,26 +848,28 @@ const TeleradiologyLanding = () => {
 
     return (
       <>
-        <div class="px-6 py-4 bg-white rounded-2xl shadow-md md:px-8 md:py-6">
-          <div>
-            <h3 class="text-2xl md:text-3xl lg:text-4xl pb-4 pt-2 font-semibold">
+        <div className="w-full px-6 py-4 bg-white rounded-2xl shadow-md md:px-8 md:py-6">
+          <div className="w-full">
+            <h3 className="text-2xl md:text-3xl lg:text-4xl pb-4 pt-2 font-semibold">
               Join Our Radiologist Team
             </h3>
           </div>
-          <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div class="md:w-2/3">
-              <p class="text-gray-700 text-sm">
+          <div className="w-full flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div className="w-full md:w-2/3">
+              <p className="text-gray-700 text-sm md:text-base">
                 Are you a radiologist seeking growth? Join 5C Network and be
                 part of a dynamic team delivering fast, precise, and
                 high-quality diagnostic reports.
               </p>
             </div>
-            <button
-              class="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-6 rounded-2xl w-full md:w-auto"
-              onClick={() => navigate("/borderless-radiology")}
-            >
-              Join 5C
-            </button>
+            <div className="w-full md:w-auto">
+              <button
+                className="w-full md:w-auto bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-6 rounded-2xl transition-colors duration-200"
+                onClick={() => navigate("/borderless-radiology")}
+              >
+                Join 5C
+              </button>
+            </div>
           </div>
         </div>
 
