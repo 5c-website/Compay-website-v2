@@ -62,7 +62,6 @@ function ReachUs() {
       await slackAlerts.jobRequestAlert(formData);
 
       if (response.status === 200) {
-        console.log("Data sent to Slack successfully");
         setShowPopup(true);
         notify();
         // Reset form fields

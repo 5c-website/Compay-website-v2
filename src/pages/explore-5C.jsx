@@ -20,6 +20,13 @@ import Footer from "../components/Footer";
 import laptopMockUpImage from "../../public/img/lead-generation/laptop.png";
 import mobileGif from "../../public/img/lead-generation/mobile-gif.gif";
 import bionicAi from "../../public/img/lead-generation/icons/bionic-ai.svg";
+import { Loader2 } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "../components/Dialog";
 
 const TeleradiologyLanding = () => {
   const [activeTab, setActiveTab] = useState("with"); // 'with' or 'without'
@@ -754,6 +761,8 @@ const TeleradiologyLanding = () => {
 
   // Contact Form Section
   const ContactSection = () => {
+    const [isLoading, setIsLoading] = useState(false);
+    const [showThankYou, setShowThankYou] = useState(false);
     const [formData, setFormData] = useState({
       organizationName: "",
       contactPersonName: "",
@@ -784,6 +793,7 @@ const TeleradiologyLanding = () => {
 
     const handleSubmit = async (e) => {
       e.preventDefault();
+      setIsLoading(true);
 
       let newErrors = {};
 
@@ -843,8 +853,12 @@ const TeleradiologyLanding = () => {
         } else {
           throw new Error("Failed to submit form");
         }
+
+        setShowThankYou(true);
       } catch (error) {
         console.error("Error submitting form:", error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -958,11 +972,38 @@ const TeleradiologyLanding = () => {
 
             <button
               type="submit"
-              className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 ease-in-out"
+              disabled={isLoading}
+              className="w-full px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
             >
-              Submit
+              {isLoading ? (
+                <>
+                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  Submitting...
+                </>
+              ) : (
+                "Submit"
+              )}
             </button>
           </form>
+
+          <Dialog open={showThankYou} onOpenChange={setShowThankYou}>
+            <DialogContent>
+              <DialogHeader>
+                <div className="mx-auto rounded-full bg-green-100/80 p-2 sm:p-3 ring-4 sm:ring-8 ring-green-50 mb-2 sm:mb-4">
+                  <CheckCircle className="h-8 w-8 sm:h-12 sm:w-12 text-green-600" />
+                </div>
+                <DialogTitle className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
+                  Thank You!
+                </DialogTitle>
+                <div className="bg-gray-50 px-3 sm:px-6 py-3 sm:py-4 rounded-xl w-full">
+                  <p className="text-center text-gray-600 text-base sm:text-lg font-medium">
+                    Thank you for your submission. We will get back to you
+                    shortly!
+                  </p>
+                </div>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     );
