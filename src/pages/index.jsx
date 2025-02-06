@@ -136,7 +136,7 @@ const IndexPage = () => {
         {/* topClassName={"lg:top-[50px] top-[60px]"} */}
       </header>
 
-      <main className="pt-[120px]">
+      <main className="pt-[80px]">
         <section className="relative h-56 md:h-[60vh] lg:h-[70vh] overflow-hidden bg-gray-100 flex items-center justify-center">
           <div className="absolute left-0 top-10 md:left-5 md:top-[110px] lg:top-[115px] xl:left-[70px] xl:top-[145px] z-30 text-white w-full max-w-2xl">
             <div className="mx-auto px-6 md:px-8 md:py-4 flex flex-col items-center md:flex-row md:items-center">
