@@ -746,7 +746,7 @@ const TeleradiologyLanding = () => {
   // Contact Form Section
   const ContactSection = () => {
     const [isLoading, setIsLoading] = useState(false);
-    const [showThankYou, setShowThankYou] = useState(false);
+    const [showThankYou, setShowThankYou] = useState(true);
     const [formData, setFormData] = useState({
       organizationName: "",
       contactPersonName: "",
@@ -825,18 +825,18 @@ const TeleradiologyLanding = () => {
           message: formData.message,
         };
 
-        await slackAlerts.leadRequestAlert(leadRequestAlertAttributes);
-        if (response.status === 200) {
-          setFormData({
-            organizationName: "",
-            contactPersonName: "",
-            contactNumber: "",
-            email: "",
-            message: "",
-          });
-        } else {
-          throw new Error("Failed to submit form");
-        }
+        // await slackAlerts.leadRequestAlert(leadRequestAlertAttributes);
+        // if (response.status === 200) {
+        //   setFormData({
+        //     organizationName: "",
+        //     contactPersonName: "",
+        //     contactNumber: "",
+        //     email: "",
+        //     message: "",
+        //   });
+        // } else {
+        //   throw new Error("Failed to submit form");
+        // }
 
         setShowThankYou(true);
       } catch (error) {
@@ -1008,7 +1008,8 @@ const TeleradiologyLanding = () => {
                       You're now part of a future where AI and radiology unite
                       to make diagnostics faster, smarter, and more precise.
                       <br />
-                      We're just a call away!
+                      we'll be calling you very soon! Have a <br/>good day{" "}
+                      <span className="text-xl">😃</span>
                     </p>
                   </div>
                 </DialogHeader>
