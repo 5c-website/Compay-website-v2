@@ -108,7 +108,7 @@ const TeleradiologyLanding = () => {
         {/* CTA Button */}
         <div className="flex justify-center mb-12">
           <button
-            className="px-6 py-3 bg-indigo-500 text-white rounded-3xl hover:bg-indigo-600 transition-colors"
+            className="px-6 py-3 bg-blue-600 text-white rounded-3xl hover:bg-blue-700 transition-colors"
             onClick={scrollToForm}
           >
             Explore 5C
@@ -397,7 +397,7 @@ const TeleradiologyLanding = () => {
           onClick={() => setActiveTab("with")}
           className={`px-8 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
             activeTab === "with"
-              ? "bg-purple-500 text-white shadow-sm"
+              ? "bg-blue-600 text-white shadow-sm"
               : "text-gray-500 hover:text-gray-700"
           }`}
         >
@@ -407,7 +407,7 @@ const TeleradiologyLanding = () => {
           onClick={() => setActiveTab("without")}
           className={`px-8 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
             activeTab === "without"
-              ? "bg-purple-500 text-white shadow-sm"
+              ? "bg-blue-600 text-white shadow-sm"
               : "text-gray-500 hover:text-gray-700"
           }`}
         >
@@ -603,7 +603,7 @@ const TeleradiologyLanding = () => {
       <div className="flex justify-center">
         <button
           onClick={toggleShowMore}
-          className="px-8 py-3 bg-purple-600 text-white rounded-3xl hover:bg-purple-700 transition-colors"
+          className="px-8 py-3 bg-blue-600 text-white rounded-3xl hover:bg-blue-700 transition-colors"
         >
           {showMore ? "Show Less" : "More About 5C"}
         </button>
@@ -649,7 +649,7 @@ const TeleradiologyLanding = () => {
 
           <div className="flex gap-4 mt-8">
             <button
-              className="px-8 py-3 bg-purple-600 text-white rounded-3xl hover:bg-purple-700 transition-colors inline-flex items-center gap-2"
+              className="px-8 py-3 bg-blue-600 text-white rounded-3xl hover:bg-blue-700 transition-colors inline-flex items-center gap-2"
               onClick={() =>
                 window.open(
                   "https://apps.apple.com/in/app/5c-network/id6479616840",
@@ -1013,7 +1013,7 @@ const TeleradiologyLanding = () => {
         </div>
         <div className="w-full md:w-auto">
           <button
-            className="w-full md:w-auto bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-6 rounded-2xl transition-colors duration-200"
+            className="w-full md:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-2xl transition-colors duration-200"
             onClick={() => navigate("/borderless-radiology")}
           >
             Join 5C
