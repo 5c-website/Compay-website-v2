@@ -848,24 +848,23 @@ const TeleradiologyLanding = () => {
 
     return (
       <>
-        <div className="w-full px-6 py-4 bg-white rounded-2xl shadow-md md:px-8 md:py-6">
-          <div className="w-full">
-            <h3 className="text-2xl md:text-3xl lg:text-4xl pb-4 pt-2 font-semibold">
-              Join Our Radiologist Team
-            </h3>
-          </div>
-          <div className="w-full flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-            <div className="w-full md:w-2/3">
-              <p className="text-gray-700 text-sm md:text-base">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="bg-white rounded-3xl shadow-md p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div className="flex-1 min-w-0">
+              <h2 className="text-2xl sm:text-3xl font-semibold mb-2">
+                Join Our Radiologist Team
+              </h2>
+              <p className="text-gray-600 text-sm sm:text-base max-w-2xl">
                 Are you a radiologist seeking growth? Join 5C Network and be
                 part of a dynamic team delivering fast, precise, and
                 high-quality diagnostic reports.
               </p>
             </div>
-            <div className="w-full md:w-auto">
+
+            <div className="w-full sm:w-auto flex-shrink-0">
               <button
-                className="w-full md:w-auto bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-6 rounded-2xl transition-colors duration-200"
                 onClick={() => navigate("/borderless-radiology")}
+                className="w-full sm:w-auto px-8 py-3 bg-purple-500 hover:bg-purple-600 text-white font-semibold rounded-full transition-colors duration-200"
               >
                 Join 5C
               </button>
@@ -1010,8 +1009,8 @@ const TeleradiologyLanding = () => {
                       You're now part of a future where AI and radiology unite
                       to make diagnostics faster, smarter, and more precise.
                       <br />
-                      we'll be calling you very soon! Have a <br/>good day{" "}
-                      <span className="text-xl">😃</span>
+                      we'll be calling you very soon! Have a <br />
+                      good day <span className="text-xl">😃</span>
                     </p>
                   </div>
                 </DialogHeader>
