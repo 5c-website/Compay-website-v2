@@ -1008,7 +1008,8 @@ const TeleradiologyLanding = () => {
                       You're now part of a future where AI and radiology unite
                       to make diagnostics faster, smarter, and more precise.
                       <br />
-                      We're just a call away!
+                      we'll be calling you very soon! Have a <br/>good day{" "}
+                      <span className="text-xl">😃</span>
                     </p>
                   </div>
                 </DialogHeader>
