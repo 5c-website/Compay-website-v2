@@ -1,4 +1,4 @@
-import { Users, X } from "lucide-react";
+import { X } from "lucide-react";
 import fiveClog from "../../public/img/footer_logo.png";
 import React, { useState, useEffect, useRef } from "react";
 import { CheckCircle, CircleMinus } from "lucide-react";
@@ -27,6 +27,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "../components/Dialog";
+import { navigate } from "gatsby";
 
 const TeleradiologyLanding = () => {
   const [activeTab, setActiveTab] = useState("with"); // 'with' or 'without'
@@ -449,23 +450,6 @@ const TeleradiologyLanding = () => {
 
         {/* Graph Section */}
         <div className="h-80">
-          {/* Balance Statistics */}
-          {/* <div className="flex justify-between items-center mb-4">
-                <span className="text-gray-500">Balance Statistics</span>
-                <div className="flex items-center gap-2">
-                  <span className="text-2xl font-bold">$85,211.00</span>
-                  <span
-                    className={`${
-                      activeTab === "without"
-                        ? "text-red-500"
-                        : "text-green-500"
-                    }`}
-                  >
-                    ↑ 65.1%
-                  </span>
-                </div>
-              </div> */}
-
           {/* Area Chart */}
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart
@@ -762,7 +746,7 @@ const TeleradiologyLanding = () => {
   // Contact Form Section
   const ContactSection = () => {
     const [isLoading, setIsLoading] = useState(false);
-    const [showThankYou, setShowThankYou] = useState(false);
+    const [showThankYou, setShowThankYou] = useState(true);
     const [formData, setFormData] = useState({
       organizationName: "",
       contactPersonName: "",
@@ -863,149 +847,176 @@ const TeleradiologyLanding = () => {
     };
 
     return (
-      <div
-        ref={formRef}
-        className="bg-white rounded-3xl shadow-lg p-8 md:p-12 my-24"
-      >
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-          LET'S GET STARTED!
-        </h2>
-        <p className="text-gray-600 mb-12 text-center">
-          Want to explore our platform? It's easy! Just fill out the form,
-          submit, and we'll guide you from there.
-        </p>
-
-        <div className="max-w-2xl mx-auto">
-          <form className="space-y-6" onSubmit={handleSubmit}>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Organization Name
-              </label>
-              <input
-                type="text"
-                name="organizationName"
-                value={formData.organizationName}
-                onChange={handleChange}
-                required
-                className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition duration-200 ease-in-out ${
-                  errors.organizationName ? "border-red-500" : ""
-                }`}
-              />
-              {errors.organizationName && (
-                <p className="text-red-500 text-sm">
-                  {errors.organizationName}
-                </p>
-              )}
+      <>
+        <div class="px-6 py-4 bg-white rounded-2xl shadow-md md:px-8 md:py-6">
+          <div>
+            <h3 class="text-2xl md:text-3xl lg:text-4xl pb-4 pt-2 font-semibold">
+              Join Our Radiologist Team
+            </h3>
+          </div>
+          <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="md:w-2/3">
+              <p class="text-gray-700 text-sm">
+                Are you a radiologist seeking growth? Join 5C Network and be
+                part of a dynamic team delivering fast, precise, and
+                high-quality diagnostic reports.
+              </p>
             </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Contact Person Name
-              </label>
-              <input
-                type="text"
-                name="contactPersonName"
-                value={formData.contactPersonName}
-                onChange={handleChange}
-                required
-                className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition duration-200 ease-in-out ${
-                  errors.contactPersonName ? "border-red-500" : ""
-                }`}
-              />
-              {errors.contactPersonName && (
-                <p className="text-red-500 text-sm">
-                  {errors.contactPersonName}
-                </p>
-              )}
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Contact Number
-              </label>
-              <input
-                type="tel"
-                name="contactNumber"
-                value={formData.contactNumber}
-                onChange={handleChange}
-                required
-                className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition duration-200 ease-in-out ${
-                  errors.contactNumber ? "border-red-500" : ""
-                }`}
-              />
-              {errors.contactNumber && (
-                <p className="text-red-500 text-sm">{errors.contactNumber}</p>
-              )}
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition duration-200 ease-in-out ${
-                  errors.email ? "border-red-500" : ""
-                }`}
-              />
-              {errors.email && (
-                <p className="text-red-500 text-sm">{errors.email}</p>
-              )}
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Leave a Message
-              </label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition duration-200 ease-in-out`}
-              />
-            </div>
-
             <button
-              type="submit"
-              disabled={isLoading}
-              className="w-full px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+              class="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-6 rounded-2xl w-full md:w-auto"
+              onClick={() => navigate("/borderless-radiology")}
             >
-              {isLoading ? (
-                <>
-                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                  Submitting...
-                </>
-              ) : (
-                "Submit"
-              )}
+              Join 5C
             </button>
-          </form>
-
-          <Dialog open={showThankYou} onOpenChange={setShowThankYou}>
-            <DialogContent>
-              <DialogHeader>
-                <div className="mx-auto rounded-full bg-green-100/80 p-2 sm:p-3 ring-4 sm:ring-8 ring-green-50 mb-2 sm:mb-4">
-                  <CheckCircle className="h-8 w-8 sm:h-12 sm:w-12 text-green-600" />
-                </div>
-                <DialogTitle className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
-                  Thank You!
-                </DialogTitle>
-                <div className="bg-gray-50 px-3 sm:px-6 py-3 sm:py-4 rounded-xl w-full">
-                  <p className="text-center text-gray-600 text-base sm:text-lg font-medium">
-                    Thank you for your submission. We will get back to you
-                    shortly!
-                  </p>
-                </div>
-              </DialogHeader>
-            </DialogContent>
-          </Dialog>
+          </div>
         </div>
-      </div>
+
+        <div
+          ref={formRef}
+          className="bg-white rounded-3xl shadow-lg p-8 md:p-12 my-24"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+            LET'S GET STARTED!
+          </h2>
+          <p className="text-gray-600 mb-12 text-center">
+            Want to explore our platform? It's easy! Just fill out the form,
+            submit, and we'll guide you from there.
+          </p>
+
+          <div className="max-w-2xl mx-auto">
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Organization Name
+                </label>
+                <input
+                  type="text"
+                  name="organizationName"
+                  value={formData.organizationName}
+                  onChange={handleChange}
+                  required
+                  className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition duration-200 ease-in-out ${
+                    errors.organizationName ? "border-red-500" : ""
+                  }`}
+                />
+                {errors.organizationName && (
+                  <p className="text-red-500 text-sm">
+                    {errors.organizationName}
+                  </p>
+                )}
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Contact Person Name
+                </label>
+                <input
+                  type="text"
+                  name="contactPersonName"
+                  value={formData.contactPersonName}
+                  onChange={handleChange}
+                  required
+                  className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition duration-200 ease-in-out ${
+                    errors.contactPersonName ? "border-red-500" : ""
+                  }`}
+                />
+                {errors.contactPersonName && (
+                  <p className="text-red-500 text-sm">
+                    {errors.contactPersonName}
+                  </p>
+                )}
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Contact Number
+                </label>
+                <input
+                  type="tel"
+                  name="contactNumber"
+                  value={formData.contactNumber}
+                  onChange={handleChange}
+                  required
+                  className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition duration-200 ease-in-out ${
+                    errors.contactNumber ? "border-red-500" : ""
+                  }`}
+                />
+                {errors.contactNumber && (
+                  <p className="text-red-500 text-sm">{errors.contactNumber}</p>
+                )}
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition duration-200 ease-in-out ${
+                    errors.email ? "border-red-500" : ""
+                  }`}
+                />
+                {errors.email && (
+                  <p className="text-red-500 text-sm">{errors.email}</p>
+                )}
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Leave a Message
+                </label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition duration-200 ease-in-out`}
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="w-full px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+              >
+                {isLoading ? (
+                  <>
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    Submitting...
+                  </>
+                ) : (
+                  "Submit"
+                )}
+              </button>
+            </form>
+
+            <Dialog open={showThankYou} onOpenChange={setShowThankYou}>
+              <DialogContent>
+                <DialogHeader>
+                  <div className="mx-auto rounded-full bg-green-100/80 p-2 sm:p-3 ring-4 sm:ring-8 ring-green-50 mb-2 sm:mb-4">
+                    <CheckCircle className="h-8 w-8 sm:h-12 sm:w-12 text-green-600" />
+                  </div>
+                  <DialogTitle className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
+                    Thank You!
+                  </DialogTitle>
+                  <div className="bg-gray-50 px-3 sm:px-6 py-3 sm:py-4 rounded-xl w-full">
+                    <p className="text-center text-gray-600 text-base sm:text-lg font-medium">
+                      You're now part of a future where AI and radiology unite
+                      to make diagnostics faster, smarter, and more precise.
+                      <br />
+                      We're just a call away!
+                    </p>
+                  </div>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
+          </div>
+        </div>
+      </>
     );
   };
 
