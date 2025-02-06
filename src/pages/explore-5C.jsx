@@ -746,7 +746,7 @@ const TeleradiologyLanding = () => {
   // Contact Form Section
   const ContactSection = () => {
     const [isLoading, setIsLoading] = useState(false);
-    const [showThankYou, setShowThankYou] = useState(true);
+    const [showThankYou, setShowThankYou] = useState(false);
     const [formData, setFormData] = useState({
       organizationName: "",
       contactPersonName: "",
