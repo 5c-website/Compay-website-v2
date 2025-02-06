@@ -240,11 +240,11 @@ const Footer = () => {
                   Newsroom
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/AOCR-2025" className="text-white hover:underline">
                   AOCR 2025
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
