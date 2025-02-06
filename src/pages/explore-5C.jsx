@@ -746,7 +746,7 @@ const TeleradiologyLanding = () => {
   // Contact Form Section
   const ContactSection = () => {
     const [isLoading, setIsLoading] = useState(false);
-    const [showThankYou, setShowThankYou] = useState(true);
+    const [showThankYou, setShowThankYou] = useState(false);
     const [formData, setFormData] = useState({
       organizationName: "",
       contactPersonName: "",
@@ -825,18 +825,18 @@ const TeleradiologyLanding = () => {
           message: formData.message,
         };
 
-        // await slackAlerts.leadRequestAlert(leadRequestAlertAttributes);
-        // if (response.status === 200) {
-        //   setFormData({
-        //     organizationName: "",
-        //     contactPersonName: "",
-        //     contactNumber: "",
-        //     email: "",
-        //     message: "",
-        //   });
-        // } else {
-        //   throw new Error("Failed to submit form");
-        // }
+        await slackAlerts.leadRequestAlert(leadRequestAlertAttributes);
+        if (response.status === 200) {
+          setFormData({
+            organizationName: "",
+            contactPersonName: "",
+            contactNumber: "",
+            email: "",
+            message: "",
+          });
+        } else {
+          throw new Error("Failed to submit form");
+        }
 
         setShowThankYou(true);
       } catch (error) {
