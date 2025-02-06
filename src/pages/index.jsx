@@ -115,7 +115,7 @@ const IndexPage = () => {
           </button>
         </div> */}
         {/* <NvidiaSummitModal /> */}
-        <div className="fixed top-0 left-0 right-0 z-40 flex items-center justify-center font-['Poppins'] bg-[linear-gradient(90deg,#FFD452_0%,#FCC219_73%,#FBBC04_100%)] p-3 gap-1 md:gap-3">
+        {/* <div className="fixed top-0 left-0 right-0 z-40 flex items-center justify-center font-['Poppins'] bg-[linear-gradient(90deg,#FFD452_0%,#FCC219_73%,#FBBC04_100%)] p-3 gap-1 md:gap-3">
           <p className="text-black text-[0.6rem] md:text-sm">
             Meet us at AOCR 2025! Find us at Booth 26, Chennai Trade Center,
             Nandambakkam.
@@ -131,8 +131,9 @@ const IndexPage = () => {
           >
             Book a meeting now
           </button>
-        </div>
-        <Navbar topClassName={"lg:top-[50px] top-[60px]"} />
+        </div> */}
+        <Navbar />
+        {/* topClassName={"lg:top-[50px] top-[60px]"} */}
       </header>
 
       <main className="pt-[120px]">
