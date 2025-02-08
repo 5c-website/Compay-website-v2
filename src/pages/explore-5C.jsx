@@ -28,6 +28,7 @@ import {
   DialogTitle,
 } from "../components/Dialog";
 import { navigate } from "gatsby";
+import axios from "axios";
 
 const TeleradiologyLanding = () => {
   const [activeTab, setActiveTab] = useState("with"); // 'with' or 'without'
@@ -825,6 +826,25 @@ const TeleradiologyLanding = () => {
           message: formData.message,
         };
 
+        try {
+          const url =
+            "https://yaake-backend.cubebase.ai/api/lead_contact_generation/";
+          const headers = {
+            Authorization: "AD4k09EWQR908FEWRQFwsRWQ",
+            "Content-Type": "application/json",
+          };
+
+          const data = {
+            phone: formData.contactNumber,
+            email: formData.email,
+            name: formData.contactPersonName,
+            message: formData.message,
+          };
+
+          await axios.post(url, data, { headers });
+        } catch (e) {
+          console.log("error posting to yaake-backend");
+        }
         await slackAlerts.leadRequestAlert(leadRequestAlertAttributes);
         if (response.status === 200) {
           setFormData({
