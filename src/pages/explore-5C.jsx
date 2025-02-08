@@ -805,6 +805,7 @@ const TeleradiologyLanding = () => {
       // If there are errors, update state and return early
       if (Object.keys(newErrors).length > 0) {
         setErrors(newErrors);
+        setIsLoading(false);
         return;
       }
       try {
