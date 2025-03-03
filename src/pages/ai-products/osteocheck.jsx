@@ -85,149 +85,150 @@ function osteocheck() {
             life.
           </p>
         </div>
-        <div className="bg-[#F3F7FF] md:h-[60vh] flex flex-col justify-start items-center my-[10px] md:my-[40px] md:py-[40px] w-[100%]">
-          <h1 className="text-[#1B3463] font-bold text-center text-[16px] md:text-[32px] py-[10px]">
-            {" "}
-            Benefits of OsteoCheck{" "}
+        <div className="bg-[#F3F7FF] w-full py-8 sm:py-10 md:py-12 flex flex-col justify-start items-center my-4 sm:my-6 md:my-10">
+          <h1 className="text-[#1B3463] font-bold text-center text-base sm:text-xl md:text-2xl lg:text-[32px] py-3 sm:py-4">
+            Benefits of OsteoCheck
           </h1>
-          <div className="text-center flex flex-col md:flex-row justify-center items-center h-[100%] gap-8 w-[90%] my-[20px]">
-            <div className="md:w-[22%] w-[90%] md:h-[100%] h-[200px] rounded-2xl shadow-lg bg-white flex flex-col justify-around items-center py-2">
-              <img
-                src={logoOne}
-                className="md:h-[100px] md:w-[100px] h-[60px] w-[60px]"
-                alt="img"
-              />
-              <p className="text-[12px] md:text-[20px] text-[#5E6282] px-4 md:px-8">
-                {" "}
+          <div className="text-center flex flex-col sm:flex-row sm:flex-wrap md:flex-nowrap justify-center items-stretch gap-6 sm:gap-4 md:gap-6 lg:gap-8 w-full max-w-[90%] my-5">
+            {/* Card 1 */}
+            <div className="mx-auto w-[90%] sm:w-[45%] md:w-[24%] rounded-2xl shadow-lg bg-white flex flex-col justify-between items-center py-4 px-3">
+              <div className="bg-[#1B3463] rounded-full p-4 mb-3">
+                <img
+                  src={logoOne}
+                  className="h-[40px] w-[40px] sm:h-[45px] sm:w-[45px] md:h-[50px] md:w-[50px]"
+                  alt="Early detection icon"
+                />
+              </div>
+              <p className="text-xs sm:text-sm md:text-base text-[#5E6282] px-2 sm:px-3 md:px-4">
                 With OsteoCheck, uncover bone degeneration in its early stages,
-                facilitating swift and efficient treatment.{" "}
+                facilitating swift and efficient treatment.
               </p>
             </div>
-            <div className="md:w-[22%] w-[90%] md:h-[100%]  h-[200px] rounded-2xl shadow-lg bg-white flex flex-col justify-around items-center py-2">
-              <img
-                src={logoTwo}
-                className="md:h-[100px] md:w-[100px] h-[60px] w-[60px]"
-                alt="img"
-              />
-              <p className="text-[12px] md:text-[20px] text-[#5E6282] px-4 md:px-8">
-                {" "}
+
+            {/* Card 2 */}
+            <div className="mx-auto w-[90%] sm:w-[45%] md:w-[24%] rounded-2xl shadow-lg bg-white flex flex-col justify-between items-center py-4 px-3">
+              <div className="bg-[#1B3463] rounded-full p-4 mb-3">
+                <img
+                  src={logoTwo}
+                  className="h-[40px] w-[40px] sm:h-[45px] sm:w-[45px] md:h-[50px] md:w-[50px]"
+                  alt="Preventing complications icon"
+                />
+              </div>
+              <p className="text-xs sm:text-sm md:text-base text-[#5E6282] px-2 sm:px-3 md:px-4">
                 By detecting bone degeneration promptly, OsteoCheck is
                 instrumental in averting severe complications and preserving
-                lives.{" "}
+                lives.
               </p>
             </div>
-            <div className="md:w-[22%] w-[90%] md:h-[100%]  h-[200px] rounded-2xl shadow-lg bg-white flex flex-col justify-around items-center py-2">
-              <img
-                src={logoThree}
-                className="md:h-[100px] md:w-[100px] h-[60px] w-[60px]"
-                alt="img"
-              />
-              <p className="text-[12px] md:text-[20px] text-[#5E6282] px-4 md:px-8">
-                {" "}
+
+            {/* Card 3 */}
+            <div className="mx-auto w-[90%] sm:w-[45%] md:w-[24%] rounded-2xl shadow-lg bg-white flex flex-col justify-between items-center py-4 px-3">
+              <div className="bg-[#1B3463] rounded-full p-4 mb-3">
+                <img
+                  src={logoThree}
+                  className="h-[40px] w-[40px] sm:h-[45px] sm:w-[45px] md:h-[50px] md:w-[50px]"
+                  alt="Timely intervention icon"
+                />
+              </div>
+              <p className="text-xs sm:text-sm md:text-base text-[#5E6282] px-2 sm:px-3 md:px-4">
                 Facilitates timely detection of bone degeneration, essential for
-                initiating timely interventions and halting disease advancement{" "}
+                initiating timely interventions and halting disease advancement.
               </p>
             </div>
-            <div className="md:w-[22%] w-[90%] md:h-[100%]  h-[200px] rounded-2xl shadow-lg bg-white flex flex-col justify-around items-center py-2">
-              <img
-                src={logoFour}
-                className="md:h-[100px] md:w-[100px] h-[60px] w-[60px]"
-                alt="img"
-              />
-              <p className="text-[12px] md:text-[20px] text-[#5E6282] px-4 md:px-8">
-                {" "}
+
+            {/* Card 4 */}
+            <div className="mx-auto w-[90%] sm:w-[45%] md:w-[24%] rounded-2xl shadow-lg bg-white flex flex-col justify-between items-center py-4 px-3">
+              <div className="bg-[#1B3463] rounded-full p-4 mb-3">
+                <img
+                  src={logoFour}
+                  className="h-[40px] w-[40px] sm:h-[45px] sm:w-[45px] md:h-[50px] md:w-[50px]"
+                  alt="Personalized guidance icon"
+                />
+              </div>
+              <p className="text-xs sm:text-sm md:text-base text-[#5E6282] px-2 sm:px-3 md:px-4">
                 Reports offer patients tailored, actionable guidance specific to
                 their condition, gender, and age, empowering informed decision-
-                making.{" "}
+                making.
               </p>
             </div>
           </div>
         </div>
 
-        <div className="md:min-h-[60vh] flex flex-col justify-start items-center my-[10px] md:my-[40px] md:py-[40px] w-[100%]">
+        <div className="w-full flex flex-col justify-start items-center my-6 sm:my-8 md:my-10 py-4 sm:py-6 md:py-10">
           <p
-            className="font-bold text-[16px] md:text-[32px] text-center bg-clip-text text-transparent"
+            className="font-bold text-base sm:text-xl md:text-2xl lg:text-[32px] text-center bg-clip-text text-transparent"
             style={{
               backgroundImage: "linear-gradient(180deg, #EA4335, #CC0000)",
             }}
           >
-            {" "}
-            Why Choose OsteoCheck?{" "}
+            Why Choose OsteoCheck?
           </p>
-          <div className="text-center flex flex-col md:flex-row flex-wrap justify-around gap-8 items-center h-[100%] w-[100%] my-[20px] pl-4">
-            <div className="md:w-[42%] flex flex-row justify-center items-center gap-2 md:pl-2 md:gap-8 md:h-[30vh]">
+          <div className="text-center flex flex-col sm:flex-row flex-wrap justify-around gap-6 sm:gap-4 md:gap-6 lg:gap-8 items-center w-full my-5 px-4 sm:px-6">
+            <div className="w-full sm:w-[90%] md:w-[45%] flex flex-row justify-center items-center gap-2 sm:gap-4 md:gap-6 lg:gap-8 py-4">
               <img
                 src={fooLogoOne}
-                className="md:h-[200px] md:w-[200px] h-[100px] w-[120px]"
-                alt="img"
+                className="h-[100px] w-[120px] sm:h-[120px] sm:w-[140px] md:h-[160px] md:w-[180px] lg:h-[200px] lg:w-[200px]"
+                alt="Robust data icon"
               />
-              <div className="flex flex-col justify-center gap-2 md:gap-8 items-start h-[100%] px-[10px] md:px-[0px]">
-                <h1 className="text-[14px] md:text-[24px] text-[#000] font-bold text-left">
-                  {" "}
-                  Developed on Robust Data{" "}
+              <div className="flex flex-col justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 items-start h-full px-2 sm:px-3">
+                <h1 className="text-sm sm:text-base md:text-xl lg:text-2xl text-[#000] font-bold text-left">
+                  Developed on Robust Data
                 </h1>
-                <p className="text-[#000000] text-[12px] md:text-[20px] text-left">
-                  {" "}
+                <p className="text-[#000000] text-xs sm:text-sm md:text-base lg:text-lg text-left">
                   Developed through a collaboration between a radiologist and 5C
                   Network, OsteoCheck has undergone training on a dataset
-                  comprising approximately 1.3 million scans.{" "}
+                  comprising approximately 1.3 million scans.
                 </p>
               </div>
             </div>
-            <div className="md:w-[42%] flex flex-row justify-center items-center gap-2 md:gap-8 md:h-[30vh]">
+            <div className="w-full sm:w-[90%] md:w-[45%] flex flex-row justify-center items-center gap-2 sm:gap-4 md:gap-6 lg:gap-8 py-4">
               <img
                 src={fooLogoTwo}
-                className="md:h-[200px] md:w-[200px] h-[100px] w-[120px]"
-                alt="img"
+                className="h-[100px] w-[120px] sm:h-[120px] sm:w-[140px] md:h-[160px] md:w-[180px] lg:h-[200px] lg:w-[200px]"
+                alt="Clinical evaluations icon"
               />
-              <div className="flex flex-col justify-center gap-2 md:gap-8 items-start h-[100%] px-[10px] md:px-[0px]">
-                <h1 className="text-[14px] md:text-[24px] text-[#000] font-bold text-left">
-                  {" "}
-                  Clinical Evaluations By OsteoCheck{" "}
+              <div className="flex flex-col justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 items-start h-full px-2 sm:px-3">
+                <h1 className="text-sm sm:text-base md:text-xl lg:text-2xl text-[#000] font-bold text-left">
+                  Clinical Evaluations By OsteoCheck
                 </h1>
-                <p className="text-[#000000] text-[12px] md:text-[20px] text-left">
-                  {" "}
+                <p className="text-[#000000] text-xs sm:text-sm md:text-base lg:text-lg text-left">
                   It evaluates various clinical parameters, including reduction
                   in joint space, presence of osteophytes, sclerosis, tibial
-                  spikes, bone alignment, and post-operative conditions.{" "}
+                  spikes, bone alignment, and post-operative conditions.
                 </p>
               </div>
             </div>
-            <div className="md:w-[42%] flex flex-row justify-center items-center gap-2 md:gap-8 md:h-[30vh]">
+            <div className="w-full sm:w-[90%] md:w-[45%] flex flex-row justify-center items-center gap-2 sm:gap-4 md:gap-6 lg:gap-8 py-4">
               <img
                 src={fooLogoThree}
-                className="md:h-[200px] md:w-[200px] h-[100px] w-[120px]"
-                alt="img"
+                className="h-[100px] w-[120px] sm:h-[120px] sm:w-[140px] md:h-[160px] md:w-[180px] lg:h-[200px] lg:w-[200px]"
+                alt="Continuous enhancement icon"
               />
-              <div className="flex flex-col justify-center gap-2 md:gap-8 items-start h-[100%] px-[10px] md:px-[0px]">
-                <h1 className="text-[14px] md:text-[24px] text-[#000] font-bold text-left">
-                  {" "}
-                  Continuous Enhancement{" "}
+              <div className="flex flex-col justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 items-start h-full px-2 sm:px-3">
+                <h1 className="text-sm sm:text-base md:text-xl lg:text-2xl text-[#000] font-bold text-left">
+                  Continuous Enhancement
                 </h1>
-                <p className="text-[#000000] text-[12px] md:text-[20px] text-left">
-                  {" "}
+                <p className="text-[#000000] text-xs sm:text-sm md:text-base lg:text-lg text-left">
                   OsteoCheck continually updates with Al advancements and user
                   feedback, improving diagnostics and user experience. Real-time
-                  monitoring ensures reliable support for healthcare providers.{" "}
+                  monitoring ensures reliable support for healthcare providers.
                 </p>
               </div>
             </div>
-            <div className="md:w-[42%] flex flex-row justify-center items-center gap-2 md:gap-8 md:h-[30vh]">
+            <div className="w-full sm:w-[90%] md:w-[45%] flex flex-row justify-center items-center gap-2 sm:gap-4 md:gap-6 lg:gap-8 py-4">
               <img
                 src={fooLogoFour}
-                className="md:h-[200px] md:w-[200px] h-[100px] w-[120px]"
-                alt="img"
+                className="h-[100px] w-[120px] sm:h-[120px] sm:w-[140px] md:h-[160px] md:w-[180px] lg:h-[200px] lg:w-[200px]"
+                alt="Advanced diagnosis icon"
               />
-              <div className="flex flex-col justify-center gap-2 md:gap-8 items-start h-[100%] px-[10px] md:px-[0px]">
-                <h1 className="text-[14px] md:text-[24px] text-[#000] font-bold text-left">
-                  {" "}
-                  Advanced Diagnosis and Grading System for Bone Degeneration{" "}
+              <div className="flex flex-col justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 items-start h-full px-2 sm:px-3">
+                <h1 className="text-sm sm:text-base md:text-xl lg:text-2xl text-[#000] font-bold text-left">
+                  Advanced Diagnosis and Grading System
                 </h1>
-                <p className="text-[#000000] text-[12px] md:text-[20px] text-left">
-                  {" "}
+                <p className="text-[#000000] text-xs sm:text-sm md:text-base lg:text-lg text-left">
                   OsteoCheck is a diagnostic system that evaluates bone
                   degeneration, categorizing severity into grades ranging from 1
-                  to 4.{" "}
+                  to 4.
                 </p>
               </div>
             </div>
