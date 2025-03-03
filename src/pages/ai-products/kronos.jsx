@@ -58,45 +58,42 @@ function kronos() {
           </div>
         </div>
 
-        <div className="md:min-h-[26vh] bg-[#F3F7FF] my-[5px]">
-          <div className="flex flex-col justify-center items-center px-[20px] md:px-[40px] gap-2 md:gap-4 py-[20px] md:py-[40px]">
-            <div className="flex flex-col md:flex-row justify-between items-center min-h-[44vh] md:h-[44vh] w-[94%] gap-4 md:gap-0">
-              <div className="h-[100%] md:w-[30%] rounded-3xl shadow-lg bg-white flex flex-col justify-center items-center p-4 gap-4 md:gap-8 px-[30px]">
-                <h1 className="text-[#1B3363] text-[14px] md:text-[24px] text-center font-extrabold">
-                  {" "}
-                  Swift Access to Precise Insights{" "}
-                </h1>
-                <p className="text-[#5E6282] font-normal text-[12px] md:text-[20px] text-center leading-4 md:leading-8">
-                  {" "}
-                  Kronos offers rapid and reliable access to precise
-                  neuroradiology insights, enabling informed decision-making
-                  within seconds.
-                </p>
-              </div>
-              <div className="h-[100%] md:w-[30%] rounded-3xl shadow-lg bg-white flex flex-col justify-center items-center p-4 gap-4 md:gap-8  px-[30px]">
-                <h1 className="text-[#1B3363] text-[14px] md:text-[24px] text-center font-extrabold">
-                  {" "}
-                  Natural Conversational Interface
-                </h1>
-                <p className="text-[#5E6282] font-normal text-[12px] md:text-[18px] text-center leading-4 md:leading-8">
-                  {" "}
-                  Natural Conversational Interface: Experience seamless
-                  interactions with Kronos that mimic consulting sessions with
-                  seasoned neuroradiologists, ensuring ease of use and accuracy.
-                </p>
-              </div>
-              <div className="h-[100%] md:w-[30%] rounded-3xl shadow-lg bg-white flex flex-col justify-center items-center p-4 gap-4 md:gap-8  px-[30px]">
-                <h1 className="text-[#1B3363] text-[14px] md:text-[20px] text-center font-extrabold">
-                  {" "}
-                  Thoroughly Vetted Information
-                </h1>
-                <p className="text-[#5E6282] font-normal text-[12px] md:text-[18px] text-center leading-4 md:leading-8">
-                  {" "}
-                  Leveraging data from authoritative textbooks and peer-reviewed
-                  journals, Kronos guarantees comprehensive and accurate
-                  responses to your queries.
-                </p>
-              </div>
+        <div className="bg-[#F3F7FF] w-full py-8 sm:py-10 md:py-12 flex flex-col justify-start items-center my-4 sm:my-6 md:my-10">
+          <div className="text-center flex flex-col sm:flex-row sm:flex-wrap md:flex-nowrap justify-center items-stretch gap-6 sm:gap-4 md:gap-6 lg:gap-8 w-full max-w-[90%]">
+            {/* Card 1 */}
+            <div className="mx-auto w-[90%] sm:w-[45%] md:w-[30%] rounded-2xl shadow-lg bg-white flex flex-col justify-between items-center py-4 px-3">
+              <h1 className="text-[#1B3363] text-base sm:text-lg md:text-xl lg:text-2xl text-center font-extrabold py-3">
+                Swift Access to Precise Insights
+              </h1>
+              <p className="text-xs sm:text-sm md:text-base text-[#5E6282] px-2 sm:px-3 md:px-4 text-center">
+                Kronos offers rapid and reliable access to precise
+                neuroradiology insights, enabling informed decision-making
+                within seconds.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="mx-auto w-[90%] sm:w-[45%] md:w-[30%] rounded-2xl shadow-lg bg-white flex flex-col justify-between items-center py-4 px-3">
+              <h1 className="text-[#1B3363] text-base sm:text-lg md:text-xl lg:text-2xl text-center font-extrabold py-3">
+                Natural Conversational Interface
+              </h1>
+              <p className="text-xs sm:text-sm md:text-base text-[#5E6282] px-2 sm:px-3 md:px-4 text-center">
+                Experience seamless interactions with Kronos that mimic
+                consulting sessions with seasoned neuroradiologists, ensuring
+                ease of use and accuracy.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="mx-auto w-[90%] sm:w-[45%] md:w-[30%] rounded-2xl shadow-lg bg-white flex flex-col justify-between items-center py-4 px-3">
+              <h1 className="text-[#1B3363] text-base sm:text-lg md:text-xl lg:text-2xl text-center font-extrabold py-3">
+                Thoroughly Vetted Information
+              </h1>
+              <p className="text-xs sm:text-sm md:text-base text-[#5E6282] px-2 sm:px-3 md:px-4 text-center">
+                Leveraging data from authoritative textbooks and peer-reviewed
+                journals, Kronos guarantees comprehensive and accurate responses
+                to your queries.
+              </p>
             </div>
           </div>
         </div>
