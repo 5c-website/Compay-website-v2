@@ -12,59 +12,6 @@ import CareerStats from "../../components/CareerStats";
 function Career() {
   const JobsData = [
     {
-      title: "Senior Software Engineer",
-      location: "Coimbatore, Tamil Nadu, India",
-      detailedInformation: {
-        no_of_positions: "NA",
-        type: "Full Time",
-        job_expiration: "NA",
-        required_experience: "3+ years",
-        skills: ["Javascript", "Node.Js", "Express.Js", "SQL"],
-        full_description: [
-          {
-            heading: "Job Summary",
-            points: [
-              "We're seeking a passionate Senior Software Engineer to create systems for the entire diagnosis lifecycle.",
-            ],
-          },
-          {
-            heading: "Responsibilities",
-            points: [
-              "Design, develop, and maintain scalable, high-performance software systems.",
-              "Lead technical projects and mentor junior team members.",
-              "Write clean, high-quality code.",
-              "Collaborate with cross-functional teams.",
-              "Optimize application performance and scalability.",
-              "Conduct code reviews.",
-              "Contribute to architectural decisions.",
-            ],
-          },
-          {
-            heading: "Requirements",
-            points: [
-              "Bachelor's degree in Computer Science or equivalent experience.",
-              "3+ years of software engineering experience, focusing on backend development.",
-              "Strong proficiency in JavaScript (ES6+), Node.js, Express.js, SQL, PostgreSQL, MySQL.",
-              "Excellent computer science fundamentals and problem-solving skills.",
-              "Strong grasp of data structures, algorithms, and OOP.",
-              "Experience with RESTful APIs, Websockets, and JSON.",
-              "Proficiency in Git.",
-            ],
-          },
-          {
-            heading: "Preferred Skills",
-            points: [
-              "Cloud infrastructure experience (AWS).",
-              "CI/CD pipelines knowledge.",
-              "Containerization and microservices exposure.",
-              "TypeScript experience.",
-              "Familiarity with frontend technologies (e.g., ReactJS).",
-            ],
-          },
-        ],
-      },
-    },
-    {
       title: "Senior Data Scientist - LLM",
       location: "Bangalore, Karnataka, India",
       detailedInformation: {
@@ -189,7 +136,7 @@ function Career() {
     },
     {
       title: "Area Sales Manager",
-      location: "Bangalore, Karnataka, India",
+      location: "Anywhere in India",
       detailedInformation: {
         no_of_positions: "NA",
         type: "Full Time",
@@ -302,6 +249,67 @@ function Career() {
               "Experience in building deep learning architectures from scratch.",
               "Experience in Large Language Models.",
               "Experience in model pruning and quantization and in scaling model training and inference using GPUs.",
+            ],
+          },
+        ],
+      },
+    },
+    {
+      title: "Senior Software Engineer (Full Stack)",
+      location: "Bangalore, Karnataka, India",
+      detailedInformation: {
+        no_of_positions: "NA",
+        type: "Full-time & Work from Office",
+        job_expiration: "NA",
+        required_experience: "3+ years",
+        full_description: [
+          {
+            heading: "Job Summary",
+            points: [
+              "We are hiring a Senior Full Stack Engineer (React.js, Node.js, MongoDB) with 3+ years of experience to build and maintain scalable web applications. This Bangalore-based, full-time, onsite role involves API development, UI/UX collaboration, code reviews, and mentoring. Experience with cloud, CI/CD, and microservices is a plus.",
+            ],
+          },
+          {
+            heading: "Key Responsibilities",
+            points: [
+              "Design, develop, and maintain scalable and efficient code for both client and server-side applications",
+              "Work with front-end technologies to create responsive and intuitive user interfaces",
+              "Develop robust back-end services and APIs to support application functionality",
+              "Collaborate with UI/UX designers to implement visually appealing and user-friendly interfaces",
+              "Participate in code reviews to ensure code quality and best practices",
+              "Troubleshoot, debug, and upgrade existing software components",
+              "Write clean, maintainable, and well-documented code",
+              "Implement automated testing strategies to ensure application reliability",
+              "Stay current with emerging technologies and industry trends",
+              "Mentor junior developers and contribute to team knowledge sharing",
+            ],
+          },
+          {
+            heading: "Required Qualifications",
+            points: [
+              "Bachelors degree in computer science, Engineering, or related field",
+              "Minimum 3+ years of professional experience in full-stack development",
+              "Strong proficiency in React.js, including state management, hooks, and component architecture",
+              "Experience with Node.js and Express.js for backend development",
+              "Expertise in MongoDB database design, queries, and Mongoose ODM",
+              "Solid understanding of RESTful API development with Express.js",
+              "Experience with RESTful API design and implementation",
+              "Familiarity with version control systems (Git)",
+              "Knowledge of web application security principles",
+              "Strong problem-solving skills and attention to detail",
+              "Excellent communication and teamwork skills",
+            ],
+          },
+          {
+            heading: "Preferred Skills",
+            points: [
+              "Experience with cloud services (AWS, Azure, or GCP)",
+              "Knowledge of containerization and orchestration tools (Docker, Kubernetes)",
+              "Experience with microservices architecture",
+              "Understanding of CI/CD pipelines",
+              "Knowledge of agile development methodologies",
+              "Experience with performance optimization techniques",
+              "Familiarity with testing frameworks",
             ],
           },
         ],

@@ -89,23 +89,26 @@ const JobDescription = () => {
               </p>
             </div>
           </div>
-          <div className="h-[100%] w-[90%] md:w-[44%] rounded-2xl flex flex-row justify-start items-center bg-white shadow-xl md:pl-5 md:p-0 p-4">
-            <img
-              src={skillsLogo}
-              className="md:h-[100px] md:w-[100px] h-[60px] w-[60px]"
-              alt="img"
-            />
-            <div className="flex flex-col  pl-2 md:pl-8 justify-start items-start gap-4">
-              <h1 className="text-[#1B3363] text-[16px] md:text-[22px] font-bold">
-                Skills
-              </h1>
-              <p className="text-[#0070C0] text-[14px] md:text-[20px]">
-                {parsedJobInfo &&
-                  parsedJobInfo.length > 0 &&
-                  parsedJobInfo[0]?.detailedInformation?.skills?.join(", ")}
-              </p>
-            </div>
-          </div>
+          {parsedJobInfo &&
+            parsedJobInfo[0]?.detailedInformation?.skills?.length && (
+              <div className="h-[100%] w-[90%] md:w-[44%] rounded-2xl flex flex-row justify-start items-center bg-white shadow-xl md:pl-5 md:p-0 p-4">
+                <img
+                  src={skillsLogo}
+                  className="md:h-[100px] md:w-[100px] h-[60px] w-[60px]"
+                  alt="img"
+                />
+                <div className="flex flex-col  pl-2 md:pl-8 justify-start items-start gap-4">
+                  <h1 className="text-[#1B3363] text-[16px] md:text-[22px] font-bold">
+                    Skills
+                  </h1>
+                  <p className="text-[#0070C0] text-[14px] md:text-[20px]">
+                    {parsedJobInfo &&
+                      parsedJobInfo.length > 0 &&
+                      parsedJobInfo[0]?.detailedInformation?.skills?.join(", ")}
+                  </p>
+                </div>
+              </div>
+            )}
         </div>
 
         <div className="min-h-[30vh] w-[100%] py-[20px] md:px-[60px] mb-8">
