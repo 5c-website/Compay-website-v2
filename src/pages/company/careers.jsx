@@ -147,7 +147,9 @@ function Career() {
           {
             heading: "Job Summary",
             points: [
-              "5C Network is India’s leading Medical AI company providing high-quality radiology reporting services powered by advanced AI technologies. Our mission is to make radiology services accessible and efficient through innovative solutions. We are now expanding our operations to Egypt and seeking a dynamic and experienced Country Manager to lead this venture.",
+              "5C Network is India’s leading Medical AI company, delivering high-quality radiology reporting services powered by advanced AI technologies. Our mission is to make radiology services more accessible and efficient through innovative solutions.",
+              "We are seeking motivated sales professionals with in-depth experience in Teleradiology sales or healthcare equipment sales. Ideal candidates should have strong connections in the diagnostic and hospital sectors.",
+              "Opportunities are available across India",
             ],
           },
           {
