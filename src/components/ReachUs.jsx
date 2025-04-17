@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Popup from "./Popup";
 import { slackAlerts } from "../api/SlackTiggers";
 import { NocoFetch } from "../api/NocoDBEndpoints";
+import { PlatformApi } from "../api/PlatformApi";
 
 function ReachUs() {
   const notify = () => toast("Successfully submitted");
@@ -56,6 +57,12 @@ function ReachUs() {
       cover_letter: coverLetter,
       cv_drive_link: cvDriveLink,
     };
+
+    try {
+      await PlatformApi.sendCareerApplicationMailToHR(formData);
+    } catch (error) {
+      console.error("Error sending career application to HR:", error);
+    }
 
     try {
       const response = await NocoFetch.createJobApplicationEntry(formData);

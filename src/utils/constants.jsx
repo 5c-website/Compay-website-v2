@@ -1,5 +1,6 @@
 export const NOCO_DB_BASE_URL = "https://answermagic.5cn.co.in";
 export const SLACK_TRIGGER_BASE_URL = "https://groot.5cn.co.in";
+export const CORE_PLATFORM_BASE_URL = "https://api.5cnetwork.com";
 
 export const SLACK_CHANNELS_KEYS = {
   DEMO_REQUEST:
