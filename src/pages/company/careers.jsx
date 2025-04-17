@@ -317,6 +317,58 @@ function Career() {
         ],
       },
     },
+    {
+      title: "Inside Sales Representative",
+      location: "Bangalore – On-site",
+      detailedInformation: {
+        no_of_positions: "NA",
+        type: "Full-time",
+        job_expiration: "NA",
+        required_experience: "1 to 5 years",
+        full_description: [
+          {
+            heading: "Job Summary",
+            points: [
+              "As an Inside Sales Representative, you will play a crucial role in driving our sales efforts and expanding our customer base. You will be responsible for identifying potential customers, engaging with prospects, and guiding them through the sales process. Your goal is to build strong relationships with healthcare providers and organizations, understand their needs, and demonstrate how our AI teleradiology solutions can address their challenges.",
+            ],
+          },
+          {
+            heading: "Key Responsibilities",
+            points: [
+              "Lead Generation: Proactively identify and qualify potential customers through research, cold calling, email campaigns, and social media.",
+              "Customer Engagement: Engage with prospects to understand their needs, pain points, and objectives. Present our AI teleradiology solutions in a compelling manner to showcase their value.",
+              "Sales Pipeline Management: Manage and maintain a robust sales pipeline, ensuring accurate and timely updates in the CRM system. Track and report on key metrics and progress towards sales targets.",
+              "Product Knowledge: Develop a deep understanding of our AI teleradiology products and services, staying up to date with industry trends and advancements. Communicate product features, benefits, and competitive advantages effectively.",
+              "Collaboration: Work closely with the sales, marketing, and customer success teams to align strategies, share insights, and ensure a seamless customer experience. Provide feedback to help refine marketing materials and sales approaches.",
+              "Negotiation and Closing: Navigate the sales process from initial contact to contract negotiation and closing. Handle objections and overcome challenges to secure new business opportunities.",
+              "Customer Relationship Management: Build and maintain long-term relationships with clients. Ensure high levels of customer satisfaction and identify opportunities for upselling or cross-selling.",
+            ],
+          },
+          {
+            heading: "Required Qualifications",
+            points: [
+              "Bachelor’s degree in business, Marketing, Healthcare, or a related field.",
+              "Proven experience in inside sales, preferably in the healthcare or technology industry.",
+              "Strong understanding of the healthcare market, particularly teleradiology and AI applications, is a plus.",
+              "Excellent communication and interpersonal skills with the ability to build rapport and trust with prospects and clients.",
+              "Results-oriented with a track record of meeting or exceeding sales targets.",
+              "Proficient in CRM software (e.g., Salesforce) and other sales tools.",
+              "Strong organizational and time management skills, with the ability to manage multiple priorities effectively.",
+              "Self-motivated, proactive, and able to work independently as well as part of a team.",
+            ],
+          },
+          {
+            heading: "Benefits",
+            points: [
+              "Competitive salary and Sales Incentive structure",
+              "Professional development opportunities",
+              "Collaborative and innovative work environment",
+              "Opportunity to make a significant impact in the healthcare industry",
+            ],
+          },
+        ],
+      },
+    }
   ];
 
   const handleApply = (title) => {
