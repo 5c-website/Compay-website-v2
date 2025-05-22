@@ -368,6 +368,158 @@ function Career() {
           },
         ],
       },
+    },
+    {
+      "title": "Data Science Specialist",
+      "location": "Bangalore – On-site",
+      "detailedInformation": {
+        "no_of_positions": "NA",
+        "type": "Full-time",
+        "job_expiration": "NA",
+        "required_experience": "1 to 6 years (but mindset > experience)",
+        "full_description": [
+          {
+            "heading": "About the Role",
+            "points": [
+              "We’re looking for a mission-driven, hands-on Data Analytics Specialist who is not just technically sharp, but obsessed with impact. This is not your average analytics role. You’ll be driving the metrics that run the business — from clinical operations to stakeholder reporting to automation.",
+              "You’ll work closely with leadership, radiologists, operations, product teams, and AI engineers to ensure every decision we make is data-backed, actionable, and scalable. If you’re the kind of person who finds excitement in building dashboards, triggering automations, rewriting messy pipelines, and helping the company grow through deep insights — this is your playground."
+            ]
+          },
+          {
+            "heading": "Key Responsibilities",
+            "points": [
+              "Own and Drive Business KPIs: Take complete ownership of company-wide metrics; proactively align with stakeholders to ensure accuracy, relevance, and actionability.",
+              "Data Engineering: Build and optimize robust pipelines (ETL/ELT) across Postgres, ClickHouse, and other data sources.",
+              "Dashboards & Reporting: Design and maintain intuitive, powerful dashboards (e.g., Metabase, Power BI, Tableau, Google Data Studio) that stakeholders love to use.",
+              "Backend Data Transformation: Write clean, reusable code to transform raw data into production-grade insights.",
+              "API Creation: Build and maintain internal APIs to serve analytics outputs to frontend and production systems.",
+              "Email Automation: Create dynamic, real-time insights and scheduled updates through email reports for various stakeholders.",
+              "Spreadsheet Mastery: Manipulate and automate complex data in spreadsheets (Excel/Google Sheets) for both deep-dive analysis and reporting.",
+              "AI & Automation: Work with AI models and predictive algorithms to bring automation into analytics and operational workflows.",
+              "Business Understanding: Deeply understand our teleradiology ecosystem—clinical flow, operations, financials, tech platform—and speak the language of every team you work with.",
+              "Proactive Collaboration: Don’t wait to be told. Identify data gaps, flag inconsistencies, suggest product tweaks, and work shoulder-to-shoulder with leadership."
+            ]
+          },
+          {
+            "heading": "Required Skills",
+            "points": [
+              "Strong foundation in Python for data analytics (Pandas, NumPy, FastAPI, Jupyter, etc.)",
+              "Solid understanding of SQL (ClickHouse, PostgreSQL) and experience designing queries for performance",
+              "End-to-end ownership of dashboards — from data model to frontend display",
+              "Experience building or working with APIs for analytics",
+              "Strong knowledge of spreadsheet tools and formula-driven reporting",
+              "Experience working with AI/ML models for real-world applications (preferred)",
+              "Hands-on experience with backend data transformations, versioning, and automation",
+              "Working knowledge of frontend/backend frameworks, preferably in a full-stack environment"
+            ]
+          },
+          {
+            "heading": "Bonus / Nice to Have",
+            "points": [
+              "Exposure to tools like dbt, Airflow, ChromaDB, Streamlit, Plotly",
+              "Familiarity with data privacy, compliance, and healthcare analytics",
+              "Experience building analytics platforms for SaaS or health-tech companies"
+            ]
+          },
+          {
+            "heading": "Mindset We’re Looking For",
+            "points": [
+              "10x Hustler: Willing to go the extra mile to solve a business problem, even if you have to learn the tool that day",
+              "Obsessed with Accuracy: You don’t ship unless the numbers make sense, no matter what",
+              "Extreme Ownership: You don’t wait to be asked. You drive results.",
+              "Fast Learner: You may not know everything, but you can pick up anything in a few days",
+              "Business First, Code Later: You understand that the goal isn’t just dashboards — it’s impact"
+            ]
+          },
+          {
+            "heading": "Why Join Us?",
+            "points": [
+              "Work at the heart of India's fastest-growing teleradiology platform",
+              "Direct access to leadership and real-world decision-making",
+              "Opportunity to build game-changing analytics systems and shape the business strategy",
+              "Learn AI, automation, product, and ops – all in one role",
+              "Clear 3-month ramp-up roadmap and growth plan"
+            ]
+          },
+          {
+            "heading": "Expectation in First 3 Months",
+            "points": [
+              "Build one end-to-end dashboard from scratch",
+              "Clean up at least one messy data pipeline",
+              "Automate at least one stakeholder email update",
+              "Prove accuracy across critical business metrics",
+              "Understand the platform’s full-stack structure and propose one improvement"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Data Science Intern – Analytics, Automation & Problem Solving",
+      "location": "Bangalore – On-site",
+      "detailedInformation": {
+        "no_of_positions": "NA",
+        "type": "Internship 3–6 months",
+        "job_expiration": "NA",
+        "required_experience": "Final-year students or recent graduates",
+        "full_description": [
+          {
+            "heading": "About the Role",
+            "points": [
+              "We’re looking for a high-agency intern who’s not just interested in data—but obsessed with solving problems. At 5C Network, data isn’t just about analysis; it’s about building systems, driving operations, and enabling healthcare outcomes. You’ll work with our Data Science & Analytics team to go beyond dashboards—owning problems, building automations, and working directly with data that impacts thousands of lives."
+            ]
+          },
+          {
+            "heading": "What You’ll Work On",
+            "points": [
+              "Complex Querying & Data Handling: Write high-performance SQL queries across large healthcare datasets (PostgreSQL, ClickHouse); troubleshoot data discrepancies and ensure reliability.",
+              "Python-based Data Transformation: Clean, manipulate, and transform raw data using Pandas/Numpy; contribute to backend scripts used in live dashboards and reporting tools.",
+              "Dashboarding & Reporting: Assist in building intuitive dashboards (Metabase/Power BI/Google Data Studio) that drive daily decisions for ops, product, and clinical teams.",
+              "Automations & Workflows: Identify repetitive processes and help automate them using Python, APIs, and email/reporting tools.",
+              "Advanced Applications: Collaborate on use-cases involving natural language data, smart assistants, and auto-triggered insights—bringing intelligence into decision loops.",
+              "Business Context Awareness: Understand the why behind every metric. Don’t just solve queries — solve problems that matter."
+            ]
+          },
+          {
+            "heading": "What We Expect from You",
+            "points": [
+              "Strong grasp of SQL — not just writing queries, but optimizing, debugging, and owning logic across tables",
+              "Solid working knowledge of Python for data (Pandas, NumPy, scripting)",
+              "Comfort working with databases, schemas, and real-world messy data",
+              "Curiosity to dig deeper: If something looks off, you investigate, not ignore",
+              "Ability to think business-first: You ask \"What is this metric telling us?\" before jumping into code",
+              "High ownership: You don’t wait for perfect specs—you explore, propose, and drive",
+              "Willingness to stretch: Whether it’s automating a report, building an internal tool, or learning something new that day"
+            ]
+          },
+          {
+            "heading": "Nice to Have",
+            "points": [
+              "Experience working with APIs or backend data workflows",
+              "Familiarity with tools like FastAPI, Git, or visualization platforms",
+              "Interest in healthcare or operations-heavy environments",
+              "Exposure to LLMs, text analytics, or no-code/low-code integrations (even if exploratory)"
+            ]
+          },
+          {
+            "heading": "Why This Internship is Different",
+            "points": [
+              "Real work, real impact: You’ll work on live projects that affect national healthcare delivery",
+              "Learn full-stack analytics: From data pipelines to dashboards to business impact",
+              "Mentorship from experienced data scientists and full-stack engineers",
+              "Opportunity to convert to a full-time role based on performance"
+            ]
+          },
+          {
+            "heading": "Perks",
+            "points": [
+              "Paid internship with stipend",
+              "Certificate and potential pre-placement offer",
+              "Office in Bangalore’s startup and health-tech hub"
+            ]
+          }
+        ]
+      }
     }
   ];
 
