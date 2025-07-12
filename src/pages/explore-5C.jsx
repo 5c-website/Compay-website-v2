@@ -20,7 +20,7 @@ import Footer from "../components/Footer";
 import laptopMockUpImage from "../../public/img/lead-generation/laptop.png";
 import mobileGif from "../../public/img/lead-generation/mobile-gif.gif";
 import bionicAi from "../../public/img/lead-generation/icons/bionic-ai.svg";
-import { Loader2 } from "lucide-react";
+import { Loader2, ChevronDown } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -29,6 +29,7 @@ import {
 } from "../components/Dialog";
 import { navigate } from "gatsby";
 import axios from "axios";
+import { Country, State } from "country-state-city";
 
 const TeleradiologyLanding = () => {
   const [activeTab, setActiveTab] = useState("with"); // 'with' or 'without'
@@ -751,12 +752,95 @@ const TeleradiologyLanding = () => {
     const [formData, setFormData] = useState({
       organizationName: "",
       contactPersonName: "",
+      country: "India",
+      state: "",
       contactNumber: "",
       email: "",
       message: "",
     });
 
     const [errors, setErrors] = useState({});
+    const [countries, setCountries] = useState([]);
+    const [states, setStates] = useState([]);
+    const [filteredCountries, setFilteredCountries] = useState([]);
+    const [filteredStates, setFilteredStates] = useState([]);
+    const [showCountryDropdown, setShowCountryDropdown] = useState(false);
+    const [showStateDropdown, setShowStateDropdown] = useState(false);
+    const [countrySearch, setCountrySearch] = useState("India");
+    const [stateSearch, setStateSearch] = useState("");
+    const [loadingStates, setLoadingStates] = useState(false);
+
+    // Fetch countries on component mount
+    useEffect(() => {
+      const fetchCountries = () => {
+        try {
+          const allCountries = Country.getAllCountries();
+          const countryData = allCountries.map(country => ({
+            name: country.name,
+            code: country.isoCode
+          }));
+          
+          // Sort countries alphabetically
+          countryData.sort((a, b) => a.name.localeCompare(b.name));
+          setCountries(countryData);
+          setFilteredCountries(countryData);
+          
+          // Set India as default and fetch its states
+          const indiaCountry = countryData.find(c => c.name === "India");
+          if (indiaCountry) {
+            fetchStates(indiaCountry.code);
+          }
+        } catch (error) {
+          console.error("Error fetching countries:", error);
+        }
+      };
+      fetchCountries();
+    }, []);
+
+    // Fetch states based on selected country
+    const fetchStates = (countryCode) => {
+      setLoadingStates(true);
+      try {
+        const statesOfCountry = State.getStatesOfCountry(countryCode);
+        const stateNames = statesOfCountry.map(state => state.name);
+        
+        // Sort states alphabetically
+        stateNames.sort((a, b) => a.localeCompare(b));
+        
+        setStates(stateNames);
+        setFilteredStates(stateNames);
+      } catch (error) {
+        console.error("Error fetching states:", error);
+        setStates([]);
+        setFilteredStates([]);
+      } finally {
+        setLoadingStates(false);
+      }
+    };
+
+    // Filter countries based on search
+    useEffect(() => {
+      if (countrySearch.trim() === "") {
+        setFilteredCountries(countries);
+      } else {
+        const filtered = countries.filter(country =>
+          country.name.toLowerCase().includes(countrySearch.toLowerCase())
+        );
+        setFilteredCountries(filtered);
+      }
+    }, [countrySearch, countries]);
+
+    // Filter states based on search
+    useEffect(() => {
+      if (stateSearch.trim() === "") {
+        setFilteredStates(states);
+      } else {
+        const filtered = states.filter(state =>
+          state.toLowerCase().includes(stateSearch.toLowerCase())
+        );
+        setFilteredStates(filtered);
+      }
+    }, [stateSearch, states]);
 
     const handleChange = (e) => {
       const { name, value } = e.target;
@@ -764,6 +848,35 @@ const TeleradiologyLanding = () => {
 
       // Clear error for that field on change
       setErrors({ ...errors, [name]: "" });
+    };
+
+    const handleCountrySearch = (e) => {
+      setCountrySearch(e.target.value);
+      setShowCountryDropdown(true);
+    };
+
+    const handleCountrySelect = (countryName) => {
+      const selectedCountry = countries.find(c => c.name === countryName);
+      setFormData({ ...formData, country: countryName, state: "" });
+      setCountrySearch(countryName);
+      setShowCountryDropdown(false);
+      setErrors({ ...errors, country: "" });
+      setStateSearch("");
+      if (selectedCountry) {
+        fetchStates(selectedCountry.code);
+      }
+    };
+
+    const handleStateSearch = (e) => {
+      setStateSearch(e.target.value);
+      setShowStateDropdown(true);
+    };
+
+    const handleStateSelect = (stateName) => {
+      setFormData({ ...formData, state: stateName });
+      setErrors({ ...errors, state: "" });
+      setShowStateDropdown(false);
+      setStateSearch(stateName);
     };
 
     const validateEmail = (email) => {
@@ -788,6 +901,14 @@ const TeleradiologyLanding = () => {
 
       if (!formData.contactPersonName) {
         newErrors.contactPersonName = "Contact Person Name is required.";
+      }
+
+      if (!formData.country) {
+        newErrors.country = "Country is required.";
+      }
+
+      if (!formData.state) {
+        newErrors.state = "State is required.";
       }
 
       if (
@@ -815,6 +936,8 @@ const TeleradiologyLanding = () => {
           Email: formData.email,
           "Mobile Number": formData.contactNumber,
           "Organization Name": formData.organizationName,
+          Country: formData.country,
+          State: formData.state,
           Message: formData.message,
         };
         const response = await NocoFetch.createDemoRequestEntry(payload);
@@ -824,6 +947,8 @@ const TeleradiologyLanding = () => {
           client_name: formData.contactPersonName,
           email: formData.email,
           mobile_number: formData.contactNumber,
+          country: formData.country,
+          state: formData.state,
           message: formData.message,
         };
 
@@ -851,10 +976,19 @@ const TeleradiologyLanding = () => {
           setFormData({
             organizationName: "",
             contactPersonName: "",
+            country: "India",
+            state: "",
             contactNumber: "",
             email: "",
             message: "",
           });
+          setCountrySearch("India");
+          setStateSearch("");
+          // Reset to India's states
+          const indiaCountry = countries.find(c => c.name === "India");
+          if (indiaCountry) {
+            fetchStates(indiaCountry.code);
+          }
         } else {
           throw new Error("Failed to submit form");
         }
@@ -921,6 +1055,88 @@ const TeleradiologyLanding = () => {
                 <p className="text-red-500 text-sm">
                   {errors.contactPersonName}
                 </p>
+              )}
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Country
+              </label>
+              <div className="relative">
+                <input
+                  type="text"
+                  value={countrySearch}
+                  required
+                  onChange={handleCountrySearch}
+                  onFocus={() => setShowCountryDropdown(true)}
+                  onBlur={() => setTimeout(() => setShowCountryDropdown(false), 200)}
+                  placeholder="Search country..."
+                  className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition duration-200 ease-in-out ${
+                    errors.country ? "border-red-500" : ""
+                  }`}
+                />
+                <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                {showCountryDropdown && filteredCountries.length > 0 && (
+                  <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-y-auto">
+                    {filteredCountries.map((country) => (
+                      <div
+                        key={country.code}
+                        onClick={() => handleCountrySelect(country.name)}
+                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                      >
+                        {country.name}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+              {errors.country && (
+                <p className="text-red-500 text-sm">{errors.country}</p>
+              )}
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                State
+              </label>
+              <div className="relative">
+                <input
+                  type="text"
+                  value={stateSearch}
+                  required
+                  onChange={handleStateSearch}
+                  onFocus={() => !loadingStates && states.length > 0 && setShowStateDropdown(true)}
+                  onBlur={() => setTimeout(() => setShowStateDropdown(false), 200)}
+                  placeholder={loadingStates ? "Loading states..." : "Search state..."}
+                  disabled={loadingStates || states.length === 0}
+                  className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition duration-200 ease-in-out ${
+                    errors.state ? "border-red-500" : ""
+                  } ${loadingStates || states.length === 0 ? "opacity-50 cursor-not-allowed" : ""}`}
+                />
+                <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                {showStateDropdown && filteredStates.length > 0 && (
+                  <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg max-h-48 overflow-y-auto">
+                    {filteredStates.map((state) => (
+                      <div
+                        key={state}
+                        onClick={() => handleStateSelect(state)}
+                        className={`px-4 py-2 hover:bg-gray-100 cursor-pointer ${
+                          formData.state === state ? "bg-blue-50 text-blue-600" : ""
+                        }`}
+                      >
+                        {state}
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {showStateDropdown && filteredStates.length === 0 && stateSearch.trim() !== "" && (
+                  <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg p-4 text-gray-500 text-center">
+                    No states found matching "{stateSearch}"
+                  </div>
+                )}
+              </div>
+              {errors.state && (
+                <p className="text-red-500 text-sm">{errors.state}</p>
               )}
             </div>
 
