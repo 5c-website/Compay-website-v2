@@ -964,6 +964,8 @@ const TeleradiologyLanding = () => {
             phone: formData.contactNumber,
             email: formData.email,
             name: formData.contactPersonName,
+            country: formData.country,
+            state: formData.state,
             message: formData.message,
           };
 
