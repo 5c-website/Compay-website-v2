@@ -8,6 +8,7 @@ import { slackAlerts } from "../api/SlackTiggers";
 import Popup from "../components/Popup";
 import { Country, State } from "country-state-city";
 import { ChevronDown } from "lucide-react";
+import axios from "axios";
 
 function ContactUs() {
   const [showPopup, setShowPopup] = useState(false);
