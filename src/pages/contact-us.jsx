@@ -176,6 +176,29 @@ function ContactUs() {
         category: formData.help,
         description: formData.message,
       };
+
+         try {
+          const url =
+            "https://yaake-backend.cubebase.ai/api/lead_contact_generation/";
+          const headers = {
+            Authorization: "AD4k09EWQR908FEWRQFwsRWQ",
+            "Content-Type": "application/json",
+          };
+
+          const data = {
+            phone: formData.phone,
+            email: formData.email,
+            name: formData.fullName,
+            country: formData.country,
+            state: formData.state,
+            message: formData.message,
+          };
+
+          await axios.post(url, data, { headers });
+        } catch (e) {
+          console.log("error posting to yaake-backend");
+        }
+      
       await slackAlerts.demoRequestAlert(demoRequestAlertAttributes);
       if (response.status === 200) {
         setShowPopup(true);
