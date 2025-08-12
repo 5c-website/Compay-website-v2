@@ -40,20 +40,6 @@ function aboutUs() {
       info: "Anand holds a management degree from the Indian Institute of Management (IIM), Bangalore, and brings over 30 years of experience in sales, marketing, and operations management. His leadership ensures operational efficiency across 5C Network’s AI solutions.",
     },
     {
-      img: profileFour,
-      name: "Bargava Subramanian",
-      role: "Chief AI Officer",
-      linkedin: "https://www.linkedin.com/in/bargava/",
-      info: "Bargava has a postgraduate degree from the University of Maryland and over 20 years of experience in data science and AI. His expertise drives the development of 5C Network’s AI models, ensuring that Bionic delivers world-class diagnostic performance.",
-    },
-    {
-      img: profileFive,
-      name: "Kirthiraj Yuvaraj",
-      role: "Chief Technology Officer",
-      linkedin: "https://www.linkedin.com/in/kirthiraj/",
-      info: "Kirthiraj holds a degree in Computer Engineering and brings over 11 years of experience in product development and technology management. He has worked in various startups, building products from the ground up and specializing in technical architecture. ",
-    },
-    {
       img: profileSix,
       name: "Prathusha Mannar",
       role: "Head - Human Resources",
