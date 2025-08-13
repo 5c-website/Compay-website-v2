@@ -3,6 +3,10 @@ import Navbar from "../../components/Navbar";
 import CompanyBanner from "../../components/CompanyBanner";
 import BannerImg from "../../../public/img/impact/blog_banner.png";
 import Footer from "../../components/Footer";
+import ContentGridComponent from "../../components/ContentGridComponent";
+import { useStrapiContent } from "../../hooks/use-strapi";
+import { COLLECTION_TYPES } from "../../services/strapi";
+import { extractCategories } from "../../utils/contentUtils";
 import TechOne from "../../../public/img/impact/tech_blog_1.png";
 import DcOne from "../../../public/img/impact/dc_blog_1.jpg";
 import blog3 from "../../../public/img/impact/blogs/b1.png";
@@ -12,7 +16,8 @@ import blog6 from "../../../public/img/impact/blogs/b4.png";
 import blog7 from "../../../public/img/impact/blogs/b6.png";
 import BlogGridComponent from "../../components/BlogGridComponent";
 
-function blogs() {
+function Blogs() {
+  // Info : static blogs as fallback if strapi blogs are not available
   const BlogsData = [
     {
       category: "Technology",
@@ -450,6 +455,49 @@ function blogs() {
     "Diagnostic center",
     "Radiologists",
   ];
+  const {
+    data: strapiBlogs,
+    loading,
+    error,
+  } = useStrapiContent(COLLECTION_TYPES.ARTICLES, {
+    filters: {
+      category: {
+        name: {
+          $eq: "blogs",
+        },
+      },
+    },
+    populate: {
+      category: true,
+      cover: true,
+      author: true,
+    },
+    sort: ["publishedAt:desc"],
+  });
+
+  const categoriesToShow = extractCategories(strapiBlogs, true);
+
+  const renderStaticBlogs = () => (
+    <BlogGridComponent
+      section={"Blogs"}
+      comInformation={BlogsData}
+      comCategories={BlogsCategories}
+      isNewsRoom={false}
+    />
+  );
+
+  const renderStrapiBlogs = () => (
+    <ContentGridComponent
+      section={"Blogs"}
+      comInformation={strapiBlogs || []}
+      comCategories={categoriesToShow}
+      isNewsRoom={false}
+      loading={loading}
+      error={error}
+      useStrapiData={true}
+      showCategories={true}
+    />
+  );
 
   return (
     <>
@@ -459,22 +507,25 @@ function blogs() {
         </header>
       </div>
       <div className="w-[100%] flex flex-col justify-center items-center pt-[90px]">
-        <div className="w-[100%] px-4 md:px-10">
+        {/* <div className="w-[100%] px-4 md:px-10">
           <CompanyBanner
             img={BannerImg}
             heading={"Blogs"}
             containerClassName={"items-center md:items-start"}
             contentClassName={"flex items-center"}
           />
-        </div>
-        <div className="w-[100%]">
-          <BlogGridComponent
-            section={"Blogs"}
-            comInformation={BlogsData}
-            comCategories={BlogsCategories}
-            isNewsRoom={false}
-          />
-        </div>
+        </div> */}
+        {loading ? (
+          <div className="w-[100%] flex flex-col justify-center items-center h-[50vh]">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1B3366]"></div>
+          </div>
+        ) : (
+          <div className="w-[100%]">
+            {Boolean(strapiBlogs?.length)
+              ? renderStrapiBlogs()
+              : renderStaticBlogs()}
+          </div>
+        )}
       </div>
       <footer>
         <Footer />
@@ -483,4 +534,4 @@ function blogs() {
   );
 }
 
-export default blogs;
+export default Blogs;

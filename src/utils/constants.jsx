@@ -10,3 +10,4 @@ export const SLACK_CHANNELS_KEYS = {
 };
 
 export const NOCO_DB_X_AUTH_TOKEN = "3qGWPbakAYq1BntlK0Upd9dw_I3Tsn86eRgwfCQN";
+export const STRAPI_URL = "https://cms.cubebase.ai";

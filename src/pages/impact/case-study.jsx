@@ -6,8 +6,32 @@ import Footer from "../../components/Footer";
 import imageOne from "../../../public/img/user_studies/study1.png";
 import imageTwo from "../../../public/img/user_studies/study2.png";
 import BlogGridComponent from "../../components/BlogGridComponent";
+import ContentGridComponent from "../../components/ContentGridComponent";
+import { useStrapiContent } from "../../hooks/use-strapi";
+import { COLLECTION_TYPES } from "../../services/strapi";
+import { extractCategories } from "../../utils/contentUtils";
 
-function caseStudies() {
+function CaseStudies() {
+  const {
+    data: strapiStudies,
+    loading,
+    error,
+  } = useStrapiContent(COLLECTION_TYPES.ARTICLES, {
+    filters: {
+      category: {
+        name: {
+          $eq: "case-studies",
+        },
+      },
+    },
+    populate: {
+      category: true,
+      cover: true,
+      author: true,
+    },
+    sort: ["publishedAt:desc"],
+  });
+
   const isMobileDevice = () => {
     if (typeof window !== "undefined") {
       return window.innerWidth <= 768;
@@ -103,7 +127,33 @@ function caseStudies() {
     },
   ];
 
-  const Studycategories = ["Latest", "User Stories"];
+  const StudyCategories = ["Latest", "User Stories"];
+
+  const renderStaticStudies = () => (
+    <BlogGridComponent
+      section={"Studies"}
+      comInformation={StudyData}
+      comCategories={StudyCategories}
+      isNewsRoom={false}
+    />
+  );
+
+  const categoriesToShow = extractCategories(strapiStudies, true);
+
+  const renderStrapiStudies = () => (
+    <ContentGridComponent
+      section={"Studies"}
+      comInformation={strapiStudies ?? []}
+      comCategories={
+        categoriesToShow.length > 1 ? categoriesToShow : StudyCategories
+      }
+      isNewsRoom={false}
+      loading={loading}
+      error={error}
+      useStrapiData={true}
+      showCategories={true}
+    />
+  );
 
   return (
     <>
@@ -121,14 +171,17 @@ function caseStudies() {
             contentClassName={"flex items-center"}
           />
         </div>
-        <div className="w-[100%]">
-          <BlogGridComponent
-            section={"Studies"}
-            comInformation={StudyData}
-            comCategories={Studycategories}
-            isNewsRoom={false}
-          />
-        </div>
+        {loading ? (
+          <div className="w-[100%] flex flex-col justify-center items-center h-[50vh]">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1B3366]"></div>
+          </div>
+        ) : (
+          <div className="w-[100%]">
+            {Boolean(strapiStudies?.length)
+              ? renderStrapiStudies()
+              : renderStaticStudies()}
+          </div>
+        )}
       </div>
       <footer>
         <Footer />
@@ -137,4 +190,4 @@ function caseStudies() {
   );
 }
 
-export default caseStudies;
+export default CaseStudies;
