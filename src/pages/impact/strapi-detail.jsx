@@ -13,17 +13,61 @@ const CONTENT_BLOCK_TYPES = {
   SLIDER: "shared.slider",
 };
 
-function BlogDetail() {
+// Map content types to their collections and back routes
+const CONTENT_TYPE_CONFIG = {
+  blogs: {
+    collection: COLLECTION_TYPES.ARTICLES,
+    backRoute: "/impact/blogs",
+    backLabel: "Back to Blogs",
+  },
+  "case-studies": {
+    collection: COLLECTION_TYPES.CASE_STUDIES,
+    backRoute: "/impact/case-study",
+    backLabel: "Back to Case Studies",
+  },
+  newsroom: {
+    collection: COLLECTION_TYPES.NEWSROOM,
+    backRoute: "/impact/newsroom",
+    backLabel: "Back to Newsroom",
+  },
+};
+
+function UniversalContentDetail() {
   const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+
+  // Extract slug and content type from URL
   const pathSegments = location.pathname.split("/").filter(Boolean);
   const slug = pathSegments[pathSegments.length - 1];
 
-  console.log("slug-===", slug);
+  // Get content type from URL params or try to detect from referrer/path
+  const contentType =
+    searchParams.get("type") ||
+    searchParams.get("contentType") ||
+    detectContentTypeFromPath(location.pathname) ||
+    "blogs"; // default to blogs
+
+  const config = CONTENT_TYPE_CONFIG[contentType] || CONTENT_TYPE_CONFIG.blogs;
+
+  console.log("Universal Content Debug:", {
+    pathname: location.pathname,
+    slug,
+    contentType,
+    collection: config.collection,
+  });
+
   const {
     data: content,
     loading,
     error,
-  } = useStrapiItem(COLLECTION_TYPES.ARTICLES, slug);
+  } = useStrapiItem(config.collection, slug);
+
+  function detectContentTypeFromPath(pathname) {
+    if (pathname.includes("case-study")) return "case-studies";
+    if (pathname.includes("newsroom")) return "newsroom";
+    if (pathname.includes("blog")) return "blogs";
+    return null;
+  }
 
   const renderContentBlock = (block) => {
     switch (block.__component) {
@@ -59,13 +103,20 @@ function BlogDetail() {
           block.media?.data && (
             <figure key={block.id} className="my-8">
               <img
-                src={`${STRAPI_URL}${block.media.data.attributes.url}`}
-                alt={block.media.data.attributes.alternativeText || ""}
+                src={`${STRAPI_URL}${
+                  block.media.data.attributes?.url || block.media.url
+                }`}
+                alt={
+                  block.media.data.attributes?.alternativeText ||
+                  block.media.alternativeText ||
+                  ""
+                }
                 className="w-full rounded-lg shadow-lg"
               />
-              {block.media.data.attributes.caption && (
+              {(block.media.data.attributes?.caption ||
+                block.media.caption) && (
                 <figcaption className="text-center text-gray-600 mt-3 text-sm">
-                  {block.media.data.attributes.caption}
+                  {block.media.data.attributes?.caption || block.media.caption}
                 </figcaption>
               )}
             </figure>
@@ -81,8 +132,12 @@ function BlogDetail() {
                 {block.files.data.map((file) => (
                   <img
                     key={file.id}
-                    src={`${STRAPI_URL}${file.attributes.url}`}
-                    alt={file.attributes.alternativeText || ""}
+                    src={`${STRAPI_URL}${file.attributes?.url || file.url}`}
+                    alt={
+                      file.attributes?.alternativeText ||
+                      file.alternativeText ||
+                      ""
+                    }
                     className="w-full h-48 object-cover rounded-lg shadow-md"
                   />
                 ))}
@@ -104,6 +159,14 @@ function BlogDetail() {
       month: "long",
       day: "numeric",
     });
+  };
+
+  const getTitle = (content) => {
+    return content["5cNetwork"] || content.title || "Untitled";
+  };
+
+  const getDescription = (content) => {
+    return content["5cNetworkDescription"] || content.description || "";
   };
 
   if (loading) {
@@ -155,8 +218,6 @@ function BlogDetail() {
     );
   }
 
-  const attributes = content.attributes || content;
-
   return (
     <>
       <div>
@@ -165,7 +226,6 @@ function BlogDetail() {
         </header>
       </div>
       <div className="w-full flex flex-col justify-center items-center pt-[90px] pb-[20px]">
-        {/* Header Section */}
         <div className="w-full max-w-4xl mx-auto px-4 md:px-8">
           <button
             className="mb-6 px-4 py-2 text-[#1B3366] border border-[#1B3366] rounded hover:bg-[#1B3366] hover:text-white transition-colors"
@@ -193,12 +253,12 @@ function BlogDetail() {
             </div>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
-              {content["5cNetwork"] || content.title || "Untitled"}
+              {getTitle(content)}
             </h1>
 
-            {(content["5cNetworkDescription"] || content.description) && (
+            {getDescription(content) && (
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                {content["5cNetworkDescription"] || content.description}
+                {getDescription(content)}
               </p>
             )}
           </div>
@@ -210,12 +270,7 @@ function BlogDetail() {
                 src={`${STRAPI_URL}${
                   content.cover.formats?.large?.url || content.cover.url
                 }`}
-                alt={
-                  content.cover.alternativeText ||
-                  content["5cNetwork"] ||
-                  content.title ||
-                  ""
-                }
+                alt={content.cover.alternativeText || getTitle(content)}
                 className="w-full h-[300px] md:h-[400px] object-cover rounded-lg shadow-lg"
               />
             </div>
@@ -224,6 +279,16 @@ function BlogDetail() {
           {/* Content Blocks */}
           <div className="prose prose-lg max-w-none">
             {content.blocks?.map((block) => renderContentBlock(block))}
+          </div>
+
+          {/* Back Button */}
+          <div className="text-center mt-12">
+            <button
+              className="px-6 py-3 bg-[#1B3366] text-white rounded hover:bg-blue-700 transition-colors"
+              onClick={() => navigate(config.backRoute)}
+            >
+              {config.backLabel}
+            </button>
           </div>
         </div>
       </div>
@@ -234,4 +299,4 @@ function BlogDetail() {
   );
 }
 
-export default BlogDetail;
+export default UniversalContentDetail;

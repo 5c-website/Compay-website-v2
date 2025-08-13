@@ -57,12 +57,12 @@ export const getRedirectionURL = (item) => {
 };
 
 export const createRouteMap = (basePath = "/impact") => ({
-  Blogs: (slug) => `${basePath}/blog-detail/${slug}`,
-  Studies: (slug) => `${basePath}/case-study-detail/${slug}`,
-  Newsroom: (slug) => `${basePath}/newsroom-detail/${slug}`,
+  Blogs: (slug) => `${basePath}/strapi-detail/${slug}?type=blogs`,
+  Studies: (slug) => `${basePath}/strapi-detail/${slug}?type=case-studies`,
+  Newsroom: (slug) => `${basePath}/strapi-detail/${slug}?type=newsroom`,
   Products: (slug) => `/products/${slug}`,
   Services: (slug) => `/services/${slug}`,
-  default: (slug) => `${basePath}/blog-detail/${slug}`,
+  default: (slug) => `${basePath}/strapi-detail/${slug}?type=blogs`,
 });
 
 export const getRouteForSection = (section, slug, basePath = "/impact") => {
