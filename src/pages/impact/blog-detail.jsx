@@ -15,7 +15,7 @@ const CONTENT_BLOCK_TYPES = {
 
 function BlogDetail() {
   const location = useLocation();
-  const pathSegments = location.pathname.split("/");
+  const pathSegments = location.pathname.split("/").filter(Boolean);
   const slug = pathSegments[pathSegments.length - 1];
 
   console.log("slug-===", slug);
@@ -23,7 +23,7 @@ function BlogDetail() {
     data: content,
     loading,
     error,
-  } = useStrapiItem(COLLECTION_TYPES.BLOGS, slug);
+  } = useStrapiItem(COLLECTION_TYPES.ARTICLES, slug);
 
   const renderContentBlock = (block) => {
     switch (block.__component) {
@@ -177,43 +177,44 @@ function BlogDetail() {
           {/* Article Header */}
           <div className="mb-8">
             <div className="flex items-center gap-4 mb-4">
-              {attributes.category?.data && (
+              {content.category && (
                 <span className="px-3 py-1 bg-[#1B3366] text-white text-sm rounded-full">
-                  {attributes.category.data.attributes.name}
+                  {content.category.name}
                 </span>
               )}
               <span className="text-gray-600 text-sm">
-                {formatDate(attributes.publishedAt)}
+                {formatDate(content.publishedAt)}
               </span>
-              {attributes.author && (
+              {content.author && (
                 <span className="text-gray-600 text-sm">
-                  By {attributes.author.name}
+                  By {content.author.name}
                 </span>
               )}
             </div>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
-              {attributes.title}
+              {content["5cNetwork"] || content.title || "Untitled"}
             </h1>
 
-            {attributes.description && (
+            {(content["5cNetworkDescription"] || content.description) && (
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                {attributes.description}
+                {content["5cNetworkDescription"] || content.description}
               </p>
             )}
           </div>
 
           {/* Cover Image */}
-          {attributes.cover?.data && (
+          {content.cover && (
             <div className="mb-8">
               <img
                 src={`${STRAPI_URL}${
-                  attributes.cover.data.attributes.formats?.large?.url ||
-                  attributes.cover.data.attributes.url
+                  content.cover.formats?.large?.url || content.cover.url
                 }`}
                 alt={
-                  attributes.cover.data.attributes.alternativeText ||
-                  attributes.title
+                  content.cover.alternativeText ||
+                  content["5cNetwork"] ||
+                  content.title ||
+                  ""
                 }
                 className="w-full h-[300px] md:h-[400px] object-cover rounded-lg shadow-lg"
               />
@@ -222,17 +223,7 @@ function BlogDetail() {
 
           {/* Content Blocks */}
           <div className="prose prose-lg max-w-none">
-            {attributes.blocks?.map((block) => renderContentBlock(block))}
-          </div>
-
-          {/* Back to Top Button */}
-          <div className="text-center mt-12">
-            <button
-              className="px-6 py-3 bg-[#1B3366] text-white rounded hover:bg-blue-700 transition-colors"
-              onClick={() => navigate("/impact/blogs")}
-            >
-              Back to Blogs
-            </button>
+            {content.blocks?.map((block) => renderContentBlock(block))}
           </div>
         </div>
       </div>

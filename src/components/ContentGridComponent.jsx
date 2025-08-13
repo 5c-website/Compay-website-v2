@@ -97,6 +97,7 @@ const ContentGridComponent = ({
   };
 
   const getCategory = (item) => {
+    console.log("Item:", item);
     if (customCategory) return customCategory(item);
     if (useStrapiData) return getStrapiCategory(item);
     return item.category;
