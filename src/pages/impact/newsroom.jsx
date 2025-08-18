@@ -9,8 +9,12 @@ import PRThree from "../../../public/img/classroom/class_4.webp";
 import PRFour from "../../../public/img/classroom/class_5.jpg";
 import PRFive from "../../../public/img/classroom/class_6.png";
 import BlogGridComponent from "../../components/BlogGridComponent";
+import { useStrapiContent } from "../../hooks/use-strapi";
+import { COLLECTION_TYPES } from "../../services/strapi";
+import { extractCategories } from "../../utils/contentUtils";
+import ContentGridComponent from "../../components/ContentGridComponent";
 
-function newsroom() {
+function Newsroom() {
   const PRData = [
     {
       category: "Press Release",
@@ -53,6 +57,49 @@ function newsroom() {
 
   const PRCategories = ["Latest", "Press Release", "Authored Article"];
 
+  const {
+    data: strapiNewsroom,
+    loading,
+    error,
+  } = useStrapiContent(COLLECTION_TYPES.ARTICLES, {
+    filters: {
+      category: {
+        name: {
+          $eq: "newsroom",
+        },
+      },
+    },
+    populate: {
+      category: true,
+      cover: true,
+      author: true,
+    },
+    sort: ["publishedAt:desc"],
+  });
+
+  const categoriesToShow = extractCategories(strapiNewsroom, true);
+
+  const renderStaticNewsroom = () => (
+    <BlogGridComponent
+      section={"Newsroom"}
+      comInformation={PRData}
+      comCategories={PRCategories}
+      isNewsRoom={true}
+    />
+  );
+
+  const renderStrapiNewsroom = () => (
+    <ContentGridComponent
+      section={"Newsroom"}
+      comInformation={strapiNewsroom ?? []}
+      comCategories={categoriesToShow}
+      isNewsRoom={false}
+      loading={loading}
+      error={error}
+      useStrapiData={true}
+      showCategories={true}
+    />
+  );
   return (
     <>
       <div>
@@ -70,12 +117,17 @@ function newsroom() {
           />
         </div>
         <div className="w-[100%]">
-          <BlogGridComponent
-            section={"Newsroom"}
-            comInformation={PRData}
-            comCategories={PRCategories}
-            isNewsRoom={true}
-          />
+          {loading ? (
+            <div className="w-[100%] flex flex-col justify-center items-center h-[50vh]">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1B3366]"></div>
+            </div>
+          ) : (
+            <div className="w-[100%]">
+              {Boolean(strapiNewsroom?.length)
+                ? renderStrapiNewsroom()
+                : renderStaticNewsroom()}
+            </div>
+          )}
         </div>
       </div>
       <footer>
@@ -85,4 +137,4 @@ function newsroom() {
   );
 }
 
-export default newsroom;
+export default Newsroom;
