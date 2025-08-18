@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[417],{203:function(e,t,l){l.r(t);var n=l(6540),a=l(8970),r=l(6879);t.default=function(){return n.createElement(n.Fragment,null,n.createElement(r.A,null),n.createElement("footer",null,n.createElement(a.A,null)))}}}]);
-//# sourceMappingURL=component---src-pages-company-reach-us-jsx-7cb11ac9b7a93b8f404c.js.map

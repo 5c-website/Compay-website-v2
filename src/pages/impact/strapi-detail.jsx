@@ -50,7 +50,7 @@ function UniversalContentDetail() {
   });
 
   const pathSegments = location.pathname.split("/").filter(Boolean);
-  const slug = pathSegments[pathSegments.length - 1];
+  const slug = pathSegments[pathSegments.length - 1] || "";
 
   const contentType =
     searchParams.get("type") ||
