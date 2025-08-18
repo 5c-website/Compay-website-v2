@@ -142,7 +142,7 @@ const ContentGridComponent = ({
   return (
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <h2 className="text-xl md:text-2xl font-bold mb-4">{section}</h2>
-      {/* {showCategories && categories.length > 0 && (
+      {showCategories && categories.length > 0 && (
         <div className="flex flex-wrap gap-2 mb-4">
           {categories.map((category, index) => (
             <button
@@ -158,7 +158,7 @@ const ContentGridComponent = ({
             </button>
           ))}
         </div>
-      )} */}
+      )}
       <div className={`grid ${gridCols} gap-6 justify-items-center`}>
         {filteredData.map((news, index) => (
           <div

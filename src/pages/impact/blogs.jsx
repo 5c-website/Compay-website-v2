@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Navbar from "../../components/Navbar";
 import CompanyBanner from "../../components/CompanyBanner";
 import BannerImg from "../../../public/img/impact/blog_banner.png";
@@ -6,7 +6,15 @@ import Footer from "../../components/Footer";
 import ContentGridComponent from "../../components/ContentGridComponent";
 import { useStrapiContent } from "../../hooks/use-strapi";
 import { COLLECTION_TYPES } from "../../services/strapi";
-import { extractCategories } from "../../utils/contentUtils";
+import {
+  extractCategories,
+  getStrapiTitle,
+  getStrapiDescription,
+  getStrapiImageUrl,
+  getStrapiCategory,
+  getStrapiSlug,
+  getRouteForSection,
+} from "../../utils/contentUtils";
 import TechOne from "../../../public/img/impact/tech_blog_1.png";
 import DcOne from "../../../public/img/impact/dc_blog_1.jpg";
 import blog3 from "../../../public/img/impact/blogs/b1.png";
@@ -14,7 +22,7 @@ import blog4 from "../../../public/img/impact/blogs/b2.png";
 import blog5 from "../../../public/img/impact/blogs/b3.png";
 import blog6 from "../../../public/img/impact/blogs/b4.png";
 import blog7 from "../../../public/img/impact/blogs/b6.png";
-import BlogGridComponent from "../../components/BlogGridComponent";
+import { navigate } from "gatsby";
 
 function Blogs() {
   // Info : static blogs as fallback if strapi blogs are not available
@@ -468,27 +476,54 @@ function Blogs() {
     sort: ["publishedAt:desc"],
   });
 
-  const categoriesToShow = extractCategories(strapiBlogs, true);
+  const combinedData = useMemo(() => {
+    const strapiNormalized = (strapiBlogs || []).map((item) => ({
+      title: getStrapiTitle(item),
+      description: getStrapiDescription(item),
+      imageUrl: getStrapiImageUrl(item),
+      category: getStrapiCategory(item),
+      slug: getStrapiSlug(item),
+      _source: "strapi",
+    }));
+    const staticNormalized = (BlogsData || []).map((item) => ({
+      ...item,
+      _source: "static",
+    }));
+    return [...strapiNormalized, ...staticNormalized];
+  }, [strapiBlogs]);
 
-  const renderStaticBlogs = () => (
-    <BlogGridComponent
-      section={"Blogs"}
-      comInformation={BlogsData}
-      comCategories={BlogsCategories}
-      isNewsRoom={false}
-    />
-  );
+  const combinedCategories = useMemo(() => {
+    const strapiCats = extractCategories(strapiBlogs, true) || [];
+    const staticCats = (BlogsCategories || []).filter((c) => c !== "Latest");
+    const unique = Array.from(new Set([...(strapiCats || []), ...staticCats]));
+    return ["All", ...unique.filter((c) => c && c !== "All")];
+  }, [strapiBlogs]);
 
-  const renderStrapiBlogs = () => (
+  const renderCombinedBlogs = () => (
     <ContentGridComponent
       section={"Blogs"}
-      comInformation={strapiBlogs || []}
-      comCategories={categoriesToShow}
+      comInformation={combinedData}
+      comCategories={combinedCategories}
       isNewsRoom={false}
       loading={loading}
       error={error}
-      useStrapiData={true}
+      useStrapiData={false}
       showCategories={true}
+      onItemClick={(item) => {
+        if (item._source === "strapi" && item.slug) {
+          const route = getRouteForSection("Blogs", item.slug, "/impact");
+          navigate(route);
+        } else {
+          const blogTitle = item.title;
+          const blogInformation = combinedData.filter(
+            (e) => e.title === blogTitle
+          );
+          const blogInfoString = encodeURIComponent(
+            JSON.stringify(blogInformation)
+          );
+          navigate(`/impact/info-blog?blogInformation=${blogInfoString}`);
+        }
+      }}
     />
   );
 
@@ -513,11 +548,7 @@ function Blogs() {
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1B3366]"></div>
           </div>
         ) : (
-          <div className="w-[100%]">
-            {Boolean(strapiBlogs?.length)
-              ? renderStrapiBlogs()
-              : renderStaticBlogs()}
-          </div>
+          <div className="w-[100%]">{renderCombinedBlogs()}</div>
         )}
       </div>
       <footer>
