@@ -89,85 +89,93 @@ function InfoBlog() {
         </div>
 
         <div className="md:min-h-[80vh] w-[100%] flex flex-col md:flex-row justify-center items-start">
-          <div className="w-[90%] md:w-[22vw] my-2 mx-auto bg-[#F3F7FF] py-2 md:py-0 px-2 md:px-0 md:h-[50vh] flex flex-col justify-around items-center rounded-xl md:order-0 order-1">
-            <h1
-              className="font-bold text-[18px] md:text-[26px] text-center bg-clip-text text-transparent uppercase"
+          <div className="w-[90%] md:w-[22vw] my-2 mx-auto py-2 md:py-0 px-2 md:px-0 md:h-[50vh] flex flex-col justify-around items-center rounded-xl md:order-0 order-1">
+            <div
+              className="h-[100%] w-[100%] bg-cover bg-no-repeat pt-[90px] flex flex-col justify-around items-center pb-[10px] rounded-xl"
               style={{
-                backgroundImage: "linear-gradient(180deg, #EA4335, #CC0000)",
+                backgroundImage: `url(${bgImg})`,
               }}
             >
-              try Our Mobile App
-            </h1>
-            <p className="text-[#1B3363] text-[14px] md:font-[16px] text-center my-2 md:my-0">
-              For the first time in India Award Winning Mobile App for Radiology
-            </p>
-            <div className="flex flex-row justify-center items-center my-2 md:my-0">
-              <div className="flex flex-col justify-center items-center  w-[60%] gap-2">
-                <div className="flex flex-row justify-start items-center w-[80%] gap-3">
-                  <img
-                    src={prodigiImg}
-                    className="h-[25px] w-[30px]"
-                    alt="img"
-                  />
-                  <p className="text-[#000] text-[14px] font-medium">
-                    Case Activation
-                  </p>
+              <h1
+                className="font-bold text-[18px] md:text-[26px] text-center bg-clip-text text-transparent uppercase"
+                style={{
+                  backgroundImage: "linear-gradient(180deg, #EA4335, #CC0000)",
+                }}
+              >
+                try Our Mobile App
+              </h1>
+              <p className="text-[#1B3363] text-[14px] md:font-[16px] text-center my-2 md:my-0">
+                For the first time in India Award Winning Mobile App for
+                Radiology
+              </p>
+              <div className="flex flex-row justify-center items-center my-2 md:my-0">
+                <div className="flex flex-col justify-center items-center  w-[60%] gap-2">
+                  <div className="flex flex-row justify-start items-center w-[80%] gap-3">
+                    <img
+                      src={prodigiImg}
+                      className="h-[25px] w-[30px]"
+                      alt="img"
+                    />
+                    <p className="text-[#000] text-[14px] font-medium">
+                      Case Activation
+                    </p>
+                  </div>
+                  <div className="flex flex-row justify-start items-center w-[80%] gap-3">
+                    <img
+                      src={prodigiImg}
+                      className="h-[25px] w-[30px]"
+                      alt="img"
+                    />
+                    <p className="text-[#000] text-[14px] font-medium">
+                      Report Download
+                    </p>
+                  </div>
+                  <div className="flex flex-row justify-start items-center w-[80%] gap-3">
+                    <img
+                      src={prodigiImg}
+                      className="h-[25px] w-[30px]"
+                      alt="img"
+                    />
+                    <p className="text-[#000] text-[14px] font-medium">
+                      Notification Alerts
+                    </p>
+                  </div>
+                  <div className="flex flex-row justify-start items-center w-[80%] gap-3">
+                    <img
+                      src={prodigiImg}
+                      className="h-[25px] w-[30px]"
+                      alt="img"
+                    />
+                    <p className="text-[#000] text-[14px] font-medium">
+                      {" "}
+                      Report Sharing{" "}
+                    </p>
+                  </div>
+                  <div className="flex flex-row justify-start items-center w-[80%] gap-3">
+                    <img
+                      src={prodigiImg}
+                      className="h-[25px] w-[30px]"
+                      alt="img"
+                    />
+                    <p className="text-[#000] text-[14px] font-medium">
+                      {" "}
+                      Multi-Lingual
+                    </p>
+                  </div>
                 </div>
-                <div className="flex flex-row justify-start items-center w-[80%] gap-3">
+                <div className="flex flex-col justify-center items-center w-[40%]">
                   <img
-                    src={prodigiImg}
-                    className="h-[25px] w-[30px]"
+                    src={prodigiScanner}
+                    className="h-[100%] w-[90%]"
                     alt="img"
                   />
-                  <p className="text-[#000] text-[14px] font-medium">
-                    Report Download
-                  </p>
-                </div>
-                <div className="flex flex-row justify-start items-center w-[80%] gap-3">
-                  <img
-                    src={prodigiImg}
-                    className="h-[25px] w-[30px]"
-                    alt="img"
-                  />
-                  <p className="text-[#000] text-[14px] font-medium">
-                    Notification Alerts
-                  </p>
-                </div>
-                <div className="flex flex-row justify-start items-center w-[80%] gap-3">
-                  <img
-                    src={prodigiImg}
-                    className="h-[25px] w-[30px]"
-                    alt="img"
-                  />
-                  <p className="text-[#000] text-[14px] font-medium">
-                    {" "}
-                    Report Sharing{" "}
-                  </p>
-                </div>
-                <div className="flex flex-row justify-start items-center w-[80%] gap-3">
-                  <img
-                    src={prodigiImg}
-                    className="h-[25px] w-[30px]"
-                    alt="img"
-                  />
-                  <p className="text-[#000] text-[14px] font-medium">
-                    {" "}
-                    Multi-Lingual
-                  </p>
                 </div>
               </div>
-              <div className="flex flex-col justify-center items-center w-[40%]">
-                <img
-                  src={prodigiScanner}
-                  className="h-[100%] w-[90%]"
-                  alt="img"
-                />
+              <div className="flex flex-row justify-center items-center">
+                <button className="bg-[#1B3363] rounded-full text-[16px] md:text-[18px] text-[#fff] px-2 md:px-3 py-1 md:py-2">
+                  Download Now
+                </button>
               </div>
-            </div>
-            <div className="flex flex-row justify-center items-center">
-              <button className="bg-[#1B3363] rounded-full text-[16px] md:text-[18px] text-[#fff] px-2 md:px-3 py-1 md:py-2">
-                Download Now
-              </button>
             </div>
           </div>
           <div className="w-[90%] mx-auto md:w-[52vw] md:min-h-[50vh] md:max-h-[78vh] md:overflow-y-scroll order-0 md:order-1">
