@@ -96,4 +96,52 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 The fastest way to combine your favorite tools and APIs to build the fastest sites, stores, and apps for the web. And also the best place to build, deploy, and host your Gatsby sites.
 
+# Compay Website V2
+
+## Deployment Instructions
+
+### Vercel Deployment
+
+This project is configured for Vercel deployment. The following files are important for proper deployment:
+
+1. **vercel.json** - Contains Vercel-specific configuration for dynamic routes
+2. **public/\_redirects** - Contains redirect rules for dynamic routes
+3. **gatsby-node.js** - Contains Gatsby-specific dynamic route configuration
+
+### Dynamic Routes
+
+The project uses dynamic routes for the strapi-detail page. The URL structure is:
+
+- `/impact/strapi-detail/[slug]?type=blogs`
+
+### Troubleshooting 404 Errors
+
+If you encounter 404 errors on dynamic routes:
+
+1. Ensure the `vercel.json` file is present in the root directory
+2. Check that the `public/_redirects` file contains the correct redirect rules
+3. Verify that the `gatsby-node.js` file has the correct matchPath configuration
+4. Make sure the build process completes successfully
+
+### Build Commands
+
+```bash
+npm install
+npm run build
+```
+
+### Development
+
+```bash
+npm run develop
+```
+
+## Project Structure
+
+- `src/pages/impact/strapi-detail.jsx` - Dynamic route handler for strapi content
+- `src/pages/impact/info-blog.jsx` - Static blog detail page
+- `gatsby-node.js` - Dynamic route configuration
+- `vercel.json` - Vercel deployment configuration
+- `public/_redirects` - Redirect rules for dynamic routes
+
 <!-- AUTO-GENERATED-CONTENT:END -->
