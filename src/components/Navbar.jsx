@@ -93,7 +93,7 @@ const Navbar = ({ topClassName }) => {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              src="../../static/logo.png"
+              src="/static/logo.png"
               alt="5C Logo"
               className="h-12 md:h-[60px]"
             />

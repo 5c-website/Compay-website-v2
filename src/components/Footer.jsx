@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="flex flex-row justify-between md:justify-start md:items-center md:py-0 py-2 w-[90%]">
           <div className="flex justify-center mb-4 md:mb-0">
             <img
-              src="../../static/footer_images/footer_logo.png"
+              src="/static/footer_images/footer_logo.png"
               className="md:h-[100px] md:w-[100px] h-[70px] w-[70px]"
               alt="footer_logo"
             />
@@ -37,7 +37,7 @@ const Footer = () => {
                   className="flex items-center"
                 >
                   <img
-                    src="../../static/footer_images/linkedin_img.png"
+                    src="/static/footer_images/linkedin_img.png"
                     alt="LinkedIn"
                     className="h-[20px] w-[20px]"
                   />
@@ -49,7 +49,7 @@ const Footer = () => {
                   className="flex items-center"
                 >
                   <img
-                    src="../../static/footer_images/insta_img.png"
+                    src="/static/footer_images/insta_img.png"
                     alt="Instagram"
                     className="h-[20px] w-[20px]"
                   />
@@ -61,7 +61,7 @@ const Footer = () => {
                   className="flex items-center"
                 >
                   <img
-                    src="../../static/footer_images/fb_logo.png"
+                    src="/static/footer_images/fb_logo.png"
                     alt="Facebook"
                     className="h-[20px] w-[20px]"
                   />
@@ -71,7 +71,7 @@ const Footer = () => {
                   className="flex items-center"
                 >
                   <img
-                    src="../../static/footer_images/mail_img.png"
+                    src="/static/footer_images/mail_img.png"
                     alt="Email"
                     className="h-[15px] w-[20px]"
                   />
@@ -88,7 +88,7 @@ const Footer = () => {
                 className="flex items-center"
               >
                 <img
-                  src="../../static/footer_images/linkedin_img.png"
+                  src="/static/footer_images/linkedin_img.png"
                   alt="LinkedIn"
                   className="h-[20px] w-[20px]"
                 />
@@ -100,7 +100,7 @@ const Footer = () => {
                 className="flex items-center"
               >
                 <img
-                  src="../../static/footer_images/insta_img.png"
+                  src="/static/footer_images/insta_img.png"
                   alt="Instagram"
                   className="h-[20px] w-[20px]"
                 />
@@ -112,7 +112,7 @@ const Footer = () => {
                 className="flex items-center"
               >
                 <img
-                  src="../../static/footer_images/fb_logo.png"
+                  src="/static/footer_images/fb_logo.png"
                   alt="Facebook"
                   className="h-[20px] w-[20px]"
                 />
@@ -122,7 +122,7 @@ const Footer = () => {
                 className="flex items-center"
               >
                 <img
-                  src="../../static/footer_images/mail_img.png"
+                  src="/static/footer_images/mail_img.png"
                   alt="Email"
                   className="h-[15px] w-[20px]"
                 />

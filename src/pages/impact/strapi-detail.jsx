@@ -1,5 +1,7 @@
 import React from "react";
 import { useLocation, navigate } from "@reach/router";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { useStrapiItem } from "../../hooks/use-strapi";
@@ -12,22 +14,20 @@ const CONTENT_BLOCK_TYPES = {
   MEDIA: "shared.media",
   SLIDER: "shared.slider",
 };
-
-// Map content types to their collections and back routes
 const CONTENT_TYPE_CONFIG = {
   blogs: {
     collection: COLLECTION_TYPES.ARTICLES,
-    backRoute: "/impact/blogs",
+    backRoute: "/impact/blogs/",
     backLabel: "Back to Blogs",
   },
   "case-studies": {
     collection: COLLECTION_TYPES.CASE_STUDIES,
-    backRoute: "/impact/case-study",
+    backRoute: "/impact/case-study/",
     backLabel: "Back to Case Studies",
   },
   newsroom: {
     collection: COLLECTION_TYPES.NEWSROOM,
-    backRoute: "/impact/newsroom",
+    backRoute: "/impact/newsroom/",
     backLabel: "Back to Newsroom",
   },
 };
@@ -36,25 +36,30 @@ function UniversalContentDetail() {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
 
-  // Extract slug and content type from URL
   const pathSegments = location.pathname.split("/").filter(Boolean);
   const slug = pathSegments[pathSegments.length - 1];
 
-  // Get content type from URL params or try to detect from referrer/path
   const contentType =
     searchParams.get("type") ||
     searchParams.get("contentType") ||
     detectContentTypeFromPath(location.pathname) ||
-    "blogs"; // default to blogs
+    "blogs";
 
   const config = CONTENT_TYPE_CONFIG[contentType] || CONTENT_TYPE_CONFIG.blogs;
 
-  console.log("Universal Content Debug:", {
-    pathname: location.pathname,
-    slug,
-    contentType,
-    collection: config.collection,
-  });
+  const handleBackNavigation = () => {
+    const referrer = document.referrer;
+    const currentDomain = window.location.origin;
+    if (
+      referrer &&
+      referrer.startsWith(currentDomain) &&
+      !referrer.includes(location.pathname)
+    ) {
+      navigate(-1);
+    } else {
+      window.location.href = config.backRoute;
+    }
+  };
 
   const {
     data: content,
@@ -73,11 +78,16 @@ function UniversalContentDetail() {
     switch (block.__component) {
       case CONTENT_BLOCK_TYPES.RICH_TEXT:
         return (
-          <div key={block.id} className="prose prose-lg max-w-none mb-6">
-            <div
-              className="text-gray-700 leading-relaxed"
-              dangerouslySetInnerHTML={{ __html: block.body || "" }}
-            />
+          <div
+            key={block.id}
+            className="prose prose-lg prose-gray max-w-none mb-6"
+          >
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={getMarkdownComponents()}
+            >
+              {block.body}
+            </ReactMarkdown>
           </div>
         );
 
@@ -87,9 +97,12 @@ function UniversalContentDetail() {
             key={block.id}
             className="border-l-4 border-[#1B3366] pl-6 my-8 italic bg-gray-50 p-6 rounded-r-lg"
           >
-            <p className="text-xl mb-4 leading-relaxed text-gray-800">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={getMarkdownComponents()}
+            >
               {block.body}
-            </p>
+            </ReactMarkdown>
             {block.title && (
               <footer className="text-lg font-medium text-gray-600">
                 — {block.title}
@@ -113,12 +126,6 @@ function UniversalContentDetail() {
                 }
                 className="w-full rounded-lg shadow-lg"
               />
-              {(block.media.data.attributes?.caption ||
-                block.media.caption) && (
-                <figcaption className="text-center text-gray-600 mt-3 text-sm">
-                  {block.media.data.attributes?.caption || block.media.caption}
-                </figcaption>
-              )}
             </figure>
           )
         );
@@ -168,6 +175,73 @@ function UniversalContentDetail() {
   const getDescription = (content) => {
     return content["5cNetworkDescription"] || content.description || "";
   };
+
+  const getMarkdownComponents = () => ({
+    p: ({ node, ...props }) => (
+      <p className="mb-4 text-gray-700 leading-relaxed" {...props} />
+    ),
+    h1: ({ node, ...props }) => (
+      <h1 className="text-3xl mb-4 font-bold text-gray-900" {...props} />
+    ),
+    h2: ({ node, ...props }) => (
+      <h2 className="text-2xl mb-4 font-bold text-gray-900" {...props} />
+    ),
+    h3: ({ node, ...props }) => (
+      <h3 className="text-xl mb-4 font-bold text-gray-900" {...props} />
+    ),
+    ul: ({ node, ...props }) => (
+      <ul className="list-disc ml-6 mb-4" {...props} />
+    ),
+    ol: ({ node, ...props }) => (
+      <ol className="list-decimal ml-6 mb-4" {...props} />
+    ),
+    li: ({ node, ...props }) => <li className="mb-2" {...props} />,
+    blockquote: ({ node, ...props }) => (
+      <blockquote
+        className="border-l-4 border-[#1B3366] pl-6 my-8 italic bg-gray-50 p-6 rounded-r-lg"
+        {...props}
+      />
+    ),
+    img: ({ node, ...props }) => (
+      <figure key={node.position} className="my-8">
+        <img
+          src={
+            props.src.startsWith("http")
+              ? props.src
+              : `${STRAPI_URL}${props.src.replace(/^\/strapi/, "")}`
+          }
+          alt={props.alt || ""}
+          className="w-full rounded-lg shadow-lg"
+        />
+      </figure>
+    ),
+    a: ({ node, ...props }) => {
+      const isExternalLink =
+        props.href &&
+        (props.href.startsWith("http") || props.href.startsWith("//"));
+      return (
+        <a
+          className="text-[#1B3366] hover:underline"
+          target={isExternalLink ? "_blank" : undefined}
+          rel={isExternalLink ? "noopener noreferrer" : undefined}
+          {...props}
+        />
+      );
+    },
+    strong: ({ node, ...props }) => (
+      <strong className="font-semibold" {...props} />
+    ),
+    em: ({ node, ...props }) => <em className="italic" {...props} />,
+    code: ({ node, ...props }) => (
+      <code className="bg-gray-100 px-2 py-1 rounded-md text-sm" {...props} />
+    ),
+    pre: ({ node, ...props }) => (
+      <pre className="bg-gray-100 p-4 rounded-md overflow-x-auto" {...props} />
+    ),
+    hr: ({ node, ...props }) => (
+      <hr className="my-8 border-gray-300" {...props} />
+    ),
+  });
 
   if (loading) {
     return (
@@ -229,12 +303,10 @@ function UniversalContentDetail() {
         <div className="w-full max-w-4xl mx-auto px-4 md:px-8">
           <button
             className="mb-6 px-4 py-2 text-[#1B3366] border border-[#1B3366] rounded hover:bg-[#1B3366] hover:text-white transition-colors"
-            onClick={() => navigate(-1)}
+            onClick={handleBackNavigation}
           >
             ← Back
           </button>
-
-          {/* Article Header */}
           <div className="mb-8">
             <div className="flex items-center gap-4 mb-4">
               {content.category && (
@@ -263,7 +335,6 @@ function UniversalContentDetail() {
             )}
           </div>
 
-          {/* Cover Image */}
           {content.cover && (
             <div className="mb-8">
               <img
@@ -276,16 +347,26 @@ function UniversalContentDetail() {
             </div>
           )}
 
-          {/* Content Blocks */}
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg prose-gray max-w-none">
             {content.blocks?.map((block) => renderContentBlock(block))}
+
+            {(!content.blocks || content.blocks.length === 0) &&
+              content.body && (
+                <div className="prose prose-lg prose-gray max-w-none mb-6">
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    components={getMarkdownComponents()}
+                  >
+                    {content.body}
+                  </ReactMarkdown>
+                </div>
+              )}
           </div>
 
-          {/* Back Button */}
           <div className="text-center mt-12">
             <button
               className="px-6 py-3 bg-[#1B3366] text-white rounded hover:bg-blue-700 transition-colors"
-              onClick={() => navigate(config.backRoute)}
+              onClick={handleBackNavigation}
             >
               {config.backLabel}
             </button>

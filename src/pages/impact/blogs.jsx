@@ -460,13 +460,6 @@ function Blogs() {
     loading,
     error,
   } = useStrapiContent(COLLECTION_TYPES.ARTICLES, {
-    filters: {
-      category: {
-        name: {
-          $eq: "blogs",
-        },
-      },
-    },
     populate: {
       category: true,
       cover: true,
@@ -507,14 +500,14 @@ function Blogs() {
         </header>
       </div>
       <div className="w-[100%] flex flex-col justify-center items-center pt-[90px]">
-        {/* <div className="w-[100%] px-4 md:px-10">
+        <div className="w-[100%] px-4 md:px-10">
           <CompanyBanner
             img={BannerImg}
             heading={"Blogs"}
             containerClassName={"items-center md:items-start"}
             contentClassName={"flex items-center"}
           />
-        </div> */}
+        </div>
         {loading ? (
           <div className="w-[100%] flex flex-col justify-center items-center h-[50vh]">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1B3366]"></div>
