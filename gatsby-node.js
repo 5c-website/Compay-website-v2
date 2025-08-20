@@ -8,3 +8,16 @@ exports.onCreatePage = async ({ page, actions }) => {
     createPage(page);
   }
 };
+
+// Add redirects for dynamic routes
+exports.createPages = async ({ actions }) => {
+  const { createRedirect } = actions;
+
+  // Create redirect for strapi-detail dynamic routes
+  createRedirect({
+    fromPath: `/impact/strapi-detail/*`,
+    toPath: `/impact/strapi-detail/`,
+    isPermanent: false,
+    statusCode: 200,
+  });
+};

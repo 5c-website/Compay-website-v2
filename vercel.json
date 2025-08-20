@@ -1,8 +1,19 @@
 {
     "rewrites": [
         {
-            "source": "/impact/strapi-detail/:slug*",
+            "source": "/impact/strapi-detail/(.*)",
             "destination": "/impact/strapi-detail/"
+        }
+    ],
+    "headers": [
+        {
+            "source": "/impact/strapi-detail/(.*)",
+            "headers": [
+                {
+                    "key": "cache-control",
+                    "value": "public, max-age=0, must-revalidate"
+                }
+            ]
         }
     ],
     "buildCommand": "npm run build",

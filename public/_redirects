@@ -1,5 +1,0 @@
-# Handle dynamic routes for strapi-detail
-/impact/strapi-detail/* /impact/strapi-detail/ 200!
-
-# Handle all other routes for SPA
-/* /index.html 200!
