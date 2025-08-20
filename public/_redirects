@@ -1,0 +1,2 @@
+# Redirect rules for dynamic routes
+/impact/strapi-detail/* /impact/strapi-detail/ 200
