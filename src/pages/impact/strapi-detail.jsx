@@ -185,7 +185,7 @@ function UniversalContentDetail() {
                   block.media.alternativeText ||
                   ""
                 }
-                className="w-full rounded-lg shadow-lg"
+                className="w-full h-auto max-w-full rounded-lg shadow-lg object-contain"
               />
             </figure>
           )
@@ -206,7 +206,7 @@ function UniversalContentDetail() {
                       file.alternativeText ||
                       ""
                     }
-                    className="w-full h-48 object-cover rounded-lg shadow-md"
+                    className="w-full h-48 md:h-56 lg:h-64 object-cover rounded-lg shadow-md"
                   />
                 ))}
               </div>
@@ -272,7 +272,7 @@ function UniversalContentDetail() {
               : `${STRAPI_URL}${props.src.replace(/^\/strapi/, "")}`
           }
           alt={props.alt || ""}
-          className="w-full rounded-lg shadow-lg"
+          className="w-full h-auto max-w-full rounded-lg shadow-lg object-contain"
         />
       </figure>
     ),
@@ -368,7 +368,7 @@ function UniversalContentDetail() {
           </h1>
         </div>
 
-        <div className="md:min-h-[80vh] w-[100%] flex flex-col md:flex-row justify-center items-start">
+        <div className="md:min-h-[80vh] w-[100%] flex flex-col md:flex-row justify-center items-start max-w-[1920px] mx-auto">
           <div className="w-[90%] md:w-[22vw] my-2 mx-auto bg-[#F3F7FF] py-2 md:py-0 px-2 md:px-0 md:h-[50vh] flex flex-col justify-around items-center rounded-xl md:order-0 order-1">
             <h1
               className="font-bold text-[18px] md:text-[26px] text-center bg-clip-text text-transparent uppercase"
@@ -450,7 +450,7 @@ function UniversalContentDetail() {
               </button>
             </div>
           </div>
-          <div className="w-[90%] mx-auto md:w-[52vw] md:min-h-[50vh] md:max-h-[78vh] md:overflow-y-scroll order-0 md:order-1">
+          <div className="w-[90%] mx-auto md:w-[52vw] lg:max-w-[1200px] md:min-h-[50vh] md:max-h-[78vh] md:overflow-y-scroll order-0 md:order-1">
             <div className="flex flex-col justify-center items-center w-[100%]">
               <button
                 className="mb-6 px-4 py-2 text-[#1B3366] border border-[#1B3366] rounded hover:bg-[#1B3366] hover:text-white transition-colors self-start"
@@ -489,7 +489,7 @@ function UniversalContentDetail() {
                       content.cover.formats?.large?.url || content.cover.url
                     }`}
                     alt={content.cover.alternativeText || getTitle(content)}
-                    className="w-full h-[300px] md:h-[400px] object-cover rounded-lg shadow-lg"
+                    className="w-full h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] object-contain md:object-cover rounded-lg shadow-lg max-w-full"
                   />
                 </div>
               )}
