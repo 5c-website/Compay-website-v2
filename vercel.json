@@ -1,10 +1,4 @@
 {
-    "rewrites": [
-        {
-            "source": "/impact/strapi-detail/:slug*",
-            "destination": "/impact/strapi-detail/"
-        }
-    ],
     "buildCommand": "npm run build",
     "outputDirectory": "public",
     "installCommand": "npm install",
