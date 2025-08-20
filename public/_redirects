@@ -3,5 +3,3 @@
 
 # Handle all other routes for SPA
 /* /index.html 200!
-## Created with gatsby-plugin-netlify
-/impact/strapi-detail/*  /impact/strapi-detail/  200
