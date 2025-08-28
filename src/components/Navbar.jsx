@@ -58,6 +58,7 @@ const Navbar = ({ topClassName }) => {
       route: "/impact/blogs",
     },
     { label: "Explore 5C", route: "/explore-5C" },
+    { label: "Research", route: "/research" },
     { label: "Contact Us", route: "/contact-us" },
   ];
 
