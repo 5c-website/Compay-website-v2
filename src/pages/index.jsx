@@ -18,6 +18,7 @@ import EnhanceSection from "../components/EnhanceSection";
 import NewMockImg from "../../public/img/new_mockup_bg.svg";
 import VideoModal from "../components/video_modal";
 import AmericanGambits from "../../public/videos/5c_Network_American_Gambit.mp4";
+
 // Lazy load images
 const LazyImage = lazy(() => import("../components/LazyLoad"));
 
@@ -137,7 +138,7 @@ const IndexPage = () => {
       </header>
 
       <main className="pt-[80px]">
-        <section className="relative h-56 md:h-[60vh] lg:h-[70vh] overflow-hidden bg-gray-100 flex items-center justify-center">
+        <section className="relative h-56 md:h-[60vh] lg:h-[60vh] overflow-hidden bg-gray-100 flex items-center justify-center">
           <div className="absolute left-0 top-10 md:left-5 md:top-[110px] lg:top-[115px] xl:left-[70px] xl:top-[145px] z-30 text-white w-full max-w-2xl">
             <div className="mx-auto px-6 md:px-8 md:py-4 flex flex-col items-center md:flex-row md:items-center">
               <motion.div
@@ -259,47 +260,204 @@ const IndexPage = () => {
           />
         </section>
 
+        {/* 5C in the Media Section */}
+        <section className="bg-gray-50 py-16 px-4">
+          <div className="container mx-auto">
+            {/* Header Section */}
+            <div className="text-center mb-12">
+              <motion.h1 
+                className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                In the News
+              </motion.h1>
+              <motion.p 
+                className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                See what the world is saying about our mission to redefine the future of radiology.
+              </motion.p>
+            </div>
+
+            {/* Bento Grid Layout */}
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {/* Article 1: Large Main Article */}
+              <motion.div 
+                className="md:col-span-2 lg:col-span-2 lg:row-span-2 rounded-3xl overflow-hidden group bento-item border border-gray-200/80 bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                onClick={() => window.open("https://www.expresshealthcare.in/radiology/5c-network-launches-bionic-report-explainer/450232/", "_blank")}
+              >
+                <div className="aspect-w-16 aspect-h-6">
+                  <img 
+                    src="/impact/news/express_health_care.jpg"
+                    alt="5C Network Launches Bionic Report Explainer" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-4 md:p-6 flex flex-col h-[55%]">
+                  <div className="flex items-center mb-2">
+                    <img 
+                      src="https://www.expresshealthcare.in/wp-content/uploads/2024/01/express-healthcare-logo.png" 
+                      alt="Express Healthcare Logo" 
+                      className="h-5 w-5 rounded-full mr-2"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = "https://placehold.co/40x40/000000/ffffff?text=EH";
+                      }}
+                    />
+                    <p className="text-sm font-semibold text-blue-600">Express Healthcare</p>
+                  </div>
+                  <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 flex-grow">
+                    5C Network Launches Bionic Report Explainer
+                  </h2>
+                  <p className="text-sm text-gray-600 mb-3">
+                    The Bionic Report leverages cutting-edge AI technology to transform how radiologists interpret medical scans. By combining Computer Vision (CV) and Large Language Models (LLMs), it provides unprecedented accuracy in detecting abnormalities and generating comprehensive medical reports.
+                  </p>
+                  <button className="inline-flex items-center mt-auto text-sm font-semibold text-gray-800 group-hover:text-teal-600">
+                    Read Article
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </button>
+                </div>
+              </motion.div>
+
+              {/* Article 2: Small Top-Right */}
+              <motion.div 
+                className="rounded-3xl overflow-hidden group bento-item border border-gray-200/80 bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                onClick={() => window.open("https://www.expresshealthcare.in/news/the-diagnostic-arena-demands-precision-ai-delivers-it-at-scale/450290/", "_blank")}
+              >
+                <div className="aspect-w-4 aspect-h-3">
+                  <img 
+                    src="/impact/news/express_health_care_2.jpg"
+                    alt="AI Delivers Precision at Scale" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-4 flex flex-col h-[50%]">
+                  <div className="flex items-center mb-2">
+                    <img 
+                      src="https://www.expresshealthcare.in/wp-content/uploads/2024/01/express-healthcare-logo.png" 
+                      alt="Express Healthcare Logo" 
+                      className="h-5 w-5 rounded-md mr-2"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = "https://placehold.co/40x40/cccccc/000000?text=EH";
+                      }}
+                    />
+                    <p className="text-sm font-semibold text-teal-600">Express Healthcare</p>
+                  </div>
+                  <h2 className="text-lg font-bold text-gray-900 flex-grow mb-2">
+                    The Diagnostic Arena Demands Precision: AI Delivers It at Scale
+                  </h2>
+                  <button className="inline-flex items-center mt-3 text-sm font-semibold text-gray-800 group-hover:text-teal-600">
+                    Read More
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              </motion.div>
+
+              {/* Article 3: Small Top-Right */}
+              <motion.div 
+                className="rounded-3xl overflow-hidden group bento-item border border-gray-200/80 bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                viewport={{ once: true }}
+                onClick={() => window.open("https://yourstory.com/2025/07/5c-network-ai-radiology-platform-india", "_blank")}
+              >
+                <div className="aspect-w-4 aspect-h-3">
+                  <img 
+                    src="/impact/news/yourstory.jpg"
+                    alt="5C Network AI Radiology Platform" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-4 flex flex-col h-[50%]">
+                  <div className="flex items-center mb-2">
+                    <img 
+                      src="https://yourstory.com/wp-content/uploads/2020/01/yourstory-logo.png" 
+                      alt="YourStory Logo" 
+                      className="h-5 w-5 rounded-md mr-2"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = "https://placehold.co/40x40/cccccc/000000?text=YS";
+                      }}
+                    />
+                    <p className="text-sm font-semibold text-pink-600">YourStory</p>
+                  </div>
+                  <h2 className="text-lg font-bold text-gray-900 flex-grow mb-2">
+                    5C Network: Revolutionizing Radiology with AI Platform in India
+                  </h2>
+                  <button className="inline-flex items-center mt-3 text-sm font-semibold text-gray-800 group-hover:text-teal-600">
+                    Read More
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              </motion.div>
+
+              {/* Article 4: Medium Bottom-Right */}
+              <motion.div 
+                className="md:col-span-1 lg:col-span-2 rounded-3xl overflow-hidden group bento-item border border-gray-200/80 bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                viewport={{ once: true }}
+                onClick={() => window.open("https://www.news18.com/india/indians-move-from-lipid-profile-to-advanced-screening-tests-amid-rising-heart-attack-risk-ws-el-9515955.html", "_blank")}
+              >
+                <div className="h-24 md:h-28">
+                  <img 
+                    src="/impact/news/new18.jpg"
+                    alt="Advanced Heart Health Screening" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-4 flex flex-col h-[30%]">
+                  <div className="flex items-center mb-2">
+                    <img 
+                      src="https://www.news18.com/static/images/logo.png" 
+                      alt="News18 Logo" 
+                      className="h-6 w-6 rounded-full mr-3"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = "https://placehold.co/40x40/cccccc/000000?text=N18";
+                      }}
+                    />
+                    <p className="text-sm font-semibold text-purple-600">News18</p>
+                  </div>
+                  <h2 className="text-xl font-bold text-gray-900 flex-grow mb-2">
+                    Indians Move from Lipid Profile to Advanced Screening Tests Amid Rising Heart Attack Risk
+                  </h2>
+                  <button className="inline-flex items-center mt-3 font-semibold text-gray-800 group-hover:text-purple-600">
+                    Read More
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </button>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         <EnhanceSection bionicLogoImg={EnhanceImg} />
-        <div className="block md:hidden">
-          <section className="min-h-[10vh] md:h-[18vh] bg-[#fff] flex flex-row justify-center items-center">
-            <p className="relative text-[#1B3363] font-normal text-[14px] text-center mt-2 pt-6">
-              Trusted by the largest health system globally, renowned for its
-              unparalleled scale and reach in providing top-tier healthcare
-              services. Our cutting-edge AI solutions help in delivering
-              consistent, accurate, and efficient patient care.
-            </p>
-          </section>
-        </div>
-
-        <div className="hidden md:block">
-          <section className="lg:h-[33vh] bg-[#fff] flex flex-row justify-between items-center lg:my-4 my-8">
-            <p
-              className="text-[#000] md:text-[15px]  lg:text-[18px] md:w-[50%] lg:w-[42%] md:pl-[40px] lg:pl-[100px] text-justify"
-              style={{ wordSpacing: "0.1em", letterSpacing: "0.01em" }}
-            >
-              Trusted by the largest health system globally, renowned for its
-              unparalleled scale and reach in providing top-tier healthcare
-              services. Our cutting-edge AI solutions help in delivering
-              consistent, accurate, and efficient patient care.
-            </p>
-            <Suspense
-              fallback={<div className="w-[44%] h-full bg-gray-200"></div>}
-            >
-              <LazyImage
-                src="./img/map_img.png"
-                className="lg:h-[100%] lg:w-[44%] md:h-[80%] md:w-[40%]"
-                alt="img"
-              />
-            </Suspense>
-          </section>
-        </div>
-
-        <div className="w-[100%] bg-[#E8F1FE] h-[10vh] py-[10px] md:py-[0px] px-[10px] md:px-0 md:h-[15vh] flex flex-col justify-center items-center my-[20px]">
-          <h1 className="text-[#1B3363] font-bold text-[16px] text-center md:text-[24px] lg:text-[32px]">
-            Reinventing Radiology Reporting with CV and LLM, Because Precision
-            is Everything
-          </h1>
-        </div>
 
         <ConfigureSection />
         <StatsSection />

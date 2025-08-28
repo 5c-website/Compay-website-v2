@@ -71,4 +71,5 @@ export const COLLECTION_TYPES = {
   BLOGS: "blogs",
   CASE_STUDIES: "case-studies",
   NEWSROOM: "newsroom",
+  RESEARCH: "research",
 };
