@@ -100,7 +100,6 @@ const ResearchPage = () => {
     "Publications",
     "Deep Learning",
     "Medical Imaging",
-    "AI Research",
     "Computer Vision",
     "Machine Learning"
   ];
