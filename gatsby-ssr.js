@@ -1,4 +1,5 @@
 import React from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
@@ -9,3 +10,10 @@ export const onRenderBody = ({ setHeadComponents }) => {
     />,
   ]);
 };
+
+export const wrapRootElement = ({ element }) => (
+  <>
+    {element}
+    <Analytics />
+  </>
+);

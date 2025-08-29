@@ -1,6 +1,7 @@
 import React, { useEffect, useState, lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "../components/Navbar";
 import MarqueeCom from "../components/Marquee";
 import Footer from "../components/Footer";
@@ -599,6 +600,7 @@ const IndexPage = () => {
         onClose={closeModal}
         videoSrc={AmericanGambits}
       />
+      <Analytics />
     </div>
   );
 };
